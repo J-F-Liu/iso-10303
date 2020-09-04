@@ -1,6 +1,6 @@
 A rust crate for reading STP/STEP CAD files.
 
-STEP (Stadndard for Exchange of Product model) is a standard for describing product data and is formally defined in the International Organization for Standardization (ISOI) standard 10303.
+**STEP** (**St**adndard for **E**xchange of **P**roduct model) is a standard for describing product data and is formally defined in ISO-10303.
 
 Both schema and data are written in EXPRESS language.
 

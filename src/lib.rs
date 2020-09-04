@@ -1,7 +1,7 @@
 #![feature(assoc_char_funcs)]
 #![feature(associated_type_bounds)]
 
-mod express;
+pub mod express;
 
 #[cfg(test)]
 mod tests {
