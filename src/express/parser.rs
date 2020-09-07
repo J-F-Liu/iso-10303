@@ -44,21 +44,15 @@ fn keyword<'a>(word: &'static str) -> Parser<'a, u8, ()> {
     })
 }
 
-fn boolean<'a>() -> Parser<'a, u8, bool> {
-    keyword("flase").map(|_| false) | keyword("true").map(|_| true)
-}
-
 fn logical<'a>() -> Parser<'a, u8, Option<bool>> {
     keyword("flase").map(|_| Some(false))
         | keyword("true").map(|_| Some(true))
         | keyword("unknown").map(|_| None)
 }
 
-fn binary<'a, T: 'a + FromStr<Err: std::fmt::Debug>>() -> Parser<'a, u8, T> {
+fn binary<'a>() -> Parser<'a, u8, String> {
     let number = sym(b'%') * one_of(b"01").repeat(1..);
-    number
-        .convert(String::from_utf8)
-        .convert(|s| T::from_str(&s))
+    number.convert(String::from_utf8)
 }
 
 fn integer<'a>() -> Parser<'a, u8, i64> {
@@ -99,6 +93,14 @@ fn encoded_string<'a>() -> Parser<'a, u8, String> {
         .repeat(0..)
         - sym(b'"');
     chars.map(String::from_iter)
+}
+
+fn literal<'a>() -> Parser<'a, u8, Literal> {
+    integer().map(|num| Literal::Integer(num))
+        | real().map(|num| Literal::Real(num))
+        | logical().map(|val| Literal::Logical(val))
+        | string().map(|text| Literal::String(text))
+        | binary().map(|val| Literal::Binary(val))
 }
 
 fn simple_data_type<'a>() -> Parser<'a, u8, DataType> {
@@ -395,12 +397,163 @@ fn attribute_ref<'a>() -> Parser<'a, u8, AttributeReference> {
     })
 }
 
-fn expression<'a>() -> Parser<'a, u8, Expression> {
-    todo!()
-}
-
 fn declaration<'a>() -> Parser<'a, u8, Declaration> {
     named_type() | entity()
+}
+
+fn expression<'a>() -> Parser<'a, u8, Expression> {
+    (simple_expression() + (relation_op() - space() + simple_expression()).repeat(0..)).map(
+        |(operand, operations)| Expression {
+            operand,
+            operations,
+        },
+    )
+}
+
+fn relation_op<'a>() -> Parser<'a, u8, Operator> {
+    seq(b"<=").map(|_| Operator::LessOrEqual)
+        | seq(b">=").map(|_| Operator::GreaterOrEqual)
+        | seq(b"<>").map(|_| Operator::NotEqual)
+        | seq(b":=:").map(|_| Operator::InstanceEqual)
+        | seq(b":<>:").map(|_| Operator::InstanceNotEqual)
+        | sym(b'<').map(|_| Operator::Less)
+        | sym(b'>').map(|_| Operator::Greater)
+        | sym(b'=').map(|_| Operator::Equal)
+        | keyword("in").map(|_| Operator::In)
+        | keyword("like").map(|_| Operator::Like)
+}
+
+fn multiplicative_op<'a>() -> Parser<'a, u8, Operator> {
+    seq(b"||").map(|_| Operator::Or)
+        | sym(b'*').map(|_| Operator::Mul)
+        | sym(b'/').map(|_| Operator::Div)
+        | keyword("div").map(|_| Operator::Div)
+        | keyword("mod").map(|_| Operator::Mod)
+        | keyword("and").map(|_| Operator::And)
+}
+
+fn interval_op<'a>() -> Parser<'a, u8, Operator> {
+    seq(b"<=").map(|_| Operator::LessOrEqual) | sym(b'<').map(|_| Operator::Less)
+}
+
+fn simple_expression<'a>() -> Parser<'a, u8, SimpleExpression> {
+    (term() + (multiplicative_op() - space() + term()).repeat(0..)).map(|(operand, operations)| {
+        SimpleExpression {
+            operand,
+            operations,
+        }
+    })
+}
+
+fn term<'a>() -> Parser<'a, u8, Term> {
+    (factor() + (multiplicative_op() - space() + factor()).repeat(0..)).map(
+        |(operand, operations)| Term {
+            operand,
+            operations,
+        },
+    )
+}
+
+fn factor<'a>() -> Parser<'a, u8, Factor> {
+    (simple_factor() - space()
+        + (seq(b"**").map(|_| Operator::Power) - space() + simple_factor() - space()).repeat(0..))
+    .map(|(operand, operations)| Factor {
+        operand,
+        operations,
+    })
+}
+
+fn simple_factor<'a>() -> Parser<'a, u8, SimpleFactor> {
+    aggregation_initiator() | interval() | query_expression() | entity_constructor() | primary()
+}
+
+fn aggregation_initiator<'a>() -> Parser<'a, u8, SimpleFactor> {
+    // let element = expression() + (sym(b':') * expression()).opt();
+    (sym(b'[') * space() * list(expression() - space(), sym(b',') - space()) - sym(b']')).map(
+        |elements| SimpleFactor::AggregateInitializer {
+            elements: elements.into_iter().map(|e| Box::new(e)).collect(),
+        },
+    )
+}
+
+fn entity_constructor<'a>() -> Parser<'a, u8, SimpleFactor> {
+    (identifier().map(str::to_string) - space() - sym(b'(')
+        + list(expression(), sym(b',') - space())
+        - sym(b')'))
+    .map(|(entity, parameters)| SimpleFactor::EnityConstructor {
+        entity,
+        parameters: parameters.into_iter().map(|e| Box::new(e)).collect(),
+    })
+}
+
+fn interval<'a>() -> Parser<'a, u8, SimpleFactor> {
+    (sym(b'{') * space() * simple_expression() + interval_op() - space()
+        + simple_expression()
+        + interval_op()
+        - space()
+        + simple_expression()
+        - sym(b'}'))
+    .map(|((((low, op1), term), op2), high)| SimpleFactor::Interval {
+        low: Box::new(low),
+        op1,
+        term: Box::new(term),
+        op2,
+        high: Box::new(high),
+    })
+}
+
+fn query_expression<'a>() -> Parser<'a, u8, SimpleFactor> {
+    (keyword("query") * space() * sym(b'(') * identifier().map(str::to_string)
+        - seq(b"<*")
+        - space()
+        + simple_expression()
+        - sym(b'|')
+        - space()
+        + expression()
+        - sym(b')'))
+    .map(
+        |((variable, source), condition)| SimpleFactor::QueryExpression {
+            variable,
+            source: Box::new(source),
+            condition: Box::new(condition),
+        },
+    )
+}
+
+fn primary<'a>() -> Parser<'a, u8, SimpleFactor> {
+    (literal().map(|lit| Primary::Literal(lit))
+        | qualified_access().map(|qa| Primary::QualifiedAccess(qa))
+        | sym(b'(') * space() * expression().map(|e| Primary::Grouped(Box::new(e))) - sym(b')'))
+    .map(|primary| SimpleFactor::Primary(primary))
+}
+
+fn qualified_access<'a>() -> Parser<'a, u8, QualifiedAccess> {
+    let qualifier = sym(b'.')
+        * identifier().map(|name| Accessor::Attribute {
+            name: name.to_string(),
+        })
+        | sym(b'\\')
+            * identifier().map(|entity| Accessor::Group {
+                entity: entity.to_string(),
+            })
+        | (sym(b'[') * simple_expression() + (sym(b':') * simple_expression()).opt() - sym(b']'))
+            .map(|(start, end)| Accessor::Indexer {
+                start: Box::new(start),
+                end: end.map(|e| Box::new(e)),
+            })
+        | (sym(b'(') * list(expression(), sym(b',') - space()) - sym(b')')).map(|parameters| {
+            Accessor::FunctionCall {
+                parameters: parameters.into_iter().map(|e| Box::new(e)).collect(),
+            }
+        });
+    ((builtin_constant() | identifier().map(str::to_string)) + qualifier.repeat(0..))
+        .map(|(target, accessors)| QualifiedAccess { target, accessors })
+}
+
+fn builtin_constant<'a>() -> Parser<'a, u8, String> {
+    (keyword("CONST_E") | keyword("PI") | keyword("SELF") | sym(b'?').discard())
+        .collect()
+        .convert(|chars| String::from_utf8(chars.to_vec()))
 }
 
 fn constants<'a>() -> Parser<'a, u8, Vec<Constant>> {
