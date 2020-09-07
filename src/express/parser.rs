@@ -1,4 +1,4 @@
-use super::{Attribute, DataType, Declaration, Rule};
+use super::*;
 use pom::char_class::{alpha, alphanum, digit, hex_digit};
 use pom::parser::*;
 use std::iter::FromIterator;
@@ -232,32 +232,82 @@ fn named_type<'a>() -> Parser<'a, u8, Declaration> {
         - keyword("end_type")
         - space()
         - sym(b';'))
-    .map(|((type_id, underlying_type), rules)| Declaration::Type {
-        name: type_id.to_string(),
-        underlying_type,
-        rules: rules.unwrap_or(Vec::new()),
-    })
+    .map(
+        |((type_id, underlying_type), domain_rules)| Declaration::Type {
+            name: type_id.to_string(),
+            underlying_type,
+            domain_rules: domain_rules.unwrap_or(Vec::new()),
+        },
+    )
 }
 
 fn entity<'a>() -> Parser<'a, u8, Declaration> {
-    (keyword("enity") * space() * identifier() - space() - sym(b';') - space()
-        + attribute().repeat(0..)
+    let head = keyword("enity") * space() * identifier() - space()
+        + supertype_declaration().opt()
+        + subtype_declaration().opt()
+        - sym(b';')
+        - space();
+    let body = attribute().repeat(0..)
         + derive_clause().opt()
         + inverse_clause().opt()
         + unique_clause().opt()
-        + where_clause().opt()
-        - keyword("end_enity")
-        - space()
-        - sym(b';'))
-    .map(
-        |(((((entity_id, attributes), derive_rules), inverse_rules), unique_rules), rules)| {
+        + where_clause().opt();
+    let tail = keyword("end_enity") - space() - sym(b';');
+    (head + body - tail).map(
+        |(
+            ((entity_id, is_abstract), supertypes),
+            ((((attributes, derived_attributes), _inverse_attributes), unique_rules), domain_rules),
+        )| {
             Declaration::Entity {
                 name: entity_id.to_string(),
+                is_abstract: is_abstract == Some(true),
+                supertypes: supertypes.unwrap_or(Vec::new()),
                 attributes: attributes.into_iter().flatten().collect(),
-                rules: rules.unwrap_or(Vec::new()),
+                derives: derived_attributes.unwrap_or(Vec::new()),
+                domain_rules: domain_rules.unwrap_or(Vec::new()),
+                unique_rules: unique_rules.unwrap_or(Vec::new()),
             }
         },
     )
+}
+
+fn supertype_declaration<'a>() -> Parser<'a, u8, bool> {
+    (keyword("abstract") * space() * keyword("supertype") * space() * subtype_constraint().opt())
+        .map(|_| true)
+        | keyword("supertype") * space() * subtype_constraint().map(|_| false)
+}
+
+fn subtype_constraint<'a>() -> Parser<'a, u8, ()> {
+    keyword("of") * space() * sym(b'(') * supertype_expr() - sym(b')')
+}
+
+fn supertype_term<'a>() -> Parser<'a, u8, ()> {
+    keyword("oneof")
+        * space()
+        * sym(b'(')
+        * list(call(supertype_expr) - space(), sym(b',') - space()).discard()
+        - sym(b')')
+        | identifier().discard()
+        | sym(b'(') * call(supertype_expr).discard() - sym(b')')
+}
+fn supertype_factor<'a>() -> Parser<'a, u8, ()> {
+    list(supertype_term() - space(), keyword("and") - space()).discard()
+}
+fn supertype_expr<'a>() -> Parser<'a, u8, ()> {
+    list(supertype_factor() - space(), keyword("andor") - space()).discard()
+}
+
+fn subtype_declaration<'a>() -> Parser<'a, u8, Vec<String>> {
+    keyword("subtype")
+        * space()
+        * keyword("of")
+        * space()
+        * sym(b'(')
+        * list(
+            identifier().map(str::to_string) - space(),
+            sym(b',') - space(),
+        )
+        - sym(b')')
 }
 
 fn attribute<'a>() -> Parser<'a, u8, Vec<Attribute>> {
@@ -270,30 +320,120 @@ fn attribute<'a>() -> Parser<'a, u8, Vec<Attribute>> {
         + base_data_type()
         - space()
         - sym(b';'))
-    .map(|((names, optional), base_type)| {
+    .map(|((names, optional), data_type)| {
         names
             .into_iter()
             .map(|name| Attribute {
                 name,
-                base_type: base_type.clone(),
+                data_type: data_type.clone(),
                 optional: optional.is_some(),
             })
             .collect::<Vec<_>>()
     })
 }
 
-fn where_clause<'a>() -> Parser<'a, u8, Vec<Rule>> {
+fn where_clause<'a>() -> Parser<'a, u8, Vec<DomainRule>> {
+    let domain_rule = ((identifier().map(str::to_string) - space() - sym(b':') - space()).opt()
+        + expression()
+        - sym(b';')
+        - space())
+    .map(|(label, expr)| DomainRule { label, expr });
+    keyword("where") * space() * domain_rule.repeat(1..)
+}
+
+fn derive_clause<'a>() -> Parser<'a, u8, Vec<DerivedAttribute>> {
+    let derive_attribute = (identifier().map(str::to_string) - space() - sym(b':') - space()
+        + base_data_type()
+        - space()
+        - sym(b'=')
+        - space()
+        + expression()
+        - sym(b';')
+        - space())
+    .map(|((name, data_type), expr)| DerivedAttribute {
+        name,
+        data_type,
+        expr,
+    });
+    keyword("derive") * space() * derive_attribute.repeat(1..)
+}
+
+fn inverse_clause<'a>() -> Parser<'a, u8, ()> {
+    let inverse_attribute = identifier().map(str::to_string) - space() - sym(b':') - space()
+        + ((keyword("set") | keyword("bag")) - space() + bound_spec().opt()
+            - space()
+            - keyword("of"))
+        .opt()
+        - space()
+        + identifier()
+        - space()
+        - keyword("for")
+        - space()
+        + identifier()
+        - space()
+        - sym(b';')
+        - space();
+    keyword("inverse") * space() * inverse_attribute.repeat(1..).discard()
+}
+
+fn unique_clause<'a>() -> Parser<'a, u8, Vec<UniqueRule>> {
+    let unique_rule = ((identifier().map(str::to_string) - space() - sym(b':') - space()).opt()
+        + list(attribute_ref() - space(), sym(b',') - space()))
+    .map(|(label, attributes)| UniqueRule { label, attributes });
+    keyword("unique") * space() * unique_rule.repeat(1..)
+}
+
+fn attribute_ref<'a>() -> Parser<'a, u8, AttributeReference> {
+    (keyword("self") * sym(b'\\') * identifier().map(str::to_string) - sym(b'.')
+        + identifier().map(str::to_string))
+    .map(|(entity, name)| AttributeReference {
+        name,
+        entity: Some(entity),
+    }) | identifier().map(|name| AttributeReference {
+        name: name.to_string(),
+        entity: None,
+    })
+}
+
+fn expression<'a>() -> Parser<'a, u8, Expression> {
     todo!()
 }
 
-fn derive_clause<'a>() -> Parser<'a, u8, Vec<Rule>> {
-    todo!()
+fn declaration<'a>() -> Parser<'a, u8, Declaration> {
+    named_type() | entity()
 }
 
-fn inverse_clause<'a>() -> Parser<'a, u8, Vec<Rule>> {
-    todo!()
+fn constants<'a>() -> Parser<'a, u8, Vec<Constant>> {
+    let constant = (identifier().map(str::to_string) - space() - sym(b':') - space()
+        + base_data_type()
+        - space()
+        - seq(b":=")
+        - space()
+        + expression()
+        - sym(b';')
+        - space())
+    .map(|((name, data_type), expr)| Constant {
+        name,
+        data_type,
+        expr,
+    });
+    keyword("constant") * space() * constant.repeat(1..)
+        - keyword("end_constant")
+        - space()
+        - sym(b';')
+        - space()
 }
 
-fn unique_clause<'a>() -> Parser<'a, u8, Vec<Rule>> {
-    todo!()
+pub fn schema<'a>() -> Parser<'a, u8, Schema> {
+    let head = space() * keyword("schema") * space() * identifier().map(str::to_string)
+        - space()
+        - sym(b':')
+        - space();
+    let body = constants().opt() + declaration().repeat(1..);
+    let tail = keyword("end_schema") - space() - sym(b':') - space();
+    (head + body - tail).map(|(name, (constants, declarations))| Schema {
+        name,
+        constants: constants.unwrap_or(Vec::new()),
+        declarations,
+    })
 }
