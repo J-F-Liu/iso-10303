@@ -45,4 +45,11 @@ pub enum DataType {
     Select {
         types: Vec<String>,
     },
+    Generic {
+        type_label: Option<String>,
+    },
+    Aggregate {
+        type_label: Option<String>,
+        base_type: Box<DataType>,
+    },
 }

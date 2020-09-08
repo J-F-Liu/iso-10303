@@ -15,6 +15,12 @@ pub enum Declaration {
         domain_rules: Vec<DomainRule>,
         unique_rules: Vec<UniqueRule>,
     },
+    Function {
+        name: String,
+        return_type: DataType,
+        parameters: Vec<Parameter>,
+        statements: Vec<Statement>,
+    },
 }
 
 pub struct Attribute {
@@ -44,8 +50,17 @@ pub struct UniqueRule {
     pub attributes: Vec<AttributeReference>,
 }
 
+pub struct Parameter {
+    pub name: String,
+    pub data_type: DataType,
+}
+
 pub struct Constant {
     pub name: String,
     pub data_type: DataType,
     pub expr: Expression,
+}
+
+pub struct Statement {
+    pub text: String,
 }

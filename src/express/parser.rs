@@ -398,7 +398,7 @@ fn attribute_ref<'a>() -> Parser<'a, u8, AttributeReference> {
 }
 
 fn declaration<'a>() -> Parser<'a, u8, Declaration> {
-    named_type() | entity()
+    named_type() | entity() | function()
 }
 
 fn expression<'a>() -> Parser<'a, u8, Expression> {
@@ -575,6 +575,82 @@ fn constants<'a>() -> Parser<'a, u8, Vec<Constant>> {
         - space()
         - sym(b';')
         - space()
+}
+
+fn generic_type<'a>() -> Parser<'a, u8, DataType> {
+    keyword("generic")
+        * (space() * sym(b':') * space() * identifier().map(str::to_string))
+            .opt()
+            .map(|type_label| DataType::Generic { type_label })
+}
+
+fn aggregate_type<'a>() -> Parser<'a, u8, DataType> {
+    (keyword("aggregate")
+        * (space() * sym(b':') * space() * identifier().map(str::to_string)).opt()
+        - space()
+        - keyword("of")
+        - space()
+        + parameter_type())
+    .map(|(type_label, base_type)| DataType::Aggregate {
+        type_label,
+        base_type: Box::new(base_type),
+    })
+}
+
+fn parameter_type<'a>() -> Parser<'a, u8, DataType> {
+    aggregation_data_type() | simple_data_type() | generic_type() | aggregate_type() | type_ref()
+}
+
+fn statement<'a>() -> Parser<'a, u8, Statement> {
+    !keyword("end_function")
+        * none_of(b";").repeat(0..).map(|chars| Statement {
+            text: String::from_utf8(chars).unwrap(),
+        })
+        - sym(b';')
+        - space()
+}
+
+fn function<'a>() -> Parser<'a, u8, Declaration> {
+    let formal_parameter = (list(
+        identifier().map(str::to_string) - space(),
+        sym(b',') - space(),
+    ) - sym(b':')
+        - space()
+        + parameter_type())
+    .map(|(names, data_type)| {
+        names
+            .into_iter()
+            .map(|name| Parameter {
+                name,
+                data_type: data_type.clone(),
+            })
+            .collect::<Vec<_>>()
+    });
+    let formal_parameters =
+        sym(b'(') * space() * list(formal_parameter - space(), sym(b';') - space()) - sym(b')');
+    let head = keyword("function") * space() * identifier().map(str::to_string)
+        + formal_parameters.opt()
+        - space()
+        - sym(b':')
+        - space()
+        + parameter_type()
+        - space()
+        - sym(b';')
+        - space();
+    let body = statement().repeat(0..);
+    let tail = keyword("end_function") - space() - sym(b';') - space();
+    (head + body - tail).map(|(((name, parameters), return_type), statements)| {
+        Declaration::Function {
+            name,
+            return_type,
+            parameters: parameters
+                .unwrap_or(Vec::new())
+                .into_iter()
+                .flatten()
+                .collect(),
+            statements,
+        }
+    })
 }
 
 pub fn schema<'a>() -> Parser<'a, u8, Schema> {
