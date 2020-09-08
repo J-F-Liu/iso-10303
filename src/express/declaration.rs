@@ -1,5 +1,6 @@
 use super::{DataType, Expression};
 
+#[derive(Debug)]
 pub enum Declaration {
     Type {
         name: String,
@@ -23,44 +24,52 @@ pub enum Declaration {
     },
 }
 
+#[derive(Debug)]
 pub struct Attribute {
     pub name: String,
     pub data_type: DataType,
     pub optional: bool,
 }
 
+#[derive(Debug)]
 pub struct DerivedAttribute {
     pub name: String,
     pub data_type: DataType,
     pub expr: Expression,
 }
 
+#[derive(Debug)]
 pub struct AttributeReference {
     pub name: String,
     pub entity: Option<String>,
 }
 
+#[derive(Debug)]
 pub struct DomainRule {
     pub label: Option<String>,
     pub expr: Expression,
 }
 
+#[derive(Debug)]
 pub struct UniqueRule {
     pub label: Option<String>,
     pub attributes: Vec<AttributeReference>,
 }
 
+#[derive(Debug)]
 pub struct Parameter {
     pub name: String,
     pub data_type: DataType,
 }
 
+#[derive(Debug)]
 pub struct Constant {
     pub name: String,
     pub data_type: DataType,
     pub expr: Expression,
 }
 
+#[derive(Debug)]
 pub struct Statement {
     pub text: String,
 }

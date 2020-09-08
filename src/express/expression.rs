@@ -1,23 +1,28 @@
+#[derive(Debug)]
 pub struct Expression {
     pub operand: SimpleExpression,
     pub operations: Vec<(Operator, SimpleExpression)>,
 }
 
+#[derive(Debug)]
 pub struct SimpleExpression {
     pub operand: Term,
     pub operations: Vec<(Operator, Term)>,
 }
 
+#[derive(Debug)]
 pub struct Term {
     pub operand: Factor,
     pub operations: Vec<(Operator, Factor)>,
 }
 
+#[derive(Debug)]
 pub struct Factor {
     pub operand: SimpleFactor,
     pub operations: Vec<(Operator, SimpleFactor)>,
 }
 
+#[derive(Debug)]
 pub enum Operator {
     Equal,
     NotEqual,
@@ -40,6 +45,7 @@ pub enum Operator {
     Power,
 }
 
+#[derive(Debug)]
 pub enum SimpleFactor {
     AggregateInitializer {
         elements: Vec<Box<Expression>>,
@@ -64,12 +70,14 @@ pub enum SimpleFactor {
     Primary(Primary),
 }
 
+#[derive(Debug)]
 pub enum Primary {
     Literal(Literal),
     Grouped(Box<Expression>),
     QualifiedAccess(QualifiedAccess),
 }
 
+#[derive(Debug)]
 pub enum Literal {
     Binary(String),
     Integer(i64),
@@ -78,11 +86,13 @@ pub enum Literal {
     String(String),
 }
 
+#[derive(Debug)]
 pub struct QualifiedAccess {
     pub target: String,
     pub accessors: Vec<Accessor>,
 }
 
+#[derive(Debug)]
 pub enum Accessor {
     FunctionCall {
         parameters: Vec<Box<Expression>>,

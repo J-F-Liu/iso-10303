@@ -1,6 +1,6 @@
 use std::ops::Range;
 
-#[derive(Clone)]
+#[derive(Debug, Clone)]
 pub enum DataType {
     Number,
     Integer,
