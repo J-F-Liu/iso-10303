@@ -19,7 +19,7 @@ fn tail_remark<'a>() -> Parser<'a, u8, ()> {
 
 fn embedded_remark<'a>() -> Parser<'a, u8, ()> {
     seq(b"(*")
-        * (none_of(b"(*)").repeat(0..).discard() | embedded_remark()).repeat(0..)
+        * (none_of(b"(*)").repeat(1..).discard() | call(embedded_remark)).repeat(0..)
         * seq(b"*)").discard()
 }
 
@@ -167,7 +167,7 @@ fn aggregation_data_type<'a>() -> Parser<'a, u8, DataType> {
         - space()
         + (keyword("optional") - space()).opt()
         + (keyword("unique") - space()).opt()
-        + base_data_type())
+        + call(base_data_type))
     .map(
         |((((start, end), optional), unique), base_type)| DataType::Array {
             bound: start..end,
@@ -177,18 +177,18 @@ fn aggregation_data_type<'a>() -> Parser<'a, u8, DataType> {
         },
     ) | (keyword("list") * space() * bound_spec().opt() - space() - keyword("of") - space()
         + (keyword("unique") - space()).opt()
-        + base_data_type())
+        + call(base_data_type))
     .map(|((bound, unique), base_type)| DataType::List {
         bound,
         unique: unique.is_some(),
         base_type: Box::new(base_type),
     }) | (keyword("bag") * space() * bound_spec().opt() - space() - keyword("of") - space()
-        + base_data_type())
+        + call(base_data_type))
     .map(|(bound, base_type)| DataType::Bag {
         bound,
         base_type: Box::new(base_type),
     }) | (keyword("set") * space() * bound_spec().opt() - space() - keyword("of") - space()
-        + base_data_type())
+        + call(base_data_type))
     .map(|(bound, base_type)| DataType::Set {
         bound,
         base_type: Box::new(base_type),
@@ -230,10 +230,12 @@ fn named_type<'a>() -> Parser<'a, u8, Declaration> {
     (keyword("type") * space() * identifier() - space() - sym(b'=') - space() + underlying_type()
         - space()
         - sym(b';')
+        - space()
         + where_clause().opt()
         - keyword("end_type")
         - space()
-        - sym(b';'))
+        - sym(b';')
+        - space())
     .map(
         |((type_id, underlying_type), domain_rules)| Declaration::Type {
             name: type_id.to_string(),
@@ -244,7 +246,7 @@ fn named_type<'a>() -> Parser<'a, u8, Declaration> {
 }
 
 fn entity<'a>() -> Parser<'a, u8, Declaration> {
-    let head = keyword("enity") * space() * identifier() - space()
+    let head = keyword("entity") * space() * identifier() - space()
         + supertype_declaration().opt()
         + subtype_declaration().opt()
         - sym(b';')
@@ -254,7 +256,7 @@ fn entity<'a>() -> Parser<'a, u8, Declaration> {
         + inverse_clause().opt()
         + unique_clause().opt()
         + where_clause().opt();
-    let tail = keyword("end_enity") - space() - sym(b';');
+    let tail = keyword("end_entity") - space() - sym(b';') - space();
     (head + body - tail).map(
         |(
             ((entity_id, is_abstract), supertypes),
@@ -321,7 +323,8 @@ fn attribute<'a>() -> Parser<'a, u8, Vec<Attribute>> {
         + (keyword("optional") - space()).opt()
         + base_data_type()
         - space()
-        - sym(b';'))
+        - sym(b';')
+        - space())
     .map(|((names, optional), data_type)| {
         names
             .into_iter()
@@ -347,7 +350,7 @@ fn derive_clause<'a>() -> Parser<'a, u8, Vec<DerivedAttribute>> {
     let derive_attribute = (identifier().map(str::to_string) - space() - sym(b':') - space()
         + base_data_type()
         - space()
-        - sym(b'=')
+        - seq(b":=")
         - space()
         + expression()
         - sym(b';')
@@ -469,7 +472,7 @@ fn simple_factor<'a>() -> Parser<'a, u8, SimpleFactor> {
 
 fn aggregation_initiator<'a>() -> Parser<'a, u8, SimpleFactor> {
     // let element = expression() + (sym(b':') * expression()).opt();
-    (sym(b'[') * space() * list(expression() - space(), sym(b',') - space()) - sym(b']')).map(
+    (sym(b'[') * space() * list(call(expression) - space(), sym(b',') - space()) - sym(b']')).map(
         |elements| SimpleFactor::AggregateInitializer {
             elements: elements.into_iter().map(|e| Box::new(e)).collect(),
         },
@@ -478,7 +481,7 @@ fn aggregation_initiator<'a>() -> Parser<'a, u8, SimpleFactor> {
 
 fn entity_constructor<'a>() -> Parser<'a, u8, SimpleFactor> {
     (identifier().map(str::to_string) - space() - sym(b'(')
-        + list(expression(), sym(b',') - space())
+        + list(call(expression), sym(b',') - space())
         - sym(b')'))
     .map(|(entity, parameters)| SimpleFactor::EnityConstructor {
         entity,
@@ -487,11 +490,11 @@ fn entity_constructor<'a>() -> Parser<'a, u8, SimpleFactor> {
 }
 
 fn interval<'a>() -> Parser<'a, u8, SimpleFactor> {
-    (sym(b'{') * space() * simple_expression() + interval_op() - space()
-        + simple_expression()
+    (sym(b'{') * space() * call(simple_expression) + interval_op() - space()
+        + call(simple_expression)
         + interval_op()
         - space()
-        + simple_expression()
+        + call(simple_expression)
         - sym(b'}'))
     .map(|((((low, op1), term), op2), high)| SimpleFactor::Interval {
         low: Box::new(low),
@@ -506,10 +509,10 @@ fn query_expression<'a>() -> Parser<'a, u8, SimpleFactor> {
     (keyword("query") * space() * sym(b'(') * identifier().map(str::to_string)
         - seq(b"<*")
         - space()
-        + simple_expression()
+        + call(simple_expression)
         - sym(b'|')
         - space()
-        + expression()
+        + call(expression)
         - sym(b')'))
     .map(
         |((variable, source), condition)| SimpleFactor::QueryExpression {
@@ -523,7 +526,7 @@ fn query_expression<'a>() -> Parser<'a, u8, SimpleFactor> {
 fn primary<'a>() -> Parser<'a, u8, SimpleFactor> {
     (literal().map(|lit| Primary::Literal(lit))
         | qualified_access().map(|qa| Primary::QualifiedAccess(qa))
-        | sym(b'(') * space() * expression().map(|e| Primary::Grouped(Box::new(e))) - sym(b')'))
+        | sym(b'(') * space() * call(expression).map(|e| Primary::Grouped(Box::new(e))) - sym(b')'))
     .map(|primary| SimpleFactor::Primary(primary))
 }
 
@@ -536,12 +539,13 @@ fn qualified_access<'a>() -> Parser<'a, u8, QualifiedAccess> {
             * identifier().map(|entity| Accessor::Group {
                 entity: entity.to_string(),
             })
-        | (sym(b'[') * simple_expression() + (sym(b':') * simple_expression()).opt() - sym(b']'))
-            .map(|(start, end)| Accessor::Indexer {
-                start: Box::new(start),
-                end: end.map(|e| Box::new(e)),
-            })
-        | (sym(b'(') * list(expression(), sym(b',') - space()) - sym(b')')).map(|parameters| {
+        | (sym(b'[') * call(simple_expression) + (sym(b':') * call(simple_expression)).opt()
+            - sym(b']'))
+        .map(|(start, end)| Accessor::Indexer {
+            start: Box::new(start),
+            end: end.map(|e| Box::new(e)),
+        })
+        | (sym(b'(') * list(call(expression), sym(b',') - space()) - sym(b')')).map(|parameters| {
             Accessor::FunctionCall {
                 parameters: parameters.into_iter().map(|e| Box::new(e)).collect(),
             }
@@ -590,7 +594,7 @@ fn aggregate_type<'a>() -> Parser<'a, u8, DataType> {
         - space()
         - keyword("of")
         - space()
-        + parameter_type())
+        + call(parameter_type))
     .map(|(type_label, base_type)| DataType::Aggregate {
         type_label,
         base_type: Box::new(base_type),
@@ -656,10 +660,10 @@ fn function<'a>() -> Parser<'a, u8, Declaration> {
 pub fn schema<'a>() -> Parser<'a, u8, Schema> {
     let head = space() * keyword("schema") * space() * identifier().map(str::to_string)
         - space()
-        - sym(b':')
+        - sym(b';')
         - space();
     let body = constants().opt() + declaration().repeat(1..);
-    let tail = keyword("end_schema") - space() - sym(b':') - space();
+    let tail = keyword("end_schema") - space() - sym(b';') - space();
     (head + body - tail).map(|(name, (constants, declarations))| Schema {
         name,
         constants: constants.unwrap_or(Vec::new()),
