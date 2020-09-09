@@ -1,6 +1,8 @@
-use iso_10303::express::*;
-use quote::{format_ident, quote};
 use structopt::StructOpt;
+
+mod generator;
+use generator::Generator;
+use iso_10303::express::parser;
 
 #[derive(StructOpt, Debug)]
 struct Args {
@@ -16,7 +18,8 @@ fn main() -> std::io::Result<()> {
     match parser::schema().parse(&bytes) {
         Ok(schema) => {
             // generate parser code
-            let code = gencode(schema);
+            let generator = Generator::new(schema);
+            let code = generator.gencode();
 
             // write code file
             let outfile = args.outdir.join("parser.rs");
@@ -33,28 +36,4 @@ fn main() -> std::io::Result<()> {
     }
 
     Ok(())
-}
-
-fn gencode(schema: Schema) -> String {
-    let declarations = schema
-        .declarations
-        .iter()
-        .map(|declaration| {
-            match declaration {
-                Declaration::Entity { name, .. } => {
-                    let ident = format_ident!("{}", name);
-                    let entity = quote! {
-                        pub struct #ident {
-                            //
-                        }
-                    };
-                    entity
-                }
-                _ => quote! {},
-            }
-        })
-        .collect::<Vec<_>>();
-
-    let code = quote! { #( #declarations )* };
-    code.to_string()
 }

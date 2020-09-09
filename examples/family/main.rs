@@ -1,4 +1,6 @@
 use iso_10303::express::parser::schema;
+
+pub mod parser;
 fn main() {
     let bytes = include_bytes!("../../schemas/example.exp");
     println!("{}", std::str::from_utf8(bytes).unwrap());
