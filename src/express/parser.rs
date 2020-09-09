@@ -211,10 +211,12 @@ fn named_type<'a>() -> Parser<'a, u8, Declaration> {
         - space()
         - sym(b';')
         - space())
-    .map(|((type_id, underlying_type), domain_rules)| Declaration::Type {
-        name: type_id.to_string(),
-        underlying_type,
-        domain_rules: domain_rules.unwrap_or(Vec::new()),
+    .map(|((type_id, underlying_type), domain_rules)| {
+        Declaration::TypeDef(TypeDef {
+            name: type_id.to_string(),
+            underlying_type,
+            domain_rules: domain_rules.unwrap_or(Vec::new()),
+        })
     })
 }
 
@@ -235,7 +237,7 @@ fn entity<'a>() -> Parser<'a, u8, Declaration> {
             ((entity_id, is_abstract), supertypes),
             ((((attributes, derived_attributes), _inverse_attributes), unique_rules), domain_rules),
         )| {
-            Declaration::Entity {
+            Declaration::Entity(Entity {
                 name: entity_id.to_string(),
                 is_abstract: is_abstract == Some(true),
                 supertypes: supertypes.unwrap_or(Vec::new()),
@@ -243,7 +245,7 @@ fn entity<'a>() -> Parser<'a, u8, Declaration> {
                 derives: derived_attributes.unwrap_or(Vec::new()),
                 domain_rules: domain_rules.unwrap_or(Vec::new()),
                 unique_rules: unique_rules.unwrap_or(Vec::new()),
-            }
+            })
         },
     )
 }
@@ -554,14 +556,14 @@ fn function<'a>() -> Parser<'a, u8, Declaration> {
         - space();
     let body = statement().repeat(0..);
     let tail = keyword("end_function") - space() - sym(b';') - space();
-    (head + body - tail).map(
-        |(((name, parameters), return_type), statements)| Declaration::Function {
+    (head + body - tail).map(|(((name, parameters), return_type), statements)| {
+        Declaration::Function(Function {
             name,
             return_type,
             parameters: parameters.unwrap_or(Vec::new()).into_iter().flatten().collect(),
             statements,
-        },
-    )
+        })
+    })
 }
 
 pub fn schema<'a>() -> Parser<'a, u8, Schema> {

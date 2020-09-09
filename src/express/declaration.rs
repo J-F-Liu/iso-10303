@@ -2,29 +2,38 @@ use super::{DataType, Expression};
 
 #[derive(Debug)]
 pub enum Declaration {
-    Type {
-        name: String,
-        underlying_type: DataType,
-        domain_rules: Vec<DomainRule>,
-    },
-    Entity {
-        name: String,
-        is_abstract: bool,
-        supertypes: Vec<String>,
-        attributes: Vec<Attribute>,
-        derives: Vec<DerivedAttribute>,
-        domain_rules: Vec<DomainRule>,
-        unique_rules: Vec<UniqueRule>,
-    },
-    Function {
-        name: String,
-        return_type: DataType,
-        parameters: Vec<Parameter>,
-        statements: Vec<Statement>,
-    },
+    TypeDef(TypeDef),
+    Entity(Entity),
+    Function(Function),
 }
 
 #[derive(Debug)]
+pub struct TypeDef {
+    pub name: String,
+    pub underlying_type: DataType,
+    pub domain_rules: Vec<DomainRule>,
+}
+
+#[derive(Debug)]
+pub struct Entity {
+    pub name: String,
+    pub is_abstract: bool,
+    pub supertypes: Vec<String>,
+    pub attributes: Vec<Attribute>,
+    pub derives: Vec<DerivedAttribute>,
+    pub domain_rules: Vec<DomainRule>,
+    pub unique_rules: Vec<UniqueRule>,
+}
+
+#[derive(Debug)]
+pub struct Function {
+    pub name: String,
+    pub return_type: DataType,
+    pub parameters: Vec<Parameter>,
+    pub statements: Vec<Statement>,
+}
+
+#[derive(Debug, Clone)]
 pub struct Attribute {
     pub name: String,
     pub data_type: DataType,

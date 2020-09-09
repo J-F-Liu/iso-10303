@@ -16,11 +16,11 @@ fn collect_types(schema: &Schema) -> (HashSet<String>, HashSet<String>) {
 
     for declaration in &schema.declarations {
         match declaration {
-            Declaration::Type { name, .. } => {
-                types.insert(name.to_string());
+            Declaration::TypeDef(type_def) => {
+                types.insert(type_def.name.to_string());
             }
-            Declaration::Entity { name, .. } => {
-                entities.insert(name.to_string());
+            Declaration::Entity(entity) => {
+                entities.insert(entity.name.to_string());
             }
             _ => {}
         }
@@ -38,21 +38,48 @@ impl Generator {
         }
     }
 
+    fn get_entity(&self, name: &str) -> Option<&Entity> {
+        for declaration in &self.schema.declarations {
+            match declaration {
+                Declaration::Entity(entity) => {
+                    if entity.name == name {
+                        return Some(entity);
+                    }
+                }
+                _ => {}
+            }
+        }
+        None
+    }
+
+    fn get_entity_supertypes(&self, name: &str) -> Vec<&Entity> {
+        let entity = self.get_entity(name).unwrap();
+        let mut supertypes = Vec::new();
+        for parent in &entity.supertypes {
+            supertypes.extend(self.get_entity_supertypes(parent));
+        }
+        supertypes.push(entity);
+        supertypes
+    }
+
+    fn get_entity_attributes(&self, name: &str) -> Vec<Attribute> {
+        let entity = self.get_entity(name).unwrap();
+        let mut attributes = Vec::new();
+        for parent in &entity.supertypes {
+            attributes.extend(self.get_entity_attributes(parent));
+        }
+        attributes.extend(entity.attributes.clone());
+        attributes
+    }
+
     pub fn gencode(&self) -> String {
         let declarations = self
             .schema
             .declarations
             .iter()
             .map(|declaration| match declaration {
-                Declaration::Type {
-                    name, underlying_type, ..
-                } => self.gen_type_def(name, underlying_type),
-                Declaration::Entity {
-                    name,
-                    is_abstract,
-                    attributes,
-                    ..
-                } => self.gen_entity_def(name, *is_abstract, attributes),
+                Declaration::TypeDef(type_def) => self.gen_type_def(type_def),
+                Declaration::Entity(entity) => self.gen_entity_def(entity),
                 _ => quote! {},
             })
             .collect::<Vec<_>>();
@@ -89,9 +116,9 @@ impl Generator {
         }
     }
 
-    fn gen_type_def(&self, name: &String, underlying_type: &DataType) -> TokenStream {
-        let ident = format_ident!("{}", name.to_camel_case());
-        match underlying_type {
+    fn gen_type_def(&self, type_def: &TypeDef) -> TokenStream {
+        let ident = format_ident!("{}", type_def.name.to_camel_case());
+        match &type_def.underlying_type {
             DataType::Enum { values } => {
                 let names = values
                     .iter()
@@ -111,7 +138,7 @@ impl Generator {
                 }
             }
             _ => {
-                let data_type = self.type_name(&underlying_type);
+                let data_type = self.type_name(&type_def.underlying_type);
                 quote! {
                     type #ident = #data_type;
                 }
@@ -119,49 +146,63 @@ impl Generator {
         }
     }
 
-    fn gen_entity_def(&self, name: &String, is_abstract: bool, attributes: &Vec<Attribute>) -> TokenStream {
-        let trait_ident = format_ident!("I{}", name.to_camel_case());
-        let fields = attributes
+    fn gen_entity_def(&self, entity: &Entity) -> TokenStream {
+        let trait_ident = format_ident!("I{}", entity.name.to_camel_case());
+        let supertypes = entity
+            .supertypes
             .iter()
-            .map(|attr| {
-                let ident = format_ident!("{}", attr.name.to_snake_case());
-                let data_type = self.type_name(&attr.data_type);
-                quote! {
-                    fn #ident(&self) -> #data_type;
-                }
-            })
+            .map(|name| format_ident!("I{}", name.to_camel_case()))
             .collect::<Vec<_>>();
+        let fields = entity.attributes.iter().map(|attr| {
+            let ident = format_ident!("{}", attr.name.to_snake_case());
+            let data_type = self.type_name(&attr.data_type);
+            quote! {
+                fn #ident(&self) -> &#data_type;
+            }
+        });
         let trait_code = quote! {
-            pub trait #trait_ident {
+            pub trait #trait_ident: #( #supertypes ),*  {
                 #( #fields )*
             }
         };
-        if is_abstract {
+        if entity.is_abstract {
             trait_code
         } else {
-            let ident = format_ident!("{}", name.to_camel_case());
-            let attrs = attributes
-                .iter()
-                .map(|attr| {
-                    let ident = format_ident!("{}", attr.name.to_snake_case());
-                    let data_type = self.type_name(&attr.data_type);
-                    quote! {
-                        #ident: #data_type,
-                    }
-                })
-                .collect::<Vec<_>>();
+            let ident = format_ident!("{}", entity.name.to_camel_case());
+            let attributes = self.get_entity_attributes(&entity.name);
+            let attrs = attributes.iter().map(|attr| {
+                let ident = format_ident!("{}", attr.name.to_snake_case());
+                let data_type = self.type_name(&attr.data_type);
+                quote! {
+                    #ident: #data_type,
+                }
+            });
             let struct_code = quote! {
                 pub struct #ident {
                     #( #attrs )*
                 }
             };
-            let impl_code = quote! {
-                impl #trait_ident for #ident {
+            let impls = self.get_entity_supertypes(&entity.name).into_iter().map(|entity| {
+                let trait_ident = format_ident!("I{}", entity.name.to_camel_case());
+                let fields = entity.attributes.iter().map(|attr| {
+                    let ident = format_ident!("{}", attr.name.to_snake_case());
+                    let data_type = self.type_name(&attr.data_type);
+                    quote! {
+                        fn #ident(&self) -> &#data_type {
+                            &self.#ident
+                        }
+                    }
+                });
+                quote! {
+                    impl #trait_ident for #ident {
+                        #( #fields )*
+                    }
                 }
-            };
+            });
             quote! {
                 #trait_code
                 #struct_code
+                #( #impls )*
             }
         }
     }
