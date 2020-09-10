@@ -7,7 +7,7 @@ Both schema and data are written in EXPRESS language.
 
 Run example:
 ```
-cargo run --features=gencode --bin gencode schemas\example.exp examples\family
+cargo run --features=gencode --bin gencode schemas/example.exp examples/family/parser.rs
 cargo run --example family
 ```
 

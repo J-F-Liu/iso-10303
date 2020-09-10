@@ -3,11 +3,12 @@ use structopt::StructOpt;
 mod generator;
 use generator::Generator;
 use iso_10303::express::parser;
+use std::process::Command;
 
 #[derive(StructOpt, Debug)]
 struct Args {
     schema: std::path::PathBuf,
-    outdir: std::path::PathBuf,
+    parser: std::path::PathBuf,
 }
 
 fn main() -> std::io::Result<()> {
@@ -22,15 +23,11 @@ fn main() -> std::io::Result<()> {
             let code = generator.gencode();
 
             // write code file
-            let outfile = args.outdir.join("parser.rs");
-            println!("write file: {}", outfile.display());
-            std::fs::write(&outfile, code.as_bytes())?;
+            println!("write file: {}", args.parser.display());
+            std::fs::write(&args.parser, code.as_bytes())?;
 
             // format code file
-            let config_toml = std::str::from_utf8(include_bytes!("../../../rustfmt.toml")).unwrap();
-            let config = rustfmt::config::Config::from_toml(config_toml).unwrap();
-            let summary = rustfmt::run(rustfmt::Input::File(outfile), &config);
-            assert_eq!(false, summary.has_parsing_errors());
+            Command::new("rustfmt").arg(args.parser).output()?;
         }
         Err(err) => println!("{:?}", err),
     }
