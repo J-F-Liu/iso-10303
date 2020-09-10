@@ -14,3 +14,4 @@ cargo run --example family
 STEP related resources:
 - [CAx Interoperability Forum](https://www.cax-if.org/cax/cax_stepLib.php)
 - [STEP Tools](http://www.steptools.com/stds/step/)
+- [ISO 10303-21](http://www.steptools.com/stds/step/IS_final_p21e3.html)

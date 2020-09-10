@@ -1,9 +1,13 @@
-use iso_10303::express::parser::schema;
+use iso_10303::step::parser::exchange_file;
 
 pub mod parser;
 fn main() {
-    let bytes = include_bytes!("../../schemas/example.exp");
-    println!("{}", std::str::from_utf8(bytes).unwrap());
-    let schema = schema().parse(bytes);
-    println!("{:?}", schema);
+    let bytes = include_bytes!("family.stp");
+    match exchange_file().parse(bytes) {
+        Ok(file) => {
+            println!("entities: {}", file.data.len());
+            println!("{:?}", file);
+        }
+        Err(err) => println!("{:?}", err),
+    }
 }

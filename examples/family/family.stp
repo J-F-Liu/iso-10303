@@ -1,0 +1,24 @@
+ISO-10303-21;
+HEADER;
+FILE_DESCRIPTION( ('A FAMILY'), /* description */
+                    '3;1'); /* implementation level */
+FILE_NAME('TOMS FAMILY',     /* name */
+    '2008-06-25',            /* time stamp */
+    ('T Kramer'),            /* author(s)   */
+    ('NIST'),                /* organization(s) */
+    'none',                  /* preprocessor version */
+    'tk',                    /* originating system */
+    'noman');                /* authorization */
+FILE_SCHEMA( ('EXAMPLE') );
+ENDSEC;
+DATA;
+#1 = MALE('Tom', 'Thumb', 'Thumbs', (1963, 4, 9),
+            (#3, #4), .BROWN., #2);
+#2 = FEMALE('Teresa', 'Thumb', 'Terri', (1963, 7, 3),
+            (#3, #4), .BLONDE.);
+#3 = MALE('Dick', 'Thumb', 'Shorty', (1993, 9, 3),
+            (), .BROWN., $);
+#4 = MALE('Harry', 'Thumb', $, (1992, 3, 26),
+            (), .BROWN., $);
+ENDSEC;
+END-ISO-10303-21;
