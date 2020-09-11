@@ -2,25 +2,42 @@ use heck::*;
 use iso_10303::express::*;
 use proc_macro2::TokenStream;
 use quote::{format_ident, quote};
-use std::collections::HashSet;
+use std::collections::HashMap;
 
 pub struct Generator {
-    schema: Schema,
-    types: HashSet<String>,
-    entities: HashSet<String>,
+    types: HashMap<String, TypeDef>,
+    entities: HashMap<String, Entity>,
+    entity_infos: HashMap<String, EntityInfo>,
 }
 
-fn collect_types(schema: &Schema) -> (HashSet<String>, HashSet<String>) {
-    let mut types = HashSet::<String>::new();
-    let mut entities = HashSet::<String>::new();
+struct EntityInfo {
+    type_name: String,
+    has_lifetime: bool,
+    attributes: Vec<Attribute>,
+}
 
-    for declaration in &schema.declarations {
+impl EntityInfo {
+    pub fn trait_name(&self) -> TokenStream {
+        let trait_name = format_ident!("I{}", self.type_name);
+        if self.has_lifetime {
+            quote! {#trait_name<'a>}
+        } else {
+            quote! {#trait_name}
+        }
+    }
+}
+
+fn collect_types(schema: Schema) -> (HashMap<String, TypeDef>, HashMap<String, Entity>) {
+    let mut types = HashMap::<String, TypeDef>::new();
+    let mut entities = HashMap::<String, Entity>::new();
+
+    for declaration in schema.declarations {
         match declaration {
             Declaration::TypeDef(type_def) => {
-                types.insert(type_def.name.to_string());
+                types.insert(type_def.name.to_string(), type_def);
             }
             Declaration::Entity(entity) => {
-                entities.insert(entity.name.to_string());
+                entities.insert(entity.name.to_string(), entity);
             }
             _ => {}
         }
@@ -28,32 +45,57 @@ fn collect_types(schema: &Schema) -> (HashSet<String>, HashSet<String>) {
     (types, entities)
 }
 
+fn get_entity_attributes(entities: &HashMap<String, Entity>, name: &str) -> Vec<Attribute> {
+    let mut attributes = Vec::new();
+    if let Some(entity) = entities.get(name) {
+        for parent in &entity.supertypes {
+            attributes.extend(get_entity_attributes(entities, parent));
+        }
+        attributes.extend(entity.attributes.clone());
+    }
+    attributes
+}
+
+fn has_entity_ref(entities: &HashMap<String, Entity>, data_type: &DataType) -> bool {
+    match data_type {
+        DataType::TypeRef { name } => entities.contains_key(name),
+        DataType::Set { base_type, .. } => has_entity_ref(entities, base_type),
+        _ => false,
+    }
+}
+
+fn collect_entity_infos(entities: &HashMap<String, Entity>) -> HashMap<String, EntityInfo> {
+    let mut entity_infos = HashMap::new();
+    for name in entities.keys() {
+        let attributes = get_entity_attributes(entities, name);
+        let has_lifetime = attributes.iter().any(|attr| has_entity_ref(entities, &attr.data_type));
+        let type_name = name.to_camel_case();
+        // let trait_name = format!("I{}{}", type_name)
+        entity_infos.insert(
+            name.to_string(),
+            EntityInfo {
+                type_name,
+                has_lifetime,
+                attributes,
+            },
+        );
+    }
+    entity_infos
+}
+
 impl Generator {
     pub fn new(schema: Schema) -> Generator {
-        let (types, entities) = collect_types(&schema);
+        let (types, entities) = collect_types(schema);
+        let entity_infos = collect_entity_infos(&entities);
         Generator {
-            schema,
             types,
             entities,
+            entity_infos,
         }
-    }
-
-    fn get_entity(&self, name: &str) -> Option<&Entity> {
-        for declaration in &self.schema.declarations {
-            match declaration {
-                Declaration::Entity(entity) => {
-                    if entity.name == name {
-                        return Some(entity);
-                    }
-                }
-                _ => {}
-            }
-        }
-        None
     }
 
     fn get_entity_supertypes(&self, name: &str) -> Vec<&Entity> {
-        let entity = self.get_entity(name).unwrap();
+        let entity = &self.entities[name];
         let mut supertypes = Vec::new();
         for parent in &entity.supertypes {
             supertypes.extend(self.get_entity_supertypes(parent));
@@ -62,33 +104,19 @@ impl Generator {
         supertypes
     }
 
-    fn get_entity_attributes(&self, name: &str) -> Vec<Attribute> {
-        let entity = self.get_entity(name).unwrap();
-        let mut attributes = Vec::new();
-        for parent in &entity.supertypes {
-            attributes.extend(self.get_entity_attributes(parent));
-        }
-        attributes.extend(entity.attributes.clone());
-        attributes
-    }
-
     pub fn gencode(&self) -> String {
-        let declarations = self
-            .schema
-            .declarations
-            .iter()
-            .map(|declaration| match declaration {
-                Declaration::TypeDef(type_def) => self.gen_type_def(type_def),
-                Declaration::Entity(entity) => self.gen_entity_def(entity),
-                _ => quote! {},
-            })
-            .collect::<Vec<_>>();
+        let type_defs = self.types.values().map(|type_def| self.gen_type_def(type_def));
+        let entity_defs = self
+            .entities
+            .values()
+            .map(|entity| self.gen_entity_def(entity, &self.entity_infos[&entity.name]));
 
         let code = quote! {
             //! This file is generated. Do not edit.
             use iso_10303::step::*;
             pub struct Unimplemented {}
-            #( #declarations )*
+            #( #type_defs )*
+            #( #entity_defs )*
         };
         code.to_string()
     }
@@ -102,9 +130,9 @@ impl Generator {
             DataType::Logical => quote! {Option<bool>},
             DataType::String { .. } => quote! {String},
             DataType::TypeRef { name } => {
-                if self.entities.contains(name) {
-                    let type_name = format_ident!("I{}", name.to_camel_case());
-                    quote! {&'a dyn #type_name}
+                if let Some(entity_info) = self.entity_infos.get(name) {
+                    let trait_name = entity_info.trait_name();
+                    quote! {&'a dyn #trait_name}
                 } else {
                     let type_name = format_ident!("{}", name.to_camel_case());
                     quote! {#type_name}
@@ -186,30 +214,18 @@ impl Generator {
         }
     }
 
-    fn gen_entity_def(&self, entity: &Entity) -> TokenStream {
-        let attributes = self.get_entity_attributes(&entity.name);
-        let attrs = attributes
-            .iter()
-            .map(|attr| {
-                let ident = format_ident!("{}", attr.name.to_snake_case());
-                let data_type = self.type_name(&attr.data_type, attr.optional);
-                quote! {
-                    #ident: #data_type,
-                }
-            })
-            .collect::<Vec<_>>();
-        let has_lifetime = attrs.iter().any(|attr| attr.to_string().contains("'a"));
-        let life_time = if has_lifetime {
+    fn gen_entity_def(&self, entity: &Entity, entity_info: &EntityInfo) -> TokenStream {
+        let life_time = if entity_info.has_lifetime {
             quote! { <'a> }
         } else {
             quote! {}
         };
 
-        let trait_ident = format_ident!("I{}", entity.name.to_camel_case());
+        let trait_ident = format_ident!("I{}", entity_info.type_name);
         let supertypes = entity
             .supertypes
             .iter()
-            .map(|name| format_ident!("I{}", name.to_camel_case()))
+            .map(|name| self.entity_infos[name].trait_name())
             .collect::<Vec<_>>();
         let fields = entity.attributes.iter().map(|attr| {
             let ident = format_ident!("{}", attr.name.to_snake_case());
@@ -226,7 +242,18 @@ impl Generator {
         if entity.is_abstract {
             trait_code
         } else {
-            let ident = format_ident!("{}", entity.name.to_camel_case());
+            let ident = format_ident!("{}", entity_info.type_name);
+            let attrs = entity_info
+                .attributes
+                .iter()
+                .map(|attr| {
+                    let ident = format_ident!("{}", attr.name.to_snake_case());
+                    let data_type = self.type_name(&attr.data_type, attr.optional);
+                    quote! {
+                        #ident: #data_type,
+                    }
+                })
+                .collect::<Vec<_>>();
             let struct_code = quote! {
                 #[derive(Default)]
                 pub struct #ident#life_time {
@@ -234,7 +261,7 @@ impl Generator {
                 }
             };
             let impls = self.get_entity_supertypes(&entity.name).into_iter().map(|entity| {
-                let trait_ident = format_ident!("I{}", entity.name.to_camel_case());
+                let trait_name = self.entity_infos[&entity.name].trait_name();
                 let fields = entity.attributes.iter().map(|attr| {
                     let field = format_ident!("{}", attr.name.to_snake_case());
                     let data_type = self.type_name(&attr.data_type, attr.optional);
@@ -245,12 +272,12 @@ impl Generator {
                     }
                 });
                 quote! {
-                    impl#life_time #trait_ident for #ident#life_time {
+                    impl#life_time #trait_name for #ident#life_time {
                         #( #fields )*
                     }
                 }
             });
-            let set_fields = attributes.iter().enumerate().map(|(index, attr)| {
+            let set_fields = entity_info.attributes.iter().enumerate().map(|(index, attr)| {
                 let field = format_ident!("{}", attr.name.to_snake_case());
                 if attr.optional {
                     quote! {
@@ -266,7 +293,7 @@ impl Generator {
                 #trait_code
                 #struct_code
                 #( #impls )*
-                impl #ident#life_time {
+                impl#life_time #ident#life_time {
                     pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
                         let mut entity = #ident::default();
 

@@ -1,7 +1,6 @@
 #![doc = r" This file is generated. Do not edit."]
 use iso_10303::step::*;
 pub struct Unimplemented {}
-type Date = Vec<i64>;
 pub enum HairType {
     Blonde,
     Brown,
@@ -38,25 +37,18 @@ impl From<Parameter> for HairType {
         }
     }
 }
-pub trait IPerson<'a> {
-    fn first_name(&self) -> &String;
-    fn last_name(&self) -> &String;
-    fn nickname(&self) -> &Option<String>;
-    fn birth_date(&self) -> &Date;
-    fn children(&self) -> &std::collections::HashSet<&'a dyn IPerson>;
-    fn hair(&self) -> &HairType;
-}
-pub trait IFemale<'a>: IPerson {}
+type Date = Vec<i64>;
+pub trait IFemale<'a>: IPerson<'a> {}
 #[derive(Default)]
 pub struct Female<'a> {
     first_name: String,
     last_name: String,
     nickname: Option<String>,
     birth_date: Date,
-    children: std::collections::HashSet<&'a dyn IPerson>,
+    children: std::collections::HashSet<&'a dyn IPerson<'a>>,
     hair: HairType,
 }
-impl<'a> IPerson for Female<'a> {
+impl<'a> IPerson<'a> for Female<'a> {
     fn first_name(&self) -> &String {
         &self.first_name
     }
@@ -69,15 +61,15 @@ impl<'a> IPerson for Female<'a> {
     fn birth_date(&self) -> &Date {
         &self.birth_date
     }
-    fn children(&self) -> &std::collections::HashSet<&'a dyn IPerson> {
+    fn children(&self) -> &std::collections::HashSet<&'a dyn IPerson<'a>> {
         &self.children
     }
     fn hair(&self) -> &HairType {
         &self.hair
     }
 }
-impl<'a> IFemale for Female<'a> {}
-impl Female<'a> {
+impl<'a> IFemale<'a> for Female<'a> {}
+impl<'a> Female<'a> {
     pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Female::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
@@ -100,8 +92,8 @@ impl Female<'a> {
         entity
     }
 }
-pub trait IMale<'a>: IPerson {
-    fn wife(&self) -> &Option<&'a dyn IFemale>;
+pub trait IMale<'a>: IPerson<'a> {
+    fn wife(&self) -> &Option<&'a dyn IFemale<'a>>;
 }
 #[derive(Default)]
 pub struct Male<'a> {
@@ -113,7 +105,7 @@ pub struct Male<'a> {
     hair: HairType,
     wife: Option<&'a dyn IFemale<'a>>,
 }
-impl<'a> IPerson for Male<'a> {
+impl<'a> IPerson<'a> for Male<'a> {
     fn first_name(&self) -> &String {
         &self.first_name
     }
@@ -126,19 +118,19 @@ impl<'a> IPerson for Male<'a> {
     fn birth_date(&self) -> &Date {
         &self.birth_date
     }
-    fn children(&self) -> &std::collections::HashSet<&'a dyn IPerson> {
+    fn children(&self) -> &std::collections::HashSet<&'a dyn IPerson<'a>> {
         &self.children
     }
     fn hair(&self) -> &HairType {
         &self.hair
     }
 }
-impl<'a> IMale for Male<'a> {
-    fn wife(&self) -> &Option<&'a dyn IFemale> {
+impl<'a> IMale<'a> for Male<'a> {
+    fn wife(&self) -> &Option<&'a dyn IFemale<'a>> {
         &self.wife
     }
 }
-impl Male<'a> {
+impl<'a> Male<'a> {
     pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Male::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
@@ -167,4 +159,12 @@ impl Male<'a> {
         }
         entity
     }
+}
+pub trait IPerson<'a> {
+    fn first_name(&self) -> &String;
+    fn last_name(&self) -> &String;
+    fn nickname(&self) -> &Option<String>;
+    fn birth_date(&self) -> &Date;
+    fn children(&self) -> &std::collections::HashSet<&'a dyn IPerson<'a>>;
+    fn hair(&self) -> &HairType;
 }
