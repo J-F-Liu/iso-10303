@@ -192,7 +192,10 @@ fn constructed_data_type<'a>() -> Parser<'a, u8, DataType> {
         * list(identifier().map(str::to_string), sym(b',') - space())
         - sym(b')'))
     .map(|values| DataType::Enum { values })
-        | (keyword("select") * space() * sym(b'(') * list(identifier().map(str::to_string), sym(b',') - space())
+        | (keyword("select")
+            * space()
+            * sym(b'(')
+            * list(identifier().map(str::to_string) - space(), sym(b',') - space())
             - sym(b')'))
         .map(|types| DataType::Select { types })
 }
@@ -302,9 +305,11 @@ fn attribute<'a>() -> Parser<'a, u8, Vec<Attribute>> {
 }
 
 fn where_clause<'a>() -> Parser<'a, u8, Vec<DomainRule>> {
-    let domain_rule =
-        ((identifier().map(str::to_string) - space() - sym(b':') - space()).opt() + expression() - sym(b';') - space())
-            .map(|(label, expr)| DomainRule { label, expr });
+    let domain_rule = !keyword("end_type")
+        * ((identifier().map(str::to_string) - space() - sym(b':') - space()).opt() + expression()
+            - sym(b';')
+            - space())
+        .map(|(label, expr)| DomainRule { label, expr });
     keyword("where") * space() * domain_rule.repeat(1..)
 }
 

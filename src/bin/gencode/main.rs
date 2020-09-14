@@ -19,6 +19,7 @@ fn main() -> std::io::Result<()> {
     match parser::schema().parse(&bytes) {
         Ok(schema) => {
             // generate parser code
+            println!("generate code");
             let generator = Generator::new(schema);
             let code = generator.gencode();
 

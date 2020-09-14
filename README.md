@@ -2,13 +2,20 @@ A rust crate for reading STP/STEP CAD files.
 
 **STEP** (**St**adndard for **E**xchange of **P**roduct model) is a standard for describing product data and is formally defined in ISO-10303.
 
-Both schema and data are written in EXPRESS language.
+### Design
+
+Schema files are written in EXPRESS language. We write an EXPRESS parser to read a schema defination, then generate a Rust code file which contains data type definations, trait impls and a reader to read stp files.
 
 
 Run example:
 ```
-cargo run --features=gencode --bin gencode schemas/example.exp examples/family/parser.rs
+cargo run --features=gencode --bin gencode schemas/example.exp examples/family/reader.rs
 cargo run --example family
+```
+
+Generate AP214 reader:
+```
+cargo run --features=gencode --bin gencode schemas/AP214E3_2010.exp src/reader/AP214.rs
 ```
 
 STEP related resources:
