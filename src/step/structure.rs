@@ -1,3 +1,7 @@
+use std::collections::HashSet;
+use std::hash::Hash;
+use std::iter::FromIterator;
+
 #[derive(Debug)]
 pub enum Parameter {
     TypedParameter(TypedParameter),
@@ -29,6 +33,9 @@ pub struct EntityInstance {
     pub id: i64,
     pub value: Vec<TypedParameter>,
 }
+
+#[derive(Eq, PartialEq, Hash)]
+pub struct EntityRef(i64);
 
 #[derive(Debug)]
 pub struct ExchangeFile {
@@ -76,6 +83,15 @@ impl From<Parameter> for String {
     }
 }
 
+impl From<Parameter> for EntityRef {
+    fn from(parameter: Parameter) -> Self {
+        match parameter {
+            Parameter::UnTypedParameter(parameter) => parameter.into(),
+            _ => panic!("can not convert"),
+        }
+    }
+}
+
 impl<T: From<Parameter>> From<Parameter> for Vec<T> {
     fn from(parameter: Parameter) -> Self {
         match parameter {
@@ -88,11 +104,20 @@ impl<T: From<Parameter>> From<Parameter> for Vec<T> {
     }
 }
 
+impl<T: From<Parameter> + Eq + Hash> From<Parameter> for HashSet<T> {
+    fn from(parameter: Parameter) -> Self {
+        match parameter {
+            Parameter::UnTypedParameter(parameter) => parameter.into(),
+            _ => panic!("can not convert"),
+        }
+    }
+}
+
 impl From<UnTypedParameter> for i64 {
     fn from(parameter: UnTypedParameter) -> Self {
         match parameter {
             UnTypedParameter::Integer(number) => number,
-            _ => panic!("can not convert"),
+            _ => panic!("can not convert to integer"),
         }
     }
 }
@@ -101,7 +126,7 @@ impl From<UnTypedParameter> for f64 {
     fn from(parameter: UnTypedParameter) -> Self {
         match parameter {
             UnTypedParameter::Real(number) => number,
-            _ => panic!("can not convert"),
+            _ => panic!("can not convert to real"),
         }
     }
 }
@@ -111,6 +136,24 @@ impl From<UnTypedParameter> for String {
         match parameter {
             UnTypedParameter::String(string) => string,
             UnTypedParameter::Null => String::default(),
+            _ => panic!("can not convert"),
+        }
+    }
+}
+
+impl From<UnTypedParameter> for EntityRef {
+    fn from(parameter: UnTypedParameter) -> Self {
+        match parameter {
+            UnTypedParameter::EntityRef(id) => EntityRef(id),
+            _ => panic!("can not convert"),
+        }
+    }
+}
+
+impl<T: From<Parameter> + Eq + Hash> From<UnTypedParameter> for HashSet<T> {
+    fn from(parameter: UnTypedParameter) -> Self {
+        match parameter {
+            UnTypedParameter::List(values) => HashSet::from_iter(values.into_iter().map(|value| T::from(value))),
             _ => panic!("can not convert"),
         }
     }

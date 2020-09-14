@@ -5,6 +5,7 @@ use quote::{format_ident, quote};
 use std::collections::HashMap;
 
 pub struct Generator {
+    name: String,
     types: HashMap<String, TypeDef>,
     entities: HashMap<String, Entity>,
     entity_infos: HashMap<String, EntityInfo>,
@@ -19,11 +20,7 @@ struct EntityInfo {
 impl EntityInfo {
     pub fn trait_name(&self) -> TokenStream {
         let trait_name = format_ident!("I{}", self.type_name);
-        if self.has_lifetime {
-            quote! {#trait_name<'a>}
-        } else {
-            quote! {#trait_name}
-        }
+        quote! {#trait_name}
     }
 }
 
@@ -85,9 +82,11 @@ fn collect_entity_infos(entities: &HashMap<String, Entity>) -> HashMap<String, E
 
 impl Generator {
     pub fn new(schema: Schema) -> Generator {
+        let name = schema.name.to_camel_case();
         let (types, entities) = collect_types(schema);
         let entity_infos = collect_entity_infos(&entities);
         Generator {
+            name,
             types,
             entities,
             entity_infos,
@@ -110,6 +109,7 @@ impl Generator {
             .entities
             .values()
             .map(|entity| self.gen_entity_def(entity, &self.entity_infos[&entity.name]));
+        let reader = self.gen_reader();
 
         let code = quote! {
             //! This file is generated. Do not edit.
@@ -117,6 +117,7 @@ impl Generator {
             pub struct Unimplemented {}
             #( #type_defs )*
             #( #entity_defs )*
+            #reader
         };
         code.to_string()
     }
@@ -131,8 +132,9 @@ impl Generator {
             DataType::String { .. } => quote! {String},
             DataType::TypeRef { name } => {
                 if let Some(entity_info) = self.entity_infos.get(name) {
-                    let trait_name = entity_info.trait_name();
-                    quote! {&'a dyn #trait_name}
+                    // let trait_name = entity_info.trait_name();
+                    // quote! {&'a dyn #trait_name}
+                    quote! {EntityRef}
                 } else {
                     let type_name = format_ident!("{}", name.to_camel_case());
                     quote! {#type_name}
@@ -215,12 +217,6 @@ impl Generator {
     }
 
     fn gen_entity_def(&self, entity: &Entity, entity_info: &EntityInfo) -> TokenStream {
-        let life_time = if entity_info.has_lifetime {
-            quote! { <'a> }
-        } else {
-            quote! {}
-        };
-
         let trait_ident = format_ident!("I{}", entity_info.type_name);
         let supertypes = entity
             .supertypes
@@ -235,7 +231,7 @@ impl Generator {
             }
         });
         let trait_code = quote! {
-            pub trait #trait_ident#life_time: #( #supertypes ),*  {
+            pub trait #trait_ident: #( #supertypes ),*  {
                 #( #fields )*
             }
         };
@@ -256,7 +252,7 @@ impl Generator {
                 .collect::<Vec<_>>();
             let struct_code = quote! {
                 #[derive(Default)]
-                pub struct #ident#life_time {
+                pub struct #ident {
                     #( #attrs )*
                 }
             };
@@ -272,7 +268,7 @@ impl Generator {
                     }
                 });
                 quote! {
-                    impl#life_time #trait_name for #ident#life_time {
+                    impl #trait_name for #ident {
                         #( #fields )*
                     }
                 }
@@ -293,7 +289,7 @@ impl Generator {
                 #trait_code
                 #struct_code
                 #( #impls )*
-                impl#life_time #ident#life_time {
+                impl #ident {
                     pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
                         let mut entity = #ident::default();
 
@@ -305,6 +301,46 @@ impl Generator {
                         }
 
                         entity
+                    }
+                }
+            }
+        }
+    }
+
+    fn gen_reader(&self) -> TokenStream {
+        let reader_name = format_ident!("{}Reader", self.name);
+        let read_entities = self
+            .entity_infos
+            .iter()
+            .filter(|&(name, _)| !self.entities[name].is_abstract)
+            .map(|(name, entity)| {
+                let constructor = name.to_uppercase();
+                let type_name = format_ident!("{}", entity.type_name);
+                quote! {
+                    #constructor => {
+                        let entity = #type_name::form_parameters(typed_parameter.parameters);
+                        self.entities.insert(id, Box::new(entity));
+                    }
+                }
+            });
+
+        quote! {
+            pub struct #reader_name {
+                pub entities: std::collections::BTreeMap<i64, Box<dyn std::any::Any>>,
+            }
+            impl #reader_name {
+                pub fn new() -> Self {
+                    #reader_name {
+                        entities: std::collections::BTreeMap::new(),
+                    }
+                }
+            }
+
+            impl StepReader for #reader_name {
+                fn read_simple_entity(&mut self, id: i64, typed_parameter: TypedParameter) {
+                    match typed_parameter.type_name.as_str() {
+                        #( #read_entities )*
+                        _ => println!("{} is not implemented", typed_parameter.type_name),
                     }
                 }
             }

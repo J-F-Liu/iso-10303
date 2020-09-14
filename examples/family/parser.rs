@@ -38,17 +38,20 @@ impl From<Parameter> for HairType {
     }
 }
 type Date = Vec<i64>;
-pub trait IFemale<'a>: IPerson<'a> {}
+pub trait IMale: IPerson {
+    fn wife(&self) -> &Option<EntityRef>;
+}
 #[derive(Default)]
-pub struct Female<'a> {
+pub struct Male {
     first_name: String,
     last_name: String,
     nickname: Option<String>,
     birth_date: Date,
-    children: std::collections::HashSet<&'a dyn IPerson<'a>>,
+    children: std::collections::HashSet<EntityRef>,
     hair: HairType,
+    wife: Option<EntityRef>,
 }
-impl<'a> IPerson<'a> for Female<'a> {
+impl IPerson for Male {
     fn first_name(&self) -> &String {
         &self.first_name
     }
@@ -61,76 +64,19 @@ impl<'a> IPerson<'a> for Female<'a> {
     fn birth_date(&self) -> &Date {
         &self.birth_date
     }
-    fn children(&self) -> &std::collections::HashSet<&'a dyn IPerson<'a>> {
+    fn children(&self) -> &std::collections::HashSet<EntityRef> {
         &self.children
     }
     fn hair(&self) -> &HairType {
         &self.hair
     }
 }
-impl<'a> IFemale<'a> for Female<'a> {}
-impl<'a> Female<'a> {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
-        let mut entity = Female::default();
-        for (index, parameter) in parameters.into_iter().enumerate() {
-            match index {
-                0usize => entity.first_name = parameter.into(),
-                1usize => entity.last_name = parameter.into(),
-                2usize => {
-                    entity.nickname = if parameter.is_null() {
-                        None
-                    } else {
-                        Some(parameter.into())
-                    }
-                }
-                3usize => entity.birth_date = parameter.into(),
-                4usize => entity.children = parameter.into(),
-                5usize => entity.hair = parameter.into(),
-                _ => {}
-            }
-        }
-        entity
-    }
-}
-pub trait IMale<'a>: IPerson<'a> {
-    fn wife(&self) -> &Option<&'a dyn IFemale<'a>>;
-}
-#[derive(Default)]
-pub struct Male<'a> {
-    first_name: String,
-    last_name: String,
-    nickname: Option<String>,
-    birth_date: Date,
-    children: std::collections::HashSet<&'a dyn IPerson<'a>>,
-    hair: HairType,
-    wife: Option<&'a dyn IFemale<'a>>,
-}
-impl<'a> IPerson<'a> for Male<'a> {
-    fn first_name(&self) -> &String {
-        &self.first_name
-    }
-    fn last_name(&self) -> &String {
-        &self.last_name
-    }
-    fn nickname(&self) -> &Option<String> {
-        &self.nickname
-    }
-    fn birth_date(&self) -> &Date {
-        &self.birth_date
-    }
-    fn children(&self) -> &std::collections::HashSet<&'a dyn IPerson<'a>> {
-        &self.children
-    }
-    fn hair(&self) -> &HairType {
-        &self.hair
-    }
-}
-impl<'a> IMale<'a> for Male<'a> {
-    fn wife(&self) -> &Option<&'a dyn IFemale<'a>> {
+impl IMale for Male {
+    fn wife(&self) -> &Option<EntityRef> {
         &self.wife
     }
 }
-impl<'a> Male<'a> {
+impl Male {
     pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Male::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
@@ -160,11 +106,90 @@ impl<'a> Male<'a> {
         entity
     }
 }
-pub trait IPerson<'a> {
+pub trait IPerson {
     fn first_name(&self) -> &String;
     fn last_name(&self) -> &String;
     fn nickname(&self) -> &Option<String>;
     fn birth_date(&self) -> &Date;
-    fn children(&self) -> &std::collections::HashSet<&'a dyn IPerson<'a>>;
+    fn children(&self) -> &std::collections::HashSet<EntityRef>;
     fn hair(&self) -> &HairType;
+}
+pub trait IFemale: IPerson {}
+#[derive(Default)]
+pub struct Female {
+    first_name: String,
+    last_name: String,
+    nickname: Option<String>,
+    birth_date: Date,
+    children: std::collections::HashSet<EntityRef>,
+    hair: HairType,
+}
+impl IPerson for Female {
+    fn first_name(&self) -> &String {
+        &self.first_name
+    }
+    fn last_name(&self) -> &String {
+        &self.last_name
+    }
+    fn nickname(&self) -> &Option<String> {
+        &self.nickname
+    }
+    fn birth_date(&self) -> &Date {
+        &self.birth_date
+    }
+    fn children(&self) -> &std::collections::HashSet<EntityRef> {
+        &self.children
+    }
+    fn hair(&self) -> &HairType {
+        &self.hair
+    }
+}
+impl IFemale for Female {}
+impl Female {
+    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Female::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.first_name = parameter.into(),
+                1usize => entity.last_name = parameter.into(),
+                2usize => {
+                    entity.nickname = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                3usize => entity.birth_date = parameter.into(),
+                4usize => entity.children = parameter.into(),
+                5usize => entity.hair = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+}
+pub struct ExampleReader {
+    pub entities: std::collections::BTreeMap<i64, Box<dyn std::any::Any>>,
+}
+impl ExampleReader {
+    pub fn new() -> Self {
+        ExampleReader {
+            entities: std::collections::BTreeMap::new(),
+        }
+    }
+}
+impl StepReader for ExampleReader {
+    fn read_simple_entity(&mut self, id: i64, typed_parameter: TypedParameter) {
+        match typed_parameter.type_name.as_str() {
+            "FEMALE" => {
+                let entity = Female::form_parameters(typed_parameter.parameters);
+                self.entities.insert(id, Box::new(entity));
+            }
+            "MALE" => {
+                let entity = Male::form_parameters(typed_parameter.parameters);
+                self.entities.insert(id, Box::new(entity));
+            }
+            _ => println!("{} is not implemented", typed_parameter.type_name),
+        }
+    }
 }
