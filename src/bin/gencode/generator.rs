@@ -170,6 +170,7 @@ impl Generator {
                     }
                 });
                 quote! {
+                    #[derive(Debug)]
                     pub enum #ident {
                         #( #names, )*
                     }
@@ -251,7 +252,7 @@ impl Generator {
                 })
                 .collect::<Vec<_>>();
             let struct_code = quote! {
-                #[derive(Default)]
+                #[derive(Default, Debug)]
                 pub struct #ident {
                     #( #attrs )*
                 }
@@ -319,20 +320,39 @@ impl Generator {
                 quote! {
                     #constructor => {
                         let entity = #type_name::form_parameters(typed_parameter.parameters);
-                        self.entities.insert(id, Box::new(entity));
+                        self.add_entity(id, entity);
                     }
                 }
             });
 
         quote! {
+            use std::any::{Any, TypeId};
+            use std::collections::{BTreeMap, HashMap};
+
             pub struct #reader_name {
-                pub entities: std::collections::BTreeMap<i64, Box<dyn std::any::Any>>,
+                pub entities: BTreeMap<i64, Box<dyn Any>>,
+                pub type_ids: HashMap<TypeId, Vec<i64>>,
             }
             impl #reader_name {
                 pub fn new() -> Self {
                     #reader_name {
-                        entities: std::collections::BTreeMap::new(),
+                        entities: BTreeMap::new(),
+                        type_ids: HashMap::new(),
                     }
+                }
+                pub fn add_entity<T: Any>(&mut self, id: i64, entity: T) {
+                    let type_id = entity.type_id();
+                    self.entities.insert(id, Box::new(entity));
+                    self.type_ids.entry(type_id).or_insert(vec![]).push(id);
+                }
+                pub fn get_entity<T: Any>(&self, id: i64) -> Option<&T> {
+                    self.entities[&id].downcast_ref::<T>()
+                }
+                pub fn get_entities<T: Any>(&self) -> impl Iterator<Item = &T> {
+                    let type_id = TypeId::of::<T>();
+                    self.type_ids[&type_id]
+                        .iter()
+                        .map(move |id| self.entities[id].downcast_ref::<T>().unwrap())
                 }
             }
 

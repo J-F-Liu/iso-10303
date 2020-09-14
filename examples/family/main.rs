@@ -1,6 +1,8 @@
 use iso_10303::step::StepReader;
 
-pub mod parser;
+pub mod reader;
+use reader::*;
+
 fn main() {
     let bytes = include_bytes!("family.stp");
     // let bytes = include_bytes!("C:/Users/Liu/3D Objects/10mm光栅方头模型.stp");
@@ -14,10 +16,13 @@ fn main() {
         Err(err) => println!("{:?}", err),
     }
 
-    let mut reader = parser::ExampleReader::new();
+    let mut reader = ExampleReader::new();
     if reader.read("examples/family/family.stp").is_ok() {
-        for entity in reader.entities.values() {
-            println!("{:?}", entity);
+        for male in reader.get_entities::<Male>() {
+            println!("{:?}", male);
+        }
+        for female in reader.get_entities::<Female>() {
+            println!("{:?}", female);
         }
     }
 }

@@ -1,6 +1,8 @@
 #![doc = r" This file is generated. Do not edit."]
 use iso_10303::step::*;
 pub struct Unimplemented {}
+type Date = Vec<i64>;
+#[derive(Debug)]
 pub enum HairType {
     Blonde,
     Brown,
@@ -37,11 +39,72 @@ impl From<Parameter> for HairType {
         }
     }
 }
-type Date = Vec<i64>;
+pub trait IPerson {
+    fn first_name(&self) -> &String;
+    fn last_name(&self) -> &String;
+    fn nickname(&self) -> &Option<String>;
+    fn birth_date(&self) -> &Date;
+    fn children(&self) -> &std::collections::HashSet<EntityRef>;
+    fn hair(&self) -> &HairType;
+}
+pub trait IFemale: IPerson {}
+#[derive(Default, Debug)]
+pub struct Female {
+    first_name: String,
+    last_name: String,
+    nickname: Option<String>,
+    birth_date: Date,
+    children: std::collections::HashSet<EntityRef>,
+    hair: HairType,
+}
+impl IPerson for Female {
+    fn first_name(&self) -> &String {
+        &self.first_name
+    }
+    fn last_name(&self) -> &String {
+        &self.last_name
+    }
+    fn nickname(&self) -> &Option<String> {
+        &self.nickname
+    }
+    fn birth_date(&self) -> &Date {
+        &self.birth_date
+    }
+    fn children(&self) -> &std::collections::HashSet<EntityRef> {
+        &self.children
+    }
+    fn hair(&self) -> &HairType {
+        &self.hair
+    }
+}
+impl IFemale for Female {}
+impl Female {
+    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Female::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.first_name = parameter.into(),
+                1usize => entity.last_name = parameter.into(),
+                2usize => {
+                    entity.nickname = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                3usize => entity.birth_date = parameter.into(),
+                4usize => entity.children = parameter.into(),
+                5usize => entity.hair = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+}
 pub trait IMale: IPerson {
     fn wife(&self) -> &Option<EntityRef>;
 }
-#[derive(Default)]
+#[derive(Default, Debug)]
 pub struct Male {
     first_name: String,
     last_name: String,
@@ -106,76 +169,32 @@ impl Male {
         entity
     }
 }
-pub trait IPerson {
-    fn first_name(&self) -> &String;
-    fn last_name(&self) -> &String;
-    fn nickname(&self) -> &Option<String>;
-    fn birth_date(&self) -> &Date;
-    fn children(&self) -> &std::collections::HashSet<EntityRef>;
-    fn hair(&self) -> &HairType;
-}
-pub trait IFemale: IPerson {}
-#[derive(Default)]
-pub struct Female {
-    first_name: String,
-    last_name: String,
-    nickname: Option<String>,
-    birth_date: Date,
-    children: std::collections::HashSet<EntityRef>,
-    hair: HairType,
-}
-impl IPerson for Female {
-    fn first_name(&self) -> &String {
-        &self.first_name
-    }
-    fn last_name(&self) -> &String {
-        &self.last_name
-    }
-    fn nickname(&self) -> &Option<String> {
-        &self.nickname
-    }
-    fn birth_date(&self) -> &Date {
-        &self.birth_date
-    }
-    fn children(&self) -> &std::collections::HashSet<EntityRef> {
-        &self.children
-    }
-    fn hair(&self) -> &HairType {
-        &self.hair
-    }
-}
-impl IFemale for Female {}
-impl Female {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
-        let mut entity = Female::default();
-        for (index, parameter) in parameters.into_iter().enumerate() {
-            match index {
-                0usize => entity.first_name = parameter.into(),
-                1usize => entity.last_name = parameter.into(),
-                2usize => {
-                    entity.nickname = if parameter.is_null() {
-                        None
-                    } else {
-                        Some(parameter.into())
-                    }
-                }
-                3usize => entity.birth_date = parameter.into(),
-                4usize => entity.children = parameter.into(),
-                5usize => entity.hair = parameter.into(),
-                _ => {}
-            }
-        }
-        entity
-    }
-}
+use std::any::{Any, TypeId};
+use std::collections::{BTreeMap, HashMap};
 pub struct ExampleReader {
-    pub entities: std::collections::BTreeMap<i64, Box<dyn std::any::Any>>,
+    pub entities: BTreeMap<i64, Box<dyn Any>>,
+    pub type_ids: HashMap<TypeId, Vec<i64>>,
 }
 impl ExampleReader {
     pub fn new() -> Self {
         ExampleReader {
-            entities: std::collections::BTreeMap::new(),
+            entities: BTreeMap::new(),
+            type_ids: HashMap::new(),
         }
+    }
+    pub fn add_entity<T: Any>(&mut self, id: i64, entity: T) {
+        let type_id = entity.type_id();
+        self.entities.insert(id, Box::new(entity));
+        self.type_ids.entry(type_id).or_insert(vec![]).push(id);
+    }
+    pub fn get_entity<T: Any>(&self, id: i64) -> Option<&T> {
+        self.entities[&id].downcast_ref::<T>()
+    }
+    pub fn get_entities<T: Any>(&self) -> impl Iterator<Item = &T> {
+        let type_id = TypeId::of::<T>();
+        self.type_ids[&type_id]
+            .iter()
+            .map(move |id| self.entities[id].downcast_ref::<T>().unwrap())
     }
 }
 impl StepReader for ExampleReader {
@@ -183,11 +202,11 @@ impl StepReader for ExampleReader {
         match typed_parameter.type_name.as_str() {
             "FEMALE" => {
                 let entity = Female::form_parameters(typed_parameter.parameters);
-                self.entities.insert(id, Box::new(entity));
+                self.add_entity(id, entity);
             }
             "MALE" => {
                 let entity = Male::form_parameters(typed_parameter.parameters);
-                self.entities.insert(id, Box::new(entity));
+                self.add_entity(id, entity);
             }
             _ => println!("{} is not implemented", typed_parameter.type_name),
         }

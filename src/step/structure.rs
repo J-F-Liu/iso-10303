@@ -34,8 +34,8 @@ pub struct EntityInstance {
     pub value: Vec<TypedParameter>,
 }
 
-#[derive(Eq, PartialEq, Hash)]
-pub struct EntityRef(i64);
+#[derive(Eq, PartialEq, Hash, Debug)]
+pub struct EntityRef(pub i64);
 
 #[derive(Debug)]
 pub struct ExchangeFile {
