@@ -2,7 +2,6 @@ use super::*;
 use pom::char_class::{alpha, alphanum, digit, hex_digit};
 use pom::parser::*;
 use std::iter::FromIterator;
-use std::ops::Range;
 use std::str::{self, FromStr};
 
 fn eol<'a>() -> Parser<'a, u8, u8> {
@@ -58,9 +57,9 @@ fn integer<'a>() -> Parser<'a, u8, i64> {
 
 fn real<'a>() -> Parser<'a, u8, f64> {
     let integer = is_a(digit).repeat(1..);
-    let frac = sym(b'.') + is_a(digit).repeat(1..);
+    let frac = sym(b'.') + is_a(digit).repeat(0..);
     let exp = one_of(b"eE") + one_of(b"+-").opt() + is_a(digit).repeat(1..);
-    let number = sym(b'-').opt() + integer + frac.opt() + exp.opt();
+    let number = sym(b'-').opt() + integer + frac + exp.opt();
     number.collect().convert(str::from_utf8).convert(f64::from_str)
 }
 
@@ -85,8 +84,8 @@ fn encoded_string<'a>() -> Parser<'a, u8, String> {
 }
 
 fn literal<'a>() -> Parser<'a, u8, Literal> {
-    integer().map(|num| Literal::Integer(num))
-        | real().map(|num| Literal::Real(num))
+    real().map(|num| Literal::Real(num))
+        | integer().map(|num| Literal::Integer(num))
         | logical().map(|val| Literal::Logical(val))
         | string().map(|text| Literal::String(text))
         | binary().map(|val| Literal::Binary(val))
@@ -131,27 +130,20 @@ fn simple_data_type<'a>() -> Parser<'a, u8, DataType> {
         })
 }
 
-fn bound_spec<'a>() -> Parser<'a, u8, Range<usize>> {
-    (sym(b'[') * space() * integer().map(|n| n as usize) - space() - sym(b':') - space()
-        + (integer().map(|n| n as usize) | sym(b'?').map(|_| usize::MAX))
-        - space()
+fn bound_spec<'a>() -> Parser<'a, u8, BoundSpec> {
+    (sym(b'[') * space() * simple_expression() - sym(b':') - space()
+        + (simple_expression().map(Option::Some) | sym(b'?').map(|_| None) - space())
         - sym(b']'))
-    .map(|(start, end)| start..end)
+    .map(|(start, end)| BoundSpec { start, end })
 }
 
 fn aggregation_data_type<'a>() -> Parser<'a, u8, DataType> {
-    (keyword("array") * space() * sym(b'[') * space() * integer().map(|n| n as usize) - space() - sym(b':') - space()
-        + integer().map(|n| n as usize)
-        - space()
-        - sym(b']')
-        - space()
-        - keyword("of")
-        - space()
+    (keyword("array") * space() * bound_spec() - space() - keyword("of") - space()
         + (keyword("optional") - space()).opt()
         + (keyword("unique") - space()).opt()
         + call(base_data_type))
-    .map(|((((start, end), optional), unique), base_type)| DataType::Array {
-        bound: start..end,
+    .map(|(((bound, optional), unique), base_type)| DataType::Array {
+        bound,
         optional: optional.is_some(),
         unique: unique.is_some(),
         base_type: Box::new(base_type),
@@ -180,7 +172,7 @@ fn type_ref<'a>() -> Parser<'a, u8, DataType> {
 }
 
 fn base_data_type<'a>() -> Parser<'a, u8, DataType> {
-    aggregation_data_type() | simple_data_type() | type_ref()
+    aggregation_data_type() | simple_data_type() | generic_type() | type_ref()
 }
 
 fn constructed_data_type<'a>() -> Parser<'a, u8, DataType> {
@@ -189,7 +181,7 @@ fn constructed_data_type<'a>() -> Parser<'a, u8, DataType> {
         * keyword("of")
         * space()
         * sym(b'(')
-        * list(identifier().map(str::to_string), sym(b',') - space())
+        * list(identifier().map(str::to_string) - space(), sym(b',') - space())
         - sym(b')'))
     .map(|values| DataType::Enum { values })
         | (keyword("select")
@@ -259,7 +251,7 @@ fn supertype_declaration<'a>() -> Parser<'a, u8, bool> {
 }
 
 fn subtype_constraint<'a>() -> Parser<'a, u8, ()> {
-    keyword("of") * space() * sym(b'(') * supertype_expr() - sym(b')')
+    keyword("of") * space() * sym(b'(') * supertype_expr() - sym(b')') - space()
 }
 
 fn supertype_term<'a>() -> Parser<'a, u8, ()> {
@@ -283,10 +275,17 @@ fn subtype_declaration<'a>() -> Parser<'a, u8, Vec<String>> {
         * sym(b'(')
         * list(identifier().map(str::to_string) - space(), sym(b',') - space())
         - sym(b')')
+        - space()
 }
 
 fn attribute<'a>() -> Parser<'a, u8, Vec<Attribute>> {
-    (list(identifier().map(str::to_string) - space(), sym(b',') - space()) - sym(b':') - space()
+    (list(
+        (keyword("self") * sym(b'\\') * space() * identifier().map(str::to_string) - sym(b'.')).opt()
+            + identifier().map(str::to_string)
+            - space(),
+        sym(b',') - space(),
+    ) - sym(b':')
+        - space()
         + (keyword("optional") - space()).opt()
         + base_data_type()
         - space()
@@ -295,8 +294,9 @@ fn attribute<'a>() -> Parser<'a, u8, Vec<Attribute>> {
     .map(|((names, optional), data_type)| {
         names
             .into_iter()
-            .map(|name| Attribute {
+            .map(|(supertype, name)| Attribute {
                 name,
+                supertype,
                 data_type: data_type.clone(),
                 optional: optional.is_some(),
             })
@@ -305,7 +305,7 @@ fn attribute<'a>() -> Parser<'a, u8, Vec<Attribute>> {
 }
 
 fn where_clause<'a>() -> Parser<'a, u8, Vec<DomainRule>> {
-    let domain_rule = !keyword("end_type")
+    let domain_rule = !(keyword("end_type") | keyword("end_entity") | keyword("end_rule"))
         * ((identifier().map(str::to_string) - space() - sym(b':') - space()).opt() + expression()
             - sym(b';')
             - space())
@@ -314,14 +314,25 @@ fn where_clause<'a>() -> Parser<'a, u8, Vec<DomainRule>> {
 }
 
 fn derive_clause<'a>() -> Parser<'a, u8, Vec<DerivedAttribute>> {
-    let derive_attribute = (identifier().map(str::to_string) - space() - sym(b':') - space() + base_data_type()
+    let derive_attribute = ((keyword("self") * sym(b'\\') * space() * identifier().map(str::to_string) - sym(b'.'))
+        .opt()
+        + identifier().map(str::to_string)
+        - space()
+        - sym(b':')
+        - space()
+        + base_data_type()
         - space()
         - seq(b":=")
         - space()
         + expression()
         - sym(b';')
         - space())
-    .map(|((name, data_type), expr)| DerivedAttribute { name, data_type, expr });
+    .map(|(((supertype, name), data_type), expr)| DerivedAttribute {
+        name,
+        supertype,
+        data_type,
+        expr,
+    });
     keyword("derive") * space() * derive_attribute.repeat(1..)
 }
 
@@ -341,26 +352,19 @@ fn inverse_clause<'a>() -> Parser<'a, u8, ()> {
 }
 
 fn unique_clause<'a>() -> Parser<'a, u8, Vec<UniqueRule>> {
-    let unique_rule = ((identifier().map(str::to_string) - space() - sym(b':') - space()).opt()
-        + list(attribute_ref() - space(), sym(b',') - space()))
-    .map(|(label, attributes)| UniqueRule { label, attributes });
+    let unique_rule = !keyword("end_entity")
+        * ((identifier().map(str::to_string) - space() - sym(b':') - space()).opt()
+            + list(attribute_ref() - space(), sym(b',') - space())
+            - sym(b';')
+            - space())
+        .map(|(label, attributes)| UniqueRule { label, attributes });
     keyword("unique") * space() * unique_rule.repeat(1..)
 }
 
 fn attribute_ref<'a>() -> Parser<'a, u8, AttributeReference> {
-    (keyword("self") * sym(b'\\') * identifier().map(str::to_string) - sym(b'.') + identifier().map(str::to_string))
-        .map(|(entity, name)| AttributeReference {
-            name,
-            entity: Some(entity),
-        })
-        | identifier().map(|name| AttributeReference {
-            name: name.to_string(),
-            entity: None,
-        })
-}
-
-fn declaration<'a>() -> Parser<'a, u8, Declaration> {
-    named_type() | entity() | function()
+    ((keyword("self") * sym(b'\\') * space() * identifier().map(str::to_string) - sym(b'.')).opt()
+        + identifier().map(str::to_string))
+    .map(|(entity, name)| AttributeReference { name, entity })
 }
 
 fn expression<'a>() -> Parser<'a, u8, Expression> {
@@ -381,6 +385,13 @@ fn relation_op<'a>() -> Parser<'a, u8, Operator> {
         | keyword("like").map(|_| Operator::Like)
 }
 
+fn additive_op<'a>() -> Parser<'a, u8, Operator> {
+    sym(b'+').map(|_| Operator::Add)
+        | sym(b'-').map(|_| Operator::Sub)
+        | keyword("or").map(|_| Operator::Or)
+        | keyword("xor").map(|_| Operator::Xor)
+}
+
 fn multiplicative_op<'a>() -> Parser<'a, u8, Operator> {
     seq(b"||").map(|_| Operator::Or)
         | sym(b'*').map(|_| Operator::Mul)
@@ -390,12 +401,16 @@ fn multiplicative_op<'a>() -> Parser<'a, u8, Operator> {
         | keyword("and").map(|_| Operator::And)
 }
 
+fn unary_op<'a>() -> Parser<'a, u8, Operator> {
+    sym(b'+').map(|_| Operator::Add) | sym(b'-').map(|_| Operator::Neg) | keyword("not").map(|_| Operator::Not)
+}
+
 fn interval_op<'a>() -> Parser<'a, u8, Operator> {
     seq(b"<=").map(|_| Operator::LessOrEqual) | sym(b'<').map(|_| Operator::Less)
 }
 
 fn simple_expression<'a>() -> Parser<'a, u8, SimpleExpression> {
-    (term() + (multiplicative_op() - space() + term()).repeat(0..))
+    (term() + (additive_op() - space() + term()).repeat(0..))
         .map(|(operand, operations)| SimpleExpression { operand, operations })
 }
 
@@ -411,12 +426,17 @@ fn factor<'a>() -> Parser<'a, u8, Factor> {
 }
 
 fn simple_factor<'a>() -> Parser<'a, u8, SimpleFactor> {
-    aggregation_initiator() | interval() | query_expression() | entity_constructor() | primary()
+    aggregation_initiator()
+        | interval()
+        | query_expression()
+        | unary_expression()
+        | qualified_access().map(SimpleFactor::QualifiedAccess)
+        | entity_constructor()
 }
 
 fn aggregation_initiator<'a>() -> Parser<'a, u8, SimpleFactor> {
     // let element = expression() + (sym(b':') * expression()).opt();
-    (sym(b'[') * space() * list(call(expression) - space(), sym(b',') - space()) - sym(b']')).map(|elements| {
+    (sym(b'[') * space() * list(call(expression), sym(b',') - space()) - sym(b']')).map(|elements| {
         SimpleFactor::AggregateInitializer {
             elements: elements.into_iter().map(|e| Box::new(e)).collect(),
         }
@@ -446,7 +466,10 @@ fn interval<'a>() -> Parser<'a, u8, SimpleFactor> {
 }
 
 fn query_expression<'a>() -> Parser<'a, u8, SimpleFactor> {
-    (keyword("query") * space() * sym(b'(') * identifier().map(str::to_string) - seq(b"<*") - space()
+    (keyword("query") * space() * sym(b'(') * space() * identifier().map(str::to_string)
+        - space()
+        - seq(b"<*")
+        - space()
         + call(simple_expression)
         - sym(b'|')
         - space()
@@ -459,36 +482,40 @@ fn query_expression<'a>() -> Parser<'a, u8, SimpleFactor> {
     })
 }
 
-fn primary<'a>() -> Parser<'a, u8, SimpleFactor> {
-    (literal().map(|lit| Primary::Literal(lit))
-        | qualified_access().map(|qa| Primary::QualifiedAccess(qa))
-        | sym(b'(') * space() * call(expression).map(|e| Primary::Grouped(Box::new(e))) - sym(b')'))
-    .map(|primary| SimpleFactor::Primary(primary))
+fn unary_expression<'a>() -> Parser<'a, u8, SimpleFactor> {
+    (unary_op() - space() + qualified_access()).map(|(op, operand)| SimpleFactor::UnaryExpression { op, operand })
+}
+
+fn primary<'a>() -> Parser<'a, u8, Primary> {
+    literal().map(|lit| Primary::Literal(lit))
+        | builtin_constant().map(|constant| Primary::Constant(constant))
+        | identifier().map(|name| Primary::Reference(name.to_string()))
+        | sym(b'(') * space() * call(expression).map(|e| Primary::Grouped(Box::new(e))) - sym(b')')
 }
 
 fn qualified_access<'a>() -> Parser<'a, u8, QualifiedAccess> {
-    let qualifier = sym(b'.') * identifier().map(|name| Accessor::Attribute { name: name.to_string() })
+    let qualifier = sym(b'.') * space() * identifier().map(|name| Accessor::Attribute { name: name.to_string() })
         | sym(b'\\')
+            * space()
             * identifier().map(|entity| Accessor::Group {
                 entity: entity.to_string(),
             })
-        | (sym(b'[') * call(simple_expression) + (sym(b':') * call(simple_expression)).opt() - sym(b']')).map(
-            |(start, end)| Accessor::Indexer {
+        | (sym(b'[') * space() * call(simple_expression) + (sym(b':') * call(simple_expression)).opt() - sym(b']'))
+            .map(|(start, end)| Accessor::Indexer {
                 start: Box::new(start),
                 end: end.map(|e| Box::new(e)),
-            },
-        )
-        | (sym(b'(') * list(call(expression), sym(b',') - space()) - sym(b')')).map(|parameters| {
+            })
+        | (sym(b'(') * space() * list(call(expression), sym(b',') - space()) - sym(b')')).map(|parameters| {
             Accessor::FunctionCall {
                 parameters: parameters.into_iter().map(|e| Box::new(e)).collect(),
             }
         });
-    ((builtin_constant() | identifier().map(str::to_string)) + qualifier.repeat(0..))
-        .map(|(target, accessors)| QualifiedAccess { target, accessors })
+    (primary() - space() + (qualifier - space()).repeat(0..))
+        .map(|(base, accessors)| QualifiedAccess { base, accessors })
 }
 
 fn builtin_constant<'a>() -> Parser<'a, u8, String> {
-    (keyword("CONST_E") | keyword("PI") | keyword("SELF") | sym(b'?').discard())
+    (keyword("const_e") | keyword("pi") | keyword("self") | sym(b'?').discard())
         .collect()
         .convert(|chars| String::from_utf8(chars.to_vec()))
 }
@@ -529,7 +556,7 @@ fn parameter_type<'a>() -> Parser<'a, u8, DataType> {
 }
 
 fn statement<'a>() -> Parser<'a, u8, Statement> {
-    !keyword("end_function")
+    !(keyword("end_function") | keyword("where") | keyword("end_rule"))
         * none_of(b";").repeat(0..).map(|chars| Statement {
             text: String::from_utf8(chars).unwrap(),
         })
@@ -537,7 +564,7 @@ fn statement<'a>() -> Parser<'a, u8, Statement> {
         - space()
 }
 
-fn function<'a>() -> Parser<'a, u8, Declaration> {
+fn function<'a>() -> Parser<'a, u8, Function> {
     let formal_parameter =
         (list(identifier().map(str::to_string) - space(), sym(b',') - space()) - sym(b':') - space()
             + parameter_type())
@@ -559,16 +586,44 @@ fn function<'a>() -> Parser<'a, u8, Declaration> {
         - space()
         - sym(b';')
         - space();
-    let body = statement().repeat(0..);
+    let body = call(declaration).repeat(0..) - constants().opt() + statement().repeat(0..);
     let tail = keyword("end_function") - space() - sym(b';') - space();
-    (head + body - tail).map(|(((name, parameters), return_type), statements)| {
-        Declaration::Function(Function {
+    (head + body - tail).map(
+        |(((name, parameters), return_type), (declarations, statements))| Function {
             name,
             return_type,
             parameters: parameters.unwrap_or(Vec::new()).into_iter().flatten().collect(),
             statements,
-        })
+            declarations,
+        },
+    )
+}
+
+fn rule<'a>() -> Parser<'a, u8, Rule> {
+    let head = keyword("rule") * space() * identifier().map(str::to_string)
+        - space()
+        - keyword("for")
+        - space()
+        - sym(b'(')
+        - space()
+        + list(identifier().map(str::to_string) - space(), sym(b',') - space())
+        - sym(b')')
+        - space()
+        - sym(b';')
+        - space();
+    let body = call(declaration).repeat(0..) - constants().opt() + statement().repeat(0..) + where_clause();
+    let tail = keyword("end_rule") - space() - sym(b';') - space();
+    (head + body - tail).map(|((name, entities), ((declarations, statements), domain_rules))| Rule {
+        name,
+        entities,
+        statements,
+        declarations,
+        domain_rules,
     })
+}
+
+fn declaration<'a>() -> Parser<'a, u8, Declaration> {
+    named_type() | entity() | function().map(Declaration::Function) | rule().map(Declaration::Rule)
 }
 
 pub fn schema<'a>() -> Parser<'a, u8, Schema> {

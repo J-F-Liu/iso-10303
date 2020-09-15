@@ -5,6 +5,7 @@ pub enum Declaration {
     TypeDef(TypeDef),
     Entity(Entity),
     Function(Function),
+    Rule(Rule),
 }
 
 #[derive(Debug)]
@@ -31,11 +32,22 @@ pub struct Function {
     pub return_type: DataType,
     pub parameters: Vec<Parameter>,
     pub statements: Vec<Statement>,
+    pub declarations: Vec<Declaration>,
+}
+
+#[derive(Debug)]
+pub struct Rule {
+    pub name: String,
+    pub entities: Vec<String>,
+    pub statements: Vec<Statement>,
+    pub domain_rules: Vec<DomainRule>,
+    pub declarations: Vec<Declaration>,
 }
 
 #[derive(Debug, Clone)]
 pub struct Attribute {
     pub name: String,
+    pub supertype: Option<String>,
     pub data_type: DataType,
     pub optional: bool,
 }
@@ -43,6 +55,7 @@ pub struct Attribute {
 #[derive(Debug)]
 pub struct DerivedAttribute {
     pub name: String,
+    pub supertype: Option<String>,
     pub data_type: DataType,
     pub expr: Expression,
 }

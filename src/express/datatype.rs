@@ -1,4 +1,4 @@
-use std::ops::Range;
+use super::SimpleExpression;
 
 #[derive(Debug, Clone)]
 pub enum DataType {
@@ -21,22 +21,22 @@ pub enum DataType {
         name: String,
     },
     Array {
-        bound: Range<usize>,
+        bound: BoundSpec,
         optional: bool,
         unique: bool,
         base_type: Box<DataType>,
     },
     List {
-        bound: Option<Range<usize>>,
+        bound: Option<BoundSpec>,
         unique: bool,
         base_type: Box<DataType>,
     },
     Bag {
-        bound: Option<Range<usize>>,
+        bound: Option<BoundSpec>,
         base_type: Box<DataType>,
     },
     Set {
-        bound: Option<Range<usize>>,
+        bound: Option<BoundSpec>,
         base_type: Box<DataType>,
     },
     Enum {
@@ -52,4 +52,10 @@ pub enum DataType {
         type_label: Option<String>,
         base_type: Box<DataType>,
     },
+}
+
+#[derive(Debug, Clone)]
+pub struct BoundSpec {
+    pub start: SimpleExpression,
+    pub end: Option<SimpleExpression>,
 }

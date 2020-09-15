@@ -1,28 +1,28 @@
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Expression {
     pub operand: SimpleExpression,
     pub operations: Vec<(Operator, SimpleExpression)>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct SimpleExpression {
     pub operand: Term,
     pub operations: Vec<(Operator, Term)>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Term {
     pub operand: Factor,
     pub operations: Vec<(Operator, Factor)>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub struct Factor {
     pub operand: SimpleFactor,
     pub operations: Vec<(Operator, SimpleFactor)>,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Operator {
     Equal,
     NotEqual,
@@ -42,10 +42,12 @@ pub enum Operator {
     Or,
     Xor,
     And,
+    Not,
+    Neg,
     Power,
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum SimpleFactor {
     AggregateInitializer {
         elements: Vec<Box<Expression>>,
@@ -67,17 +69,28 @@ pub enum SimpleFactor {
         source: Box<SimpleExpression>,
         condition: Box<Expression>,
     },
-    Primary(Primary),
-}
-
-#[derive(Debug)]
-pub enum Primary {
-    Literal(Literal),
-    Grouped(Box<Expression>),
+    UnaryExpression {
+        op: Operator,
+        operand: QualifiedAccess,
+    },
     QualifiedAccess(QualifiedAccess),
 }
 
-#[derive(Debug)]
+#[derive(Debug, Clone)]
+pub struct QualifiedAccess {
+    pub base: Primary,
+    pub accessors: Vec<Accessor>,
+}
+
+#[derive(Debug, Clone)]
+pub enum Primary {
+    Literal(Literal),
+    Constant(String),
+    Reference(String),
+    Grouped(Box<Expression>),
+}
+
+#[derive(Debug, Clone)]
 pub enum Literal {
     Binary(String),
     Integer(i64),
@@ -86,13 +99,7 @@ pub enum Literal {
     String(String),
 }
 
-#[derive(Debug)]
-pub struct QualifiedAccess {
-    pub target: String,
-    pub accessors: Vec<Accessor>,
-}
-
-#[derive(Debug)]
+#[derive(Debug, Clone)]
 pub enum Accessor {
     FunctionCall {
         parameters: Vec<Box<Expression>>,
