@@ -43,10 +43,20 @@ fn collect_types(schema: Schema) -> (HashMap<String, TypeDef>, HashMap<String, E
 }
 
 fn get_entity_attributes(entities: &HashMap<String, Entity>, name: &str) -> Vec<Attribute> {
-    let mut attributes = Vec::new();
+    let mut attributes: Vec<Attribute> = Vec::new();
     if let Some(entity) = entities.get(name) {
         for parent in &entity.supertypes {
-            attributes.extend(get_entity_attributes(entities, parent));
+            let mut parent_attributes = get_entity_attributes(entities, parent)
+                .into_iter()
+                .filter(|attribute| {
+                    !entity
+                        .attributes
+                        .iter()
+                        .chain(attributes.iter())
+                        .any(|attr| attribute.name == attr.name)
+                })
+                .collect::<Vec<_>>();
+            attributes.append(&mut parent_attributes);
         }
         attributes.extend(entity.attributes.clone());
     }
@@ -80,6 +90,24 @@ fn collect_entity_infos(entities: &HashMap<String, Entity>) -> HashMap<String, E
     entity_infos
 }
 
+fn dedup<T, F>(items: &mut Vec<T>, is_equal: F)
+where
+    F: Fn(&T, &T) -> bool,
+{
+    let mut current = 0;
+    while current < items.len() {
+        let mut index = current + 1;
+        while index < items.len() {
+            if is_equal(&items[index], &items[current]) {
+                items.swap_remove(index);
+            } else {
+                index += 1;
+            }
+        }
+        current += 1;
+    }
+}
+
 impl Generator {
     pub fn new(schema: Schema) -> Generator {
         let name = schema.name.to_camel_case();
@@ -100,6 +128,7 @@ impl Generator {
             supertypes.extend(self.get_entity_supertypes(parent));
         }
         supertypes.push(entity);
+        dedup(&mut supertypes, |a, b| a.name == b.name);
         supertypes
     }
 
@@ -113,7 +142,8 @@ impl Generator {
 
         let code = quote! {
             //! This file is generated. Do not edit.
-            use iso_10303::step::*;
+            use crate::step::*;
+            #[derive(Default, Debug)]
             pub struct Unimplemented {}
             #( #type_defs )*
             #( #entity_defs )*
@@ -131,7 +161,7 @@ impl Generator {
             DataType::Logical => quote! {Option<bool>},
             DataType::String { .. } => quote! {String},
             DataType::TypeRef { name } => {
-                if let Some(entity_info) = self.entity_infos.get(name) {
+                if let Some(_entity_info) = self.entity_infos.get(name) {
                     // let trait_name = entity_info.trait_name();
                     // quote! {&'a dyn #trait_name}
                     quote! {EntityRef}
@@ -201,9 +231,8 @@ impl Generator {
                     }
                 }
             }
-            DataType::Array { bound, base_type, .. } => {
+            DataType::Array { base_type, .. } => {
                 let data_type = self.type_name(base_type, false);
-                let _size = bound.end - bound.start + 1;
                 quote! {
                     type #ident = Vec<#data_type>;
                 }
@@ -232,7 +261,7 @@ impl Generator {
             }
         });
         let trait_code = quote! {
-            pub trait #trait_ident: #( #supertypes ),*  {
+            pub trait #trait_ident: #( #supertypes )+*  {
                 #( #fields )*
             }
         };

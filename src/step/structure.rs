@@ -34,7 +34,7 @@ pub struct EntityInstance {
     pub value: Vec<TypedParameter>,
 }
 
-#[derive(Eq, PartialEq, Hash, Debug)]
+#[derive(Eq, PartialEq, Hash, Debug, Default)]
 pub struct EntityRef(pub i64);
 
 #[derive(Debug)]

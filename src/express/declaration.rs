@@ -95,3 +95,14 @@ pub struct Constant {
 pub struct Statement {
     pub text: String,
 }
+
+impl Entity {
+    pub fn get_attribute(&self, name: &str) -> Option<&Attribute> {
+        for attribute in &self.attributes {
+            if attribute.name == name {
+                return Some(attribute);
+            }
+        }
+        return None;
+    }
+}
