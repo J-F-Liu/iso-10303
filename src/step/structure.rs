@@ -1,3 +1,4 @@
+use super::Real;
 use std::collections::HashSet;
 use std::hash::Hash;
 use std::iter::FromIterator;
@@ -56,6 +57,25 @@ impl Parameter {
     }
 }
 
+impl From<Parameter> for bool {
+    fn from(parameter: Parameter) -> Self {
+        match parameter {
+            Parameter::UnTypedParameter(parameter) => parameter.into(),
+            _ => panic!("can not convert"),
+        }
+    }
+}
+
+impl From<Parameter> for Option<bool> {
+    fn from(parameter: Parameter) -> Self {
+        match parameter {
+            Parameter::UnTypedParameter(parameter) => parameter.into(),
+            Parameter::OmittedParameter => None,
+            _ => panic!("can not convert"),
+        }
+    }
+}
+
 impl From<Parameter> for i64 {
     fn from(parameter: Parameter) -> Self {
         match parameter {
@@ -65,7 +85,7 @@ impl From<Parameter> for i64 {
     }
 }
 
-impl From<Parameter> for f64 {
+impl From<Parameter> for Real {
     fn from(parameter: Parameter) -> Self {
         match parameter {
             Parameter::UnTypedParameter(parameter) => parameter.into(),
@@ -113,6 +133,33 @@ impl<T: From<Parameter> + Eq + Hash> From<Parameter> for HashSet<T> {
     }
 }
 
+impl From<UnTypedParameter> for bool {
+    fn from(parameter: UnTypedParameter) -> Self {
+        match parameter {
+            UnTypedParameter::EnumValue(value) => match value.as_str() {
+                "T" => true,
+                "F" => false,
+                _ => panic!("invalid boolean value {}", value),
+            },
+            _ => panic!("can not convert to boolean"),
+        }
+    }
+}
+
+impl From<UnTypedParameter> for Option<bool> {
+    fn from(parameter: UnTypedParameter) -> Self {
+        match parameter {
+            UnTypedParameter::EnumValue(value) => match value.as_str() {
+                "T" => Some(true),
+                "F" => Some(false),
+                "U" => None,
+                _ => panic!("invalid boolean value {}", value),
+            },
+            _ => panic!("can not convert to boolean"),
+        }
+    }
+}
+
 impl From<UnTypedParameter> for i64 {
     fn from(parameter: UnTypedParameter) -> Self {
         match parameter {
@@ -122,10 +169,10 @@ impl From<UnTypedParameter> for i64 {
     }
 }
 
-impl From<UnTypedParameter> for f64 {
+impl From<UnTypedParameter> for Real {
     fn from(parameter: UnTypedParameter) -> Self {
         match parameter {
-            UnTypedParameter::Real(number) => number,
+            UnTypedParameter::Real(number) => Real(number),
             _ => panic!("can not convert to real"),
         }
     }

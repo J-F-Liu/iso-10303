@@ -1,8 +1,11 @@
 #![doc = r" This file is generated. Do not edit."]
+#![allow(dead_code)]
 use iso_10303::step::*;
+use std::collections::HashSet;
+#[derive(Default, Debug)]
 pub struct Unimplemented {}
 type Date = Vec<i64>;
-#[derive(Debug)]
+#[derive(Eq, PartialEq, Hash, Debug)]
 pub enum HairType {
     Blonde,
     Brown,
@@ -44,7 +47,7 @@ pub trait IPerson {
     fn last_name(&self) -> &String;
     fn nickname(&self) -> &Option<String>;
     fn birth_date(&self) -> &Date;
-    fn children(&self) -> &std::collections::HashSet<EntityRef>;
+    fn children(&self) -> &HashSet<EntityRef>;
     fn hair(&self) -> &HairType;
 }
 pub trait IFemale: IPerson {}
@@ -54,7 +57,7 @@ pub struct Female {
     last_name: String,
     nickname: Option<String>,
     birth_date: Date,
-    children: std::collections::HashSet<EntityRef>,
+    children: HashSet<EntityRef>,
     hair: HairType,
 }
 impl IPerson for Female {
@@ -70,7 +73,7 @@ impl IPerson for Female {
     fn birth_date(&self) -> &Date {
         &self.birth_date
     }
-    fn children(&self) -> &std::collections::HashSet<EntityRef> {
+    fn children(&self) -> &HashSet<EntityRef> {
         &self.children
     }
     fn hair(&self) -> &HairType {
@@ -110,7 +113,7 @@ pub struct Male {
     last_name: String,
     nickname: Option<String>,
     birth_date: Date,
-    children: std::collections::HashSet<EntityRef>,
+    children: HashSet<EntityRef>,
     hair: HairType,
     wife: Option<EntityRef>,
 }
@@ -127,7 +130,7 @@ impl IPerson for Male {
     fn birth_date(&self) -> &Date {
         &self.birth_date
     }
-    fn children(&self) -> &std::collections::HashSet<EntityRef> {
+    fn children(&self) -> &HashSet<EntityRef> {
         &self.children
     }
     fn hair(&self) -> &HairType {

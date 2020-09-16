@@ -26,22 +26,27 @@ pub enum DataType {
         unique: bool,
         base_type: Box<DataType>,
     },
+    /// Ordered elements
     List {
         bound: Option<BoundSpec>,
         unique: bool,
         base_type: Box<DataType>,
     },
+    /// Unordered elements
     Bag {
         bound: Option<BoundSpec>,
         base_type: Box<DataType>,
     },
+    /// Unordered and unqiue elements
     Set {
         bound: Option<BoundSpec>,
         base_type: Box<DataType>,
     },
+    /// Enumeration
     Enum {
         values: Vec<String>,
     },
+    /// Union of named types
     Select {
         types: Vec<String>,
     },
@@ -58,4 +63,19 @@ pub enum DataType {
 pub struct BoundSpec {
     pub start: SimpleExpression,
     pub end: Option<SimpleExpression>,
+}
+
+impl DataType {
+    pub fn is_number(&self) -> bool {
+        match *self {
+            DataType::Number => true,
+            _ => false,
+        }
+    }
+    pub fn is_integer(&self) -> bool {
+        match *self {
+            DataType::Integer => true,
+            _ => false,
+        }
+    }
 }
