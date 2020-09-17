@@ -3,8 +3,14 @@ name = "iso-10303-parts"
 version = "0.1.0"
 authors = ["Junfeng Liu <china.liujunfeng@gmail.com>"]
 edition = "2018"
+repository = "https://github.com/J-F-Liu/iso-10303.git"
+categories = ["cad"]
+keywords = ["stp", "step"]
+license = "MIT"
+readme = "README.md"
+description = "A Rust crate for reading STP files."
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-iso-10303 = {version = "*",  path = "../"}
+iso-10303 = {version = "0.1",  path = "../"}
