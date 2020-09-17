@@ -107,6 +107,7 @@ impl From<Parameter> for EntityRef {
     fn from(parameter: Parameter) -> Self {
         match parameter {
             Parameter::UnTypedParameter(parameter) => parameter.into(),
+            Parameter::OmittedParameter => EntityRef(0),
             _ => panic!("can not convert"),
         }
     }

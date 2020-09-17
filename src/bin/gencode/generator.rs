@@ -280,10 +280,10 @@ impl Generator {
                     .map(|value| format_ident!("{}", value.to_camel_case()))
                     .collect::<Vec<_>>();
                 let default_value = &names[0];
-                let convertions = names.iter().map(|value| {
-                    let upper = value.to_string().to_ascii_uppercase();
+                let convertions = values.iter().zip(names.iter()).map(|(value, name)| {
+                    let upper = value.to_shouty_snake_case();
                     quote! {
-                        #upper => #ident::#value,
+                        #upper => #ident::#name,
                     }
                 });
                 quote! {
@@ -433,77 +433,82 @@ impl Generator {
                     }
                 }
             });
-            let set_fields = attributes.iter().enumerate().map(|(index, attr)| {
-                let field = format_ident!("{}", attr.name);
-                if attr.optional {
-                    quote! {
-                        #index => entity.#field = if parameter.is_null() {None} else {Some(parameter.into())},
+            let form_parameters = if attributes.len() > 0 {
+                let set_fields = attributes.iter().enumerate().map(|(index, attr)| {
+                    let field = format_ident!("{}", attr.name);
+                    if attr.optional {
+                        quote! {
+                            #index => entity.#field = if parameter.is_null() {None} else {Some(parameter.into())},
+                        }
+                    } else {
+                        quote! {
+                            #index => entity.#field = parameter.into(),
+                        }
                     }
-                } else {
-                    quote! {
-                        #index => entity.#field = parameter.into(),
+                });
+                quote! {
+                    impl #type_name {
+                        pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+                            let mut entity = #type_name::default();
+
+                            for (index, parameter) in parameters.into_iter().enumerate() {
+                                match index {
+                                    #( #set_fields )*
+                                    _ => {}
+                                }
+                            }
+
+                            entity
+                        }
                     }
                 }
-            });
+            } else {
+                quote! {
+                    impl #type_name {
+                        pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+                            #type_name::default()
+                        }
+                    }
+                }
+            };
             quote! {
                 #trait_code
                 #struct_code
                 #( #impls )*
-                impl #type_name {
-                    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
-                        let mut entity = #type_name::default();
-
-                        for (index, parameter) in parameters.into_iter().enumerate() {
-                            match index {
-                                #( #set_fields )*
-                                _ => {}
-                            }
-                        }
-
-                        entity
-                    }
-                }
+                #form_parameters
             }
         }
     }
 
     fn gen_select_def(&self, type_name: &str, types: &Vec<String>) -> TokenStream {
         let ident = format_ident!("{}", type_name.to_camel_case());
-        if types.len() == 1 {
-            let variant = format_ident!("{}", types[0].to_camel_case());
-            return quote! {
-                type #ident = #variant;
-            };
-        }
-        let has_entity = types.iter().any(|name| self.entity_infos.contains_key(name));
-        let variants = if has_entity {
-            vec![quote! { EntityRef(EntityRef) }]
-                .into_iter()
-                .chain(types.iter().map(|name| {
-                    if let Some(entity_info) = self.entity_infos.get(name) {
-                        let type_name = entity_info.type_name();
-                        quote! {
-                            #type_name(EntityRef)
-                        }
-                    } else {
-                        let type_name = format_ident!("{}", name.to_camel_case());
-                        quote! {
-                            #type_name(#type_name)
-                        }
-                    }
-                }))
-                .collect::<Vec<_>>()
+        let derive = if self.hashable_types.contains(type_name) {
+            quote! { #[derive(Eq, PartialEq, Hash, Debug)] }
         } else {
-            types
-                .iter()
-                .map(|name| {
-                    let type_name = format_ident!("{}", name.to_camel_case());
-                    quote! {
-                        #type_name(#type_name)
-                    }
-                })
-                .collect::<Vec<_>>()
+            quote! { #[derive(Debug)] }
         };
+        let entity_count = types
+            .iter()
+            .filter(|name| self.entity_infos.contains_key(*name))
+            .count();
+        let default_variant = if entity_count > 1 {
+            quote! { EntityRef(EntityRef), }
+        } else {
+            quote! {}
+        };
+        let variants = types.iter().map(|name| {
+            if let Some(entity_info) = self.entity_infos.get(name) {
+                let type_name = entity_info.type_name();
+                quote! {
+                    #type_name(EntityRef)
+                }
+            } else {
+                let type_name = format_ident!("{}", name.to_camel_case());
+                quote! {
+                    #type_name(#type_name)
+                }
+            }
+        });
         let default_value = types
             .iter()
             .next()
@@ -521,26 +526,50 @@ impl Generator {
                 }
             })
             .unwrap();
-        let derive = if self.hashable_types.contains(type_name) {
-            quote! { #[derive(Eq, PartialEq, Hash, Debug)] }
+        let create_variants = types
+            .iter()
+            .filter(|name| !self.entity_infos.contains_key(*name))
+            .map(|name| {
+                let type_name = name.to_shouty_snake_case();
+                let variant = format_ident!("{}", name.to_camel_case());
+                quote! {
+                    #type_name => #ident::#variant(typed_parameter.parameters.into_iter().next().unwrap().into())
+                }
+            })
+            .collect::<Vec<_>>();
+        let typed_case = if create_variants.len() > 0 {
+            quote! {
+                Parameter::TypedParameter(typed_parameter) => match typed_parameter.type_name.as_str() {
+                    #( #create_variants, )*
+                    _ => panic!("parameter type is not recognized: {}", typed_parameter.type_name),
+                }
+            }
         } else {
-            quote! { #[derive(Debug)] }
+            quote! {}
         };
-        let convert = if has_entity {
+        let untyped_case = if entity_count == 1 {
+            let variant = types.iter().find(|name| self.entity_infos.contains_key(*name)).unwrap();
+            let type_name = self.entity_infos[variant].type_name();
             quote! {
-                UnTypedParameter::EntityRef(id) => #ident::EntityRef(EntityRef(id)),
-                _ => panic!("parameter is not an instance"),
+                Parameter::UnTypedParameter(untyped_parameter) => match untyped_parameter {
+                    UnTypedParameter::EntityRef(id) => #ident::#type_name(EntityRef(id)),
+                    _ => panic!("parameter is not an instance"),
+                }
+            }
+        } else if entity_count > 1 {
+            quote! {
+                Parameter::UnTypedParameter(untyped_parameter) => match untyped_parameter {
+                    UnTypedParameter::EntityRef(id) => #ident::EntityRef(EntityRef(id)),
+                    _ => panic!("parameter is not an instance"),
+                }
             }
         } else {
-            let variant = format_ident!("{}", types[0].to_camel_case());
-            quote! {
-                UnTypedParameter::EntityRef(id) => #ident::#variant(#variant::default()),
-                _ => panic!("parameter is not an instance"),
-            }
+            quote! {}
         };
         quote! {
             #derive
             pub enum #ident {
+                #default_variant
                 #( #variants, )*
             }
             impl Default for #ident {
@@ -551,10 +580,9 @@ impl Generator {
             impl From<Parameter> for #ident {
                 fn from(parameter: Parameter) -> Self {
                     match parameter {
-                        Parameter::UnTypedParameter(untyped_parameter) => match untyped_parameter {
-                            #convert
-                        },
-                        _ => panic!("parameter is not an instance"),
+                        #typed_case
+                        #untyped_case
+                        _ => panic!("parameter is not recognized"),
                     }
                 }
             }

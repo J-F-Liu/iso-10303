@@ -13,6 +13,7 @@ pub trait StepReader {
                 for instance in file.data {
                     if instance.value.len() == 1 {
                         for typed_parameter in instance.value {
+                            // println!("read #{}", instance.id);
                             self.read_simple_entity(instance.id, typed_parameter);
                         }
                     }
