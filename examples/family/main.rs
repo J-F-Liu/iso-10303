@@ -5,9 +5,6 @@ use reader::*;
 
 fn main() {
     let bytes = include_bytes!("family.stp");
-    // let bytes = include_bytes!("C:/Users/Liu/3D Objects/10mm光栅方头模型.stp");
-    // let bytes = include_bytes!("C:/Users/Liu/3D Objects/HandySCAN 3D_Demo part_CAD.stp");
-
     match iso_10303::step::parser::exchange_file().parse(bytes) {
         Ok(file) => {
             println!("entities: {}", file.data.len());

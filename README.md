@@ -16,6 +16,7 @@ cargo run --example family
 Generate AP214 reader:
 ```
 cargo run --release --features=gencode --bin gencode schemas/AP214E3_2010.exp parts/src/ap214.rs
+cargo build --workspace
 ```
 
 STEP related resources:
