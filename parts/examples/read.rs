@@ -8,8 +8,8 @@ fn main() {
             for organization in reader.get_entities::<Organization>() {
                 println!("{:?}", organization);
             }
-            for product in reader.get_entities::<Product>() {
-                println!("{:?}", product);
+            for id in reader.entities.keys() {
+                println!("{} - {}", id, reader.get_type_name(*id));
             }
         }
         Err(err) => println!("{:?}", err),

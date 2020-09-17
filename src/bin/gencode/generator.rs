@@ -623,18 +623,21 @@ impl Generator {
             pub struct #reader_name {
                 pub entities: BTreeMap<i64, Box<dyn Any>>,
                 pub type_ids: HashMap<TypeId, Vec<i64>>,
+                pub type_names: HashMap<TypeId, &'static str>,
             }
             impl #reader_name {
                 pub fn new() -> Self {
                     #reader_name {
                         entities: BTreeMap::new(),
                         type_ids: HashMap::new(),
+                        type_names: HashMap::new(),
                     }
                 }
                 pub fn add_entity<T: Any>(&mut self, id: i64, entity: T) {
                     let type_id = entity.type_id();
                     self.entities.insert(id, Box::new(entity));
                     self.type_ids.entry(type_id).or_insert(vec![]).push(id);
+                    self.type_names.entry(type_id).or_insert(std::any::type_name::<T>());
                 }
                 pub fn get_entity<T: Any>(&self, id: i64) -> Option<&T> {
                     self.entities[&id].downcast_ref::<T>()
@@ -644,6 +647,10 @@ impl Generator {
                     self.type_ids[&type_id]
                         .iter()
                         .map(move |id| self.entities[id].downcast_ref::<T>().unwrap())
+                }
+                pub fn get_type_name(&self, id: i64) -> &'static str {
+                    let type_id = (*self.entities[&id]).type_id();
+                    self.type_names[&type_id]
                 }
             }
 

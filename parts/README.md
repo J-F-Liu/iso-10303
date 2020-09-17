@@ -7,5 +7,5 @@ Currently supported parts:
 
 Run example:
 ```
-cargo run --release --example read
+cargo run --example read
 ```
