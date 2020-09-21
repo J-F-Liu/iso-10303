@@ -22,10 +22,15 @@ heck = { version = "0.3", optional = true }
 
 [features]
 gencode = ["quote", "proc-macro2", "heck"]
+gengraph = ["heck"]
 
 [[bin]]
 name = "gencode"
 required-features = ["gencode"]
+
+[[bin]]
+name = "gengraph"
+required-features = ["gengraph"]
 
 [workspace]
 members = ["parts"]

@@ -5,7 +5,7 @@ use std::collections::HashSet;
 #[derive(Default, Debug)]
 pub struct Unimplemented {}
 impl From<Parameter> for Unimplemented {
-    fn from(parameter: Parameter) -> Self {
+    fn from(_parameter: Parameter) -> Self {
         Unimplemented {}
     }
 }

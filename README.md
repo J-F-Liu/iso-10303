@@ -20,6 +20,11 @@ cargo run --release --features=gencode --bin gencode schemas/AP203E2_November_20
 cargo build --workspace
 ```
 
+Generate dot graph:
+```
+cargo run --release --features=gengraph --bin gengraph schemas/AP214E3_2010.exp graphs/ap214.dot
+```
+
 STEP related resources:
 - [CAx Interoperability Forum](https://www.cax-if.org/cax/cax_stepLib.php)
 - [STEP Tools](http://www.steptools.com/stds/step/)
