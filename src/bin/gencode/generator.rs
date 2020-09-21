@@ -62,25 +62,44 @@ fn collect_types(schema: &Schema) -> (HashMap<String, TypeInfo>, HashMap<String,
         }
     }
 
-    for declaration in &schema.declarations {
-        match declaration {
-            Declaration::TypeDef(type_def) => {
-                let is_entity = match &type_def.underlying_type {
-                    DataType::Select { types } => types.iter().all(|type_name| {
-                        entity_infos.contains_key(type_name)
-                            || type_infos.get(type_name).map(|info| info.is_entity) == Some(true)
-                    }),
-                    _ => false,
-                };
-                type_infos.insert(
-                    type_def.name.to_string(),
-                    TypeInfo {
-                        is_entity,
-                        underlying_type: type_def.underlying_type.clone(),
-                    },
-                );
-            }
-            _ => {}
+    let mut type_defs = schema
+        .declarations
+        .iter()
+        .filter_map(|declaration| match declaration {
+            Declaration::TypeDef(type_def) => Some(type_def),
+            _ => None,
+        })
+        .collect::<Vec<_>>();
+    let mut index = 0;
+    while index < type_defs.len() {
+        let type_def = type_defs[index];
+        let is_ready = match &type_def.underlying_type {
+            DataType::Select { types } => types
+                .iter()
+                .all(|type_name| entity_infos.contains_key(type_name) || type_infos.contains_key(type_name)),
+            _ => true,
+        };
+        if is_ready {
+            let is_entity = match &type_def.underlying_type {
+                DataType::Select { types } => types.iter().all(|type_name| {
+                    entity_infos.contains_key(type_name)
+                        || type_infos.get(type_name).map(|info| info.is_entity) == Some(true)
+                }),
+                _ => false,
+            };
+            type_infos.insert(
+                type_def.name.to_string(),
+                TypeInfo {
+                    is_entity,
+                    underlying_type: type_def.underlying_type.clone(),
+                },
+            );
+            type_defs.swap_remove(index);
+        } else {
+            index += 1;
+        }
+        if index >= type_defs.len() && index > 0 {
+            index = 0;
         }
     }
     (type_infos, entity_infos)
@@ -219,6 +238,11 @@ impl Generator {
             use std::collections::HashSet;
             #[derive(Default, Debug)]
             pub struct Unimplemented {}
+            impl From<Parameter> for Unimplemented {
+                fn from(_parameter: Parameter) -> Self {
+                    Unimplemented {}
+                }
+            }
             #( #declarations )*
             #reader
         };
@@ -400,12 +424,16 @@ impl Generator {
             };
             let impls = self.get_entity_supertypes(&entity.name).into_iter().map(|supertype| {
                 let trait_name = supertype.trait_name();
-                let fields = supertype.attributes.iter().map(|attr| {
-                    let field = format_ident!("{}", attr.name);
-                    let data_type = self.type_name(&attr.data_type, attr.optional);
-                    if is_copy_type(&attr.data_type) {
-                        if attr.data_type.is_number()
-                            && entity.get_attribute(&attr.name).map(|attr| attr.data_type.is_integer()) == Some(true)
+                let fields = supertype.attributes.iter().map(|super_attr| {
+                    let field = format_ident!("{}", super_attr.name);
+                    let data_type = self.type_name(&super_attr.data_type, super_attr.optional);
+                    if is_copy_type(&super_attr.data_type) {
+                        if super_attr.data_type.is_number()
+                            && attributes
+                                .iter()
+                                .find(|attr| attr.name == super_attr.name)
+                                .map(|attr| attr.data_type.is_integer())
+                                == Some(true)
                         {
                             quote! {
                                 fn #field(&self) -> #data_type {
@@ -420,9 +448,22 @@ impl Generator {
                             }
                         }
                     } else {
-                        quote! {
-                            fn #field(&self) -> &#data_type {
-                                &self.#field
+                        if Some(data_type.to_string())
+                            != attributes
+                                .iter()
+                                .find(|attr| attr.name == super_attr.name)
+                                .map(|attr| self.type_name(&attr.data_type, attr.optional).to_string())
+                        {
+                            quote! {
+                                fn #field(&self) -> &#data_type {
+                                    unimplemented!()
+                                }
+                            }
+                        } else {
+                            quote! {
+                                fn #field(&self) -> &#data_type {
+                                    &self.#field
+                                }
                             }
                         }
                     }

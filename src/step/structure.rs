@@ -120,6 +120,7 @@ impl<T: From<Parameter>> From<Parameter> for Vec<T> {
                 UnTypedParameter::List(list) => list.into_iter().map(|item| item.into()).collect(),
                 _ => panic!("parameter is not an list"),
             },
+            Parameter::OmittedParameter => Vec::new(),
             _ => panic!("parameter is not an list"),
         }
     }
@@ -129,6 +130,7 @@ impl<T: From<Parameter> + Eq + Hash> From<Parameter> for HashSet<T> {
     fn from(parameter: Parameter) -> Self {
         match parameter {
             Parameter::UnTypedParameter(parameter) => parameter.into(),
+            Parameter::OmittedParameter => HashSet::new(),
             _ => panic!("can not convert"),
         }
     }

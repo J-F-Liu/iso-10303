@@ -181,12 +181,14 @@ fn constructed_data_type<'a>() -> Parser<'a, u8, DataType> {
         * keyword("of")
         * space()
         * sym(b'(')
+        * space()
         * list(identifier().map(str::to_string) - space(), sym(b',') - space())
         - sym(b')'))
     .map(|values| DataType::Enum { values })
         | (keyword("select")
             * space()
             * sym(b'(')
+            * space()
             * list(identifier().map(str::to_string) - space(), sym(b',') - space())
             - sym(b')'))
         .map(|types| DataType::Select { types })
@@ -578,7 +580,7 @@ fn function<'a>() -> Parser<'a, u8, Function> {
                 .collect::<Vec<_>>()
         });
     let formal_parameters = sym(b'(') * space() * list(formal_parameter - space(), sym(b';') - space()) - sym(b')');
-    let head = keyword("function") * space() * identifier().map(str::to_string) + formal_parameters.opt()
+    let head = keyword("function") * space() * identifier().map(str::to_string) - space() + formal_parameters.opt()
         - space()
         - sym(b':')
         - space()

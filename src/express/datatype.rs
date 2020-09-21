@@ -72,10 +72,22 @@ impl DataType {
             _ => false,
         }
     }
+    pub fn is_real(&self) -> bool {
+        match *self {
+            DataType::Real { .. } => true,
+            _ => false,
+        }
+    }
     pub fn is_integer(&self) -> bool {
         match *self {
             DataType::Integer => true,
             _ => false,
+        }
+    }
+    pub fn type_ref(&self) -> Option<&String> {
+        match self {
+            DataType::TypeRef { name } => Some(name),
+            _ => None,
         }
     }
 }
