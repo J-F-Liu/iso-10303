@@ -9,6 +9,7 @@ use std::process::Command;
 struct Args {
     schema: std::path::PathBuf,
     parser: std::path::PathBuf,
+    name: String,
 }
 
 fn main() -> std::io::Result<()> {
@@ -20,7 +21,7 @@ fn main() -> std::io::Result<()> {
         Ok(schema) => {
             // generate parser code
             println!("generate code");
-            let generator = Generator::new(schema);
+            let generator = Generator::new(schema, args.name);
             let code = generator.gencode();
 
             // write code file

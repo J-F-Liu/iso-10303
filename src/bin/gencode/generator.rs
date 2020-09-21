@@ -5,6 +5,7 @@ use quote::{format_ident, quote};
 use std::collections::{HashMap, HashSet};
 
 pub struct Generator {
+    name: String,
     schema: Schema,
     type_infos: HashMap<String, TypeInfo>,
     entity_infos: HashMap<String, EntityInfo>,
@@ -179,10 +180,11 @@ fn is_copy_type(data_type: &DataType) -> bool {
 }
 
 impl Generator {
-    pub fn new(schema: Schema) -> Generator {
+    pub fn new(schema: Schema, name: String) -> Generator {
         let (type_infos, entity_infos) = collect_types(&schema);
         let hashable_types = collect_hashable_types(&type_infos, &entity_infos);
         Generator {
+            name,
             schema,
             type_infos,
             entity_infos,
@@ -631,7 +633,7 @@ impl Generator {
     }
 
     fn gen_reader(&self) -> TokenStream {
-        let reader_name = format_ident!("{}Reader", self.schema.name.to_camel_case());
+        let reader_name = format_ident!("{}Reader", self.name.to_camel_case());
         let read_entities = self
             .schema
             .declarations

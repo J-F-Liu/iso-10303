@@ -4,6 +4,11 @@ use iso_10303::step::*;
 use std::collections::HashSet;
 #[derive(Default, Debug)]
 pub struct Unimplemented {}
+impl From<Parameter> for Unimplemented {
+    fn from(_parameter: Parameter) -> Self {
+        Unimplemented {}
+    }
+}
 #[derive(Eq, PartialEq, Hash, Debug)]
 pub enum ActionItem {
     EntityRef(EntityRef),
@@ -8690,15 +8695,15 @@ impl BooleanLiteral {
 }
 pub trait IBooleanResult: IGeometricRepresentationItem {
     fn operator(&self) -> &BooleanOperator;
-    fn first_operand(&self) -> &BooleanOperand;
-    fn second_operand(&self) -> &BooleanOperand;
+    fn first_operand(&self) -> &EntityRef;
+    fn second_operand(&self) -> &EntityRef;
 }
 #[derive(Default, Debug)]
 pub struct BooleanResult {
     name: Label,
     operator: BooleanOperator,
-    first_operand: BooleanOperand,
-    second_operand: BooleanOperand,
+    first_operand: EntityRef,
+    second_operand: EntityRef,
 }
 impl IRepresentationItem for BooleanResult {
     fn name(&self) -> &Label {
@@ -8710,10 +8715,10 @@ impl IBooleanResult for BooleanResult {
     fn operator(&self) -> &BooleanOperator {
         &self.operator
     }
-    fn first_operand(&self) -> &BooleanOperand {
+    fn first_operand(&self) -> &EntityRef {
         &self.first_operand
     }
-    fn second_operand(&self) -> &BooleanOperand {
+    fn second_operand(&self) -> &EntityRef {
         &self.second_operand
     }
 }
@@ -12688,14 +12693,14 @@ impl CurveReplica {
 }
 pub trait ICurveStyle: IFoundedItem {
     fn name(&self) -> &Label;
-    fn curve_font(&self) -> &CurveFontOrScaledCurveFontSelect;
+    fn curve_font(&self) -> &EntityRef;
     fn curve_width(&self) -> &SizeSelect;
     fn curve_colour(&self) -> &EntityRef;
 }
 #[derive(Default, Debug)]
 pub struct CurveStyle {
     name: Label,
-    curve_font: CurveFontOrScaledCurveFontSelect,
+    curve_font: EntityRef,
     curve_width: SizeSelect,
     curve_colour: EntityRef,
 }
@@ -12704,7 +12709,7 @@ impl ICurveStyle for CurveStyle {
     fn name(&self) -> &Label {
         &self.name
     }
-    fn curve_font(&self) -> &CurveFontOrScaledCurveFontSelect {
+    fn curve_font(&self) -> &EntityRef {
         &self.curve_font
     }
     fn curve_width(&self) -> &SizeSelect {
@@ -13225,14 +13230,14 @@ impl DateTimeRole {
     }
 }
 pub trait IDatedEffectivity: IEffectivity {
-    fn effectivity_end_date(&self) -> &Option<DateTimeOrEventOccurrence>;
-    fn effectivity_start_date(&self) -> &DateTimeOrEventOccurrence;
+    fn effectivity_end_date(&self) -> &Option<EntityRef>;
+    fn effectivity_start_date(&self) -> &EntityRef;
 }
 #[derive(Default, Debug)]
 pub struct DatedEffectivity {
     id: Identifier,
-    effectivity_end_date: Option<DateTimeOrEventOccurrence>,
-    effectivity_start_date: DateTimeOrEventOccurrence,
+    effectivity_end_date: Option<EntityRef>,
+    effectivity_start_date: EntityRef,
 }
 impl IEffectivity for DatedEffectivity {
     fn id(&self) -> &Identifier {
@@ -13240,10 +13245,10 @@ impl IEffectivity for DatedEffectivity {
     }
 }
 impl IDatedEffectivity for DatedEffectivity {
-    fn effectivity_end_date(&self) -> &Option<DateTimeOrEventOccurrence> {
+    fn effectivity_end_date(&self) -> &Option<EntityRef> {
         &self.effectivity_end_date
     }
-    fn effectivity_start_date(&self) -> &DateTimeOrEventOccurrence {
+    fn effectivity_start_date(&self) -> &EntityRef {
         &self.effectivity_start_date
     }
 }
@@ -17938,7 +17943,7 @@ pub trait IFeaturedShape: IProductDefinitionShape {}
 pub struct FeaturedShape {
     name: Label,
     description: Option<Text>,
-    definition: CharacterizedDefinition,
+    definition: EntityRef,
 }
 impl IPropertyDefinition for FeaturedShape {
     fn name(&self) -> &Label {
@@ -17947,7 +17952,7 @@ impl IPropertyDefinition for FeaturedShape {
     fn description(&self) -> &Option<Text> {
         &self.description
     }
-    fn definition(&self) -> &CharacterizedDefinition {
+    fn definition(&self) -> &EntityRef {
         &self.definition
     }
 }
@@ -20954,14 +20959,14 @@ impl KinematicPath {
     }
 }
 pub trait IKinematicPropertyDefinition: IPropertyDefinition {
-    fn ground_definition(&self) -> &CharacterizedDefinition;
+    fn ground_definition(&self) -> &EntityRef;
 }
 #[derive(Default, Debug)]
 pub struct KinematicPropertyDefinition {
     name: Label,
     description: Option<Text>,
-    definition: CharacterizedDefinition,
-    ground_definition: CharacterizedDefinition,
+    definition: EntityRef,
+    ground_definition: EntityRef,
 }
 impl IPropertyDefinition for KinematicPropertyDefinition {
     fn name(&self) -> &Label {
@@ -20970,12 +20975,12 @@ impl IPropertyDefinition for KinematicPropertyDefinition {
     fn description(&self) -> &Option<Text> {
         &self.description
     }
-    fn definition(&self) -> &CharacterizedDefinition {
+    fn definition(&self) -> &EntityRef {
         &self.definition
     }
 }
 impl IKinematicPropertyDefinition for KinematicPropertyDefinition {
-    fn ground_definition(&self) -> &CharacterizedDefinition {
+    fn ground_definition(&self) -> &EntityRef {
         &self.ground_definition
     }
 }
@@ -22386,18 +22391,18 @@ impl MassUnit {
 }
 pub trait IMaterialDesignation {
     fn name(&self) -> &Label;
-    fn definitions(&self) -> &HashSet<CharacterizedDefinition>;
+    fn definitions(&self) -> &HashSet<EntityRef>;
 }
 #[derive(Default, Debug)]
 pub struct MaterialDesignation {
     name: Label,
-    definitions: HashSet<CharacterizedDefinition>,
+    definitions: HashSet<EntityRef>,
 }
 impl IMaterialDesignation for MaterialDesignation {
     fn name(&self) -> &Label {
         &self.name
     }
-    fn definitions(&self) -> &HashSet<CharacterizedDefinition> {
+    fn definitions(&self) -> &HashSet<EntityRef> {
         &self.definitions
     }
 }
@@ -22461,7 +22466,7 @@ pub trait IMaterialProperty: IPropertyDefinition {}
 pub struct MaterialProperty {
     name: Label,
     description: Option<Text>,
-    definition: CharacterizedDefinition,
+    definition: EntityRef,
 }
 impl IPropertyDefinition for MaterialProperty {
     fn name(&self) -> &Label {
@@ -22470,7 +22475,7 @@ impl IPropertyDefinition for MaterialProperty {
     fn description(&self) -> &Option<Text> {
         &self.description
     }
-    fn definition(&self) -> &CharacterizedDefinition {
+    fn definition(&self) -> &EntityRef {
         &self.definition
     }
 }
@@ -28115,14 +28120,14 @@ pub trait IProcessPropertyAssociation {
     fn name(&self) -> &Label;
     fn description(&self) -> &Text;
     fn process(&self) -> &EntityRef;
-    fn property_or_shape(&self) -> &PropertyOrShapeSelect;
+    fn property_or_shape(&self) -> &EntityRef;
 }
 #[derive(Default, Debug)]
 pub struct ProcessPropertyAssociation {
     name: Label,
     description: Text,
     process: EntityRef,
-    property_or_shape: PropertyOrShapeSelect,
+    property_or_shape: EntityRef,
 }
 impl IProcessPropertyAssociation for ProcessPropertyAssociation {
     fn name(&self) -> &Label {
@@ -28134,7 +28139,7 @@ impl IProcessPropertyAssociation for ProcessPropertyAssociation {
     fn process(&self) -> &EntityRef {
         &self.process
     }
-    fn property_or_shape(&self) -> &PropertyOrShapeSelect {
+    fn property_or_shape(&self) -> &EntityRef {
         &self.property_or_shape
     }
 }
@@ -29208,7 +29213,7 @@ pub trait IProductDefinitionShape: IPropertyDefinition {}
 pub struct ProductDefinitionShape {
     name: Label,
     description: Option<Text>,
-    definition: CharacterizedDefinition,
+    definition: EntityRef,
 }
 impl IPropertyDefinition for ProductDefinitionShape {
     fn name(&self) -> &Label {
@@ -29217,7 +29222,7 @@ impl IPropertyDefinition for ProductDefinitionShape {
     fn description(&self) -> &Option<Text> {
         &self.description
     }
-    fn definition(&self) -> &CharacterizedDefinition {
+    fn definition(&self) -> &EntityRef {
         &self.definition
     }
 }
@@ -29787,13 +29792,13 @@ impl PromissoryUsageOccurrence {
 pub trait IPropertyDefinition {
     fn name(&self) -> &Label;
     fn description(&self) -> &Option<Text>;
-    fn definition(&self) -> &CharacterizedDefinition;
+    fn definition(&self) -> &EntityRef;
 }
 #[derive(Default, Debug)]
 pub struct PropertyDefinition {
     name: Label,
     description: Option<Text>,
-    definition: CharacterizedDefinition,
+    definition: EntityRef,
 }
 impl IPropertyDefinition for PropertyDefinition {
     fn name(&self) -> &Label {
@@ -29802,7 +29807,7 @@ impl IPropertyDefinition for PropertyDefinition {
     fn description(&self) -> &Option<Text> {
         &self.description
     }
-    fn definition(&self) -> &CharacterizedDefinition {
+    fn definition(&self) -> &EntityRef {
         &self.definition
     }
 }
@@ -36779,8 +36784,8 @@ impl TimeIntervalRole {
     }
 }
 pub trait ITimeIntervalWithBounds: ITimeInterval {
-    fn primary_bound(&self) -> &Option<DateTimeOrEventOccurrence>;
-    fn secondary_bound(&self) -> &Option<DateTimeOrEventOccurrence>;
+    fn primary_bound(&self) -> &Option<EntityRef>;
+    fn secondary_bound(&self) -> &Option<EntityRef>;
     fn duration(&self) -> &Option<EntityRef>;
 }
 #[derive(Default, Debug)]
@@ -36788,8 +36793,8 @@ pub struct TimeIntervalWithBounds {
     id: Identifier,
     name: Label,
     description: Option<Text>,
-    primary_bound: Option<DateTimeOrEventOccurrence>,
-    secondary_bound: Option<DateTimeOrEventOccurrence>,
+    primary_bound: Option<EntityRef>,
+    secondary_bound: Option<EntityRef>,
     duration: Option<EntityRef>,
 }
 impl ITimeInterval for TimeIntervalWithBounds {
@@ -36804,10 +36809,10 @@ impl ITimeInterval for TimeIntervalWithBounds {
     }
 }
 impl ITimeIntervalWithBounds for TimeIntervalWithBounds {
-    fn primary_bound(&self) -> &Option<DateTimeOrEventOccurrence> {
+    fn primary_bound(&self) -> &Option<EntityRef> {
         &self.primary_bound
     }
-    fn secondary_bound(&self) -> &Option<DateTimeOrEventOccurrence> {
+    fn secondary_bound(&self) -> &Option<EntityRef> {
         &self.secondary_bound
     }
     fn duration(&self) -> &Option<EntityRef> {
@@ -37996,7 +38001,7 @@ pub trait IVectorStyle: IPreDefinedTerminatorSymbol + ICurveStyle {}
 #[derive(Default, Debug)]
 pub struct VectorStyle {
     name: Label,
-    curve_font: CurveFontOrScaledCurveFontSelect,
+    curve_font: EntityRef,
     curve_width: SizeSelect,
     curve_colour: EntityRef,
 }
@@ -38012,7 +38017,7 @@ impl ICurveStyle for VectorStyle {
     fn name(&self) -> &Label {
         &self.name
     }
-    fn curve_font(&self) -> &CurveFontOrScaledCurveFontSelect {
+    fn curve_font(&self) -> &EntityRef {
         &self.curve_font
     }
     fn curve_width(&self) -> &SizeSelect {
@@ -38467,14 +38472,14 @@ impl XorExpression {
 }
 use std::any::{Any, TypeId};
 use std::collections::{BTreeMap, HashMap};
-pub struct AutomotiveDesignReader {
+pub struct Ap214Reader {
     pub entities: BTreeMap<i64, Box<dyn Any>>,
     pub type_ids: HashMap<TypeId, Vec<i64>>,
     pub type_names: HashMap<TypeId, &'static str>,
 }
-impl AutomotiveDesignReader {
+impl Ap214Reader {
     pub fn new() -> Self {
-        AutomotiveDesignReader {
+        Ap214Reader {
             entities: BTreeMap::new(),
             type_ids: HashMap::new(),
             type_names: HashMap::new(),
@@ -38500,7 +38505,7 @@ impl AutomotiveDesignReader {
         self.type_names[&type_id]
     }
 }
-impl StepReader for AutomotiveDesignReader {
+impl StepReader for Ap214Reader {
     fn read_simple_entity(&mut self, id: i64, typed_parameter: TypedParameter) {
         match typed_parameter.type_name.as_str() {
             "ABS_FUNCTION" => {
