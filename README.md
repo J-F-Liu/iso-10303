@@ -1,3 +1,7 @@
+[![Crates.io](https://img.shields.io/crates/v/iso-10303.svg)](https://crates.io/crates/iso-10303)
+[![Docs](https://docs.rs/iso-10303/badge.svg)](https://docs.rs/iso-10303)
+
+
 A rust crate for reading STP/STEP CAD files.
 
 **STEP** (**St**adndard for **E**xchange of **P**roduct model) is a standard for describing product data and is formally defined in ISO-10303.
