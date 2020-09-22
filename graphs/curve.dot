@@ -1,0 +1,11 @@
+digraph G {
+  Curve -> {SurfaceCurve, Pcurve, OffsetCurve3d, OffsetCurve2d, Line, CurveReplica, Conic, BoundedCurve};
+  SurfaceCurve -> {SeamCurve, IntersectionCurve, BoundedSurfaceCurve};
+  Pcurve -> {BoundedPcurve};
+  Conic -> {Parabola, Hyperbola, Ellipse, Circle};
+  BoundedCurve -> {TrimmedCurve, Polyline, CompositeCurve, BoundedSurfaceCurve, BoundedPcurve, BSplineCurve};
+  CompositeCurve -> {CompositeCurveOnSurface};
+  CompositeCurveOnSurface -> {BoundaryCurve};
+  BoundaryCurve -> {OuterBoundaryCurve};
+  BSplineCurve -> {UniformCurve, RationalBSplineCurve, QuasiUniformCurve, BezierCurve, BSplineCurveWithKnots};
+}

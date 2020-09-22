@@ -18,11 +18,12 @@ structopt = "0.3"
 quote ={ version = "1.0", optional = true }
 proc-macro2 ={ version = "1.0", optional = true }
 heck = { version = "0.3", optional = true }
+petgraph = { version = "0.5.1", optional = true }
 
 
 [features]
 gencode = ["quote", "proc-macro2", "heck"]
-gengraph = ["heck"]
+gengraph = ["heck", "petgraph"]
 
 [[bin]]
 name = "gencode"

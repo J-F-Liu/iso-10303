@@ -27,6 +27,7 @@ cargo build --workspace
 Generate dot graph:
 ```
 cargo run --release --features=gengraph --bin gengraph schemas/AP214E3_2010.exp graphs/ap214.dot
+cargo run --release --features=gengraph --bin gengraph schemas/AP214E3_2010.exp graphs/curve.dot Curve
 ```
 
 STEP related resources:
