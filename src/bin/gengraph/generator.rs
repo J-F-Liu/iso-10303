@@ -42,7 +42,6 @@ impl Generator {
 
     fn write_edges(&self, parent_id: NodeIndex, visited: &mut HashSet<NodeIndex>, code: &mut String) {
         if visited.insert(parent_id) {
-            let parent = self.graph.node_weight(parent_id).unwrap();
             let children = self
                 .graph
                 .neighbors(parent_id)
@@ -55,6 +54,7 @@ impl Generator {
                     list
                 });
             if children.len() > 0 {
+                let parent = self.graph.node_weight(parent_id).unwrap();
                 code.push_str(&format!("  {} -> {{{}}};\n", parent, children));
                 for child_id in self.graph.neighbors(parent_id) {
                     self.write_edges(child_id, visited, code);

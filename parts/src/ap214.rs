@@ -38476,13 +38476,16 @@ pub struct Ap214Reader {
     pub entities: BTreeMap<i64, Box<dyn Any>>,
     pub type_ids: HashMap<TypeId, Vec<i64>>,
     pub type_names: HashMap<TypeId, &'static str>,
+    empty: Vec<i64>,
 }
+
 impl Ap214Reader {
     pub fn new() -> Self {
         Ap214Reader {
             entities: BTreeMap::new(),
             type_ids: HashMap::new(),
             type_names: HashMap::new(),
+            empty: Vec::new(),
         }
     }
     pub fn add_entity<T: Any>(&mut self, id: i64, entity: T) {
@@ -38491,12 +38494,14 @@ impl Ap214Reader {
         self.type_ids.entry(type_id).or_insert(vec![]).push(id);
         self.type_names.entry(type_id).or_insert(std::any::type_name::<T>());
     }
-    pub fn get_entity<T: Any>(&self, id: i64) -> Option<&T> {
-        self.entities[&id].downcast_ref::<T>()
+    pub fn get_entity<T: Any>(&self, entity_ref: &EntityRef) -> Option<&T> {
+        self.entities[&entity_ref.0].downcast_ref::<T>()
     }
     pub fn get_entities<T: Any>(&self) -> impl Iterator<Item = &T> {
         let type_id = TypeId::of::<T>();
-        self.type_ids[&type_id]
+        self.type_ids
+            .get(&type_id)
+            .unwrap_or(&self.empty)
             .iter()
             .map(move |id| self.entities[id].downcast_ref::<T>().unwrap())
     }
