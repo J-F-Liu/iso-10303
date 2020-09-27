@@ -667,7 +667,7 @@ impl Generator {
                 pub entities: BTreeMap<i64, Box<dyn Any>>,
                 pub type_ids: HashMap<TypeId, Vec<i64>>,
                 pub type_names: HashMap<TypeId, &'static str>,
-                empty: Vec::new(),
+                empty: Vec<i64>,
             }
             impl #reader_name {
                 pub fn new() -> Self {
