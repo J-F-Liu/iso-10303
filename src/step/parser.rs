@@ -79,7 +79,7 @@ fn parameter_list<'a>() -> Parser<'a, u8, Vec<Parameter>> {
 }
 
 fn typed_parameter<'a>() -> Parser<'a, u8, TypedParameter> {
-    (identifier().map(str::to_string) - space() + parameter_list())
+    (identifier().map(str::to_string) - space() + parameter_list() - space())
         .map(|(type_name, parameters)| TypedParameter { type_name, parameters })
 }
 
