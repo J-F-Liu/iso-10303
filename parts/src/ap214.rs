@@ -38495,7 +38495,10 @@ impl Ap214Reader {
         self.type_names.entry(type_id).or_insert(std::any::type_name::<T>());
     }
     pub fn get_entity<T: Any>(&self, entity_ref: &EntityRef) -> Option<&T> {
-        self.entities[&entity_ref.0].downcast_ref::<T>()
+        self.entities
+            .get(&entity_ref.0)
+            .map(|entity| entity.downcast_ref::<T>())
+            .flatten()
     }
     pub fn get_entities<T: Any>(&self) -> impl Iterator<Item = &T> {
         let type_id = TypeId::of::<T>();
