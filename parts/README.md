@@ -8,8 +8,9 @@ Currently supported parts:
 - AP203
 - AP214
 
-
 Run example:
+
 ```
-cargo run --example read
+cargo run --release --example read -- "examples/ap214_example.stp"
+cargo run --release --example read -- "C:/Users/Liu/3D Objects/HandySCAN 3D_Demo part_CAD.stp"
 ```

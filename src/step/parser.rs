@@ -24,11 +24,28 @@ fn integer<'a>() -> Parser<'a, u8, i64> {
 }
 
 fn real<'a>() -> Parser<'a, u8, f64> {
-    let integer = is_a(digit).repeat(1..);
-    let frac = sym(b'.') + is_a(digit).repeat(0..);
-    let exp = sym(b'E') + one_of(b"+-").opt() + is_a(digit).repeat(1..);
-    let number = sym(b'-').opt() + integer + frac + exp.opt();
-    number.collect().convert(str::from_utf8).convert(f64::from_str)
+    // let integer = is_a(digit).repeat(1..);
+    // let frac = sym(b'.') + is_a(digit).repeat(0..);
+    // let exp = sym(b'E') + one_of(b"+-").opt() + is_a(digit).repeat(1..);
+    // let number = sym(b'-').opt() + integer + frac + exp.opt();
+    // number.collect().convert(str::from_utf8).convert(f64::from_str)
+    Parser::new(move |input: &'a [u8], start: usize| {
+        if let Ok((float, digits)) = fast_float::parse_partial(&input[start..]) {
+            if input[start..(start + digits)].contains(&b'.') {
+                Ok((float, start + digits))
+            } else {
+                Err(pom::Error::Mismatch {
+                    message: "Is an integer".to_owned(),
+                    position: start,
+                })
+            }
+        } else {
+            Err(pom::Error::Mismatch {
+                message: "Not a real number".to_owned(),
+                position: start,
+            })
+        }
+    })
 }
 
 fn string<'a>() -> Parser<'a, u8, String> {
