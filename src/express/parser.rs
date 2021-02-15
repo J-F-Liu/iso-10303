@@ -138,7 +138,7 @@ fn bound_spec<'a>() -> Parser<'a, u8, BoundSpec> {
 }
 
 fn aggregation_data_type<'a>() -> Parser<'a, u8, DataType> {
-    (keyword("array") * space() * bound_spec() - space() - keyword("of") - space()
+    (keyword("array") * space() * bound_spec().opt() - space() - keyword("of") - space()
         + (keyword("optional") - space()).opt()
         + (keyword("unique") - space()).opt()
         + call(base_data_type))

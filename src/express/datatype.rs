@@ -21,7 +21,7 @@ pub enum DataType {
         name: String,
     },
     Array {
-        bound: BoundSpec,
+        bound: Option<BoundSpec>,
         optional: bool,
         unique: bool,
         base_type: Box<DataType>,
