@@ -3,10 +3,10 @@
 
 Generated reader code for ISO 10303 parts.
 
-Currently supported parts:
+Currently supported application protocols:
 
-- AP203
-- AP214
+- AP203: [CONFIG_CONTROL_DESIGN] Configuration controlled 3d design of mechanical parts and assemblies
+- AP214: [AUTOMOTIVE_DESIGN] Core data for automotive mechanical design processes
 
 Run example:
 
