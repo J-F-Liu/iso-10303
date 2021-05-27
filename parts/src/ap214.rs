@@ -38478,7 +38478,6 @@ pub struct Ap214Reader {
     pub type_names: HashMap<TypeId, &'static str>,
     empty: Vec<i64>,
 }
-
 impl Ap214Reader {
     pub fn new() -> Self {
         Ap214Reader {
@@ -38514,3426 +38513,6302 @@ impl Ap214Reader {
     }
 }
 impl StepReader for Ap214Reader {
-    fn read_simple_entity(&mut self, id: i64, typed_parameter: TypedParameter) {
+    fn insert_entity(&mut self, id: i64, type_id: TypeId, type_name: &'static str, entity: Box<dyn Any>) {
+        self.entities.insert(id, entity);
+        self.type_ids.entry(type_id).or_insert(vec![]).push(id);
+        self.type_names.entry(type_id).or_insert(type_name);
+    }
+    fn create_entity(&self, typed_parameter: TypedParameter) -> Option<(TypeId, &'static str, Box<dyn Any>)> {
         match typed_parameter.type_name.as_str() {
             "ABS_FUNCTION" => {
                 let entity = AbsFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<AbsFunction>(), Box::new(entity)))
             }
             "ACOS_FUNCTION" => {
                 let entity = AcosFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AcosFunction>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION" => {
                 let entity = Action::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Action>(), Box::new(entity)))
             }
             "ACTION_DIRECTIVE" => {
                 let entity = ActionDirective::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionDirective>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_METHOD" => {
                 let entity = ActionMethod::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionMethod>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_METHOD_RELATIONSHIP" => {
                 let entity = ActionMethodRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionMethodRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_PROPERTY" => {
                 let entity = ActionProperty::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionProperty>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_PROPERTY_REPRESENTATION" => {
                 let entity = ActionPropertyRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionPropertyRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_RELATIONSHIP" => {
                 let entity = ActionRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_REQUEST_SOLUTION" => {
                 let entity = ActionRequestSolution::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionRequestSolution>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_REQUEST_STATUS" => {
                 let entity = ActionRequestStatus::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionRequestStatus>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_RESOURCE" => {
                 let entity = ActionResource::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionResource>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_RESOURCE_REQUIREMENT" => {
                 let entity = ActionResourceRequirement::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionResourceRequirement>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_RESOURCE_TYPE" => {
                 let entity = ActionResourceType::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionResourceType>(),
+                    Box::new(entity),
+                ))
             }
             "ACTION_STATUS" => {
                 let entity = ActionStatus::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ActionStatus>(),
+                    Box::new(entity),
+                ))
             }
             "ADDRESS" => {
                 let entity = Address::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Address>(), Box::new(entity)))
             }
             "ADVANCED_BREP_SHAPE_REPRESENTATION" => {
                 let entity = AdvancedBrepShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AdvancedBrepShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "ADVANCED_FACE" => {
                 let entity = AdvancedFace::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AdvancedFace>(),
+                    Box::new(entity),
+                ))
             }
             "ALTERNATE_PRODUCT_RELATIONSHIP" => {
                 let entity = AlternateProductRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AlternateProductRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "AMOUNT_OF_SUBSTANCE_MEASURE_WITH_UNIT" => {
                 let entity = AmountOfSubstanceMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AmountOfSubstanceMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "AMOUNT_OF_SUBSTANCE_UNIT" => {
                 let entity = AmountOfSubstanceUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AmountOfSubstanceUnit>(),
+                    Box::new(entity),
+                ))
             }
             "AND_EXPRESSION" => {
                 let entity = AndExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AndExpression>(),
+                    Box::new(entity),
+                ))
             }
             "ANGULAR_DIMENSION" => {
                 let entity = AngularDimension::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AngularDimension>(),
+                    Box::new(entity),
+                ))
             }
             "ANGULAR_LOCATION" => {
                 let entity = AngularLocation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AngularLocation>(),
+                    Box::new(entity),
+                ))
             }
             "ANGULAR_SIZE" => {
                 let entity = AngularSize::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<AngularSize>(), Box::new(entity)))
             }
             "ANGULARITY_TOLERANCE" => {
                 let entity = AngularityTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AngularityTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_CURVE_OCCURRENCE" => {
                 let entity = AnnotationCurveOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationCurveOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_FILL_AREA" => {
                 let entity = AnnotationFillArea::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationFillArea>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_FILL_AREA_OCCURRENCE" => {
                 let entity = AnnotationFillAreaOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationFillAreaOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_OCCURRENCE" => {
                 let entity = AnnotationOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_OCCURRENCE_ASSOCIATIVITY" => {
                 let entity = AnnotationOccurrenceAssociativity::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationOccurrenceAssociativity>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_OCCURRENCE_RELATIONSHIP" => {
                 let entity = AnnotationOccurrenceRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationOccurrenceRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_PLANE" => {
                 let entity = AnnotationPlane::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationPlane>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_SUBFIGURE_OCCURRENCE" => {
                 let entity = AnnotationSubfigureOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationSubfigureOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_SYMBOL" => {
                 let entity = AnnotationSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_SYMBOL_OCCURRENCE" => {
                 let entity = AnnotationSymbolOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationSymbolOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_TEXT" => {
                 let entity = AnnotationText::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationText>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_TEXT_CHARACTER" => {
                 let entity = AnnotationTextCharacter::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationTextCharacter>(),
+                    Box::new(entity),
+                ))
             }
             "ANNOTATION_TEXT_OCCURRENCE" => {
                 let entity = AnnotationTextOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AnnotationTextOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "APEX" => {
                 let entity = Apex::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Apex>(), Box::new(entity)))
             }
             "APPLICATION_CONTEXT" => {
                 let entity = ApplicationContext::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApplicationContext>(),
+                    Box::new(entity),
+                ))
             }
             "APPLICATION_CONTEXT_ELEMENT" => {
                 let entity = ApplicationContextElement::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApplicationContextElement>(),
+                    Box::new(entity),
+                ))
             }
             "APPLICATION_CONTEXT_RELATIONSHIP" => {
                 let entity = ApplicationContextRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApplicationContextRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "APPLICATION_PROTOCOL_DEFINITION" => {
                 let entity = ApplicationProtocolDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApplicationProtocolDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_ACTION_ASSIGNMENT" => {
                 let entity = AppliedActionAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedActionAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_ACTION_REQUEST_ASSIGNMENT" => {
                 let entity = AppliedActionRequestAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedActionRequestAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_APPROVAL_ASSIGNMENT" => {
                 let entity = AppliedApprovalAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedApprovalAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_AREA" => {
                 let entity = AppliedArea::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<AppliedArea>(), Box::new(entity)))
             }
             "APPLIED_CERTIFICATION_ASSIGNMENT" => {
                 let entity = AppliedCertificationAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedCertificationAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_CLASSIFICATION_ASSIGNMENT" => {
                 let entity = AppliedClassificationAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedClassificationAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_CONTRACT_ASSIGNMENT" => {
                 let entity = AppliedContractAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedContractAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_DATE_AND_TIME_ASSIGNMENT" => {
                 let entity = AppliedDateAndTimeAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedDateAndTimeAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_DATE_ASSIGNMENT" => {
                 let entity = AppliedDateAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedDateAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_DOCUMENT_REFERENCE" => {
                 let entity = AppliedDocumentReference::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedDocumentReference>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_DOCUMENT_USAGE_CONSTRAINT_ASSIGNMENT" => {
                 let entity = AppliedDocumentUsageConstraintAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedDocumentUsageConstraintAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_EFFECTIVITY_ASSIGNMENT" => {
                 let entity = AppliedEffectivityAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedEffectivityAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_EVENT_OCCURRENCE_ASSIGNMENT" => {
                 let entity = AppliedEventOccurrenceAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedEventOccurrenceAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_EXTERNAL_IDENTIFICATION_ASSIGNMENT" => {
                 let entity = AppliedExternalIdentificationAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedExternalIdentificationAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_GROUP_ASSIGNMENT" => {
                 let entity = AppliedGroupAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedGroupAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_IDENTIFICATION_ASSIGNMENT" => {
                 let entity = AppliedIdentificationAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedIdentificationAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_INEFFECTIVITY_ASSIGNMENT" => {
                 let entity = AppliedIneffectivityAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedIneffectivityAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_NAME_ASSIGNMENT" => {
                 let entity = AppliedNameAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedNameAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_ORGANIZATION_ASSIGNMENT" => {
                 let entity = AppliedOrganizationAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedOrganizationAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_ORGANIZATIONAL_PROJECT_ASSIGNMENT" => {
                 let entity = AppliedOrganizationalProjectAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedOrganizationalProjectAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_PERSON_AND_ORGANIZATION_ASSIGNMENT" => {
                 let entity = AppliedPersonAndOrganizationAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedPersonAndOrganizationAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_PRESENTED_ITEM" => {
                 let entity = AppliedPresentedItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedPresentedItem>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_SECURITY_CLASSIFICATION_ASSIGNMENT" => {
                 let entity = AppliedSecurityClassificationAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedSecurityClassificationAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPLIED_TIME_INTERVAL_ASSIGNMENT" => {
                 let entity = AppliedTimeIntervalAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AppliedTimeIntervalAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "APPROVAL" => {
                 let entity = Approval::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Approval>(), Box::new(entity)))
             }
             "APPROVAL_DATE_TIME" => {
                 let entity = ApprovalDateTime::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApprovalDateTime>(),
+                    Box::new(entity),
+                ))
             }
             "APPROVAL_PERSON_ORGANIZATION" => {
                 let entity = ApprovalPersonOrganization::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApprovalPersonOrganization>(),
+                    Box::new(entity),
+                ))
             }
             "APPROVAL_RELATIONSHIP" => {
                 let entity = ApprovalRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApprovalRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "APPROVAL_ROLE" => {
                 let entity = ApprovalRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApprovalRole>(),
+                    Box::new(entity),
+                ))
             }
             "APPROVAL_STATUS" => {
                 let entity = ApprovalStatus::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApprovalStatus>(),
+                    Box::new(entity),
+                ))
             }
             "APPROXIMATION_TOLERANCE" => {
                 let entity = ApproximationTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApproximationTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "APPROXIMATION_TOLERANCE_DEVIATION" => {
                 let entity = ApproximationToleranceDeviation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApproximationToleranceDeviation>(),
+                    Box::new(entity),
+                ))
             }
             "APPROXIMATION_TOLERANCE_PARAMETER" => {
                 let entity = ApproximationToleranceParameter::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ApproximationToleranceParameter>(),
+                    Box::new(entity),
+                ))
             }
             "AREA_IN_SET" => {
                 let entity = AreaInSet::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<AreaInSet>(), Box::new(entity)))
             }
             "AREA_MEASURE_WITH_UNIT" => {
                 let entity = AreaMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AreaMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "AREA_UNIT" => {
                 let entity = AreaUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<AreaUnit>(), Box::new(entity)))
             }
             "ASIN_FUNCTION" => {
                 let entity = AsinFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AsinFunction>(),
+                    Box::new(entity),
+                ))
             }
             "ASSEMBLY_COMPONENT_USAGE" => {
                 let entity = AssemblyComponentUsage::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AssemblyComponentUsage>(),
+                    Box::new(entity),
+                ))
             }
             "ASSEMBLY_COMPONENT_USAGE_SUBSTITUTE" => {
                 let entity = AssemblyComponentUsageSubstitute::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AssemblyComponentUsageSubstitute>(),
+                    Box::new(entity),
+                ))
             }
             "ATAN_FUNCTION" => {
                 let entity = AtanFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AtanFunction>(),
+                    Box::new(entity),
+                ))
             }
             "ATTRIBUTE_LANGUAGE_ASSIGNMENT" => {
                 let entity = AttributeLanguageAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AttributeLanguageAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "ATTRIBUTE_VALUE_ROLE" => {
                 let entity = AttributeValueRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<AttributeValueRole>(),
+                    Box::new(entity),
+                ))
             }
             "AXIS1_PLACEMENT" => {
                 let entity = Axis1Placement::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<Axis1Placement>(),
+                    Box::new(entity),
+                ))
             }
             "AXIS2_PLACEMENT_2D" => {
                 let entity = Axis2Placement2d::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<Axis2Placement2d>(),
+                    Box::new(entity),
+                ))
             }
             "AXIS2_PLACEMENT_3D" => {
                 let entity = Axis2Placement3d::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<Axis2Placement3d>(),
+                    Box::new(entity),
+                ))
             }
             "B_SPLINE_CURVE" => {
                 let entity = BSplineCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BSplineCurve>(),
+                    Box::new(entity),
+                ))
             }
             "B_SPLINE_CURVE_WITH_KNOTS" => {
                 let entity = BSplineCurveWithKnots::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BSplineCurveWithKnots>(),
+                    Box::new(entity),
+                ))
             }
             "B_SPLINE_SURFACE" => {
                 let entity = BSplineSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BSplineSurface>(),
+                    Box::new(entity),
+                ))
             }
             "B_SPLINE_SURFACE_WITH_KNOTS" => {
                 let entity = BSplineSurfaceWithKnots::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BSplineSurfaceWithKnots>(),
+                    Box::new(entity),
+                ))
             }
             "BACKGROUND_COLOUR" => {
                 let entity = BackgroundColour::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BackgroundColour>(),
+                    Box::new(entity),
+                ))
             }
             "BARRING_HOLE" => {
                 let entity = BarringHole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<BarringHole>(), Box::new(entity)))
             }
             "BEAD" => {
                 let entity = Bead::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Bead>(), Box::new(entity)))
             }
             "BEAD_END" => {
                 let entity = BeadEnd::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<BeadEnd>(), Box::new(entity)))
             }
             "BEZIER_CURVE" => {
                 let entity = BezierCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<BezierCurve>(), Box::new(entity)))
             }
             "BEZIER_SURFACE" => {
                 let entity = BezierSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BezierSurface>(),
+                    Box::new(entity),
+                ))
             }
             "BLOCK" => {
                 let entity = Block::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Block>(), Box::new(entity)))
             }
             "BOOLEAN_LITERAL" => {
                 let entity = BooleanLiteral::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BooleanLiteral>(),
+                    Box::new(entity),
+                ))
             }
             "BOOLEAN_RESULT" => {
                 let entity = BooleanResult::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BooleanResult>(),
+                    Box::new(entity),
+                ))
             }
             "BOOLEAN_VARIABLE" => {
                 let entity = BooleanVariable::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BooleanVariable>(),
+                    Box::new(entity),
+                ))
             }
             "BOSS" => {
                 let entity = Boss::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Boss>(), Box::new(entity)))
             }
             "BOSS_TOP" => {
                 let entity = BossTop::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<BossTop>(), Box::new(entity)))
             }
             "BOUNDARY_CURVE" => {
                 let entity = BoundaryCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BoundaryCurve>(),
+                    Box::new(entity),
+                ))
             }
             "BOUNDED_CURVE" => {
                 let entity = BoundedCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BoundedCurve>(),
+                    Box::new(entity),
+                ))
             }
             "BOUNDED_PCURVE" => {
                 let entity = BoundedPcurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BoundedPcurve>(),
+                    Box::new(entity),
+                ))
             }
             "BOUNDED_SURFACE" => {
                 let entity = BoundedSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BoundedSurface>(),
+                    Box::new(entity),
+                ))
             }
             "BOUNDED_SURFACE_CURVE" => {
                 let entity = BoundedSurfaceCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BoundedSurfaceCurve>(),
+                    Box::new(entity),
+                ))
             }
             "BOX_DOMAIN" => {
                 let entity = BoxDomain::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<BoxDomain>(), Box::new(entity)))
             }
             "BOXED_HALF_SPACE" => {
                 let entity = BoxedHalfSpace::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BoxedHalfSpace>(),
+                    Box::new(entity),
+                ))
             }
             "BREP_WITH_VOIDS" => {
                 let entity = BrepWithVoids::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<BrepWithVoids>(),
+                    Box::new(entity),
+                ))
             }
             "CALENDAR_DATE" => {
                 let entity = CalendarDate::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CalendarDate>(),
+                    Box::new(entity),
+                ))
             }
             "CAMERA_IMAGE" => {
                 let entity = CameraImage::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<CameraImage>(), Box::new(entity)))
             }
             "CAMERA_IMAGE_2D_WITH_SCALE" => {
                 let entity = CameraImage2dWithScale::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CameraImage2dWithScale>(),
+                    Box::new(entity),
+                ))
             }
             "CAMERA_IMAGE_3D_WITH_SCALE" => {
                 let entity = CameraImage3dWithScale::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CameraImage3dWithScale>(),
+                    Box::new(entity),
+                ))
             }
             "CAMERA_MODEL_D2" => {
                 let entity = CameraModelD2::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CameraModelD2>(),
+                    Box::new(entity),
+                ))
             }
             "CAMERA_MODEL_D3" => {
                 let entity = CameraModelD3::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CameraModelD3>(),
+                    Box::new(entity),
+                ))
             }
             "CAMERA_MODEL_D3_WITH_HLHSR" => {
                 let entity = CameraModelD3WithHlhsr::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CameraModelD3WithHlhsr>(),
+                    Box::new(entity),
+                ))
             }
             "CAMERA_USAGE" => {
                 let entity = CameraUsage::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<CameraUsage>(), Box::new(entity)))
             }
             "CARTESIAN_POINT" => {
                 let entity = CartesianPoint::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CartesianPoint>(),
+                    Box::new(entity),
+                ))
             }
             "CARTESIAN_TRANSFORMATION_OPERATOR" => {
                 let entity = CartesianTransformationOperator::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CartesianTransformationOperator>(),
+                    Box::new(entity),
+                ))
             }
             "CARTESIAN_TRANSFORMATION_OPERATOR_2D" => {
                 let entity = CartesianTransformationOperator2d::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CartesianTransformationOperator2d>(),
+                    Box::new(entity),
+                ))
             }
             "CARTESIAN_TRANSFORMATION_OPERATOR_3D" => {
                 let entity = CartesianTransformationOperator3d::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CartesianTransformationOperator3d>(),
+                    Box::new(entity),
+                ))
             }
             "CELSIUS_TEMPERATURE_MEASURE_WITH_UNIT" => {
                 let entity = CelsiusTemperatureMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CelsiusTemperatureMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "CENTRE_OF_SYMMETRY" => {
                 let entity = CentreOfSymmetry::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CentreOfSymmetry>(),
+                    Box::new(entity),
+                ))
             }
             "CERTIFICATION" => {
                 let entity = Certification::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<Certification>(),
+                    Box::new(entity),
+                ))
             }
             "CERTIFICATION_TYPE" => {
                 let entity = CertificationType::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CertificationType>(),
+                    Box::new(entity),
+                ))
             }
             "CHAMFER" => {
                 let entity = Chamfer::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Chamfer>(), Box::new(entity)))
             }
             "CHAMFER_OFFSET" => {
                 let entity = ChamferOffset::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ChamferOffset>(),
+                    Box::new(entity),
+                ))
             }
             "CHARACTER_GLYPH_SYMBOL" => {
                 let entity = CharacterGlyphSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CharacterGlyphSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "CHARACTERIZED_CLASS" => {
                 let entity = CharacterizedClass::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CharacterizedClass>(),
+                    Box::new(entity),
+                ))
             }
             "CHARACTERIZED_OBJECT" => {
                 let entity = CharacterizedObject::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CharacterizedObject>(),
+                    Box::new(entity),
+                ))
             }
             "CIRCLE" => {
                 let entity = Circle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Circle>(), Box::new(entity)))
             }
             "CIRCULAR_CLOSED_PROFILE" => {
                 let entity = CircularClosedProfile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CircularClosedProfile>(),
+                    Box::new(entity),
+                ))
             }
             "CIRCULAR_PATTERN" => {
                 let entity = CircularPattern::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CircularPattern>(),
+                    Box::new(entity),
+                ))
             }
             "CIRCULAR_RUNOUT_TOLERANCE" => {
                 let entity = CircularRunoutTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CircularRunoutTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "CLASS" => {
                 let entity = Class::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Class>(), Box::new(entity)))
             }
             "CLASS_SYSTEM" => {
                 let entity = ClassSystem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<ClassSystem>(), Box::new(entity)))
             }
             "CLASS_USAGE_EFFECTIVITY_CONTEXT_ASSIGNMENT" => {
                 let entity = ClassUsageEffectivityContextAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ClassUsageEffectivityContextAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "CLASSIFICATION_ROLE" => {
                 let entity = ClassificationRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ClassificationRole>(),
+                    Box::new(entity),
+                ))
             }
             "CLOSED_PATH_PROFILE" => {
                 let entity = ClosedPathProfile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ClosedPathProfile>(),
+                    Box::new(entity),
+                ))
             }
             "CLOSED_SHELL" => {
                 let entity = ClosedShell::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<ClosedShell>(), Box::new(entity)))
             }
             "COAXIALITY_TOLERANCE" => {
                 let entity = CoaxialityTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CoaxialityTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "COLOUR" => {
                 let entity = Colour::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Colour>(), Box::new(entity)))
             }
             "COLOUR_RGB" => {
                 let entity = ColourRgb::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<ColourRgb>(), Box::new(entity)))
             }
             "COLOUR_SPECIFICATION" => {
                 let entity = ColourSpecification::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ColourSpecification>(),
+                    Box::new(entity),
+                ))
             }
             "COMMON_DATUM" => {
                 let entity = CommonDatum::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<CommonDatum>(), Box::new(entity)))
             }
             "COMPARISON_EQUAL" => {
                 let entity = ComparisonEqual::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ComparisonEqual>(),
+                    Box::new(entity),
+                ))
             }
             "COMPARISON_GREATER" => {
                 let entity = ComparisonGreater::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ComparisonGreater>(),
+                    Box::new(entity),
+                ))
             }
             "COMPARISON_GREATER_EQUAL" => {
                 let entity = ComparisonGreaterEqual::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ComparisonGreaterEqual>(),
+                    Box::new(entity),
+                ))
             }
             "COMPARISON_LESS" => {
                 let entity = ComparisonLess::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ComparisonLess>(),
+                    Box::new(entity),
+                ))
             }
             "COMPARISON_LESS_EQUAL" => {
                 let entity = ComparisonLessEqual::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ComparisonLessEqual>(),
+                    Box::new(entity),
+                ))
             }
             "COMPARISON_NOT_EQUAL" => {
                 let entity = ComparisonNotEqual::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ComparisonNotEqual>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOSITE_CURVE" => {
                 let entity = CompositeCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompositeCurve>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOSITE_CURVE_ON_SURFACE" => {
                 let entity = CompositeCurveOnSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompositeCurveOnSurface>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOSITE_CURVE_SEGMENT" => {
                 let entity = CompositeCurveSegment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompositeCurveSegment>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOSITE_HOLE" => {
                 let entity = CompositeHole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompositeHole>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOSITE_SHAPE_ASPECT" => {
                 let entity = CompositeShapeAspect::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompositeShapeAspect>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOSITE_TEXT" => {
                 let entity = CompositeText::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompositeText>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOSITE_TEXT_WITH_ASSOCIATED_CURVES" => {
                 let entity = CompositeTextWithAssociatedCurves::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompositeTextWithAssociatedCurves>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOSITE_TEXT_WITH_BLANKING_BOX" => {
                 let entity = CompositeTextWithBlankingBox::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompositeTextWithBlankingBox>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOSITE_TEXT_WITH_EXTENT" => {
                 let entity = CompositeTextWithExtent::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompositeTextWithExtent>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOUND_FEATURE" => {
                 let entity = CompoundFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompoundFeature>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOUND_REPRESENTATION_ITEM" => {
                 let entity = CompoundRepresentationItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompoundRepresentationItem>(),
+                    Box::new(entity),
+                ))
             }
             "COMPOUND_SHAPE_REPRESENTATION" => {
                 let entity = CompoundShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CompoundShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "CONCAT_EXPRESSION" => {
                 let entity = ConcatExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConcatExpression>(),
+                    Box::new(entity),
+                ))
             }
             "CONCENTRICITY_TOLERANCE" => {
                 let entity = ConcentricityTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConcentricityTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "CONCEPT_FEATURE_OPERATOR" => {
                 let entity = ConceptFeatureOperator::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConceptFeatureOperator>(),
+                    Box::new(entity),
+                ))
             }
             "CONCEPT_FEATURE_RELATIONSHIP" => {
                 let entity = ConceptFeatureRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConceptFeatureRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "CONCEPT_FEATURE_RELATIONSHIP_WITH_CONDITION" => {
                 let entity = ConceptFeatureRelationshipWithCondition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConceptFeatureRelationshipWithCondition>(),
+                    Box::new(entity),
+                ))
             }
             "CONDITIONAL_CONCEPT_FEATURE" => {
                 let entity = ConditionalConceptFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConditionalConceptFeature>(),
+                    Box::new(entity),
+                ))
             }
             "CONFIGURABLE_ITEM" => {
                 let entity = ConfigurableItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConfigurableItem>(),
+                    Box::new(entity),
+                ))
             }
             "CONFIGURATION_DEFINITION" => {
                 let entity = ConfigurationDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConfigurationDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "CONFIGURATION_DESIGN" => {
                 let entity = ConfigurationDesign::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConfigurationDesign>(),
+                    Box::new(entity),
+                ))
             }
             "CONFIGURATION_EFFECTIVITY" => {
                 let entity = ConfigurationEffectivity::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConfigurationEffectivity>(),
+                    Box::new(entity),
+                ))
             }
             "CONFIGURATION_INTERPOLATION" => {
                 let entity = ConfigurationInterpolation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConfigurationInterpolation>(),
+                    Box::new(entity),
+                ))
             }
             "CONFIGURATION_ITEM" => {
                 let entity = ConfigurationItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConfigurationItem>(),
+                    Box::new(entity),
+                ))
             }
             "CONFIGURED_EFFECTIVITY_ASSIGNMENT" => {
                 let entity = ConfiguredEffectivityAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConfiguredEffectivityAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "CONFIGURED_EFFECTIVITY_CONTEXT_ASSIGNMENT" => {
                 let entity = ConfiguredEffectivityContextAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConfiguredEffectivityContextAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "CONIC" => {
                 let entity = Conic::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Conic>(), Box::new(entity)))
             }
             "CONICAL_SURFACE" => {
                 let entity = ConicalSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConicalSurface>(),
+                    Box::new(entity),
+                ))
             }
             "CONNECTED_EDGE_SET" => {
                 let entity = ConnectedEdgeSet::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConnectedEdgeSet>(),
+                    Box::new(entity),
+                ))
             }
             "CONNECTED_FACE_SET" => {
                 let entity = ConnectedFaceSet::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConnectedFaceSet>(),
+                    Box::new(entity),
+                ))
             }
             "CONNECTED_FACE_SUB_SET" => {
                 let entity = ConnectedFaceSubSet::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConnectedFaceSubSet>(),
+                    Box::new(entity),
+                ))
             }
             "CONSTRUCTIVE_GEOMETRY_REPRESENTATION" => {
                 let entity = ConstructiveGeometryRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConstructiveGeometryRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "CONSTRUCTIVE_GEOMETRY_REPRESENTATION_RELATIONSHIP" => {
                 let entity =
                     ConstructiveGeometryRepresentationRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConstructiveGeometryRepresentationRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "CONTACT_RATIO_REPRESENTATION" => {
                 let entity = ContactRatioRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ContactRatioRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "CONTEXT_DEPENDENT_INVISIBILITY" => {
                 let entity = ContextDependentInvisibility::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ContextDependentInvisibility>(),
+                    Box::new(entity),
+                ))
             }
             "CONTEXT_DEPENDENT_OVER_RIDING_STYLED_ITEM" => {
                 let entity = ContextDependentOverRidingStyledItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ContextDependentOverRidingStyledItem>(),
+                    Box::new(entity),
+                ))
             }
             "CONTEXT_DEPENDENT_SHAPE_REPRESENTATION" => {
                 let entity = ContextDependentShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ContextDependentShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "CONTEXT_DEPENDENT_UNIT" => {
                 let entity = ContextDependentUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ContextDependentUnit>(),
+                    Box::new(entity),
+                ))
             }
             "CONTRACT" => {
                 let entity = Contract::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Contract>(), Box::new(entity)))
             }
             "CONTRACT_TYPE" => {
                 let entity = ContractType::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ContractType>(),
+                    Box::new(entity),
+                ))
             }
             "CONVERSION_BASED_UNIT" => {
                 let entity = ConversionBasedUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ConversionBasedUnit>(),
+                    Box::new(entity),
+                ))
             }
             "COORDINATED_UNIVERSAL_TIME_OFFSET" => {
                 let entity = CoordinatedUniversalTimeOffset::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CoordinatedUniversalTimeOffset>(),
+                    Box::new(entity),
+                ))
             }
             "COS_FUNCTION" => {
                 let entity = CosFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<CosFunction>(), Box::new(entity)))
             }
             "CSG_SHAPE_REPRESENTATION" => {
                 let entity = CsgShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CsgShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "CSG_SOLID" => {
                 let entity = CsgSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<CsgSolid>(), Box::new(entity)))
             }
             "CURVE" => {
                 let entity = Curve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Curve>(), Box::new(entity)))
             }
             "CURVE_BOUNDED_SURFACE" => {
                 let entity = CurveBoundedSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CurveBoundedSurface>(),
+                    Box::new(entity),
+                ))
             }
             "CURVE_DIMENSION" => {
                 let entity = CurveDimension::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CurveDimension>(),
+                    Box::new(entity),
+                ))
             }
             "CURVE_REPLICA" => {
                 let entity = CurveReplica::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CurveReplica>(),
+                    Box::new(entity),
+                ))
             }
             "CURVE_STYLE" => {
                 let entity = CurveStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<CurveStyle>(), Box::new(entity)))
             }
             "CURVE_STYLE_FONT" => {
                 let entity = CurveStyleFont::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CurveStyleFont>(),
+                    Box::new(entity),
+                ))
             }
             "CURVE_STYLE_FONT_PATTERN" => {
                 let entity = CurveStyleFontPattern::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CurveStyleFontPattern>(),
+                    Box::new(entity),
+                ))
             }
             "CURVE_STYLE_RENDERING" => {
                 let entity = CurveStyleRendering::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CurveStyleRendering>(),
+                    Box::new(entity),
+                ))
             }
             "CURVE_SWEPT_SOLID_SHAPE_REPRESENTATION" => {
                 let entity = CurveSweptSolidShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CurveSweptSolidShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "CYLINDRICAL_PAIR" => {
                 let entity = CylindricalPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CylindricalPair>(),
+                    Box::new(entity),
+                ))
             }
             "CYLINDRICAL_PAIR_RANGE" => {
                 let entity = CylindricalPairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CylindricalPairRange>(),
+                    Box::new(entity),
+                ))
             }
             "CYLINDRICAL_PAIR_VALUE" => {
                 let entity = CylindricalPairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CylindricalPairValue>(),
+                    Box::new(entity),
+                ))
             }
             "CYLINDRICAL_SURFACE" => {
                 let entity = CylindricalSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CylindricalSurface>(),
+                    Box::new(entity),
+                ))
             }
             "CYLINDRICITY_TOLERANCE" => {
                 let entity = CylindricityTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<CylindricityTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "DATA_ENVIRONMENT" => {
                 let entity = DataEnvironment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DataEnvironment>(),
+                    Box::new(entity),
+                ))
             }
             "DATE" => {
                 let entity = Date::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Date>(), Box::new(entity)))
             }
             "DATE_AND_TIME" => {
                 let entity = DateAndTime::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<DateAndTime>(), Box::new(entity)))
             }
             "DATE_ROLE" => {
                 let entity = DateRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<DateRole>(), Box::new(entity)))
             }
             "DATE_TIME_ROLE" => {
                 let entity = DateTimeRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DateTimeRole>(),
+                    Box::new(entity),
+                ))
             }
             "DATED_EFFECTIVITY" => {
                 let entity = DatedEffectivity::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DatedEffectivity>(),
+                    Box::new(entity),
+                ))
             }
             "DATUM" => {
                 let entity = Datum::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Datum>(), Box::new(entity)))
             }
             "DATUM_FEATURE" => {
                 let entity = DatumFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DatumFeature>(),
+                    Box::new(entity),
+                ))
             }
             "DATUM_FEATURE_CALLOUT" => {
                 let entity = DatumFeatureCallout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DatumFeatureCallout>(),
+                    Box::new(entity),
+                ))
             }
             "DATUM_REFERENCE" => {
                 let entity = DatumReference::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DatumReference>(),
+                    Box::new(entity),
+                ))
             }
             "DATUM_TARGET" => {
                 let entity = DatumTarget::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<DatumTarget>(), Box::new(entity)))
             }
             "DATUM_TARGET_CALLOUT" => {
                 let entity = DatumTargetCallout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DatumTargetCallout>(),
+                    Box::new(entity),
+                ))
             }
             "DEFAULT_TOLERANCE_TABLE" => {
                 let entity = DefaultToleranceTable::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DefaultToleranceTable>(),
+                    Box::new(entity),
+                ))
             }
             "DEFAULT_TOLERANCE_TABLE_CELL" => {
                 let entity = DefaultToleranceTableCell::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DefaultToleranceTableCell>(),
+                    Box::new(entity),
+                ))
             }
             "DEFINED_CHARACTER_GLYPH" => {
                 let entity = DefinedCharacterGlyph::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DefinedCharacterGlyph>(),
+                    Box::new(entity),
+                ))
             }
             "DEFINED_SYMBOL" => {
                 let entity = DefinedSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DefinedSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "DEFINITIONAL_REPRESENTATION" => {
                 let entity = DefinitionalRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DefinitionalRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "DEGENERATE_PCURVE" => {
                 let entity = DegeneratePcurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DegeneratePcurve>(),
+                    Box::new(entity),
+                ))
             }
             "DEGENERATE_TOROIDAL_SURFACE" => {
                 let entity = DegenerateToroidalSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DegenerateToroidalSurface>(),
+                    Box::new(entity),
+                ))
             }
             "DERIVED_SHAPE_ASPECT" => {
                 let entity = DerivedShapeAspect::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DerivedShapeAspect>(),
+                    Box::new(entity),
+                ))
             }
             "DERIVED_UNIT" => {
                 let entity = DerivedUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<DerivedUnit>(), Box::new(entity)))
             }
             "DERIVED_UNIT_ELEMENT" => {
                 let entity = DerivedUnitElement::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DerivedUnitElement>(),
+                    Box::new(entity),
+                ))
             }
             "DERIVED_UNIT_VARIABLE" => {
                 let entity = DerivedUnitVariable::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DerivedUnitVariable>(),
+                    Box::new(entity),
+                ))
             }
             "DESCRIPTION_ATTRIBUTE" => {
                 let entity = DescriptionAttribute::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DescriptionAttribute>(),
+                    Box::new(entity),
+                ))
             }
             "DESCRIPTIVE_REPRESENTATION_ITEM" => {
                 let entity = DescriptiveRepresentationItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DescriptiveRepresentationItem>(),
+                    Box::new(entity),
+                ))
             }
             "DIAMETER_DIMENSION" => {
                 let entity = DiameterDimension::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DiameterDimension>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSION_CALLOUT" => {
                 let entity = DimensionCallout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionCallout>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSION_CALLOUT_COMPONENT_RELATIONSHIP" => {
                 let entity = DimensionCalloutComponentRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionCalloutComponentRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSION_CALLOUT_RELATIONSHIP" => {
                 let entity = DimensionCalloutRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionCalloutRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSION_CURVE" => {
                 let entity = DimensionCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionCurve>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSION_CURVE_DIRECTED_CALLOUT" => {
                 let entity = DimensionCurveDirectedCallout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionCurveDirectedCallout>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSION_CURVE_TERMINATOR" => {
                 let entity = DimensionCurveTerminator::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionCurveTerminator>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSION_PAIR" => {
                 let entity = DimensionPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionPair>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSION_RELATED_TOLERANCE_ZONE_ELEMENT" => {
                 let entity = DimensionRelatedToleranceZoneElement::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionRelatedToleranceZoneElement>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSION_TEXT_ASSOCIATIVITY" => {
                 let entity = DimensionTextAssociativity::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionTextAssociativity>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSIONAL_CHARACTERISTIC_REPRESENTATION" => {
                 let entity = DimensionalCharacteristicRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionalCharacteristicRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSIONAL_EXPONENTS" => {
                 let entity = DimensionalExponents::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionalExponents>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSIONAL_LOCATION" => {
                 let entity = DimensionalLocation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionalLocation>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSIONAL_LOCATION_WITH_PATH" => {
                 let entity = DimensionalLocationWithPath::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionalLocationWithPath>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSIONAL_SIZE" => {
                 let entity = DimensionalSize::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionalSize>(),
+                    Box::new(entity),
+                ))
             }
             "DIMENSIONAL_SIZE_WITH_PATH" => {
                 let entity = DimensionalSizeWithPath::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DimensionalSizeWithPath>(),
+                    Box::new(entity),
+                ))
             }
             "DIRECTED_ACTION" => {
                 let entity = DirectedAction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DirectedAction>(),
+                    Box::new(entity),
+                ))
             }
             "DIRECTED_ANGLE" => {
                 let entity = DirectedAngle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DirectedAngle>(),
+                    Box::new(entity),
+                ))
             }
             "DIRECTED_DIMENSIONAL_LOCATION" => {
                 let entity = DirectedDimensionalLocation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DirectedDimensionalLocation>(),
+                    Box::new(entity),
+                ))
             }
             "DIRECTION" => {
                 let entity = Direction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Direction>(), Box::new(entity)))
             }
             "DIRECTION_SHAPE_REPRESENTATION" => {
                 let entity = DirectionShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DirectionShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "DIV_EXPRESSION" => {
                 let entity = DivExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DivExpression>(),
+                    Box::new(entity),
+                ))
             }
             "DOCUMENT" => {
                 let entity = Document::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Document>(), Box::new(entity)))
             }
             "DOCUMENT_FILE" => {
                 let entity = DocumentFile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DocumentFile>(),
+                    Box::new(entity),
+                ))
             }
             "DOCUMENT_PRODUCT_ASSOCIATION" => {
                 let entity = DocumentProductAssociation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DocumentProductAssociation>(),
+                    Box::new(entity),
+                ))
             }
             "DOCUMENT_PRODUCT_EQUIVALENCE" => {
                 let entity = DocumentProductEquivalence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DocumentProductEquivalence>(),
+                    Box::new(entity),
+                ))
             }
             "DOCUMENT_RELATIONSHIP" => {
                 let entity = DocumentRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DocumentRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "DOCUMENT_REPRESENTATION_TYPE" => {
                 let entity = DocumentRepresentationType::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DocumentRepresentationType>(),
+                    Box::new(entity),
+                ))
             }
             "DOCUMENT_TYPE" => {
                 let entity = DocumentType::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DocumentType>(),
+                    Box::new(entity),
+                ))
             }
             "DOCUMENT_USAGE_CONSTRAINT" => {
                 let entity = DocumentUsageConstraint::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DocumentUsageConstraint>(),
+                    Box::new(entity),
+                ))
             }
             "DOCUMENT_USAGE_ROLE" => {
                 let entity = DocumentUsageRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DocumentUsageRole>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_ANNOTATION_OCCURRENCE" => {
                 let entity = DraughtingAnnotationOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingAnnotationOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_CALLOUT" => {
                 let entity = DraughtingCallout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingCallout>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_CALLOUT_RELATIONSHIP" => {
                 let entity = DraughtingCalloutRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingCalloutRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_ELEMENTS" => {
                 let entity = DraughtingElements::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingElements>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_MODEL" => {
                 let entity = DraughtingModel::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingModel>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_MODEL_ITEM_ASSOCIATION" => {
                 let entity = DraughtingModelItemAssociation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingModelItemAssociation>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_PRE_DEFINED_COLOUR" => {
                 let entity = DraughtingPreDefinedColour::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingPreDefinedColour>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_PRE_DEFINED_CURVE_FONT" => {
                 let entity = DraughtingPreDefinedCurveFont::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingPreDefinedCurveFont>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_PRE_DEFINED_TEXT_FONT" => {
                 let entity = DraughtingPreDefinedTextFont::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingPreDefinedTextFont>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_SPECIFICATION_REFERENCE" => {
                 let entity = DraughtingSpecificationReference::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingSpecificationReference>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_SUBFIGURE_REPRESENTATION" => {
                 let entity = DraughtingSubfigureRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingSubfigureRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_SYMBOL_REPRESENTATION" => {
                 let entity = DraughtingSymbolRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingSymbolRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_TEXT_LITERAL_WITH_DELINEATION" => {
                 let entity = DraughtingTextLiteralWithDelineation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingTextLiteralWithDelineation>(),
+                    Box::new(entity),
+                ))
             }
             "DRAUGHTING_TITLE" => {
                 let entity = DraughtingTitle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DraughtingTitle>(),
+                    Box::new(entity),
+                ))
             }
             "DRAWING_DEFINITION" => {
                 let entity = DrawingDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DrawingDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "DRAWING_REVISION" => {
                 let entity = DrawingRevision::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DrawingRevision>(),
+                    Box::new(entity),
+                ))
             }
             "DRAWING_REVISION_SEQUENCE" => {
                 let entity = DrawingRevisionSequence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DrawingRevisionSequence>(),
+                    Box::new(entity),
+                ))
             }
             "DRAWING_SHEET_LAYOUT" => {
                 let entity = DrawingSheetLayout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DrawingSheetLayout>(),
+                    Box::new(entity),
+                ))
             }
             "DRAWING_SHEET_REVISION" => {
                 let entity = DrawingSheetRevision::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DrawingSheetRevision>(),
+                    Box::new(entity),
+                ))
             }
             "DRAWING_SHEET_REVISION_USAGE" => {
                 let entity = DrawingSheetRevisionUsage::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<DrawingSheetRevisionUsage>(),
+                    Box::new(entity),
+                ))
             }
             "EDGE" => {
                 let entity = Edge::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Edge>(), Box::new(entity)))
             }
             "EDGE_BASED_WIREFRAME_MODEL" => {
                 let entity = EdgeBasedWireframeModel::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<EdgeBasedWireframeModel>(),
+                    Box::new(entity),
+                ))
             }
             "EDGE_BASED_WIREFRAME_SHAPE_REPRESENTATION" => {
                 let entity = EdgeBasedWireframeShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<EdgeBasedWireframeShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "EDGE_CURVE" => {
                 let entity = EdgeCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<EdgeCurve>(), Box::new(entity)))
             }
             "EDGE_LOOP" => {
                 let entity = EdgeLoop::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<EdgeLoop>(), Box::new(entity)))
             }
             "EDGE_ROUND" => {
                 let entity = EdgeRound::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<EdgeRound>(), Box::new(entity)))
             }
             "EFFECTIVITY" => {
                 let entity = Effectivity::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Effectivity>(), Box::new(entity)))
             }
             "EFFECTIVITY_CONTEXT_ROLE" => {
                 let entity = EffectivityContextRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<EffectivityContextRole>(),
+                    Box::new(entity),
+                ))
             }
             "EFFECTIVITY_RELATIONSHIP" => {
                 let entity = EffectivityRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<EffectivityRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "ELECTRIC_CURRENT_MEASURE_WITH_UNIT" => {
                 let entity = ElectricCurrentMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ElectricCurrentMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "ELECTRIC_CURRENT_UNIT" => {
                 let entity = ElectricCurrentUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ElectricCurrentUnit>(),
+                    Box::new(entity),
+                ))
             }
             "ELEMENT_DELIVERY" => {
                 let entity = ElementDelivery::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ElementDelivery>(),
+                    Box::new(entity),
+                ))
             }
             "ELEMENTARY_SURFACE" => {
                 let entity = ElementarySurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ElementarySurface>(),
+                    Box::new(entity),
+                ))
             }
             "ELLIPSE" => {
                 let entity = Ellipse::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Ellipse>(), Box::new(entity)))
             }
             "ENVIRONMENT" => {
                 let entity = Environment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Environment>(), Box::new(entity)))
             }
             "EQUALS_EXPRESSION" => {
                 let entity = EqualsExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<EqualsExpression>(),
+                    Box::new(entity),
+                ))
             }
             "EVALUATED_DEGENERATE_PCURVE" => {
                 let entity = EvaluatedDegeneratePcurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<EvaluatedDegeneratePcurve>(),
+                    Box::new(entity),
+                ))
             }
             "EVENT_OCCURRENCE" => {
                 let entity = EventOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<EventOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "EVENT_OCCURRENCE_CONTEXT_ROLE" => {
                 let entity = EventOccurrenceContextRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<EventOccurrenceContextRole>(),
+                    Box::new(entity),
+                ))
             }
             "EVENT_OCCURRENCE_ROLE" => {
                 let entity = EventOccurrenceRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<EventOccurrenceRole>(),
+                    Box::new(entity),
+                ))
             }
             "EXCLUSIVE_PRODUCT_CONCEPT_FEATURE_CATEGORY" => {
                 let entity = ExclusiveProductConceptFeatureCategory::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExclusiveProductConceptFeatureCategory>(),
+                    Box::new(entity),
+                ))
             }
             "EXECUTED_ACTION" => {
                 let entity = ExecutedAction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExecutedAction>(),
+                    Box::new(entity),
+                ))
             }
             "EXP_FUNCTION" => {
                 let entity = ExpFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<ExpFunction>(), Box::new(entity)))
             }
             "EXPRESSION_CONVERSION_BASED_UNIT" => {
                 let entity = ExpressionConversionBasedUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExpressionConversionBasedUnit>(),
+                    Box::new(entity),
+                ))
             }
             "EXTENSION" => {
                 let entity = Extension::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Extension>(), Box::new(entity)))
             }
             "EXTERNAL_SOURCE" => {
                 let entity = ExternalSource::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternalSource>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_CHARACTER_GLYPH" => {
                 let entity = ExternallyDefinedCharacterGlyph::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedCharacterGlyph>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_CLASS" => {
                 let entity = ExternallyDefinedClass::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedClass>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_CURVE_FONT" => {
                 let entity = ExternallyDefinedCurveFont::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedCurveFont>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_DIMENSION_DEFINITION" => {
                 let entity = ExternallyDefinedDimensionDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedDimensionDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_FEATURE_DEFINITION" => {
                 let entity = ExternallyDefinedFeatureDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedFeatureDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_GENERAL_PROPERTY" => {
                 let entity = ExternallyDefinedGeneralProperty::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedGeneralProperty>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_HATCH_STYLE" => {
                 let entity = ExternallyDefinedHatchStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedHatchStyle>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_ITEM" => {
                 let entity = ExternallyDefinedItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedItem>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_ITEM_RELATIONSHIP" => {
                 let entity = ExternallyDefinedItemRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedItemRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_STYLE" => {
                 let entity = ExternallyDefinedStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedStyle>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_SYMBOL" => {
                 let entity = ExternallyDefinedSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_TEXT_FONT" => {
                 let entity = ExternallyDefinedTextFont::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedTextFont>(),
+                    Box::new(entity),
+                ))
             }
             "EXTERNALLY_DEFINED_TILE_STYLE" => {
                 let entity = ExternallyDefinedTileStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExternallyDefinedTileStyle>(),
+                    Box::new(entity),
+                ))
             }
             "EXTRUDED_AREA_SOLID" => {
                 let entity = ExtrudedAreaSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExtrudedAreaSolid>(),
+                    Box::new(entity),
+                ))
             }
             "EXTRUDED_FACE_SOLID" => {
                 let entity = ExtrudedFaceSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ExtrudedFaceSolid>(),
+                    Box::new(entity),
+                ))
             }
             "FACE" => {
                 let entity = Face::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Face>(), Box::new(entity)))
             }
             "FACE_BASED_SURFACE_MODEL" => {
                 let entity = FaceBasedSurfaceModel::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FaceBasedSurfaceModel>(),
+                    Box::new(entity),
+                ))
             }
             "FACE_BOUND" => {
                 let entity = FaceBound::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<FaceBound>(), Box::new(entity)))
             }
             "FACE_OUTER_BOUND" => {
                 let entity = FaceOuterBound::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FaceOuterBound>(),
+                    Box::new(entity),
+                ))
             }
             "FACE_SHAPE_REPRESENTATION" => {
                 let entity = FaceShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FaceShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "FACE_SURFACE" => {
                 let entity = FaceSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<FaceSurface>(), Box::new(entity)))
             }
             "FACETED_BREP" => {
                 let entity = FacetedBrep::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<FacetedBrep>(), Box::new(entity)))
             }
             "FACETED_BREP_SHAPE_REPRESENTATION" => {
                 let entity = FacetedBrepShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FacetedBrepShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "FEATURE_COMPONENT_DEFINITION" => {
                 let entity = FeatureComponentDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FeatureComponentDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "FEATURE_COMPONENT_RELATIONSHIP" => {
                 let entity = FeatureComponentRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FeatureComponentRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "FEATURE_DEFINITION" => {
                 let entity = FeatureDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FeatureDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "FEATURE_IN_PANEL" => {
                 let entity = FeatureInPanel::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FeatureInPanel>(),
+                    Box::new(entity),
+                ))
             }
             "FEATURE_PATTERN" => {
                 let entity = FeaturePattern::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FeaturePattern>(),
+                    Box::new(entity),
+                ))
             }
             "FEATURED_SHAPE" => {
                 let entity = FeaturedShape::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FeaturedShape>(),
+                    Box::new(entity),
+                ))
             }
             "FILL_AREA_STYLE" => {
                 let entity = FillAreaStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FillAreaStyle>(),
+                    Box::new(entity),
+                ))
             }
             "FILL_AREA_STYLE_COLOUR" => {
                 let entity = FillAreaStyleColour::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FillAreaStyleColour>(),
+                    Box::new(entity),
+                ))
             }
             "FILL_AREA_STYLE_HATCHING" => {
                 let entity = FillAreaStyleHatching::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FillAreaStyleHatching>(),
+                    Box::new(entity),
+                ))
             }
             "FILL_AREA_STYLE_TILE_SYMBOL_WITH_STYLE" => {
                 let entity = FillAreaStyleTileSymbolWithStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FillAreaStyleTileSymbolWithStyle>(),
+                    Box::new(entity),
+                ))
             }
             "FILL_AREA_STYLE_TILES" => {
                 let entity = FillAreaStyleTiles::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FillAreaStyleTiles>(),
+                    Box::new(entity),
+                ))
             }
             "FILLET" => {
                 let entity = Fillet::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Fillet>(), Box::new(entity)))
             }
             "FLATNESS_TOLERANCE" => {
                 let entity = FlatnessTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FlatnessTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "FORMAT_FUNCTION" => {
                 let entity = FormatFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FormatFunction>(),
+                    Box::new(entity),
+                ))
             }
             "FOUNDED_ITEM" => {
                 let entity = FoundedItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<FoundedItem>(), Box::new(entity)))
             }
             "FOUNDED_KINEMATIC_PATH" => {
                 let entity = FoundedKinematicPath::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FoundedKinematicPath>(),
+                    Box::new(entity),
+                ))
             }
             "FULLY_CONSTRAINED_PAIR" => {
                 let entity = FullyConstrainedPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FullyConstrainedPair>(),
+                    Box::new(entity),
+                ))
             }
             "FUNCTIONALLY_DEFINED_TRANSFORMATION" => {
                 let entity = FunctionallyDefinedTransformation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<FunctionallyDefinedTransformation>(),
+                    Box::new(entity),
+                ))
             }
             "GEAR_PAIR" => {
                 let entity = GearPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<GearPair>(), Box::new(entity)))
             }
             "GEAR_PAIR_RANGE" => {
                 let entity = GearPairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GearPairRange>(),
+                    Box::new(entity),
+                ))
             }
             "GEAR_PAIR_VALUE" => {
                 let entity = GearPairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GearPairValue>(),
+                    Box::new(entity),
+                ))
             }
             "GENERAL_FEATURE" => {
                 let entity = GeneralFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeneralFeature>(),
+                    Box::new(entity),
+                ))
             }
             "GENERAL_MATERIAL_PROPERTY" => {
                 let entity = GeneralMaterialProperty::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeneralMaterialProperty>(),
+                    Box::new(entity),
+                ))
             }
             "GENERAL_PROPERTY" => {
                 let entity = GeneralProperty::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeneralProperty>(),
+                    Box::new(entity),
+                ))
             }
             "GENERAL_PROPERTY_ASSOCIATION" => {
                 let entity = GeneralPropertyAssociation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeneralPropertyAssociation>(),
+                    Box::new(entity),
+                ))
             }
             "GENERAL_PROPERTY_RELATIONSHIP" => {
                 let entity = GeneralPropertyRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeneralPropertyRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_ALIGNMENT" => {
                 let entity = GeometricAlignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricAlignment>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_CURVE_SET" => {
                 let entity = GeometricCurveSet::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricCurveSet>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_INTERSECTION" => {
                 let entity = GeometricIntersection::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricIntersection>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_ITEM_SPECIFIC_USAGE" => {
                 let entity = GeometricItemSpecificUsage::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricItemSpecificUsage>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_REPRESENTATION_CONTEXT" => {
                 let entity = GeometricRepresentationContext::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricRepresentationContext>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_REPRESENTATION_ITEM" => {
                 let entity = GeometricRepresentationItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricRepresentationItem>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_SET" => {
                 let entity = GeometricSet::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricSet>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_TOLERANCE" => {
                 let entity = GeometricTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_TOLERANCE_RELATIONSHIP" => {
                 let entity = GeometricToleranceRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricToleranceRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_TOLERANCE_WITH_DATUM_REFERENCE" => {
                 let entity = GeometricToleranceWithDatumReference::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricToleranceWithDatumReference>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRIC_TOLERANCE_WITH_DEFINED_UNIT" => {
                 let entity = GeometricToleranceWithDefinedUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricToleranceWithDefinedUnit>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRICAL_TOLERANCE_CALLOUT" => {
                 let entity = GeometricalToleranceCallout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricalToleranceCallout>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRICALLY_BOUNDED_2D_WIREFRAME_REPRESENTATION" => {
                 let entity = GeometricallyBounded2dWireframeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricallyBounded2dWireframeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRICALLY_BOUNDED_SURFACE_SHAPE_REPRESENTATION" => {
                 let entity =
                     GeometricallyBoundedSurfaceShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricallyBoundedSurfaceShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "GEOMETRICALLY_BOUNDED_WIREFRAME_SHAPE_REPRESENTATION" => {
                 let entity =
                     GeometricallyBoundedWireframeShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GeometricallyBoundedWireframeShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "GLOBAL_UNCERTAINTY_ASSIGNED_CONTEXT" => {
                 let entity = GlobalUncertaintyAssignedContext::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GlobalUncertaintyAssignedContext>(),
+                    Box::new(entity),
+                ))
             }
             "GLOBAL_UNIT_ASSIGNED_CONTEXT" => {
                 let entity = GlobalUnitAssignedContext::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GlobalUnitAssignedContext>(),
+                    Box::new(entity),
+                ))
             }
             "GROUP" => {
                 let entity = Group::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Group>(), Box::new(entity)))
             }
             "GROUP_RELATIONSHIP" => {
                 let entity = GroupRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<GroupRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "HALF_SPACE_SOLID" => {
                 let entity = HalfSpaceSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<HalfSpaceSolid>(),
+                    Box::new(entity),
+                ))
             }
             "HARDNESS_REPRESENTATION" => {
                 let entity = HardnessRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<HardnessRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "HIDDEN_ELEMENT_OVER_RIDING_STYLED_ITEM" => {
                 let entity = HiddenElementOverRidingStyledItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<HiddenElementOverRidingStyledItem>(),
+                    Box::new(entity),
+                ))
             }
             "HOLE_BOTTOM" => {
                 let entity = HoleBottom::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<HoleBottom>(), Box::new(entity)))
             }
             "HOLE_IN_PANEL" => {
                 let entity = HoleInPanel::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<HoleInPanel>(), Box::new(entity)))
             }
             "HOMOKINETIC_PAIR" => {
                 let entity = HomokineticPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<HomokineticPair>(),
+                    Box::new(entity),
+                ))
             }
             "HYPERBOLA" => {
                 let entity = Hyperbola::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Hyperbola>(), Box::new(entity)))
             }
             "ID_ATTRIBUTE" => {
                 let entity = IdAttribute::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<IdAttribute>(), Box::new(entity)))
             }
             "IDENTIFICATION_ROLE" => {
                 let entity = IdentificationRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<IdentificationRole>(),
+                    Box::new(entity),
+                ))
             }
             "INCLUSION_PRODUCT_CONCEPT_FEATURE" => {
                 let entity = InclusionProductConceptFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<InclusionProductConceptFeature>(),
+                    Box::new(entity),
+                ))
             }
             "INDEX_EXPRESSION" => {
                 let entity = IndexExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<IndexExpression>(),
+                    Box::new(entity),
+                ))
             }
             "INITIAL_STATE" => {
                 let entity = InitialState::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<InitialState>(),
+                    Box::new(entity),
+                ))
             }
             "INSTANCED_FEATURE" => {
                 let entity = InstancedFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<InstancedFeature>(),
+                    Box::new(entity),
+                ))
             }
             "INT_LITERAL" => {
                 let entity = IntLiteral::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<IntLiteral>(), Box::new(entity)))
             }
             "INT_NUMERIC_VARIABLE" => {
                 let entity = IntNumericVariable::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<IntNumericVariable>(),
+                    Box::new(entity),
+                ))
             }
             "INT_VALUE_FUNCTION" => {
                 let entity = IntValueFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<IntValueFunction>(),
+                    Box::new(entity),
+                ))
             }
             "INTERPOLATED_CONFIGURATION_SEQUENCE" => {
                 let entity = InterpolatedConfigurationSequence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<InterpolatedConfigurationSequence>(),
+                    Box::new(entity),
+                ))
             }
             "INTERSECTION_CURVE" => {
                 let entity = IntersectionCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<IntersectionCurve>(),
+                    Box::new(entity),
+                ))
             }
             "INTERVAL_EXPRESSION" => {
                 let entity = IntervalExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<IntervalExpression>(),
+                    Box::new(entity),
+                ))
             }
             "INVISIBILITY" => {
                 let entity = Invisibility::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<Invisibility>(),
+                    Box::new(entity),
+                ))
             }
             "ITEM_DEFINED_TRANSFORMATION" => {
                 let entity = ItemDefinedTransformation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ItemDefinedTransformation>(),
+                    Box::new(entity),
+                ))
             }
             "ITEM_IDENTIFIED_REPRESENTATION_USAGE" => {
                 let entity = ItemIdentifiedRepresentationUsage::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ItemIdentifiedRepresentationUsage>(),
+                    Box::new(entity),
+                ))
             }
             "JOGGLE" => {
                 let entity = Joggle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Joggle>(), Box::new(entity)))
             }
             "JOGGLE_TERMINATION" => {
                 let entity = JoggleTermination::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<JoggleTermination>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_ANALYSIS_CONSISTENCY" => {
                 let entity = KinematicAnalysisConsistency::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicAnalysisConsistency>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_ANALYSIS_RESULT" => {
                 let entity = KinematicAnalysisResult::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicAnalysisResult>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_CONTROL" => {
                 let entity = KinematicControl::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicControl>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_FRAME_BACKGROUND_REPRESENTATION" => {
                 let entity = KinematicFrameBackgroundRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicFrameBackgroundRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_FRAME_BACKGROUND_REPRESENTATION_ASSOCIATION" => {
                 let entity =
                     KinematicFrameBackgroundRepresentationAssociation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicFrameBackgroundRepresentationAssociation>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_FRAME_BASED_TRANSFORMATION" => {
                 let entity = KinematicFrameBasedTransformation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicFrameBasedTransformation>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_GROUND_REPRESENTATION" => {
                 let entity = KinematicGroundRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicGroundRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_JOINT" => {
                 let entity = KinematicJoint::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicJoint>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_LINK" => {
                 let entity = KinematicLink::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicLink>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_LINK_REPRESENTATION" => {
                 let entity = KinematicLinkRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicLinkRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_LINK_REPRESENTATION_ASSOCIATION" => {
                 let entity = KinematicLinkRepresentationAssociation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicLinkRepresentationAssociation>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_LINK_REPRESENTATION_RELATION" => {
                 let entity = KinematicLinkRepresentationRelation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicLinkRepresentationRelation>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_PAIR" => {
                 let entity = KinematicPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicPair>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_PATH" => {
                 let entity = KinematicPath::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicPath>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_PROPERTY_DEFINITION" => {
                 let entity = KinematicPropertyDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicPropertyDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_PROPERTY_REPRESENTATION_RELATION" => {
                 let entity = KinematicPropertyRepresentationRelation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicPropertyRepresentationRelation>(),
+                    Box::new(entity),
+                ))
             }
             "KINEMATIC_STRUCTURE" => {
                 let entity = KinematicStructure::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<KinematicStructure>(),
+                    Box::new(entity),
+                ))
             }
             "KNOWN_SOURCE" => {
                 let entity = KnownSource::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<KnownSource>(), Box::new(entity)))
             }
             "LANGUAGE" => {
                 let entity = Language::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Language>(), Box::new(entity)))
             }
             "LANGUAGE_ASSIGNMENT" => {
                 let entity = LanguageAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LanguageAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "LEADER_CURVE" => {
                 let entity = LeaderCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<LeaderCurve>(), Box::new(entity)))
             }
             "LEADER_DIRECTED_CALLOUT" => {
                 let entity = LeaderDirectedCallout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LeaderDirectedCallout>(),
+                    Box::new(entity),
+                ))
             }
             "LEADER_DIRECTED_DIMENSION" => {
                 let entity = LeaderDirectedDimension::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LeaderDirectedDimension>(),
+                    Box::new(entity),
+                ))
             }
             "LEADER_TERMINATOR" => {
                 let entity = LeaderTerminator::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LeaderTerminator>(),
+                    Box::new(entity),
+                ))
             }
             "LENGTH_FUNCTION" => {
                 let entity = LengthFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LengthFunction>(),
+                    Box::new(entity),
+                ))
             }
             "LENGTH_MEASURE_WITH_UNIT" => {
                 let entity = LengthMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LengthMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "LENGTH_UNIT" => {
                 let entity = LengthUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<LengthUnit>(), Box::new(entity)))
             }
             "LIGHT_SOURCE" => {
                 let entity = LightSource::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<LightSource>(), Box::new(entity)))
             }
             "LIGHT_SOURCE_AMBIENT" => {
                 let entity = LightSourceAmbient::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LightSourceAmbient>(),
+                    Box::new(entity),
+                ))
             }
             "LIGHT_SOURCE_DIRECTIONAL" => {
                 let entity = LightSourceDirectional::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LightSourceDirectional>(),
+                    Box::new(entity),
+                ))
             }
             "LIGHT_SOURCE_POSITIONAL" => {
                 let entity = LightSourcePositional::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LightSourcePositional>(),
+                    Box::new(entity),
+                ))
             }
             "LIGHT_SOURCE_SPOT" => {
                 let entity = LightSourceSpot::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LightSourceSpot>(),
+                    Box::new(entity),
+                ))
             }
             "LIKE_EXPRESSION" => {
                 let entity = LikeExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LikeExpression>(),
+                    Box::new(entity),
+                ))
             }
             "LIMITS_AND_FITS" => {
                 let entity = LimitsAndFits::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LimitsAndFits>(),
+                    Box::new(entity),
+                ))
             }
             "LINE" => {
                 let entity = Line::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Line>(), Box::new(entity)))
             }
             "LINE_PROFILE_TOLERANCE" => {
                 let entity = LineProfileTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LineProfileTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "LINEAR_DIMENSION" => {
                 let entity = LinearDimension::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LinearDimension>(),
+                    Box::new(entity),
+                ))
             }
             "LOCAL_TIME" => {
                 let entity = LocalTime::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<LocalTime>(), Box::new(entity)))
             }
             "LOCATION_SHAPE_REPRESENTATION" => {
                 let entity = LocationShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LocationShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "LOCATOR" => {
                 let entity = Locator::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Locator>(), Box::new(entity)))
             }
             "LOG10_FUNCTION" => {
                 let entity = Log10Function::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<Log10Function>(),
+                    Box::new(entity),
+                ))
             }
             "LOG2_FUNCTION" => {
                 let entity = Log2Function::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<Log2Function>(),
+                    Box::new(entity),
+                ))
             }
             "LOG_FUNCTION" => {
                 let entity = LogFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<LogFunction>(), Box::new(entity)))
             }
             "LOOP" => {
                 let entity = Loop::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Loop>(), Box::new(entity)))
             }
             "LOT_EFFECTIVITY" => {
                 let entity = LotEffectivity::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LotEffectivity>(),
+                    Box::new(entity),
+                ))
             }
             "LUMINOUS_INTENSITY_MEASURE_WITH_UNIT" => {
                 let entity = LuminousIntensityMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LuminousIntensityMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "LUMINOUS_INTENSITY_UNIT" => {
                 let entity = LuminousIntensityUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<LuminousIntensityUnit>(),
+                    Box::new(entity),
+                ))
             }
             "MAKE_FROM_USAGE_OPTION" => {
                 let entity = MakeFromUsageOption::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MakeFromUsageOption>(),
+                    Box::new(entity),
+                ))
             }
             "MANIFOLD_SOLID_BREP" => {
                 let entity = ManifoldSolidBrep::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ManifoldSolidBrep>(),
+                    Box::new(entity),
+                ))
             }
             "MANIFOLD_SUBSURFACE_SHAPE_REPRESENTATION" => {
                 let entity = ManifoldSubsurfaceShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ManifoldSubsurfaceShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "MANIFOLD_SURFACE_SHAPE_REPRESENTATION" => {
                 let entity = ManifoldSurfaceShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ManifoldSurfaceShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "MAPPED_ITEM" => {
                 let entity = MappedItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<MappedItem>(), Box::new(entity)))
             }
             "MASS_MEASURE_WITH_UNIT" => {
                 let entity = MassMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MassMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "MASS_UNIT" => {
                 let entity = MassUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<MassUnit>(), Box::new(entity)))
             }
             "MATERIAL_DESIGNATION" => {
                 let entity = MaterialDesignation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MaterialDesignation>(),
+                    Box::new(entity),
+                ))
             }
             "MATERIAL_DESIGNATION_CHARACTERIZATION" => {
                 let entity = MaterialDesignationCharacterization::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MaterialDesignationCharacterization>(),
+                    Box::new(entity),
+                ))
             }
             "MATERIAL_PROPERTY" => {
                 let entity = MaterialProperty::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MaterialProperty>(),
+                    Box::new(entity),
+                ))
             }
             "MATERIAL_PROPERTY_REPRESENTATION" => {
                 let entity = MaterialPropertyRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MaterialPropertyRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "MAXIMUM_FUNCTION" => {
                 let entity = MaximumFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MaximumFunction>(),
+                    Box::new(entity),
+                ))
             }
             "MEASURE_QUALIFICATION" => {
                 let entity = MeasureQualification::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MeasureQualification>(),
+                    Box::new(entity),
+                ))
             }
             "MEASURE_REPRESENTATION_ITEM" => {
                 let entity = MeasureRepresentationItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MeasureRepresentationItem>(),
+                    Box::new(entity),
+                ))
             }
             "MEASURE_WITH_UNIT" => {
                 let entity = MeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "MECHANICAL_DESIGN_GEOMETRIC_PRESENTATION_AREA" => {
                 let entity = MechanicalDesignGeometricPresentationArea::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MechanicalDesignGeometricPresentationArea>(),
+                    Box::new(entity),
+                ))
             }
             "MECHANICAL_DESIGN_GEOMETRIC_PRESENTATION_REPRESENTATION" => {
                 let entity =
                     MechanicalDesignGeometricPresentationRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MechanicalDesignGeometricPresentationRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "MECHANISM" => {
                 let entity = Mechanism::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Mechanism>(), Box::new(entity)))
             }
             "MECHANISM_BASE_PLACEMENT" => {
                 let entity = MechanismBasePlacement::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MechanismBasePlacement>(),
+                    Box::new(entity),
+                ))
             }
             "MINIMUM_FUNCTION" => {
                 let entity = MinimumFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MinimumFunction>(),
+                    Box::new(entity),
+                ))
             }
             "MINUS_EXPRESSION" => {
                 let entity = MinusExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MinusExpression>(),
+                    Box::new(entity),
+                ))
             }
             "MINUS_FUNCTION" => {
                 let entity = MinusFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MinusFunction>(),
+                    Box::new(entity),
+                ))
             }
             "MOD_EXPRESSION" => {
                 let entity = ModExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ModExpression>(),
+                    Box::new(entity),
+                ))
             }
             "MODIFIED_GEOMETRIC_TOLERANCE" => {
                 let entity = ModifiedGeometricTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ModifiedGeometricTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "MODIFIED_PATTERN" => {
                 let entity = ModifiedPattern::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ModifiedPattern>(),
+                    Box::new(entity),
+                ))
             }
             "MOMENTS_OF_INERTIA_REPRESENTATION" => {
                 let entity = MomentsOfInertiaRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MomentsOfInertiaRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "MOTION_LINK_RELATIONSHIP" => {
                 let entity = MotionLinkRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MotionLinkRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "MULT_EXPRESSION" => {
                 let entity = MultExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MultExpression>(),
+                    Box::new(entity),
+                ))
             }
             "MULTI_LANGUAGE_ATTRIBUTE_ASSIGNMENT" => {
                 let entity = MultiLanguageAttributeAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<MultiLanguageAttributeAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "NAME_ATTRIBUTE" => {
                 let entity = NameAttribute::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<NameAttribute>(),
+                    Box::new(entity),
+                ))
             }
             "NAMED_UNIT" => {
                 let entity = NamedUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<NamedUnit>(), Box::new(entity)))
             }
             "NAMED_UNIT_VARIABLE" => {
                 let entity = NamedUnitVariable::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<NamedUnitVariable>(),
+                    Box::new(entity),
+                ))
             }
             "NEXT_ASSEMBLY_USAGE_OCCURRENCE" => {
                 let entity = NextAssemblyUsageOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<NextAssemblyUsageOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "NGON_CLOSED_PROFILE" => {
                 let entity = NgonClosedProfile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<NgonClosedProfile>(),
+                    Box::new(entity),
+                ))
             }
             "NON_MANIFOLD_SURFACE_SHAPE_REPRESENTATION" => {
                 let entity = NonManifoldSurfaceShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<NonManifoldSurfaceShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "NOT_EXPRESSION" => {
                 let entity = NotExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<NotExpression>(),
+                    Box::new(entity),
+                ))
             }
             "NUMERIC_VARIABLE" => {
                 let entity = NumericVariable::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<NumericVariable>(),
+                    Box::new(entity),
+                ))
             }
             "OBJECT_ROLE" => {
                 let entity = ObjectRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<ObjectRole>(), Box::new(entity)))
             }
             "ODD_FUNCTION" => {
                 let entity = OddFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<OddFunction>(), Box::new(entity)))
             }
             "OFFSET_CURVE_2D" => {
                 let entity = OffsetCurve2d::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OffsetCurve2d>(),
+                    Box::new(entity),
+                ))
             }
             "OFFSET_CURVE_3D" => {
                 let entity = OffsetCurve3d::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OffsetCurve3d>(),
+                    Box::new(entity),
+                ))
             }
             "OFFSET_SURFACE" => {
                 let entity = OffsetSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OffsetSurface>(),
+                    Box::new(entity),
+                ))
             }
             "ONE_DIRECTION_REPEAT_FACTOR" => {
                 let entity = OneDirectionRepeatFactor::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OneDirectionRepeatFactor>(),
+                    Box::new(entity),
+                ))
             }
             "OPEN_PATH_PROFILE" => {
                 let entity = OpenPathProfile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OpenPathProfile>(),
+                    Box::new(entity),
+                ))
             }
             "OPEN_SHELL" => {
                 let entity = OpenShell::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<OpenShell>(), Box::new(entity)))
             }
             "OR_EXPRESSION" => {
                 let entity = OrExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrExpression>(),
+                    Box::new(entity),
+                ))
             }
             "ORDINATE_DIMENSION" => {
                 let entity = OrdinateDimension::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrdinateDimension>(),
+                    Box::new(entity),
+                ))
             }
             "ORGANIZATION" => {
                 let entity = Organization::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<Organization>(),
+                    Box::new(entity),
+                ))
             }
             "ORGANIZATION_RELATIONSHIP" => {
                 let entity = OrganizationRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrganizationRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "ORGANIZATION_ROLE" => {
                 let entity = OrganizationRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrganizationRole>(),
+                    Box::new(entity),
+                ))
             }
             "ORGANIZATIONAL_ADDRESS" => {
                 let entity = OrganizationalAddress::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrganizationalAddress>(),
+                    Box::new(entity),
+                ))
             }
             "ORGANIZATIONAL_PROJECT" => {
                 let entity = OrganizationalProject::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrganizationalProject>(),
+                    Box::new(entity),
+                ))
             }
             "ORGANIZATIONAL_PROJECT_RELATIONSHIP" => {
                 let entity = OrganizationalProjectRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrganizationalProjectRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "ORGANIZATIONAL_PROJECT_ROLE" => {
                 let entity = OrganizationalProjectRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrganizationalProjectRole>(),
+                    Box::new(entity),
+                ))
             }
             "ORIENTED_CLOSED_SHELL" => {
                 let entity = OrientedClosedShell::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrientedClosedShell>(),
+                    Box::new(entity),
+                ))
             }
             "ORIENTED_EDGE" => {
                 let entity = OrientedEdge::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrientedEdge>(),
+                    Box::new(entity),
+                ))
             }
             "ORIENTED_FACE" => {
                 let entity = OrientedFace::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrientedFace>(),
+                    Box::new(entity),
+                ))
             }
             "ORIENTED_OPEN_SHELL" => {
                 let entity = OrientedOpenShell::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrientedOpenShell>(),
+                    Box::new(entity),
+                ))
             }
             "ORIENTED_PATH" => {
                 let entity = OrientedPath::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrientedPath>(),
+                    Box::new(entity),
+                ))
             }
             "ORIENTED_SURFACE" => {
                 let entity = OrientedSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OrientedSurface>(),
+                    Box::new(entity),
+                ))
             }
             "OUTER_BOUNDARY_CURVE" => {
                 let entity = OuterBoundaryCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OuterBoundaryCurve>(),
+                    Box::new(entity),
+                ))
             }
             "OVER_RIDING_STYLED_ITEM" => {
                 let entity = OverRidingStyledItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<OverRidingStyledItem>(),
+                    Box::new(entity),
+                ))
             }
             "PACKAGE_PRODUCT_CONCEPT_FEATURE" => {
                 let entity = PackageProductConceptFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PackageProductConceptFeature>(),
+                    Box::new(entity),
+                ))
             }
             "PAIR_ACTUATOR" => {
                 let entity = PairActuator::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PairActuator>(),
+                    Box::new(entity),
+                ))
             }
             "PAIR_VALUE" => {
                 let entity = PairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<PairValue>(), Box::new(entity)))
             }
             "PARABOLA" => {
                 let entity = Parabola::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Parabola>(), Box::new(entity)))
             }
             "PARALLEL_OFFSET" => {
                 let entity = ParallelOffset::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ParallelOffset>(),
+                    Box::new(entity),
+                ))
             }
             "PARALLELISM_TOLERANCE" => {
                 let entity = ParallelismTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ParallelismTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "PARAMETRIC_REPRESENTATION_CONTEXT" => {
                 let entity = ParametricRepresentationContext::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ParametricRepresentationContext>(),
+                    Box::new(entity),
+                ))
             }
             "PARTIAL_CIRCULAR_PROFILE" => {
                 let entity = PartialCircularProfile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PartialCircularProfile>(),
+                    Box::new(entity),
+                ))
             }
             "PATH" => {
                 let entity = Path::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Path>(), Box::new(entity)))
             }
             "PATH_FEATURE_COMPONENT" => {
                 let entity = PathFeatureComponent::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PathFeatureComponent>(),
+                    Box::new(entity),
+                ))
             }
             "PATH_SHAPE_REPRESENTATION" => {
                 let entity = PathShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PathShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "PATTERN_OFFSET_MEMBERSHIP" => {
                 let entity = PatternOffsetMembership::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PatternOffsetMembership>(),
+                    Box::new(entity),
+                ))
             }
             "PATTERN_OMIT_MEMBERSHIP" => {
                 let entity = PatternOmitMembership::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PatternOmitMembership>(),
+                    Box::new(entity),
+                ))
             }
             "PCURVE" => {
                 let entity = Pcurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Pcurve>(), Box::new(entity)))
             }
             "PERPENDICULAR_TO" => {
                 let entity = PerpendicularTo::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PerpendicularTo>(),
+                    Box::new(entity),
+                ))
             }
             "PERPENDICULARITY_TOLERANCE" => {
                 let entity = PerpendicularityTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PerpendicularityTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "PERSON" => {
                 let entity = Person::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Person>(), Box::new(entity)))
             }
             "PERSON_AND_ORGANIZATION" => {
                 let entity = PersonAndOrganization::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PersonAndOrganization>(),
+                    Box::new(entity),
+                ))
             }
             "PERSON_AND_ORGANIZATION_ADDRESS" => {
                 let entity = PersonAndOrganizationAddress::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PersonAndOrganizationAddress>(),
+                    Box::new(entity),
+                ))
             }
             "PERSON_AND_ORGANIZATION_ROLE" => {
                 let entity = PersonAndOrganizationRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PersonAndOrganizationRole>(),
+                    Box::new(entity),
+                ))
             }
             "PERSONAL_ADDRESS" => {
                 let entity = PersonalAddress::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PersonalAddress>(),
+                    Box::new(entity),
+                ))
             }
             "PHYSICALLY_MODELLED_PRODUCT_DEFINITION" => {
                 let entity = PhysicallyModelledProductDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PhysicallyModelledProductDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "PLACED_DATUM_TARGET_FEATURE" => {
                 let entity = PlacedDatumTargetFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlacedDatumTargetFeature>(),
+                    Box::new(entity),
+                ))
             }
             "PLACED_FEATURE" => {
                 let entity = PlacedFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlacedFeature>(),
+                    Box::new(entity),
+                ))
             }
             "PLACEMENT" => {
                 let entity = Placement::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Placement>(), Box::new(entity)))
             }
             "PLANAR_BOX" => {
                 let entity = PlanarBox::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<PlanarBox>(), Box::new(entity)))
             }
             "PLANAR_CURVE_PAIR" => {
                 let entity = PlanarCurvePair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlanarCurvePair>(),
+                    Box::new(entity),
+                ))
             }
             "PLANAR_CURVE_PAIR_RANGE" => {
                 let entity = PlanarCurvePairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlanarCurvePairRange>(),
+                    Box::new(entity),
+                ))
             }
             "PLANAR_EXTENT" => {
                 let entity = PlanarExtent::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlanarExtent>(),
+                    Box::new(entity),
+                ))
             }
             "PLANAR_PAIR" => {
                 let entity = PlanarPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<PlanarPair>(), Box::new(entity)))
             }
             "PLANAR_PAIR_RANGE" => {
                 let entity = PlanarPairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlanarPairRange>(),
+                    Box::new(entity),
+                ))
             }
             "PLANAR_PAIR_VALUE" => {
                 let entity = PlanarPairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlanarPairValue>(),
+                    Box::new(entity),
+                ))
             }
             "PLANAR_SHAPE_REPRESENTATION" => {
                 let entity = PlanarShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlanarShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "PLANE" => {
                 let entity = Plane::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Plane>(), Box::new(entity)))
             }
             "PLANE_ANGLE_MEASURE_WITH_UNIT" => {
                 let entity = PlaneAngleMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlaneAngleMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "PLANE_ANGLE_UNIT" => {
                 let entity = PlaneAngleUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlaneAngleUnit>(),
+                    Box::new(entity),
+                ))
             }
             "PLUS_EXPRESSION" => {
                 let entity = PlusExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlusExpression>(),
+                    Box::new(entity),
+                ))
             }
             "PLUS_MINUS_TOLERANCE" => {
                 let entity = PlusMinusTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PlusMinusTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "POCKET" => {
                 let entity = Pocket::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Pocket>(), Box::new(entity)))
             }
             "POCKET_BOTTOM" => {
                 let entity = PocketBottom::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PocketBottom>(),
+                    Box::new(entity),
+                ))
             }
             "POINT" => {
                 let entity = Point::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Point>(), Box::new(entity)))
             }
             "POINT_ON_CURVE" => {
                 let entity = PointOnCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PointOnCurve>(),
+                    Box::new(entity),
+                ))
             }
             "POINT_ON_PLANAR_CURVE_PAIR" => {
                 let entity = PointOnPlanarCurvePair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PointOnPlanarCurvePair>(),
+                    Box::new(entity),
+                ))
             }
             "POINT_ON_PLANAR_CURVE_PAIR_RANGE" => {
                 let entity = PointOnPlanarCurvePairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PointOnPlanarCurvePairRange>(),
+                    Box::new(entity),
+                ))
             }
             "POINT_ON_PLANAR_CURVE_PAIR_VALUE" => {
                 let entity = PointOnPlanarCurvePairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PointOnPlanarCurvePairValue>(),
+                    Box::new(entity),
+                ))
             }
             "POINT_ON_SURFACE" => {
                 let entity = PointOnSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PointOnSurface>(),
+                    Box::new(entity),
+                ))
             }
             "POINT_ON_SURFACE_PAIR" => {
                 let entity = PointOnSurfacePair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PointOnSurfacePair>(),
+                    Box::new(entity),
+                ))
             }
             "POINT_ON_SURFACE_PAIR_RANGE" => {
                 let entity = PointOnSurfacePairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PointOnSurfacePairRange>(),
+                    Box::new(entity),
+                ))
             }
             "POINT_ON_SURFACE_PAIR_VALUE" => {
                 let entity = PointOnSurfacePairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PointOnSurfacePairValue>(),
+                    Box::new(entity),
+                ))
             }
             "POINT_PLACEMENT_SHAPE_REPRESENTATION" => {
                 let entity = PointPlacementShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PointPlacementShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "POINT_REPLICA" => {
                 let entity = PointReplica::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PointReplica>(),
+                    Box::new(entity),
+                ))
             }
             "POINT_STYLE" => {
                 let entity = PointStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<PointStyle>(), Box::new(entity)))
             }
             "POLY_LOOP" => {
                 let entity = PolyLoop::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<PolyLoop>(), Box::new(entity)))
             }
             "POLYLINE" => {
                 let entity = Polyline::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Polyline>(), Box::new(entity)))
             }
             "POSITION_TOLERANCE" => {
                 let entity = PositionTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PositionTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "POWER_EXPRESSION" => {
                 let entity = PowerExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PowerExpression>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_COLOUR" => {
                 let entity = PreDefinedColour::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedColour>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_CURVE_FONT" => {
                 let entity = PreDefinedCurveFont::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedCurveFont>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_DIMENSION_SYMBOL" => {
                 let entity = PreDefinedDimensionSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedDimensionSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_GEOMETRICAL_TOLERANCE_SYMBOL" => {
                 let entity = PreDefinedGeometricalToleranceSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedGeometricalToleranceSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_ITEM" => {
                 let entity = PreDefinedItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedItem>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_MARKER" => {
                 let entity = PreDefinedMarker::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedMarker>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_POINT_MARKER_SYMBOL" => {
                 let entity = PreDefinedPointMarkerSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedPointMarkerSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_PRESENTATION_STYLE" => {
                 let entity = PreDefinedPresentationStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedPresentationStyle>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_SURFACE_CONDITION_SYMBOL" => {
                 let entity = PreDefinedSurfaceConditionSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedSurfaceConditionSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_SYMBOL" => {
                 let entity = PreDefinedSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_TERMINATOR_SYMBOL" => {
                 let entity = PreDefinedTerminatorSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedTerminatorSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "PRE_DEFINED_TEXT_FONT" => {
                 let entity = PreDefinedTextFont::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PreDefinedTextFont>(),
+                    Box::new(entity),
+                ))
             }
             "PRECISION_QUALIFIER" => {
                 let entity = PrecisionQualifier::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PrecisionQualifier>(),
+                    Box::new(entity),
+                ))
             }
             "PRESENTATION_AREA" => {
                 let entity = PresentationArea::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PresentationArea>(),
+                    Box::new(entity),
+                ))
             }
             "PRESENTATION_LAYER_ASSIGNMENT" => {
                 let entity = PresentationLayerAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PresentationLayerAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "PRESENTATION_REPRESENTATION" => {
                 let entity = PresentationRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PresentationRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "PRESENTATION_SET" => {
                 let entity = PresentationSet::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PresentationSet>(),
+                    Box::new(entity),
+                ))
             }
             "PRESENTATION_SIZE" => {
                 let entity = PresentationSize::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PresentationSize>(),
+                    Box::new(entity),
+                ))
             }
             "PRESENTATION_STYLE_ASSIGNMENT" => {
                 let entity = PresentationStyleAssignment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PresentationStyleAssignment>(),
+                    Box::new(entity),
+                ))
             }
             "PRESENTATION_STYLE_BY_CONTEXT" => {
                 let entity = PresentationStyleByContext::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PresentationStyleByContext>(),
+                    Box::new(entity),
+                ))
             }
             "PRESENTATION_VIEW" => {
                 let entity = PresentationView::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PresentationView>(),
+                    Box::new(entity),
+                ))
             }
             "PRESENTED_ITEM_REPRESENTATION" => {
                 let entity = PresentedItemRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PresentedItemRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "PRISMATIC_PAIR" => {
                 let entity = PrismaticPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PrismaticPair>(),
+                    Box::new(entity),
+                ))
             }
             "PRISMATIC_PAIR_RANGE" => {
                 let entity = PrismaticPairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PrismaticPairRange>(),
+                    Box::new(entity),
+                ))
             }
             "PRISMATIC_PAIR_VALUE" => {
                 let entity = PrismaticPairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PrismaticPairValue>(),
+                    Box::new(entity),
+                ))
             }
             "PROCESS_OPERATION" => {
                 let entity = ProcessOperation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProcessOperation>(),
+                    Box::new(entity),
+                ))
             }
             "PROCESS_PLAN" => {
                 let entity = ProcessPlan::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<ProcessPlan>(), Box::new(entity)))
             }
             "PROCESS_PRODUCT_ASSOCIATION" => {
                 let entity = ProcessProductAssociation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProcessProductAssociation>(),
+                    Box::new(entity),
+                ))
             }
             "PROCESS_PROPERTY_ASSOCIATION" => {
                 let entity = ProcessPropertyAssociation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProcessPropertyAssociation>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT" => {
                 let entity = Product::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Product>(), Box::new(entity)))
             }
             "PRODUCT_CATEGORY" => {
                 let entity = ProductCategory::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductCategory>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_CATEGORY_RELATIONSHIP" => {
                 let entity = ProductCategoryRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductCategoryRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_CLASS" => {
                 let entity = ProductClass::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductClass>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_CONCEPT" => {
                 let entity = ProductConcept::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductConcept>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_CONCEPT_CONTEXT" => {
                 let entity = ProductConceptContext::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductConceptContext>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_CONCEPT_FEATURE" => {
                 let entity = ProductConceptFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductConceptFeature>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_CONCEPT_FEATURE_ASSOCIATION" => {
                 let entity = ProductConceptFeatureAssociation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductConceptFeatureAssociation>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_CONCEPT_FEATURE_CATEGORY" => {
                 let entity = ProductConceptFeatureCategory::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductConceptFeatureCategory>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_CONCEPT_FEATURE_CATEGORY_USAGE" => {
                 let entity = ProductConceptFeatureCategoryUsage::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductConceptFeatureCategoryUsage>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_CONCEPT_RELATIONSHIP" => {
                 let entity = ProductConceptRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductConceptRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_CONTEXT" => {
                 let entity = ProductContext::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductContext>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION" => {
                 let entity = ProductDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_CONTEXT" => {
                 let entity = ProductDefinitionContext::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionContext>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_CONTEXT_ASSOCIATION" => {
                 let entity = ProductDefinitionContextAssociation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionContextAssociation>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_CONTEXT_ROLE" => {
                 let entity = ProductDefinitionContextRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionContextRole>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_EFFECTIVITY" => {
                 let entity = ProductDefinitionEffectivity::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionEffectivity>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_FORMATION" => {
                 let entity = ProductDefinitionFormation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionFormation>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_FORMATION_RELATIONSHIP" => {
                 let entity = ProductDefinitionFormationRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionFormationRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE" => {
                 let entity = ProductDefinitionFormationWithSpecifiedSource::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionFormationWithSpecifiedSource>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_OCCURRENCE_RELATIONSHIP" => {
                 let entity = ProductDefinitionOccurrenceRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionOccurrenceRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_PROCESS" => {
                 let entity = ProductDefinitionProcess::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionProcess>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_RELATIONSHIP" => {
                 let entity = ProductDefinitionRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_RESOURCE" => {
                 let entity = ProductDefinitionResource::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionResource>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_SHAPE" => {
                 let entity = ProductDefinitionShape::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionShape>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_SUBSTITUTE" => {
                 let entity = ProductDefinitionSubstitute::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionSubstitute>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_USAGE" => {
                 let entity = ProductDefinitionUsage::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionUsage>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_DEFINITION_WITH_ASSOCIATED_DOCUMENTS" => {
                 let entity = ProductDefinitionWithAssociatedDocuments::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductDefinitionWithAssociatedDocuments>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_IDENTIFICATION" => {
                 let entity = ProductIdentification::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductIdentification>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_PROCESS_PLAN" => {
                 let entity = ProductProcessPlan::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductProcessPlan>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_RELATED_PRODUCT_CATEGORY" => {
                 let entity = ProductRelatedProductCategory::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductRelatedProductCategory>(),
+                    Box::new(entity),
+                ))
             }
             "PRODUCT_SPECIFICATION" => {
                 let entity = ProductSpecification::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProductSpecification>(),
+                    Box::new(entity),
+                ))
             }
             "PROJECTED_ZONE_DEFINITION" => {
                 let entity = ProjectedZoneDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProjectedZoneDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "PROJECTION_CURVE" => {
                 let entity = ProjectionCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProjectionCurve>(),
+                    Box::new(entity),
+                ))
             }
             "PROJECTION_DIRECTED_CALLOUT" => {
                 let entity = ProjectionDirectedCallout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ProjectionDirectedCallout>(),
+                    Box::new(entity),
+                ))
             }
             "PROMISSORY_USAGE_OCCURRENCE" => {
                 let entity = PromissoryUsageOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PromissoryUsageOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "PROPERTY_DEFINITION" => {
                 let entity = PropertyDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PropertyDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "PROPERTY_DEFINITION_RELATIONSHIP" => {
                 let entity = PropertyDefinitionRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PropertyDefinitionRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "PROPERTY_DEFINITION_REPRESENTATION" => {
                 let entity = PropertyDefinitionRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PropertyDefinitionRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "PROPERTY_PROCESS" => {
                 let entity = PropertyProcess::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<PropertyProcess>(),
+                    Box::new(entity),
+                ))
             }
             "QUALIFIED_REPRESENTATION_ITEM" => {
                 let entity = QualifiedRepresentationItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<QualifiedRepresentationItem>(),
+                    Box::new(entity),
+                ))
             }
             "QUALITATIVE_UNCERTAINTY" => {
                 let entity = QualitativeUncertainty::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<QualitativeUncertainty>(),
+                    Box::new(entity),
+                ))
             }
             "QUANTIFIED_ASSEMBLY_COMPONENT_USAGE" => {
                 let entity = QuantifiedAssemblyComponentUsage::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<QuantifiedAssemblyComponentUsage>(),
+                    Box::new(entity),
+                ))
             }
             "QUASI_UNIFORM_CURVE" => {
                 let entity = QuasiUniformCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<QuasiUniformCurve>(),
+                    Box::new(entity),
+                ))
             }
             "QUASI_UNIFORM_SURFACE" => {
                 let entity = QuasiUniformSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<QuasiUniformSurface>(),
+                    Box::new(entity),
+                ))
             }
             "RACK_AND_PINION_PAIR" => {
                 let entity = RackAndPinionPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RackAndPinionPair>(),
+                    Box::new(entity),
+                ))
             }
             "RACK_AND_PINION_PAIR_RANGE" => {
                 let entity = RackAndPinionPairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RackAndPinionPairRange>(),
+                    Box::new(entity),
+                ))
             }
             "RACK_AND_PINION_PAIR_VALUE" => {
                 let entity = RackAndPinionPairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RackAndPinionPairValue>(),
+                    Box::new(entity),
+                ))
             }
             "RADIUS_DIMENSION" => {
                 let entity = RadiusDimension::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RadiusDimension>(),
+                    Box::new(entity),
+                ))
             }
             "RATIO_MEASURE_WITH_UNIT" => {
                 let entity = RatioMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RatioMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "RATIO_UNIT" => {
                 let entity = RatioUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<RatioUnit>(), Box::new(entity)))
             }
             "RATIONAL_B_SPLINE_CURVE" => {
                 let entity = RationalBSplineCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RationalBSplineCurve>(),
+                    Box::new(entity),
+                ))
             }
             "RATIONAL_B_SPLINE_SURFACE" => {
                 let entity = RationalBSplineSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RationalBSplineSurface>(),
+                    Box::new(entity),
+                ))
             }
             "REAL_LITERAL" => {
                 let entity = RealLiteral::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<RealLiteral>(), Box::new(entity)))
             }
             "REAL_NUMERIC_VARIABLE" => {
                 let entity = RealNumericVariable::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RealNumericVariable>(),
+                    Box::new(entity),
+                ))
             }
             "RECTANGULAR_CLOSED_PROFILE" => {
                 let entity = RectangularClosedProfile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RectangularClosedProfile>(),
+                    Box::new(entity),
+                ))
             }
             "RECTANGULAR_COMPOSITE_SURFACE" => {
                 let entity = RectangularCompositeSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RectangularCompositeSurface>(),
+                    Box::new(entity),
+                ))
             }
             "RECTANGULAR_PATTERN" => {
                 let entity = RectangularPattern::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RectangularPattern>(),
+                    Box::new(entity),
+                ))
             }
             "RECTANGULAR_TRIMMED_SURFACE" => {
                 let entity = RectangularTrimmedSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RectangularTrimmedSurface>(),
+                    Box::new(entity),
+                ))
             }
             "REFERENCED_MODIFIED_DATUM" => {
                 let entity = ReferencedModifiedDatum::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ReferencedModifiedDatum>(),
+                    Box::new(entity),
+                ))
             }
             "RELATIVE_EVENT_OCCURRENCE" => {
                 let entity = RelativeEventOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RelativeEventOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "REP_ITEM_GROUP" => {
                 let entity = RepItemGroup::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RepItemGroup>(),
+                    Box::new(entity),
+                ))
             }
             "REPARAMETRISED_COMPOSITE_CURVE_SEGMENT" => {
                 let entity = ReparametrisedCompositeCurveSegment::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ReparametrisedCompositeCurveSegment>(),
+                    Box::new(entity),
+                ))
             }
             "REPLICATE_FEATURE" => {
                 let entity = ReplicateFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ReplicateFeature>(),
+                    Box::new(entity),
+                ))
             }
             "REPRESENTATION" => {
                 let entity = Representation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<Representation>(),
+                    Box::new(entity),
+                ))
             }
             "REPRESENTATION_CONTEXT" => {
                 let entity = RepresentationContext::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RepresentationContext>(),
+                    Box::new(entity),
+                ))
             }
             "REPRESENTATION_ITEM" => {
                 let entity = RepresentationItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RepresentationItem>(),
+                    Box::new(entity),
+                ))
             }
             "REPRESENTATION_MAP" => {
                 let entity = RepresentationMap::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RepresentationMap>(),
+                    Box::new(entity),
+                ))
             }
             "REPRESENTATION_RELATIONSHIP" => {
                 let entity = RepresentationRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RepresentationRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "REPRESENTATION_RELATIONSHIP_WITH_TRANSFORMATION" => {
                 let entity = RepresentationRelationshipWithTransformation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RepresentationRelationshipWithTransformation>(),
+                    Box::new(entity),
+                ))
             }
             "REQUIREMENT_FOR_ACTION_RESOURCE" => {
                 let entity = RequirementForActionResource::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RequirementForActionResource>(),
+                    Box::new(entity),
+                ))
             }
             "RESOURCE_PROPERTY" => {
                 let entity = ResourceProperty::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ResourceProperty>(),
+                    Box::new(entity),
+                ))
             }
             "RESOURCE_PROPERTY_REPRESENTATION" => {
                 let entity = ResourcePropertyRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ResourcePropertyRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "RESOURCE_REQUIREMENT_TYPE" => {
                 let entity = ResourceRequirementType::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ResourceRequirementType>(),
+                    Box::new(entity),
+                ))
             }
             "RESULTING_PATH" => {
                 let entity = ResultingPath::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ResultingPath>(),
+                    Box::new(entity),
+                ))
             }
             "RETENTION" => {
                 let entity = Retention::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Retention>(), Box::new(entity)))
             }
             "REVOLUTE_PAIR" => {
                 let entity = RevolutePair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RevolutePair>(),
+                    Box::new(entity),
+                ))
             }
             "REVOLUTE_PAIR_RANGE" => {
                 let entity = RevolutePairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RevolutePairRange>(),
+                    Box::new(entity),
+                ))
             }
             "REVOLUTE_PAIR_VALUE" => {
                 let entity = RevolutePairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RevolutePairValue>(),
+                    Box::new(entity),
+                ))
             }
             "REVOLVED_AREA_SOLID" => {
                 let entity = RevolvedAreaSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RevolvedAreaSolid>(),
+                    Box::new(entity),
+                ))
             }
             "REVOLVED_FACE_SOLID" => {
                 let entity = RevolvedFaceSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RevolvedFaceSolid>(),
+                    Box::new(entity),
+                ))
             }
             "RIB" => {
                 let entity = Rib::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Rib>(), Box::new(entity)))
             }
             "RIGHT_ANGULAR_WEDGE" => {
                 let entity = RightAngularWedge::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RightAngularWedge>(),
+                    Box::new(entity),
+                ))
             }
             "RIGHT_CIRCULAR_CONE" => {
                 let entity = RightCircularCone::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RightCircularCone>(),
+                    Box::new(entity),
+                ))
             }
             "RIGHT_CIRCULAR_CYLINDER" => {
                 let entity = RightCircularCylinder::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RightCircularCylinder>(),
+                    Box::new(entity),
+                ))
             }
             "ROLE_ASSOCIATION" => {
                 let entity = RoleAssociation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RoleAssociation>(),
+                    Box::new(entity),
+                ))
             }
             "ROLLING_CURVE_PAIR" => {
                 let entity = RollingCurvePair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RollingCurvePair>(),
+                    Box::new(entity),
+                ))
             }
             "ROLLING_CURVE_PAIR_VALUE" => {
                 let entity = RollingCurvePairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RollingCurvePairValue>(),
+                    Box::new(entity),
+                ))
             }
             "ROLLING_SURFACE_PAIR" => {
                 let entity = RollingSurfacePair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RollingSurfacePair>(),
+                    Box::new(entity),
+                ))
             }
             "ROLLING_SURFACE_PAIR_VALUE" => {
                 let entity = RollingSurfacePairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RollingSurfacePairValue>(),
+                    Box::new(entity),
+                ))
             }
             "ROTATION_ABOUT_DIRECTION" => {
                 let entity = RotationAboutDirection::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RotationAboutDirection>(),
+                    Box::new(entity),
+                ))
             }
             "ROUND_HOLE" => {
                 let entity = RoundHole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<RoundHole>(), Box::new(entity)))
             }
             "ROUNDED_U_PROFILE" => {
                 let entity = RoundedUProfile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RoundedUProfile>(),
+                    Box::new(entity),
+                ))
             }
             "ROUNDNESS_TOLERANCE" => {
                 let entity = RoundnessTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RoundnessTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "RULED_SURFACE_SWEPT_AREA_SOLID" => {
                 let entity = RuledSurfaceSweptAreaSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RuledSurfaceSweptAreaSolid>(),
+                    Box::new(entity),
+                ))
             }
             "RUNOUT_ZONE_DEFINITION" => {
                 let entity = RunoutZoneDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RunoutZoneDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "RUNOUT_ZONE_ORIENTATION" => {
                 let entity = RunoutZoneOrientation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RunoutZoneOrientation>(),
+                    Box::new(entity),
+                ))
             }
             "RUNOUT_ZONE_ORIENTATION_REFERENCE_DIRECTION" => {
                 let entity = RunoutZoneOrientationReferenceDirection::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<RunoutZoneOrientationReferenceDirection>(),
+                    Box::new(entity),
+                ))
             }
             "SCREW_PAIR" => {
                 let entity = ScrewPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<ScrewPair>(), Box::new(entity)))
             }
             "SCREW_PAIR_RANGE" => {
                 let entity = ScrewPairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ScrewPairRange>(),
+                    Box::new(entity),
+                ))
             }
             "SCREW_PAIR_VALUE" => {
                 let entity = ScrewPairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ScrewPairValue>(),
+                    Box::new(entity),
+                ))
             }
             "SEAM_CURVE" => {
                 let entity = SeamCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<SeamCurve>(), Box::new(entity)))
             }
             "SEAM_EDGE" => {
                 let entity = SeamEdge::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<SeamEdge>(), Box::new(entity)))
             }
             "SECURITY_CLASSIFICATION" => {
                 let entity = SecurityClassification::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SecurityClassification>(),
+                    Box::new(entity),
+                ))
             }
             "SECURITY_CLASSIFICATION_LEVEL" => {
                 let entity = SecurityClassificationLevel::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SecurityClassificationLevel>(),
+                    Box::new(entity),
+                ))
             }
             "SERIAL_NUMBERED_EFFECTIVITY" => {
                 let entity = SerialNumberedEffectivity::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SerialNumberedEffectivity>(),
+                    Box::new(entity),
+                ))
             }
             "SHAPE_ASPECT" => {
                 let entity = ShapeAspect::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<ShapeAspect>(), Box::new(entity)))
             }
             "SHAPE_ASPECT_ASSOCIATIVITY" => {
                 let entity = ShapeAspectAssociativity::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShapeAspectAssociativity>(),
+                    Box::new(entity),
+                ))
             }
             "SHAPE_ASPECT_DERIVING_RELATIONSHIP" => {
                 let entity = ShapeAspectDerivingRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShapeAspectDerivingRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "SHAPE_ASPECT_RELATIONSHIP" => {
                 let entity = ShapeAspectRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShapeAspectRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "SHAPE_ASPECT_TRANSITION" => {
                 let entity = ShapeAspectTransition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShapeAspectTransition>(),
+                    Box::new(entity),
+                ))
             }
             "SHAPE_DEFINING_RELATIONSHIP" => {
                 let entity = ShapeDefiningRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShapeDefiningRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "SHAPE_DEFINITION_REPRESENTATION" => {
                 let entity = ShapeDefinitionRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShapeDefinitionRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "SHAPE_DIMENSION_REPRESENTATION" => {
                 let entity = ShapeDimensionRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShapeDimensionRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "SHAPE_REPRESENTATION" => {
                 let entity = ShapeRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShapeRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "SHAPE_REPRESENTATION_RELATIONSHIP" => {
                 let entity = ShapeRepresentationRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShapeRepresentationRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "SHAPE_REPRESENTATION_WITH_PARAMETERS" => {
                 let entity = ShapeRepresentationWithParameters::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShapeRepresentationWithParameters>(),
+                    Box::new(entity),
+                ))
             }
             "SHELL_BASED_SURFACE_MODEL" => {
                 let entity = ShellBasedSurfaceModel::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ShellBasedSurfaceModel>(),
+                    Box::new(entity),
+                ))
             }
             "SI_UNIT" => {
                 let entity = SiUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<SiUnit>(), Box::new(entity)))
             }
             "SIMPLE_PAIR_RANGE" => {
                 let entity = SimplePairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SimplePairRange>(),
+                    Box::new(entity),
+                ))
             }
             "SIN_FUNCTION" => {
                 let entity = SinFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<SinFunction>(), Box::new(entity)))
             }
             "SLASH_EXPRESSION" => {
                 let entity = SlashExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SlashExpression>(),
+                    Box::new(entity),
+                ))
             }
             "SLIDING_CURVE_PAIR" => {
                 let entity = SlidingCurvePair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SlidingCurvePair>(),
+                    Box::new(entity),
+                ))
             }
             "SLIDING_CURVE_PAIR_VALUE" => {
                 let entity = SlidingCurvePairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SlidingCurvePairValue>(),
+                    Box::new(entity),
+                ))
             }
             "SLIDING_SURFACE_PAIR" => {
                 let entity = SlidingSurfacePair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SlidingSurfacePair>(),
+                    Box::new(entity),
+                ))
             }
             "SLIDING_SURFACE_PAIR_VALUE" => {
                 let entity = SlidingSurfacePairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SlidingSurfacePairValue>(),
+                    Box::new(entity),
+                ))
             }
             "SLOT" => {
                 let entity = Slot::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Slot>(), Box::new(entity)))
             }
             "SLOT_END" => {
                 let entity = SlotEnd::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<SlotEnd>(), Box::new(entity)))
             }
             "SOLID_ANGLE_MEASURE_WITH_UNIT" => {
                 let entity = SolidAngleMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SolidAngleMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "SOLID_ANGLE_UNIT" => {
                 let entity = SolidAngleUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SolidAngleUnit>(),
+                    Box::new(entity),
+                ))
             }
             "SOLID_MODEL" => {
                 let entity = SolidModel::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<SolidModel>(), Box::new(entity)))
             }
             "SOLID_REPLICA" => {
                 let entity = SolidReplica::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SolidReplica>(),
+                    Box::new(entity),
+                ))
             }
             "SPECIFIED_HIGHER_USAGE_OCCURRENCE" => {
                 let entity = SpecifiedHigherUsageOccurrence::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SpecifiedHigherUsageOccurrence>(),
+                    Box::new(entity),
+                ))
             }
             "SPHERE" => {
                 let entity = Sphere::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Sphere>(), Box::new(entity)))
             }
             "SPHERICAL_PAIR" => {
                 let entity = SphericalPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SphericalPair>(),
+                    Box::new(entity),
+                ))
             }
             "SPHERICAL_PAIR_RANGE" => {
                 let entity = SphericalPairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SphericalPairRange>(),
+                    Box::new(entity),
+                ))
             }
             "SPHERICAL_PAIR_VALUE" => {
                 let entity = SphericalPairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SphericalPairValue>(),
+                    Box::new(entity),
+                ))
             }
             "SPHERICAL_SURFACE" => {
                 let entity = SphericalSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SphericalSurface>(),
+                    Box::new(entity),
+                ))
             }
             "SQUARE_ROOT_FUNCTION" => {
                 let entity = SquareRootFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SquareRootFunction>(),
+                    Box::new(entity),
+                ))
             }
             "SQUARE_U_PROFILE" => {
                 let entity = SquareUProfile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SquareUProfile>(),
+                    Box::new(entity),
+                ))
             }
             "STANDARD_UNCERTAINTY" => {
                 let entity = StandardUncertainty::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<StandardUncertainty>(),
+                    Box::new(entity),
+                ))
             }
             "STRAIGHTNESS_TOLERANCE" => {
                 let entity = StraightnessTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<StraightnessTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "STRING_LITERAL" => {
                 let entity = StringLiteral::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<StringLiteral>(),
+                    Box::new(entity),
+                ))
             }
             "STRING_VARIABLE" => {
                 let entity = StringVariable::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<StringVariable>(),
+                    Box::new(entity),
+                ))
             }
             "STRUCTURED_DIMENSION_CALLOUT" => {
                 let entity = StructuredDimensionCallout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<StructuredDimensionCallout>(),
+                    Box::new(entity),
+                ))
             }
             "STYLED_ITEM" => {
                 let entity = StyledItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<StyledItem>(), Box::new(entity)))
             }
             "SUBEDGE" => {
                 let entity = Subedge::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Subedge>(), Box::new(entity)))
             }
             "SUBFACE" => {
                 let entity = Subface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Subface>(), Box::new(entity)))
             }
             "SUBSTRING_EXPRESSION" => {
                 let entity = SubstringExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SubstringExpression>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE" => {
                 let entity = Surface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Surface>(), Box::new(entity)))
             }
             "SURFACE_CONDITION_CALLOUT" => {
                 let entity = SurfaceConditionCallout::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceConditionCallout>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_CURVE" => {
                 let entity = SurfaceCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceCurve>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_CURVE_SWEPT_AREA_SOLID" => {
                 let entity = SurfaceCurveSweptAreaSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceCurveSweptAreaSolid>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_OF_LINEAR_EXTRUSION" => {
                 let entity = SurfaceOfLinearExtrusion::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceOfLinearExtrusion>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_OF_REVOLUTION" => {
                 let entity = SurfaceOfRevolution::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceOfRevolution>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_PAIR" => {
                 let entity = SurfacePair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<SurfacePair>(), Box::new(entity)))
             }
             "SURFACE_PAIR_RANGE" => {
                 let entity = SurfacePairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfacePairRange>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_PATCH" => {
                 let entity = SurfacePatch::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfacePatch>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_PROFILE_TOLERANCE" => {
                 let entity = SurfaceProfileTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceProfileTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_RENDERING_PROPERTIES" => {
                 let entity = SurfaceRenderingProperties::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceRenderingProperties>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_REPLICA" => {
                 let entity = SurfaceReplica::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceReplica>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_SIDE_STYLE" => {
                 let entity = SurfaceSideStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceSideStyle>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_BOUNDARY" => {
                 let entity = SurfaceStyleBoundary::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleBoundary>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_CONTROL_GRID" => {
                 let entity = SurfaceStyleControlGrid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleControlGrid>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_FILL_AREA" => {
                 let entity = SurfaceStyleFillArea::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleFillArea>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_PARAMETER_LINE" => {
                 let entity = SurfaceStyleParameterLine::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleParameterLine>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_REFLECTANCE_AMBIENT" => {
                 let entity = SurfaceStyleReflectanceAmbient::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleReflectanceAmbient>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_REFLECTANCE_AMBIENT_DIFFUSE" => {
                 let entity = SurfaceStyleReflectanceAmbientDiffuse::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleReflectanceAmbientDiffuse>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_REFLECTANCE_AMBIENT_DIFFUSE_SPECULAR" => {
                 let entity = SurfaceStyleReflectanceAmbientDiffuseSpecular::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleReflectanceAmbientDiffuseSpecular>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_RENDERING" => {
                 let entity = SurfaceStyleRendering::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleRendering>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_RENDERING_WITH_PROPERTIES" => {
                 let entity = SurfaceStyleRenderingWithProperties::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleRenderingWithProperties>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_SEGMENTATION_CURVE" => {
                 let entity = SurfaceStyleSegmentationCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleSegmentationCurve>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_SILHOUETTE" => {
                 let entity = SurfaceStyleSilhouette::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleSilhouette>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_TRANSPARENT" => {
                 let entity = SurfaceStyleTransparent::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleTransparent>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_STYLE_USAGE" => {
                 let entity = SurfaceStyleUsage::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceStyleUsage>(),
+                    Box::new(entity),
+                ))
             }
             "SURFACE_TEXTURE_REPRESENTATION" => {
                 let entity = SurfaceTextureRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SurfaceTextureRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "SWEPT_AREA_SOLID" => {
                 let entity = SweptAreaSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SweptAreaSolid>(),
+                    Box::new(entity),
+                ))
             }
             "SWEPT_DISK_SOLID" => {
                 let entity = SweptDiskSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SweptDiskSolid>(),
+                    Box::new(entity),
+                ))
             }
             "SWEPT_FACE_SOLID" => {
                 let entity = SweptFaceSolid::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SweptFaceSolid>(),
+                    Box::new(entity),
+                ))
             }
             "SWEPT_SURFACE" => {
                 let entity = SweptSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SweptSurface>(),
+                    Box::new(entity),
+                ))
             }
             "SYMBOL_COLOUR" => {
                 let entity = SymbolColour::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SymbolColour>(),
+                    Box::new(entity),
+                ))
             }
             "SYMBOL_REPRESENTATION" => {
                 let entity = SymbolRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SymbolRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "SYMBOL_REPRESENTATION_MAP" => {
                 let entity = SymbolRepresentationMap::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SymbolRepresentationMap>(),
+                    Box::new(entity),
+                ))
             }
             "SYMBOL_STYLE" => {
                 let entity = SymbolStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<SymbolStyle>(), Box::new(entity)))
             }
             "SYMBOL_TARGET" => {
                 let entity = SymbolTarget::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SymbolTarget>(),
+                    Box::new(entity),
+                ))
             }
             "SYMMETRIC_SHAPE_ASPECT" => {
                 let entity = SymmetricShapeAspect::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SymmetricShapeAspect>(),
+                    Box::new(entity),
+                ))
             }
             "SYMMETRY_TOLERANCE" => {
                 let entity = SymmetryTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<SymmetryTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "TACTILE_APPEARANCE_REPRESENTATION" => {
                 let entity = TactileAppearanceRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TactileAppearanceRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "TAN_FUNCTION" => {
                 let entity = TanFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<TanFunction>(), Box::new(entity)))
             }
             "TANGENT" => {
                 let entity = Tangent::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Tangent>(), Box::new(entity)))
             }
             "TAPER" => {
                 let entity = Taper::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Taper>(), Box::new(entity)))
             }
             "TEE_PROFILE" => {
                 let entity = TeeProfile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<TeeProfile>(), Box::new(entity)))
             }
             "TERMINATOR_SYMBOL" => {
                 let entity = TerminatorSymbol::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TerminatorSymbol>(),
+                    Box::new(entity),
+                ))
             }
             "TEXT_LITERAL" => {
                 let entity = TextLiteral::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<TextLiteral>(), Box::new(entity)))
             }
             "TEXT_LITERAL_WITH_ASSOCIATED_CURVES" => {
                 let entity = TextLiteralWithAssociatedCurves::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TextLiteralWithAssociatedCurves>(),
+                    Box::new(entity),
+                ))
             }
             "TEXT_LITERAL_WITH_BLANKING_BOX" => {
                 let entity = TextLiteralWithBlankingBox::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TextLiteralWithBlankingBox>(),
+                    Box::new(entity),
+                ))
             }
             "TEXT_LITERAL_WITH_DELINEATION" => {
                 let entity = TextLiteralWithDelineation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TextLiteralWithDelineation>(),
+                    Box::new(entity),
+                ))
             }
             "TEXT_LITERAL_WITH_EXTENT" => {
                 let entity = TextLiteralWithExtent::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TextLiteralWithExtent>(),
+                    Box::new(entity),
+                ))
             }
             "TEXT_STRING_REPRESENTATION" => {
                 let entity = TextStringRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TextStringRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "TEXT_STYLE" => {
                 let entity = TextStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<TextStyle>(), Box::new(entity)))
             }
             "TEXT_STYLE_FOR_DEFINED_FONT" => {
                 let entity = TextStyleForDefinedFont::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TextStyleForDefinedFont>(),
+                    Box::new(entity),
+                ))
             }
             "TEXT_STYLE_WITH_BOX_CHARACTERISTICS" => {
                 let entity = TextStyleWithBoxCharacteristics::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TextStyleWithBoxCharacteristics>(),
+                    Box::new(entity),
+                ))
             }
             "TEXT_STYLE_WITH_MIRROR" => {
                 let entity = TextStyleWithMirror::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TextStyleWithMirror>(),
+                    Box::new(entity),
+                ))
             }
             "TEXT_STYLE_WITH_SPACING" => {
                 let entity = TextStyleWithSpacing::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TextStyleWithSpacing>(),
+                    Box::new(entity),
+                ))
             }
             "THERMODYNAMIC_TEMPERATURE_MEASURE_WITH_UNIT" => {
                 let entity = ThermodynamicTemperatureMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ThermodynamicTemperatureMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "THERMODYNAMIC_TEMPERATURE_UNIT" => {
                 let entity = ThermodynamicTemperatureUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ThermodynamicTemperatureUnit>(),
+                    Box::new(entity),
+                ))
             }
             "THREAD" => {
                 let entity = Thread::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Thread>(), Box::new(entity)))
             }
             "TIME_INTERVAL" => {
                 let entity = TimeInterval::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TimeInterval>(),
+                    Box::new(entity),
+                ))
             }
             "TIME_INTERVAL_BASED_EFFECTIVITY" => {
                 let entity = TimeIntervalBasedEffectivity::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TimeIntervalBasedEffectivity>(),
+                    Box::new(entity),
+                ))
             }
             "TIME_INTERVAL_ROLE" => {
                 let entity = TimeIntervalRole::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TimeIntervalRole>(),
+                    Box::new(entity),
+                ))
             }
             "TIME_INTERVAL_WITH_BOUNDS" => {
                 let entity = TimeIntervalWithBounds::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TimeIntervalWithBounds>(),
+                    Box::new(entity),
+                ))
             }
             "TIME_MEASURE_WITH_UNIT" => {
                 let entity = TimeMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TimeMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "TIME_UNIT" => {
                 let entity = TimeUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<TimeUnit>(), Box::new(entity)))
             }
             "TOLERANCE_VALUE" => {
                 let entity = ToleranceValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ToleranceValue>(),
+                    Box::new(entity),
+                ))
             }
             "TOLERANCE_ZONE" => {
                 let entity = ToleranceZone::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ToleranceZone>(),
+                    Box::new(entity),
+                ))
             }
             "TOLERANCE_ZONE_DEFINITION" => {
                 let entity = ToleranceZoneDefinition::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ToleranceZoneDefinition>(),
+                    Box::new(entity),
+                ))
             }
             "TOLERANCE_ZONE_FORM" => {
                 let entity = ToleranceZoneForm::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ToleranceZoneForm>(),
+                    Box::new(entity),
+                ))
             }
             "TOPOLOGICAL_REPRESENTATION_ITEM" => {
                 let entity = TopologicalRepresentationItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TopologicalRepresentationItem>(),
+                    Box::new(entity),
+                ))
             }
             "TOROIDAL_SURFACE" => {
                 let entity = ToroidalSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ToroidalSurface>(),
+                    Box::new(entity),
+                ))
             }
             "TORUS" => {
                 let entity = Torus::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Torus>(), Box::new(entity)))
             }
             "TOTAL_RUNOUT_TOLERANCE" => {
                 let entity = TotalRunoutTolerance::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TotalRunoutTolerance>(),
+                    Box::new(entity),
+                ))
             }
             "TRANSITION_FEATURE" => {
                 let entity = TransitionFeature::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TransitionFeature>(),
+                    Box::new(entity),
+                ))
             }
             "TRIMMED_CURVE" => {
                 let entity = TrimmedCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TrimmedCurve>(),
+                    Box::new(entity),
+                ))
             }
             "TWO_DIRECTION_REPEAT_FACTOR" => {
                 let entity = TwoDirectionRepeatFactor::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TwoDirectionRepeatFactor>(),
+                    Box::new(entity),
+                ))
             }
             "TYPE_QUALIFIER" => {
                 let entity = TypeQualifier::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<TypeQualifier>(),
+                    Box::new(entity),
+                ))
             }
             "UNCERTAINTY_ASSIGNED_REPRESENTATION" => {
                 let entity = UncertaintyAssignedRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<UncertaintyAssignedRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "UNCERTAINTY_MEASURE_WITH_UNIT" => {
                 let entity = UncertaintyMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<UncertaintyMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "UNCERTAINTY_QUALIFIER" => {
                 let entity = UncertaintyQualifier::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<UncertaintyQualifier>(),
+                    Box::new(entity),
+                ))
             }
             "UNCONSTRAINED_PAIR" => {
                 let entity = UnconstrainedPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<UnconstrainedPair>(),
+                    Box::new(entity),
+                ))
             }
             "UNCONSTRAINED_PAIR_VALUE" => {
                 let entity = UnconstrainedPairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<UnconstrainedPairValue>(),
+                    Box::new(entity),
+                ))
             }
             "UNIFORM_CURVE" => {
                 let entity = UniformCurve::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<UniformCurve>(),
+                    Box::new(entity),
+                ))
             }
             "UNIFORM_SURFACE" => {
                 let entity = UniformSurface::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<UniformSurface>(),
+                    Box::new(entity),
+                ))
             }
             "UNIVERSAL_PAIR" => {
                 let entity = UniversalPair::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<UniversalPair>(),
+                    Box::new(entity),
+                ))
             }
             "UNIVERSAL_PAIR_RANGE" => {
                 let entity = UniversalPairRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<UniversalPairRange>(),
+                    Box::new(entity),
+                ))
             }
             "UNIVERSAL_PAIR_VALUE" => {
                 let entity = UniversalPairValue::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<UniversalPairValue>(),
+                    Box::new(entity),
+                ))
             }
             "VALUE_FUNCTION" => {
                 let entity = ValueFunction::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ValueFunction>(),
+                    Box::new(entity),
+                ))
             }
             "VALUE_RANGE" => {
                 let entity = ValueRange::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<ValueRange>(), Box::new(entity)))
             }
             "VALUE_REPRESENTATION_ITEM" => {
                 let entity = ValueRepresentationItem::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<ValueRepresentationItem>(),
+                    Box::new(entity),
+                ))
             }
             "VECTOR" => {
                 let entity = Vector::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Vector>(), Box::new(entity)))
             }
             "VECTOR_STYLE" => {
                 let entity = VectorStyle::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<VectorStyle>(), Box::new(entity)))
             }
             "VEE_PROFILE" => {
                 let entity = VeeProfile::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<VeeProfile>(), Box::new(entity)))
             }
             "VERSIONED_ACTION_REQUEST" => {
                 let entity = VersionedActionRequest::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<VersionedActionRequest>(),
+                    Box::new(entity),
+                ))
             }
             "VERSIONED_ACTION_REQUEST_RELATIONSHIP" => {
                 let entity = VersionedActionRequestRelationship::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<VersionedActionRequestRelationship>(),
+                    Box::new(entity),
+                ))
             }
             "VERTEX" => {
                 let entity = Vertex::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<Vertex>(), Box::new(entity)))
             }
             "VERTEX_LOOP" => {
                 let entity = VertexLoop::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<VertexLoop>(), Box::new(entity)))
             }
             "VERTEX_POINT" => {
                 let entity = VertexPoint::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<VertexPoint>(), Box::new(entity)))
             }
             "VIEW_VOLUME" => {
                 let entity = ViewVolume::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<ViewVolume>(), Box::new(entity)))
             }
             "VISUAL_APPEARANCE_REPRESENTATION" => {
                 let entity = VisualAppearanceRepresentation::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<VisualAppearanceRepresentation>(),
+                    Box::new(entity),
+                ))
             }
             "VOLUME_MEASURE_WITH_UNIT" => {
                 let entity = VolumeMeasureWithUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<VolumeMeasureWithUnit>(),
+                    Box::new(entity),
+                ))
             }
             "VOLUME_UNIT" => {
                 let entity = VolumeUnit::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((entity.type_id(), std::any::type_name::<VolumeUnit>(), Box::new(entity)))
             }
             "XOR_EXPRESSION" => {
                 let entity = XorExpression::form_parameters(typed_parameter.parameters);
-                self.add_entity(id, entity);
+                Some((
+                    entity.type_id(),
+                    std::any::type_name::<XorExpression>(),
+                    Box::new(entity),
+                ))
             }
-            _ => println!("{} is not implemented", typed_parameter.type_name),
+            _ => {
+                println!("{} is not implemented", typed_parameter.type_name);
+                None
+            }
         }
     }
 }

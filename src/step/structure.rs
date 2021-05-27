@@ -186,7 +186,7 @@ impl From<UnTypedParameter> for String {
         match parameter {
             UnTypedParameter::String(string) => string,
             UnTypedParameter::Null => String::default(),
-            _ => panic!("can not convert"),
+            _ => panic!("can not convert to string"),
         }
     }
 }

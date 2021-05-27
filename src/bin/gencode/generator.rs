@@ -654,7 +654,7 @@ impl Generator {
                 quote! {
                     #constructor => {
                         let entity = #type_name::form_parameters(typed_parameter.parameters);
-                        self.add_entity(id, entity);
+                        Some((entity.type_id(), std::any::type_name::<#type_name>(), Box::new(entity)))
                     }
                 }
             });
@@ -684,7 +684,7 @@ impl Generator {
                     self.type_ids.entry(type_id).or_insert(vec![]).push(id);
                     self.type_names.entry(type_id).or_insert(std::any::type_name::<T>());
                 }
-                pub fn get_entity<T: Any>(&self, entity_ref: EntityRef ) -> Option<&T> {
+                pub fn get_entity<T: Any>(&self, entity_ref: &EntityRef ) -> Option<&T> {
                     self.entities
                         .get(&entity_ref.0)
                         .map(|entity| entity.downcast_ref::<T>())
@@ -705,10 +705,19 @@ impl Generator {
             }
 
             impl StepReader for #reader_name {
-                fn read_simple_entity(&mut self, id: i64, typed_parameter: TypedParameter) {
+                fn insert_entity(&mut self, id: i64, type_id: TypeId, type_name: &'static str, entity: Box<dyn Any>) {
+                    self.entities.insert(id, entity);
+                    self.type_ids.entry(type_id).or_insert(vec![]).push(id);
+                    self.type_names.entry(type_id).or_insert(type_name);
+                }
+
+                fn create_entity(&self, typed_parameter: TypedParameter) -> Option<(TypeId, &'static str, Box<dyn Any>)> {
                     match typed_parameter.type_name.as_str() {
                         #( #read_entities )*
-                        _ => println!("{} is not implemented", typed_parameter.type_name),
+                        _ => {
+                            println!("{} is not implemented", typed_parameter.type_name);
+                            None
+                        },
                     }
                 }
             }
