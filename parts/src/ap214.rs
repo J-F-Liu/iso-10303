@@ -4609,7 +4609,7 @@ impl IUnaryGenericExpression for AbsFunction {
 impl IUnaryFunctionCall for AbsFunction {}
 impl IAbsFunction for AbsFunction {}
 impl AbsFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AbsFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -4641,7 +4641,7 @@ impl IUnaryGenericExpression for AcosFunction {
 impl IUnaryFunctionCall for AcosFunction {}
 impl IAcosFunction for AcosFunction {}
 impl AcosFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AcosFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -4675,7 +4675,7 @@ impl IAction for Action {
     }
 }
 impl Action {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Action::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -4730,7 +4730,7 @@ impl IActionDirective for ActionDirective {
     }
 }
 impl ActionDirective {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionDirective::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -4779,7 +4779,7 @@ impl IActionMethod for ActionMethod {
     }
 }
 impl ActionMethod {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionMethod::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -4827,7 +4827,7 @@ impl IActionMethodRelationship for ActionMethodRelationship {
     }
 }
 impl ActionMethodRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionMethodRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -4870,7 +4870,7 @@ impl IActionProperty for ActionProperty {
     }
 }
 impl ActionProperty {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionProperty::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -4911,7 +4911,7 @@ impl IActionPropertyRepresentation for ActionPropertyRepresentation {
     }
 }
 impl ActionPropertyRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionPropertyRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -4953,7 +4953,7 @@ impl IActionRelationship for ActionRelationship {
     }
 }
 impl ActionRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -4994,7 +4994,7 @@ impl IActionRequestSolution for ActionRequestSolution {
     }
 }
 impl ActionRequestSolution {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionRequestSolution::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5024,7 +5024,7 @@ impl IActionRequestStatus for ActionRequestStatus {
     }
 }
 impl ActionRequestStatus {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionRequestStatus::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5064,7 +5064,7 @@ impl IActionResource for ActionResource {
     }
 }
 impl ActionResource {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionResource::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5112,7 +5112,7 @@ impl IActionResourceRequirement for ActionResourceRequirement {
     }
 }
 impl ActionResourceRequirement {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionResourceRequirement::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5139,7 +5139,7 @@ impl IActionResourceType for ActionResourceType {
     }
 }
 impl ActionResourceType {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionResourceType::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5168,7 +5168,7 @@ impl IActionStatus for ActionStatus {
     }
 }
 impl ActionStatus {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ActionStatus::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5248,7 +5248,7 @@ impl IAddress for Address {
     }
 }
 impl Address {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Address::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5363,7 +5363,7 @@ impl IRepresentation for AdvancedBrepShapeRepresentation {
 impl IShapeRepresentation for AdvancedBrepShapeRepresentation {}
 impl IAdvancedBrepShapeRepresentation for AdvancedBrepShapeRepresentation {}
 impl AdvancedBrepShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AdvancedBrepShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5406,7 +5406,7 @@ impl IFaceSurface for AdvancedFace {
 impl IGeometricRepresentationItem for AdvancedFace {}
 impl IAdvancedFace for AdvancedFace {}
 impl AdvancedFace {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AdvancedFace::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5453,7 +5453,7 @@ impl IAlternateProductRelationship for AlternateProductRelationship {
     }
 }
 impl AlternateProductRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AlternateProductRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5490,7 +5490,7 @@ impl IMeasureWithUnit for AmountOfSubstanceMeasureWithUnit {
 }
 impl IAmountOfSubstanceMeasureWithUnit for AmountOfSubstanceMeasureWithUnit {}
 impl AmountOfSubstanceMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AmountOfSubstanceMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5514,7 +5514,7 @@ impl INamedUnit for AmountOfSubstanceUnit {
 }
 impl IAmountOfSubstanceUnit for AmountOfSubstanceUnit {}
 impl AmountOfSubstanceUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AmountOfSubstanceUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5545,7 +5545,7 @@ impl IMultipleArityGenericExpression for AndExpression {
 }
 impl IAndExpression for AndExpression {}
 impl AndExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AndExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5576,7 +5576,7 @@ impl IDraughtingCallout for AngularDimension {
 impl IDimensionCurveDirectedCallout for AngularDimension {}
 impl IAngularDimension for AngularDimension {}
 impl AngularDimension {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AngularDimension::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5620,7 +5620,7 @@ impl IAngularLocation for AngularLocation {
     }
 }
 impl AngularLocation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AngularLocation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5635,6 +5635,16 @@ impl AngularLocation {
                 2usize => entity.relating_shape_aspect = parameter.into(),
                 3usize => entity.related_shape_aspect = parameter.into(),
                 4usize => entity.angle_selection = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AngularLocation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.angle_selection = parameter.into(),
                 _ => {}
             }
         }
@@ -5664,13 +5674,23 @@ impl IAngularSize for AngularSize {
     }
 }
 impl AngularSize {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AngularSize::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.applies_to = parameter.into(),
                 1usize => entity.name = parameter.into(),
                 2usize => entity.angle_selection = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AngularSize::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.angle_selection = parameter.into(),
                 _ => {}
             }
         }
@@ -5707,7 +5727,7 @@ impl IGeometricToleranceWithDatumReference for AngularityTolerance {
 }
 impl IAngularityTolerance for AngularityTolerance {}
 impl AngularityTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AngularityTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5751,13 +5771,23 @@ impl IAnnotationCurveOccurrence for AnnotationCurveOccurrence {
     }
 }
 impl AnnotationCurveOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationCurveOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.styles = parameter.into(),
                 2usize => entity.item = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AnnotationCurveOccurrence::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.item = parameter.into(),
                 _ => {}
             }
         }
@@ -5784,12 +5814,22 @@ impl IAnnotationFillArea for AnnotationFillArea {
     }
 }
 impl AnnotationFillArea {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationFillArea::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.boundaries = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AnnotationFillArea::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.boundaries = parameter.into(),
                 _ => {}
             }
         }
@@ -5830,7 +5870,7 @@ impl IAnnotationFillAreaOccurrence for AnnotationFillAreaOccurrence {
     }
 }
 impl AnnotationFillAreaOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationFillAreaOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5838,6 +5878,17 @@ impl AnnotationFillAreaOccurrence {
                 1usize => entity.styles = parameter.into(),
                 2usize => entity.fill_style_target = parameter.into(),
                 3usize => entity.item = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AnnotationFillAreaOccurrence::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.fill_style_target = parameter.into(),
+                1usize => entity.item = parameter.into(),
                 _ => {}
             }
         }
@@ -5866,7 +5917,7 @@ impl IStyledItem for AnnotationOccurrence {
 }
 impl IAnnotationOccurrence for AnnotationOccurrence {}
 impl AnnotationOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5903,7 +5954,7 @@ impl IAnnotationOccurrenceRelationship for AnnotationOccurrenceAssociativity {
 }
 impl IAnnotationOccurrenceAssociativity for AnnotationOccurrenceAssociativity {}
 impl AnnotationOccurrenceAssociativity {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationOccurrenceAssociativity::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5945,7 +5996,7 @@ impl IAnnotationOccurrenceRelationship for AnnotationOccurrenceRelationship {
     }
 }
 impl AnnotationOccurrenceRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationOccurrenceRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -5994,7 +6045,7 @@ impl IAnnotationPlane for AnnotationPlane {
 }
 impl IGeometricRepresentationItem for AnnotationPlane {}
 impl AnnotationPlane {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationPlane::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -6008,6 +6059,23 @@ impl AnnotationPlane {
                     }
                 }
                 3usize => entity.item = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AnnotationPlane::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
+                    entity.elements = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                1usize => entity.item = parameter.into(),
                 _ => {}
             }
         }
@@ -6042,7 +6110,7 @@ impl IAnnotationSymbolOccurrence for AnnotationSubfigureOccurrence {
 }
 impl IAnnotationSubfigureOccurrence for AnnotationSubfigureOccurrence {}
 impl AnnotationSubfigureOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationSubfigureOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -6087,13 +6155,24 @@ impl IAnnotationSymbol for AnnotationSymbol {
     }
 }
 impl AnnotationSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.mapping_source = parameter.into(),
                 2usize => entity.mapping_target = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AnnotationSymbol::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.mapping_source = parameter.into(),
+                1usize => entity.mapping_target = parameter.into(),
                 _ => {}
             }
         }
@@ -6129,13 +6208,23 @@ impl IAnnotationSymbolOccurrence for AnnotationSymbolOccurrence {
     }
 }
 impl AnnotationSymbolOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationSymbolOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.styles = parameter.into(),
                 2usize => entity.item = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AnnotationSymbolOccurrence::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.item = parameter.into(),
                 _ => {}
             }
         }
@@ -6170,13 +6259,23 @@ impl IAnnotationText for AnnotationText {
     }
 }
 impl AnnotationText {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationText::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.mapping_source = parameter.into(),
                 2usize => entity.mapping_target = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AnnotationText::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.mapping_target = parameter.into(),
                 _ => {}
             }
         }
@@ -6216,7 +6315,7 @@ impl IAnnotationTextCharacter for AnnotationTextCharacter {
     }
 }
 impl AnnotationTextCharacter {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationTextCharacter::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -6224,6 +6323,17 @@ impl AnnotationTextCharacter {
                 1usize => entity.mapping_source = parameter.into(),
                 2usize => entity.alignment = parameter.into(),
                 3usize => entity.mapping_target = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AnnotationTextCharacter::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.alignment = parameter.into(),
+                1usize => entity.mapping_target = parameter.into(),
                 _ => {}
             }
         }
@@ -6259,13 +6369,23 @@ impl IAnnotationTextOccurrence for AnnotationTextOccurrence {
     }
 }
 impl AnnotationTextOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AnnotationTextOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.styles = parameter.into(),
                 2usize => entity.item = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AnnotationTextOccurrence::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.item = parameter.into(),
                 _ => {}
             }
         }
@@ -6297,7 +6417,7 @@ impl IShapeAspect for Apex {
 impl IDerivedShapeAspect for Apex {}
 impl IApex for Apex {}
 impl Apex {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Apex::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -6330,7 +6450,7 @@ impl IApplicationContext for ApplicationContext {
     }
 }
 impl ApplicationContext {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApplicationContext::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -6359,7 +6479,7 @@ impl IApplicationContextElement for ApplicationContextElement {
     }
 }
 impl ApplicationContextElement {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApplicationContextElement::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -6399,7 +6519,7 @@ impl IApplicationContextRelationship for ApplicationContextRelationship {
     }
 }
 impl ApplicationContextRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApplicationContextRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -6447,7 +6567,7 @@ impl IApplicationProtocolDefinition for ApplicationProtocolDefinition {
     }
 }
 impl ApplicationProtocolDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApplicationProtocolDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -6480,12 +6600,22 @@ impl IAppliedActionAssignment for AppliedActionAssignment {
     }
 }
 impl AppliedActionAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedActionAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_action = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedActionAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6511,12 +6641,22 @@ impl IAppliedActionRequestAssignment for AppliedActionRequestAssignment {
     }
 }
 impl AppliedActionRequestAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedActionRequestAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_action_request = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedActionRequestAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6542,12 +6682,22 @@ impl IAppliedApprovalAssignment for AppliedApprovalAssignment {
     }
 }
 impl AppliedApprovalAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedApprovalAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_approval = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedApprovalAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6578,7 +6728,7 @@ impl IShapeAspect for AppliedArea {
 }
 impl IAppliedArea for AppliedArea {}
 impl AppliedArea {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedArea::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -6617,12 +6767,22 @@ impl IAppliedCertificationAssignment for AppliedCertificationAssignment {
     }
 }
 impl AppliedCertificationAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedCertificationAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_certification = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedCertificationAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6652,13 +6812,23 @@ impl IAppliedClassificationAssignment for AppliedClassificationAssignment {
     }
 }
 impl AppliedClassificationAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedClassificationAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_class = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedClassificationAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6684,12 +6854,22 @@ impl IAppliedContractAssignment for AppliedContractAssignment {
     }
 }
 impl AppliedContractAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedContractAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_contract = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedContractAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6719,13 +6899,23 @@ impl IAppliedDateAndTimeAssignment for AppliedDateAndTimeAssignment {
     }
 }
 impl AppliedDateAndTimeAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedDateAndTimeAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_date_and_time = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedDateAndTimeAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6755,13 +6945,23 @@ impl IAppliedDateAssignment for AppliedDateAssignment {
     }
 }
 impl AppliedDateAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedDateAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_date = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedDateAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6791,13 +6991,23 @@ impl IAppliedDocumentReference for AppliedDocumentReference {
     }
 }
 impl AppliedDocumentReference {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedDocumentReference::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_document = parameter.into(),
                 1usize => entity.source = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedDocumentReference::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6827,13 +7037,23 @@ impl IAppliedDocumentUsageConstraintAssignment for AppliedDocumentUsageConstrain
     }
 }
 impl AppliedDocumentUsageConstraintAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedDocumentUsageConstraintAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_document_usage = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedDocumentUsageConstraintAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6859,12 +7079,22 @@ impl IAppliedEffectivityAssignment for AppliedEffectivityAssignment {
     }
 }
 impl AppliedEffectivityAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedEffectivityAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_effectivity = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedEffectivityAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6894,13 +7124,23 @@ impl IAppliedEventOccurrenceAssignment for AppliedEventOccurrenceAssignment {
     }
 }
 impl AppliedEventOccurrenceAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedEventOccurrenceAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_event_occurrence = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedEventOccurrenceAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6936,7 +7176,7 @@ impl IAppliedExternalIdentificationAssignment for AppliedExternalIdentificationA
     }
 }
 impl AppliedExternalIdentificationAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedExternalIdentificationAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -6944,6 +7184,16 @@ impl AppliedExternalIdentificationAssignment {
                 1usize => entity.role = parameter.into(),
                 2usize => entity.source = parameter.into(),
                 3usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedExternalIdentificationAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -6969,12 +7219,22 @@ impl IAppliedGroupAssignment for AppliedGroupAssignment {
     }
 }
 impl AppliedGroupAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedGroupAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_group = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedGroupAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -7004,13 +7264,23 @@ impl IAppliedIdentificationAssignment for AppliedIdentificationAssignment {
     }
 }
 impl AppliedIdentificationAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedIdentificationAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_id = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedIdentificationAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -7036,12 +7306,22 @@ impl IAppliedIneffectivityAssignment for AppliedIneffectivityAssignment {
     }
 }
 impl AppliedIneffectivityAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedIneffectivityAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_effectivity = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedIneffectivityAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -7067,12 +7347,22 @@ impl IAppliedNameAssignment for AppliedNameAssignment {
     }
 }
 impl AppliedNameAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedNameAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_name = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedNameAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -7102,13 +7392,23 @@ impl IAppliedOrganizationAssignment for AppliedOrganizationAssignment {
     }
 }
 impl AppliedOrganizationAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedOrganizationAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_organization = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedOrganizationAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -7138,13 +7438,23 @@ impl IAppliedOrganizationalProjectAssignment for AppliedOrganizationalProjectAss
     }
 }
 impl AppliedOrganizationalProjectAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedOrganizationalProjectAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_organizational_project = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedOrganizationalProjectAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -7174,13 +7484,23 @@ impl IAppliedPersonAndOrganizationAssignment for AppliedPersonAndOrganizationAss
     }
 }
 impl AppliedPersonAndOrganizationAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedPersonAndOrganizationAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_person_and_organization = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedPersonAndOrganizationAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -7201,7 +7521,7 @@ impl IAppliedPresentedItem for AppliedPresentedItem {
     }
 }
 impl AppliedPresentedItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedPresentedItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7231,12 +7551,22 @@ impl IAppliedSecurityClassificationAssignment for AppliedSecurityClassificationA
     }
 }
 impl AppliedSecurityClassificationAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedSecurityClassificationAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_security_classification = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedSecurityClassificationAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -7266,13 +7596,23 @@ impl IAppliedTimeIntervalAssignment for AppliedTimeIntervalAssignment {
     }
 }
 impl AppliedTimeIntervalAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AppliedTimeIntervalAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_time_interval = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AppliedTimeIntervalAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -7297,7 +7637,7 @@ impl IApproval for Approval {
     }
 }
 impl Approval {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Approval::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7330,7 +7670,7 @@ impl IApprovalDateTime for ApprovalDateTime {
     }
 }
 impl ApprovalDateTime {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApprovalDateTime::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7365,7 +7705,7 @@ impl IApprovalPersonOrganization for ApprovalPersonOrganization {
     }
 }
 impl ApprovalPersonOrganization {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApprovalPersonOrganization::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7406,7 +7746,7 @@ impl IApprovalRelationship for ApprovalRelationship {
     }
 }
 impl ApprovalRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApprovalRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7439,7 +7779,7 @@ impl IApprovalRole for ApprovalRole {
     }
 }
 impl ApprovalRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApprovalRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7463,7 +7803,7 @@ impl IApprovalStatus for ApprovalStatus {
     }
 }
 impl ApprovalStatus {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApprovalStatus::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7488,7 +7828,7 @@ impl IApproximationTolerance for ApproximationTolerance {
     }
 }
 impl ApproximationTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApproximationTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7523,7 +7863,7 @@ impl IApproximationToleranceDeviation for ApproximationToleranceDeviation {
     }
 }
 impl ApproximationToleranceDeviation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApproximationToleranceDeviation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7550,7 +7890,7 @@ impl IApproximationToleranceParameter for ApproximationToleranceParameter {
     }
 }
 impl ApproximationToleranceParameter {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ApproximationToleranceParameter::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7579,7 +7919,7 @@ impl IAreaInSet for AreaInSet {
     }
 }
 impl AreaInSet {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AreaInSet::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7607,7 +7947,7 @@ impl IMeasureWithUnit for AreaMeasureWithUnit {
 }
 impl IAreaMeasureWithUnit for AreaMeasureWithUnit {}
 impl AreaMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AreaMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7631,7 +7971,7 @@ impl IDerivedUnit for AreaUnit {
 }
 impl IAreaUnit for AreaUnit {}
 impl AreaUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AreaUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7663,7 +8003,7 @@ impl IUnaryGenericExpression for AsinFunction {
 impl IUnaryFunctionCall for AsinFunction {}
 impl IAsinFunction for AsinFunction {}
 impl AsinFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AsinFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7710,7 +8050,7 @@ impl IAssemblyComponentUsage for AssemblyComponentUsage {
     }
 }
 impl AssemblyComponentUsage {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AssemblyComponentUsage::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7726,6 +8066,22 @@ impl AssemblyComponentUsage {
                 3usize => entity.relating_product_definition = parameter.into(),
                 4usize => entity.related_product_definition = parameter.into(),
                 5usize => {
+                    entity.reference_designator = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AssemblyComponentUsage::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
                     entity.reference_designator = if parameter.is_null() {
                         None
                     } else {
@@ -7766,7 +8122,7 @@ impl IAssemblyComponentUsageSubstitute for AssemblyComponentUsageSubstitute {
     }
 }
 impl AssemblyComponentUsageSubstitute {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AssemblyComponentUsageSubstitute::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7807,7 +8163,7 @@ impl IBinaryGenericExpression for AtanFunction {
 impl IBinaryFunctionCall for AtanFunction {}
 impl IAtanFunction for AtanFunction {}
 impl AtanFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AtanFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7850,7 +8206,7 @@ impl IAttributeLanguageAssignment for AttributeLanguageAssignment {
     }
 }
 impl AttributeLanguageAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AttributeLanguageAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7858,6 +8214,16 @@ impl AttributeLanguageAssignment {
                 1usize => entity.attribute_name = parameter.into(),
                 2usize => entity.role = parameter.into(),
                 3usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = AttributeLanguageAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -7887,7 +8253,7 @@ impl IAttributeValueRole for AttributeValueRole {
     }
 }
 impl AttributeValueRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = AttributeValueRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -7931,13 +8297,29 @@ impl IAxis1Placement for Axis1Placement {
     }
 }
 impl Axis1Placement {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Axis1Placement::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.location = parameter.into(),
                 2usize => {
+                    entity.axis = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Axis1Placement::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
                     entity.axis = if parameter.is_null() {
                         None
                     } else {
@@ -7976,13 +8358,29 @@ impl IAxis2Placement2d for Axis2Placement2d {
     }
 }
 impl Axis2Placement2d {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Axis2Placement2d::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.location = parameter.into(),
                 2usize => {
+                    entity.ref_direction = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Axis2Placement2d::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
                     entity.ref_direction = if parameter.is_null() {
                         None
                     } else {
@@ -8026,7 +8424,7 @@ impl IAxis2Placement3d for Axis2Placement3d {
     }
 }
 impl Axis2Placement3d {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Axis2Placement3d::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8040,6 +8438,29 @@ impl Axis2Placement3d {
                     }
                 }
                 3usize => {
+                    entity.ref_direction = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Axis2Placement3d::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
+                    entity.axis = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                1usize => {
                     entity.ref_direction = if parameter.is_null() {
                         None
                     } else {
@@ -8094,7 +8515,7 @@ impl IBSplineCurve for BSplineCurve {
     }
 }
 impl BSplineCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BSplineCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8104,6 +8525,20 @@ impl BSplineCurve {
                 3usize => entity.curve_form = parameter.into(),
                 4usize => entity.closed_curve = parameter.into(),
                 5usize => entity.self_intersect = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = BSplineCurve::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.degree = parameter.into(),
+                1usize => entity.control_points_list = parameter.into(),
+                2usize => entity.curve_form = parameter.into(),
+                3usize => entity.closed_curve = parameter.into(),
+                4usize => entity.self_intersect = parameter.into(),
                 _ => {}
             }
         }
@@ -8164,7 +8599,7 @@ impl IBSplineCurveWithKnots for BSplineCurveWithKnots {
     }
 }
 impl BSplineCurveWithKnots {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BSplineCurveWithKnots::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8177,6 +8612,18 @@ impl BSplineCurveWithKnots {
                 6usize => entity.knot_multiplicities = parameter.into(),
                 7usize => entity.knots = parameter.into(),
                 8usize => entity.knot_spec = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = BSplineCurveWithKnots::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.knot_multiplicities = parameter.into(),
+                1usize => entity.knots = parameter.into(),
+                2usize => entity.knot_spec = parameter.into(),
                 _ => {}
             }
         }
@@ -8235,7 +8682,7 @@ impl IBSplineSurface for BSplineSurface {
     }
 }
 impl BSplineSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BSplineSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8247,6 +8694,22 @@ impl BSplineSurface {
                 5usize => entity.u_closed = parameter.into(),
                 6usize => entity.v_closed = parameter.into(),
                 7usize => entity.self_intersect = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = BSplineSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.u_degree = parameter.into(),
+                1usize => entity.v_degree = parameter.into(),
+                2usize => entity.control_points_list = parameter.into(),
+                3usize => entity.surface_form = parameter.into(),
+                4usize => entity.u_closed = parameter.into(),
+                5usize => entity.v_closed = parameter.into(),
+                6usize => entity.self_intersect = parameter.into(),
                 _ => {}
             }
         }
@@ -8325,7 +8788,7 @@ impl IBSplineSurfaceWithKnots for BSplineSurfaceWithKnots {
     }
 }
 impl BSplineSurfaceWithKnots {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BSplineSurfaceWithKnots::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8347,6 +8810,20 @@ impl BSplineSurfaceWithKnots {
         }
         entity
     }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = BSplineSurfaceWithKnots::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.u_multiplicities = parameter.into(),
+                1usize => entity.v_multiplicities = parameter.into(),
+                2usize => entity.u_knots = parameter.into(),
+                3usize => entity.v_knots = parameter.into(),
+                4usize => entity.knot_spec = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
 }
 pub trait IBackgroundColour: IColour {
     fn presentation(&self) -> &EntityRef;
@@ -8362,7 +8839,7 @@ impl IBackgroundColour for BackgroundColour {
     }
 }
 impl BackgroundColour {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BackgroundColour::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8390,7 +8867,7 @@ impl ICharacterizedObject for BarringHole {
 impl IFeatureDefinition for BarringHole {}
 impl IBarringHole for BarringHole {}
 impl BarringHole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BarringHole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8425,7 +8902,7 @@ impl ICharacterizedObject for Bead {
 impl IFeatureDefinition for Bead {}
 impl IBead for Bead {}
 impl Bead {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Bead::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8467,7 +8944,7 @@ impl IShapeAspect for BeadEnd {
 }
 impl IBeadEnd for BeadEnd {}
 impl BeadEnd {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BeadEnd::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8524,7 +9001,7 @@ impl IBSplineCurve for BezierCurve {
 }
 impl IBezierCurve for BezierCurve {}
 impl BezierCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BezierCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8585,7 +9062,7 @@ impl IBSplineSurface for BezierSurface {
 }
 impl IBezierSurface for BezierSurface {}
 impl BezierSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BezierSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8646,7 +9123,7 @@ impl IBlock for Block {
     }
 }
 impl Block {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Block::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8655,6 +9132,19 @@ impl Block {
                 2usize => entity.x = parameter.into(),
                 3usize => entity.y = parameter.into(),
                 4usize => entity.z = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Block::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.position = parameter.into(),
+                1usize => entity.x = parameter.into(),
+                2usize => entity.y = parameter.into(),
+                3usize => entity.z = parameter.into(),
                 _ => {}
             }
         }
@@ -8682,7 +9172,7 @@ impl IBooleanLiteral for BooleanLiteral {
 }
 impl IGenericLiteral for BooleanLiteral {}
 impl BooleanLiteral {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BooleanLiteral::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8723,7 +9213,7 @@ impl IBooleanResult for BooleanResult {
     }
 }
 impl BooleanResult {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BooleanResult::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8731,6 +9221,18 @@ impl BooleanResult {
                 1usize => entity.operator = parameter.into(),
                 2usize => entity.first_operand = parameter.into(),
                 3usize => entity.second_operand = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = BooleanResult::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.operator = parameter.into(),
+                1usize => entity.first_operand = parameter.into(),
+                2usize => entity.second_operand = parameter.into(),
                 _ => {}
             }
         }
@@ -8749,7 +9251,7 @@ impl IBooleanVariable for BooleanVariable {}
 impl IVariable for BooleanVariable {}
 impl IGenericVariable for BooleanVariable {}
 impl BooleanVariable {
-    pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(_parameters: Vec<Parameter>) -> Self {
         BooleanVariable::default()
     }
 }
@@ -8770,7 +9272,7 @@ impl ICharacterizedObject for Boss {
 impl IFeatureDefinition for Boss {}
 impl IBoss for Boss {}
 impl Boss {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Boss::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8812,7 +9314,7 @@ impl IShapeAspect for BossTop {
 }
 impl IBossTop for BossTop {}
 impl BossTop {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BossTop::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8858,7 +9360,7 @@ impl ICompositeCurve for BoundaryCurve {
 impl ICompositeCurveOnSurface for BoundaryCurve {}
 impl IBoundaryCurve for BoundaryCurve {}
 impl BoundaryCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BoundaryCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8885,7 +9387,7 @@ impl IGeometricRepresentationItem for BoundedCurve {}
 impl ICurve for BoundedCurve {}
 impl IBoundedCurve for BoundedCurve {}
 impl BoundedCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BoundedCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8921,7 +9423,7 @@ impl IPcurve for BoundedPcurve {
 impl IBoundedPcurve for BoundedPcurve {}
 impl IBoundedCurve for BoundedPcurve {}
 impl BoundedPcurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BoundedPcurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8948,7 +9450,7 @@ impl IGeometricRepresentationItem for BoundedSurface {}
 impl ISurface for BoundedSurface {}
 impl IBoundedSurface for BoundedSurface {}
 impl BoundedSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BoundedSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -8988,7 +9490,7 @@ impl ISurfaceCurve for BoundedSurfaceCurve {
 impl IBoundedSurfaceCurve for BoundedSurfaceCurve {}
 impl IBoundedCurve for BoundedSurfaceCurve {}
 impl BoundedSurfaceCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BoundedSurfaceCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9031,7 +9533,7 @@ impl IBoxDomain for BoxDomain {
     }
 }
 impl BoxDomain {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BoxDomain::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9075,7 +9577,7 @@ impl IBoxedHalfSpace for BoxedHalfSpace {
     }
 }
 impl BoxedHalfSpace {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BoxedHalfSpace::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9083,6 +9585,16 @@ impl BoxedHalfSpace {
                 1usize => entity.base_surface = parameter.into(),
                 2usize => entity.agreement_flag = parameter.into(),
                 3usize => entity.enclosure = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = BoxedHalfSpace::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.enclosure = parameter.into(),
                 _ => {}
             }
         }
@@ -9116,13 +9628,23 @@ impl IBrepWithVoids for BrepWithVoids {
     }
 }
 impl BrepWithVoids {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = BrepWithVoids::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.outer = parameter.into(),
                 2usize => entity.voids = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = BrepWithVoids::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.voids = parameter.into(),
                 _ => {}
             }
         }
@@ -9153,13 +9675,24 @@ impl ICalendarDate for CalendarDate {
     }
 }
 impl CalendarDate {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CalendarDate::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.year_component = parameter.into(),
                 1usize => entity.day_component = parameter.into(),
                 2usize => entity.month_component = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CalendarDate::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.day_component = parameter.into(),
+                1usize => entity.month_component = parameter.into(),
                 _ => {}
             }
         }
@@ -9198,13 +9731,24 @@ impl ICameraImage for CameraImage {
     }
 }
 impl CameraImage {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CameraImage::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.mapping_source = parameter.into(),
                 2usize => entity.mapping_target = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CameraImage::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.mapping_source = parameter.into(),
+                1usize => entity.mapping_target = parameter.into(),
                 _ => {}
             }
         }
@@ -9241,7 +9785,7 @@ impl ICameraImage for CameraImage2dWithScale {
 }
 impl ICameraImage2dWithScale for CameraImage2dWithScale {}
 impl CameraImage2dWithScale {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CameraImage2dWithScale::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9284,7 +9828,7 @@ impl ICameraImage for CameraImage3dWithScale {
 }
 impl ICameraImage3dWithScale for CameraImage3dWithScale {}
 impl CameraImage3dWithScale {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CameraImage3dWithScale::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9324,13 +9868,24 @@ impl ICameraModelD2 for CameraModelD2 {
     }
 }
 impl CameraModelD2 {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CameraModelD2::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.view_window = parameter.into(),
                 2usize => entity.view_window_clipping = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CameraModelD2::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.view_window = parameter.into(),
+                1usize => entity.view_window_clipping = parameter.into(),
                 _ => {}
             }
         }
@@ -9363,13 +9918,24 @@ impl ICameraModelD3 for CameraModelD3 {
     }
 }
 impl CameraModelD3 {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CameraModelD3::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.view_reference_system = parameter.into(),
                 2usize => entity.perspective_of_volume = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CameraModelD3::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.view_reference_system = parameter.into(),
+                1usize => entity.perspective_of_volume = parameter.into(),
                 _ => {}
             }
         }
@@ -9407,7 +9973,7 @@ impl ICameraModelD3WithHlhsr for CameraModelD3WithHlhsr {
     }
 }
 impl CameraModelD3WithHlhsr {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CameraModelD3WithHlhsr::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9415,6 +9981,16 @@ impl CameraModelD3WithHlhsr {
                 1usize => entity.view_reference_system = parameter.into(),
                 2usize => entity.perspective_of_volume = parameter.into(),
                 3usize => entity.hidden_line_surface_removal = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CameraModelD3WithHlhsr::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.hidden_line_surface_removal = parameter.into(),
                 _ => {}
             }
         }
@@ -9443,12 +10019,22 @@ impl ICameraUsage for CameraUsage {
     }
 }
 impl CameraUsage {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CameraUsage::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.mapped_representation = parameter.into(),
                 1usize => entity.mapping_origin = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CameraUsage::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.mapping_origin = parameter.into(),
                 _ => {}
             }
         }
@@ -9476,12 +10062,22 @@ impl ICartesianPoint for CartesianPoint {
     }
 }
 impl CartesianPoint {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CartesianPoint::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.coordinates = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CartesianPoint::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.coordinates = parameter.into(),
                 _ => {}
             }
         }
@@ -9532,7 +10128,7 @@ impl ICartesianTransformationOperator for CartesianTransformationOperator {
     }
 }
 impl CartesianTransformationOperator {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CartesianTransformationOperator::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9560,6 +10156,37 @@ impl CartesianTransformationOperator {
                 }
                 4usize => entity.local_origin = parameter.into(),
                 5usize => {
+                    entity.scale = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CartesianTransformationOperator::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
+                    entity.axis1 = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                1usize => {
+                    entity.axis2 = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                2usize => entity.local_origin = parameter.into(),
+                3usize => {
                     entity.scale = if parameter.is_null() {
                         None
                     } else {
@@ -9612,7 +10239,7 @@ impl ICartesianTransformationOperator for CartesianTransformationOperator2d {
 }
 impl ICartesianTransformationOperator2d for CartesianTransformationOperator2d {}
 impl CartesianTransformationOperator2d {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CartesianTransformationOperator2d::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9699,7 +10326,7 @@ impl ICartesianTransformationOperator3d for CartesianTransformationOperator3d {
     }
 }
 impl CartesianTransformationOperator3d {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CartesianTransformationOperator3d::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9745,6 +10372,22 @@ impl CartesianTransformationOperator3d {
         }
         entity
     }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CartesianTransformationOperator3d::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
+                    entity.axis3 = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
 }
 pub trait ICelsiusTemperatureMeasureWithUnit: IMeasureWithUnit {}
 #[derive(Default, Debug)]
@@ -9762,7 +10405,7 @@ impl IMeasureWithUnit for CelsiusTemperatureMeasureWithUnit {
 }
 impl ICelsiusTemperatureMeasureWithUnit for CelsiusTemperatureMeasureWithUnit {}
 impl CelsiusTemperatureMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CelsiusTemperatureMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9799,7 +10442,7 @@ impl IShapeAspect for CentreOfSymmetry {
 impl IDerivedShapeAspect for CentreOfSymmetry {}
 impl ICentreOfSymmetry for CentreOfSymmetry {}
 impl CentreOfSymmetry {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CentreOfSymmetry::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9842,7 +10485,7 @@ impl ICertification for Certification {
     }
 }
 impl Certification {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Certification::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9871,7 +10514,7 @@ impl ICertificationType for CertificationType {
     }
 }
 impl CertificationType {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CertificationType::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9907,7 +10550,7 @@ impl IShapeAspect for Chamfer {
 impl ITransitionFeature for Chamfer {}
 impl IChamfer for Chamfer {}
 impl Chamfer {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Chamfer::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -9951,7 +10594,7 @@ impl IShapeAspect for ChamferOffset {
 }
 impl IChamferOffset for ChamferOffset {}
 impl ChamferOffset {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ChamferOffset::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10005,7 +10648,7 @@ impl ICharacterGlyphSymbol for CharacterGlyphSymbol {
     }
 }
 impl CharacterGlyphSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CharacterGlyphSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10014,6 +10657,17 @@ impl CharacterGlyphSymbol {
                 2usize => entity.context_of_items = parameter.into(),
                 3usize => entity.character_box = parameter.into(),
                 4usize => entity.baseline_ratio = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CharacterGlyphSymbol::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.character_box = parameter.into(),
+                1usize => entity.baseline_ratio = parameter.into(),
                 _ => {}
             }
         }
@@ -10045,7 +10699,7 @@ impl IGroup for CharacterizedClass {
 impl IClass for CharacterizedClass {}
 impl ICharacterizedClass for CharacterizedClass {}
 impl CharacterizedClass {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CharacterizedClass::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10081,7 +10735,7 @@ impl ICharacterizedObject for CharacterizedObject {
     }
 }
 impl CharacterizedObject {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CharacterizedObject::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10126,13 +10780,23 @@ impl ICircle for Circle {
     }
 }
 impl Circle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Circle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.position = parameter.into(),
                 2usize => entity.radius = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Circle::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.radius = parameter.into(),
                 _ => {}
             }
         }
@@ -10163,7 +10827,7 @@ impl IShapeAspect for CircularClosedProfile {
 }
 impl ICircularClosedProfile for CircularClosedProfile {}
 impl CircularClosedProfile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CircularClosedProfile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10201,7 +10865,7 @@ impl IFeatureDefinition for CircularPattern {}
 impl IReplicateFeature for CircularPattern {}
 impl ICircularPattern for CircularPattern {}
 impl CircularPattern {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CircularPattern::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10249,7 +10913,7 @@ impl IGeometricToleranceWithDatumReference for CircularRunoutTolerance {
 }
 impl ICircularRunoutTolerance for CircularRunoutTolerance {}
 impl CircularRunoutTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CircularRunoutTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10280,7 +10944,7 @@ impl IGroup for Class {
 }
 impl IClass for Class {}
 impl Class {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Class::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10314,7 +10978,7 @@ impl IGroup for ClassSystem {
 }
 impl IClassSystem for ClassSystem {}
 impl ClassSystem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ClassSystem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10355,13 +11019,23 @@ impl IClassUsageEffectivityContextAssignment for ClassUsageEffectivityContextAss
     }
 }
 impl ClassUsageEffectivityContextAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ClassUsageEffectivityContextAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_effectivity_assignment = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ClassUsageEffectivityContextAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -10390,7 +11064,7 @@ impl IClassificationRole for ClassificationRole {
     }
 }
 impl ClassificationRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ClassificationRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10432,7 +11106,7 @@ impl IShapeAspect for ClosedPathProfile {
 }
 impl IClosedPathProfile for ClosedPathProfile {}
 impl ClosedPathProfile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ClosedPathProfile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10471,7 +11145,7 @@ impl IConnectedFaceSet for ClosedShell {
 }
 impl IClosedShell for ClosedShell {}
 impl ClosedShell {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ClosedShell::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10513,7 +11187,7 @@ impl IGeometricToleranceWithDatumReference for CoaxialityTolerance {
 }
 impl ICoaxialityTolerance for CoaxialityTolerance {}
 impl CoaxialityTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CoaxialityTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10533,7 +11207,7 @@ pub trait IColour {}
 pub struct Colour {}
 impl IColour for Colour {}
 impl Colour {
-    pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(_parameters: Vec<Parameter>) -> Self {
         Colour::default()
     }
 }
@@ -10567,7 +11241,7 @@ impl IColourRgb for ColourRgb {
     }
 }
 impl ColourRgb {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ColourRgb::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10575,6 +11249,18 @@ impl ColourRgb {
                 1usize => entity.red = parameter.into(),
                 2usize => entity.green = parameter.into(),
                 3usize => entity.blue = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ColourRgb::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.red = parameter.into(),
+                1usize => entity.green = parameter.into(),
+                2usize => entity.blue = parameter.into(),
                 _ => {}
             }
         }
@@ -10595,7 +11281,7 @@ impl IColourSpecification for ColourSpecification {
     }
 }
 impl ColourSpecification {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ColourSpecification::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10637,7 +11323,7 @@ impl IDatum for CommonDatum {
     }
 }
 impl CommonDatum {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CommonDatum::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10678,7 +11364,7 @@ impl IBinaryGenericExpression for ComparisonEqual {
 }
 impl IComparisonEqual for ComparisonEqual {}
 impl ComparisonEqual {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ComparisonEqual::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10712,7 +11398,7 @@ impl IBinaryGenericExpression for ComparisonGreater {
 }
 impl IComparisonGreater for ComparisonGreater {}
 impl ComparisonGreater {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ComparisonGreater::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10743,7 +11429,7 @@ impl IBinaryGenericExpression for ComparisonGreaterEqual {
 }
 impl IComparisonGreaterEqual for ComparisonGreaterEqual {}
 impl ComparisonGreaterEqual {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ComparisonGreaterEqual::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10774,7 +11460,7 @@ impl IBinaryGenericExpression for ComparisonLess {
 }
 impl IComparisonLess for ComparisonLess {}
 impl ComparisonLess {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ComparisonLess::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10805,7 +11491,7 @@ impl IBinaryGenericExpression for ComparisonLessEqual {
 }
 impl IComparisonLessEqual for ComparisonLessEqual {}
 impl ComparisonLessEqual {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ComparisonLessEqual::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10836,7 +11522,7 @@ impl IBinaryGenericExpression for ComparisonNotEqual {
 }
 impl IComparisonNotEqual for ComparisonNotEqual {}
 impl ComparisonNotEqual {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ComparisonNotEqual::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10874,13 +11560,24 @@ impl ICompositeCurve for CompositeCurve {
     }
 }
 impl CompositeCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompositeCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.segments = parameter.into(),
                 2usize => entity.self_intersect = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CompositeCurve::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.segments = parameter.into(),
+                1usize => entity.self_intersect = parameter.into(),
                 _ => {}
             }
         }
@@ -10912,7 +11609,7 @@ impl ICompositeCurve for CompositeCurveOnSurface {
 }
 impl ICompositeCurveOnSurface for CompositeCurveOnSurface {}
 impl CompositeCurveOnSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompositeCurveOnSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10949,7 +11646,7 @@ impl ICompositeCurveSegment for CompositeCurveSegment {
     }
 }
 impl CompositeCurveSegment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompositeCurveSegment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -10980,7 +11677,7 @@ impl IFeatureDefinition for CompositeHole {}
 impl ICompoundFeature for CompositeHole {}
 impl ICompositeHole for CompositeHole {}
 impl CompositeHole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompositeHole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11022,7 +11719,7 @@ impl IShapeAspect for CompositeShapeAspect {
 }
 impl ICompositeShapeAspect for CompositeShapeAspect {}
 impl CompositeShapeAspect {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompositeShapeAspect::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11062,12 +11759,22 @@ impl ICompositeText for CompositeText {
     }
 }
 impl CompositeText {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompositeText::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.collected_text = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CompositeText::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.collected_text = parameter.into(),
                 _ => {}
             }
         }
@@ -11100,13 +11807,23 @@ impl ICompositeTextWithAssociatedCurves for CompositeTextWithAssociatedCurves {
     }
 }
 impl CompositeTextWithAssociatedCurves {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompositeTextWithAssociatedCurves::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.collected_text = parameter.into(),
                 2usize => entity.associated_curves = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CompositeTextWithAssociatedCurves::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.associated_curves = parameter.into(),
                 _ => {}
             }
         }
@@ -11139,13 +11856,23 @@ impl ICompositeTextWithBlankingBox for CompositeTextWithBlankingBox {
     }
 }
 impl CompositeTextWithBlankingBox {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompositeTextWithBlankingBox::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.collected_text = parameter.into(),
                 2usize => entity.blanking = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CompositeTextWithBlankingBox::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.blanking = parameter.into(),
                 _ => {}
             }
         }
@@ -11178,13 +11905,23 @@ impl ICompositeTextWithExtent for CompositeTextWithExtent {
     }
 }
 impl CompositeTextWithExtent {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompositeTextWithExtent::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.collected_text = parameter.into(),
                 2usize => entity.extent = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CompositeTextWithExtent::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.extent = parameter.into(),
                 _ => {}
             }
         }
@@ -11208,7 +11945,7 @@ impl ICharacterizedObject for CompoundFeature {
 impl IFeatureDefinition for CompoundFeature {}
 impl ICompoundFeature for CompoundFeature {}
 impl CompoundFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompoundFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11245,12 +11982,22 @@ impl ICompoundRepresentationItem for CompoundRepresentationItem {
     }
 }
 impl CompoundRepresentationItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompoundRepresentationItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.item_element = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CompoundRepresentationItem::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.item_element = parameter.into(),
                 _ => {}
             }
         }
@@ -11278,7 +12025,7 @@ impl IRepresentation for CompoundShapeRepresentation {
 impl IShapeRepresentation for CompoundShapeRepresentation {}
 impl ICompoundShapeRepresentation for CompoundShapeRepresentation {}
 impl CompoundShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CompoundShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11312,7 +12059,7 @@ impl IMultipleArityGenericExpression for ConcatExpression {
     }
 }
 impl ConcatExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConcatExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11353,7 +12100,7 @@ impl IGeometricToleranceWithDatumReference for ConcentricityTolerance {
 }
 impl IConcentricityTolerance for ConcentricityTolerance {}
 impl ConcentricityTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConcentricityTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11386,7 +12133,7 @@ impl IConceptFeatureOperator for ConceptFeatureOperator {
     }
 }
 impl ConceptFeatureOperator {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConceptFeatureOperator::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11432,7 +12179,7 @@ impl IConceptFeatureRelationship for ConceptFeatureRelationship {
     }
 }
 impl ConceptFeatureRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConceptFeatureRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11483,7 +12230,7 @@ impl IConceptFeatureRelationshipWithCondition for ConceptFeatureRelationshipWith
     }
 }
 impl ConceptFeatureRelationshipWithCondition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConceptFeatureRelationshipWithCondition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11498,6 +12245,16 @@ impl ConceptFeatureRelationshipWithCondition {
                 2usize => entity.relating_product_concept_feature = parameter.into(),
                 3usize => entity.related_product_concept_feature = parameter.into(),
                 4usize => entity.conditional_operator = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConceptFeatureRelationshipWithCondition::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.conditional_operator = parameter.into(),
                 _ => {}
             }
         }
@@ -11531,7 +12288,7 @@ impl IConditionalConceptFeature for ConditionalConceptFeature {
     }
 }
 impl ConditionalConceptFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConditionalConceptFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11545,6 +12302,16 @@ impl ConditionalConceptFeature {
                     }
                 }
                 3usize => entity.condition = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConditionalConceptFeature::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.condition = parameter.into(),
                 _ => {}
             }
         }
@@ -11586,7 +12353,7 @@ impl IConfigurableItem for ConfigurableItem {
     }
 }
 impl ConfigurableItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConfigurableItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11613,6 +12380,16 @@ impl ConfigurableItem {
         }
         entity
     }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConfigurableItem::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.item_concept_feature = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
 }
 pub trait IConfigurationDefinition {
     fn pair_values(&self) -> &HashSet<EntityRef>;
@@ -11632,7 +12409,7 @@ impl IConfigurationDefinition for ConfigurationDefinition {
     }
 }
 impl ConfigurationDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConfigurationDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11662,7 +12439,7 @@ impl IConfigurationDesign for ConfigurationDesign {
     }
 }
 impl ConfigurationDesign {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConfigurationDesign::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11699,13 +12476,23 @@ impl IConfigurationEffectivity for ConfigurationEffectivity {
     }
 }
 impl ConfigurationEffectivity {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConfigurationEffectivity::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.id = parameter.into(),
                 1usize => entity.usage = parameter.into(),
                 2usize => entity.configuration = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConfigurationEffectivity::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.configuration = parameter.into(),
                 _ => {}
             }
         }
@@ -11735,7 +12522,7 @@ impl IConfigurationInterpolation for ConfigurationInterpolation {
     }
 }
 impl ConfigurationInterpolation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConfigurationInterpolation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11781,7 +12568,7 @@ impl IConfigurationItem for ConfigurationItem {
     }
 }
 impl ConfigurationItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConfigurationItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11827,12 +12614,22 @@ impl IConfiguredEffectivityAssignment for ConfiguredEffectivityAssignment {
     }
 }
 impl ConfiguredEffectivityAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConfiguredEffectivityAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_effectivity = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConfiguredEffectivityAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -11862,13 +12659,23 @@ impl IConfiguredEffectivityContextAssignment for ConfiguredEffectivityContextAss
     }
 }
 impl ConfiguredEffectivityContextAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConfiguredEffectivityContextAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_effectivity_assignment = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConfiguredEffectivityContextAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -11896,12 +12703,22 @@ impl IConic for Conic {
     }
 }
 impl Conic {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Conic::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.position = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Conic::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.position = parameter.into(),
                 _ => {}
             }
         }
@@ -11940,7 +12757,7 @@ impl IConicalSurface for ConicalSurface {
     }
 }
 impl ConicalSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConicalSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -11948,6 +12765,17 @@ impl ConicalSurface {
                 1usize => entity.position = parameter.into(),
                 2usize => entity.radius = parameter.into(),
                 3usize => entity.semi_angle = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConicalSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.radius = parameter.into(),
+                1usize => entity.semi_angle = parameter.into(),
                 _ => {}
             }
         }
@@ -11974,12 +12802,22 @@ impl IConnectedEdgeSet for ConnectedEdgeSet {
     }
 }
 impl ConnectedEdgeSet {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConnectedEdgeSet::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.ces_edges = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConnectedEdgeSet::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.ces_edges = parameter.into(),
                 _ => {}
             }
         }
@@ -12006,12 +12844,22 @@ impl IConnectedFaceSet for ConnectedFaceSet {
     }
 }
 impl ConnectedFaceSet {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConnectedFaceSet::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.cfs_faces = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConnectedFaceSet::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.cfs_faces = parameter.into(),
                 _ => {}
             }
         }
@@ -12044,13 +12892,23 @@ impl IConnectedFaceSubSet for ConnectedFaceSubSet {
     }
 }
 impl ConnectedFaceSubSet {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConnectedFaceSubSet::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.cfs_faces = parameter.into(),
                 2usize => entity.parent_face_set = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConnectedFaceSubSet::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.parent_face_set = parameter.into(),
                 _ => {}
             }
         }
@@ -12077,7 +12935,7 @@ impl IRepresentation for ConstructiveGeometryRepresentation {
 }
 impl IConstructiveGeometryRepresentation for ConstructiveGeometryRepresentation {}
 impl ConstructiveGeometryRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConstructiveGeometryRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12114,7 +12972,7 @@ impl IRepresentationRelationship for ConstructiveGeometryRepresentationRelations
 }
 impl IConstructiveGeometryRepresentationRelationship for ConstructiveGeometryRepresentationRelationship {}
 impl ConstructiveGeometryRepresentationRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConstructiveGeometryRepresentationRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12154,7 +13012,7 @@ impl IRepresentation for ContactRatioRepresentation {
 }
 impl IContactRatioRepresentation for ContactRatioRepresentation {}
 impl ContactRatioRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ContactRatioRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12186,12 +13044,22 @@ impl IContextDependentInvisibility for ContextDependentInvisibility {
     }
 }
 impl ContextDependentInvisibility {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ContextDependentInvisibility::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.invisible_items = parameter.into(),
                 1usize => entity.presentation_context = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ContextDependentInvisibility::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.presentation_context = parameter.into(),
                 _ => {}
             }
         }
@@ -12233,7 +13101,7 @@ impl IContextDependentOverRidingStyledItem for ContextDependentOverRidingStyledI
     }
 }
 impl ContextDependentOverRidingStyledItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ContextDependentOverRidingStyledItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12242,6 +13110,16 @@ impl ContextDependentOverRidingStyledItem {
                 2usize => entity.item = parameter.into(),
                 3usize => entity.over_ridden_style = parameter.into(),
                 4usize => entity.style_context = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ContextDependentOverRidingStyledItem::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.style_context = parameter.into(),
                 _ => {}
             }
         }
@@ -12266,7 +13144,7 @@ impl IContextDependentShapeRepresentation for ContextDependentShapeRepresentatio
     }
 }
 impl ContextDependentShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ContextDependentShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12297,12 +13175,22 @@ impl IContextDependentUnit for ContextDependentUnit {
     }
 }
 impl ContextDependentUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ContextDependentUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.dimensions = parameter.into(),
                 1usize => entity.name = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ContextDependentUnit::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.name = parameter.into(),
                 _ => {}
             }
         }
@@ -12332,7 +13220,7 @@ impl IContract for Contract {
     }
 }
 impl Contract {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Contract::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12361,7 +13249,7 @@ impl IContractType for ContractType {
     }
 }
 impl ContractType {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ContractType::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12396,13 +13284,24 @@ impl IConversionBasedUnit for ConversionBasedUnit {
     }
 }
 impl ConversionBasedUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ConversionBasedUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.dimensions = parameter.into(),
                 1usize => entity.name = parameter.into(),
                 2usize => entity.conversion_factor = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ConversionBasedUnit::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.name = parameter.into(),
+                1usize => entity.conversion_factor = parameter.into(),
                 _ => {}
             }
         }
@@ -12432,7 +13331,7 @@ impl ICoordinatedUniversalTimeOffset for CoordinatedUniversalTimeOffset {
     }
 }
 impl CoordinatedUniversalTimeOffset {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CoordinatedUniversalTimeOffset::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12472,7 +13371,7 @@ impl IUnaryGenericExpression for CosFunction {
 impl IUnaryFunctionCall for CosFunction {}
 impl ICosFunction for CosFunction {}
 impl CosFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CosFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12504,7 +13403,7 @@ impl IRepresentation for CsgShapeRepresentation {
 impl IShapeRepresentation for CsgShapeRepresentation {}
 impl ICsgShapeRepresentation for CsgShapeRepresentation {}
 impl CsgShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CsgShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12538,12 +13437,22 @@ impl ICsgSolid for CsgSolid {
     }
 }
 impl CsgSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CsgSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.tree_root_expression = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CsgSolid::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.tree_root_expression = parameter.into(),
                 _ => {}
             }
         }
@@ -12563,7 +13472,7 @@ impl IRepresentationItem for Curve {
 impl IGeometricRepresentationItem for Curve {}
 impl ICurve for Curve {}
 impl Curve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Curve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12606,7 +13515,7 @@ impl ICurveBoundedSurface for CurveBoundedSurface {
     }
 }
 impl CurveBoundedSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CurveBoundedSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12614,6 +13523,18 @@ impl CurveBoundedSurface {
                 1usize => entity.basis_surface = parameter.into(),
                 2usize => entity.boundaries = parameter.into(),
                 3usize => entity.implicit_outer = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CurveBoundedSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.basis_surface = parameter.into(),
+                1usize => entity.boundaries = parameter.into(),
+                2usize => entity.implicit_outer = parameter.into(),
                 _ => {}
             }
         }
@@ -12640,7 +13561,7 @@ impl IDraughtingCallout for CurveDimension {
 impl IDimensionCurveDirectedCallout for CurveDimension {}
 impl ICurveDimension for CurveDimension {}
 impl CurveDimension {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CurveDimension::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12678,13 +13599,24 @@ impl ICurveReplica for CurveReplica {
     }
 }
 impl CurveReplica {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CurveReplica::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.parent_curve = parameter.into(),
                 2usize => entity.transformation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CurveReplica::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.parent_curve = parameter.into(),
+                1usize => entity.transformation = parameter.into(),
                 _ => {}
             }
         }
@@ -12720,7 +13652,7 @@ impl ICurveStyle for CurveStyle {
     }
 }
 impl CurveStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CurveStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12753,7 +13685,7 @@ impl ICurveStyleFont for CurveStyleFont {
     }
 }
 impl CurveStyleFont {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CurveStyleFont::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12784,7 +13716,7 @@ impl ICurveStyleFontPattern for CurveStyleFontPattern {
     }
 }
 impl CurveStyleFontPattern {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CurveStyleFontPattern::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12814,7 +13746,7 @@ impl ICurveStyleRendering for CurveStyleRendering {
     }
 }
 impl CurveStyleRendering {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CurveStyleRendering::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12847,7 +13779,7 @@ impl IRepresentation for CurveSweptSolidShapeRepresentation {
 impl IShapeRepresentation for CurveSweptSolidShapeRepresentation {}
 impl ICurveSweptSolidShapeRepresentation for CurveSweptSolidShapeRepresentation {}
 impl CurveSweptSolidShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CurveSweptSolidShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12890,7 +13822,7 @@ impl IKinematicPair for CylindricalPair {
 }
 impl ICylindricalPair for CylindricalPair {}
 impl CylindricalPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CylindricalPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12949,7 +13881,7 @@ impl ICylindricalPairRange for CylindricalPairRange {
     }
 }
 impl CylindricalPairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CylindricalPairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -12992,7 +13924,7 @@ impl ICylindricalPairValue for CylindricalPairValue {
     }
 }
 impl CylindricalPairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CylindricalPairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13032,13 +13964,23 @@ impl ICylindricalSurface for CylindricalSurface {
     }
 }
 impl CylindricalSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CylindricalSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.position = parameter.into(),
                 2usize => entity.radius = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = CylindricalSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.radius = parameter.into(),
                 _ => {}
             }
         }
@@ -13069,7 +14011,7 @@ impl IGeometricTolerance for CylindricityTolerance {
 }
 impl ICylindricityTolerance for CylindricityTolerance {}
 impl CylindricityTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = CylindricityTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13106,7 +14048,7 @@ impl IDataEnvironment for DataEnvironment {
     }
 }
 impl DataEnvironment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DataEnvironment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13132,7 +14074,7 @@ impl IDate for Date {
     }
 }
 impl Date {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Date::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13161,7 +14103,7 @@ impl IDateAndTime for DateAndTime {
     }
 }
 impl DateAndTime {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DateAndTime::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13194,7 +14136,7 @@ impl IDateRole for DateRole {
     }
 }
 impl DateRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DateRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13218,7 +14160,7 @@ impl IDateTimeRole for DateTimeRole {
     }
 }
 impl DateTimeRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DateTimeRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13253,7 +14195,7 @@ impl IDatedEffectivity for DatedEffectivity {
     }
 }
 impl DatedEffectivity {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DatedEffectivity::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13266,6 +14208,23 @@ impl DatedEffectivity {
                     }
                 }
                 2usize => entity.effectivity_start_date = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DatedEffectivity::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
+                    entity.effectivity_end_date = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                1usize => entity.effectivity_start_date = parameter.into(),
                 _ => {}
             }
         }
@@ -13303,7 +14262,7 @@ impl IDatum for Datum {
     }
 }
 impl Datum {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Datum::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13318,6 +14277,16 @@ impl Datum {
                 2usize => entity.of_shape = parameter.into(),
                 3usize => entity.product_definitional = parameter.into(),
                 4usize => entity.identification = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Datum::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.identification = parameter.into(),
                 _ => {}
             }
         }
@@ -13348,7 +14317,7 @@ impl IShapeAspect for DatumFeature {
 }
 impl IDatumFeature for DatumFeature {}
 impl DatumFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DatumFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13387,7 +14356,7 @@ impl IDraughtingCallout for DatumFeatureCallout {
 }
 impl IDatumFeatureCallout for DatumFeatureCallout {}
 impl DatumFeatureCallout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DatumFeatureCallout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13417,7 +14386,7 @@ impl IDatumReference for DatumReference {
     }
 }
 impl DatumReference {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DatumReference::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13460,7 +14429,7 @@ impl IDatumTarget for DatumTarget {
     }
 }
 impl DatumTarget {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DatumTarget::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13475,6 +14444,16 @@ impl DatumTarget {
                 2usize => entity.of_shape = parameter.into(),
                 3usize => entity.product_definitional = parameter.into(),
                 4usize => entity.target_id = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DatumTarget::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.target_id = parameter.into(),
                 _ => {}
             }
         }
@@ -13500,7 +14479,7 @@ impl IDraughtingCallout for DatumTargetCallout {
 }
 impl IDatumTargetCallout for DatumTargetCallout {}
 impl DatumTargetCallout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DatumTargetCallout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13532,7 +14511,7 @@ impl IRepresentation for DefaultToleranceTable {
 }
 impl IDefaultToleranceTable for DefaultToleranceTable {}
 impl DefaultToleranceTable {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DefaultToleranceTable::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13563,7 +14542,7 @@ impl ICompoundRepresentationItem for DefaultToleranceTableCell {
 }
 impl IDefaultToleranceTableCell for DefaultToleranceTableCell {}
 impl DefaultToleranceTableCell {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DefaultToleranceTableCell::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13600,13 +14579,24 @@ impl IDefinedCharacterGlyph for DefinedCharacterGlyph {
     }
 }
 impl DefinedCharacterGlyph {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DefinedCharacterGlyph::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.definition = parameter.into(),
                 2usize => entity.placement = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DefinedCharacterGlyph::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.definition = parameter.into(),
+                1usize => entity.placement = parameter.into(),
                 _ => {}
             }
         }
@@ -13639,13 +14629,24 @@ impl IDefinedSymbol for DefinedSymbol {
     }
 }
 impl DefinedSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DefinedSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.definition = parameter.into(),
                 2usize => entity.target = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DefinedSymbol::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.definition = parameter.into(),
+                1usize => entity.target = parameter.into(),
                 _ => {}
             }
         }
@@ -13672,7 +14673,7 @@ impl IRepresentation for DefinitionalRepresentation {
 }
 impl IDefinitionalRepresentation for DefinitionalRepresentation {}
 impl DefinitionalRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DefinitionalRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13711,13 +14712,24 @@ impl IDegeneratePcurve for DegeneratePcurve {
     }
 }
 impl DegeneratePcurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DegeneratePcurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.basis_surface = parameter.into(),
                 2usize => entity.reference_to_curve = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DegeneratePcurve::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.basis_surface = parameter.into(),
+                1usize => entity.reference_to_curve = parameter.into(),
                 _ => {}
             }
         }
@@ -13761,7 +14773,7 @@ impl IDegenerateToroidalSurface for DegenerateToroidalSurface {
     }
 }
 impl DegenerateToroidalSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DegenerateToroidalSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13770,6 +14782,16 @@ impl DegenerateToroidalSurface {
                 2usize => entity.major_radius = parameter.into(),
                 3usize => entity.minor_radius = parameter.into(),
                 4usize => entity.select_outer = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DegenerateToroidalSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.select_outer = parameter.into(),
                 _ => {}
             }
         }
@@ -13800,7 +14822,7 @@ impl IShapeAspect for DerivedShapeAspect {
 }
 impl IDerivedShapeAspect for DerivedShapeAspect {}
 impl DerivedShapeAspect {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DerivedShapeAspect::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13833,7 +14855,7 @@ impl IDerivedUnit for DerivedUnit {
     }
 }
 impl DerivedUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DerivedUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13862,7 +14884,7 @@ impl IDerivedUnitElement for DerivedUnitElement {
     }
 }
 impl DerivedUnitElement {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DerivedUnitElement::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13887,7 +14909,7 @@ impl IDerivedUnit for DerivedUnitVariable {
 impl IVariableSemantics for DerivedUnitVariable {}
 impl IDerivedUnitVariable for DerivedUnitVariable {}
 impl DerivedUnitVariable {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DerivedUnitVariable::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13916,7 +14938,7 @@ impl IDescriptionAttribute for DescriptionAttribute {
     }
 }
 impl DescriptionAttribute {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DescriptionAttribute::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -13947,12 +14969,22 @@ impl IDescriptiveRepresentationItem for DescriptiveRepresentationItem {
     }
 }
 impl DescriptiveRepresentationItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DescriptiveRepresentationItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.description = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DescriptiveRepresentationItem::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.description = parameter.into(),
                 _ => {}
             }
         }
@@ -13979,7 +15011,7 @@ impl IDraughtingCallout for DiameterDimension {
 impl IDimensionCurveDirectedCallout for DiameterDimension {}
 impl IDiameterDimension for DiameterDimension {}
 impl DiameterDimension {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DiameterDimension::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14010,7 +15042,7 @@ impl IDraughtingCallout for DimensionCallout {
 }
 impl IDimensionCallout for DimensionCallout {}
 impl DimensionCallout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionCallout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14046,7 +15078,7 @@ impl IDraughtingCalloutRelationship for DimensionCalloutComponentRelationship {
 }
 impl IDimensionCalloutComponentRelationship for DimensionCalloutComponentRelationship {}
 impl DimensionCalloutComponentRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionCalloutComponentRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14084,7 +15116,7 @@ impl IDraughtingCalloutRelationship for DimensionCalloutRelationship {
 }
 impl IDimensionCalloutRelationship for DimensionCalloutRelationship {}
 impl DimensionCalloutRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionCalloutRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14126,7 +15158,7 @@ impl IAnnotationCurveOccurrence for DimensionCurve {
 }
 impl IDimensionCurve for DimensionCurve {}
 impl DimensionCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14158,7 +15190,7 @@ impl IDraughtingCallout for DimensionCurveDirectedCallout {
 }
 impl IDimensionCurveDirectedCallout for DimensionCurveDirectedCallout {}
 impl DimensionCurveDirectedCallout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionCurveDirectedCallout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14211,7 +15243,7 @@ impl IDimensionCurveTerminator for DimensionCurveTerminator {
     }
 }
 impl DimensionCurveTerminator {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionCurveTerminator::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14220,6 +15252,16 @@ impl DimensionCurveTerminator {
                 2usize => entity.item = parameter.into(),
                 3usize => entity.annotated_curve = parameter.into(),
                 4usize => entity.role = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DimensionCurveTerminator::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.role = parameter.into(),
                 _ => {}
             }
         }
@@ -14250,7 +15292,7 @@ impl IDraughtingCalloutRelationship for DimensionPair {
 }
 impl IDimensionPair for DimensionPair {}
 impl DimensionPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14282,7 +15324,7 @@ impl IDimensionRelatedToleranceZoneElement for DimensionRelatedToleranceZoneElem
     }
 }
 impl DimensionRelatedToleranceZoneElement {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionRelatedToleranceZoneElement::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14339,7 +15381,7 @@ impl IMappedItem for DimensionTextAssociativity {
     }
 }
 impl DimensionTextAssociativity {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionTextAssociativity::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14375,7 +15417,7 @@ impl IDimensionalCharacteristicRepresentation for DimensionalCharacteristicRepre
     }
 }
 impl DimensionalCharacteristicRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionalCharacteristicRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14430,7 +15472,7 @@ impl IDimensionalExponents for DimensionalExponents {
     }
 }
 impl DimensionalExponents {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionalExponents::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14471,7 +15513,7 @@ impl IShapeAspectRelationship for DimensionalLocation {
 }
 impl IDimensionalLocation for DimensionalLocation {}
 impl DimensionalLocation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionalLocation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14523,7 +15565,7 @@ impl IDimensionalLocationWithPath for DimensionalLocationWithPath {
     }
 }
 impl DimensionalLocationWithPath {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionalLocationWithPath::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14538,6 +15580,16 @@ impl DimensionalLocationWithPath {
                 2usize => entity.relating_shape_aspect = parameter.into(),
                 3usize => entity.related_shape_aspect = parameter.into(),
                 4usize => entity.path = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DimensionalLocationWithPath::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.path = parameter.into(),
                 _ => {}
             }
         }
@@ -14562,7 +15614,7 @@ impl IDimensionalSize for DimensionalSize {
     }
 }
 impl DimensionalSize {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionalSize::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14597,13 +15649,23 @@ impl IDimensionalSizeWithPath for DimensionalSizeWithPath {
     }
 }
 impl DimensionalSizeWithPath {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DimensionalSizeWithPath::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.applies_to = parameter.into(),
                 1usize => entity.name = parameter.into(),
                 2usize => entity.path = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DimensionalSizeWithPath::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.path = parameter.into(),
                 _ => {}
             }
         }
@@ -14638,7 +15700,7 @@ impl IDirectedAction for DirectedAction {
     }
 }
 impl DirectedAction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DirectedAction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14652,6 +15714,16 @@ impl DirectedAction {
                 }
                 2usize => entity.chosen_method = parameter.into(),
                 3usize => entity.directive = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DirectedAction::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.directive = parameter.into(),
                 _ => {}
             }
         }
@@ -14682,7 +15754,7 @@ impl IShapeAspect for DirectedAngle {
 }
 impl IDirectedAngle for DirectedAngle {}
 impl DirectedAngle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DirectedAngle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14727,7 +15799,7 @@ impl IShapeAspectRelationship for DirectedDimensionalLocation {
 impl IDimensionalLocation for DirectedDimensionalLocation {}
 impl IDirectedDimensionalLocation for DirectedDimensionalLocation {}
 impl DirectedDimensionalLocation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DirectedDimensionalLocation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14767,12 +15839,22 @@ impl IDirection for Direction {
     }
 }
 impl Direction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Direction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.direction_ratios = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Direction::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.direction_ratios = parameter.into(),
                 _ => {}
             }
         }
@@ -14800,7 +15882,7 @@ impl IRepresentation for DirectionShapeRepresentation {
 impl IShapeRepresentation for DirectionShapeRepresentation {}
 impl IDirectionShapeRepresentation for DirectionShapeRepresentation {}
 impl DirectionShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DirectionShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14833,7 +15915,7 @@ impl IBinaryGenericExpression for DivExpression {
 }
 impl IDivExpression for DivExpression {}
 impl DivExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DivExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14872,7 +15954,7 @@ impl IDocument for Document {
     }
 }
 impl Document {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Document::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14924,7 +16006,7 @@ impl ICharacterizedObject for DocumentFile {
 }
 impl IDocumentFile for DocumentFile {}
 impl DocumentFile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DocumentFile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -14972,7 +16054,7 @@ impl IDocumentProductAssociation for DocumentProductAssociation {
     }
 }
 impl DocumentProductAssociation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DocumentProductAssociation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15016,7 +16098,7 @@ impl IDocumentProductAssociation for DocumentProductEquivalence {
 }
 impl IDocumentProductEquivalence for DocumentProductEquivalence {}
 impl DocumentProductEquivalence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DocumentProductEquivalence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15068,7 +16150,7 @@ impl IDocumentRelationship for DocumentRelationship {
     }
 }
 impl DocumentRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DocumentRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15106,7 +16188,7 @@ impl IDocumentRepresentationType for DocumentRepresentationType {
     }
 }
 impl DocumentRepresentationType {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DocumentRepresentationType::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15131,7 +16213,7 @@ impl IDocumentType for DocumentType {
     }
 }
 impl DocumentType {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DocumentType::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15165,7 +16247,7 @@ impl IDocumentUsageConstraint for DocumentUsageConstraint {
     }
 }
 impl DocumentUsageConstraint {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DocumentUsageConstraint::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15200,7 +16282,7 @@ impl IDocumentUsageRole for DocumentUsageRole {
     }
 }
 impl DocumentUsageRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DocumentUsageRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15241,7 +16323,7 @@ impl IStyledItem for DraughtingAnnotationOccurrence {
 impl IAnnotationOccurrence for DraughtingAnnotationOccurrence {}
 impl IDraughtingAnnotationOccurrence for DraughtingAnnotationOccurrence {}
 impl DraughtingAnnotationOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingAnnotationOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15274,12 +16356,22 @@ impl IDraughtingCallout for DraughtingCallout {
     }
 }
 impl DraughtingCallout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingCallout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.contents = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DraughtingCallout::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.contents = parameter.into(),
                 _ => {}
             }
         }
@@ -15314,7 +16406,7 @@ impl IDraughtingCalloutRelationship for DraughtingCalloutRelationship {
     }
 }
 impl DraughtingCalloutRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingCalloutRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15347,7 +16439,7 @@ impl IDraughtingCallout for DraughtingElements {
 }
 impl IDraughtingElements for DraughtingElements {}
 impl DraughtingElements {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingElements::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15379,7 +16471,7 @@ impl IRepresentation for DraughtingModel {
 }
 impl IDraughtingModel for DraughtingModel {}
 impl DraughtingModel {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingModel::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15434,7 +16526,7 @@ impl IDraughtingModelItemAssociation for DraughtingModelItemAssociation {
     }
 }
 impl DraughtingModelItemAssociation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingModelItemAssociation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15449,6 +16541,18 @@ impl DraughtingModelItemAssociation {
                 2usize => entity.definition = parameter.into(),
                 3usize => entity.used_representation = parameter.into(),
                 4usize => entity.identified_item = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DraughtingModelItemAssociation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.definition = parameter.into(),
+                1usize => entity.used_representation = parameter.into(),
+                2usize => entity.identified_item = parameter.into(),
                 _ => {}
             }
         }
@@ -15469,7 +16573,7 @@ impl IColour for DraughtingPreDefinedColour {}
 impl IPreDefinedColour for DraughtingPreDefinedColour {}
 impl IDraughtingPreDefinedColour for DraughtingPreDefinedColour {}
 impl DraughtingPreDefinedColour {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingPreDefinedColour::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15493,7 +16597,7 @@ impl IPreDefinedItem for DraughtingPreDefinedCurveFont {
 impl IPreDefinedCurveFont for DraughtingPreDefinedCurveFont {}
 impl IDraughtingPreDefinedCurveFont for DraughtingPreDefinedCurveFont {}
 impl DraughtingPreDefinedCurveFont {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingPreDefinedCurveFont::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15517,7 +16621,7 @@ impl IPreDefinedItem for DraughtingPreDefinedTextFont {
 impl IPreDefinedTextFont for DraughtingPreDefinedTextFont {}
 impl IDraughtingPreDefinedTextFont for DraughtingPreDefinedTextFont {}
 impl DraughtingPreDefinedTextFont {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingPreDefinedTextFont::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15551,13 +16655,23 @@ impl IDraughtingSpecificationReference for DraughtingSpecificationReference {
     }
 }
 impl DraughtingSpecificationReference {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingSpecificationReference::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_document = parameter.into(),
                 1usize => entity.source = parameter.into(),
                 2usize => entity.specified_items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DraughtingSpecificationReference::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.specified_items = parameter.into(),
                 _ => {}
             }
         }
@@ -15585,7 +16699,7 @@ impl IRepresentation for DraughtingSubfigureRepresentation {
 impl ISymbolRepresentation for DraughtingSubfigureRepresentation {}
 impl IDraughtingSubfigureRepresentation for DraughtingSubfigureRepresentation {}
 impl DraughtingSubfigureRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingSubfigureRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15619,7 +16733,7 @@ impl IRepresentation for DraughtingSymbolRepresentation {
 impl ISymbolRepresentation for DraughtingSymbolRepresentation {}
 impl IDraughtingSymbolRepresentation for DraughtingSymbolRepresentation {}
 impl DraughtingSymbolRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingSymbolRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15673,7 +16787,7 @@ impl ITextLiteralWithDelineation for DraughtingTextLiteralWithDelineation {
 }
 impl IDraughtingTextLiteralWithDelineation for DraughtingTextLiteralWithDelineation {}
 impl DraughtingTextLiteralWithDelineation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingTextLiteralWithDelineation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15713,7 +16827,7 @@ impl IDraughtingTitle for DraughtingTitle {
     }
 }
 impl DraughtingTitle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DraughtingTitle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15744,7 +16858,7 @@ impl IDrawingDefinition for DrawingDefinition {
     }
 }
 impl DrawingDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DrawingDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15786,7 +16900,7 @@ impl IDrawingRevision for DrawingRevision {
     }
 }
 impl DrawingRevision {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DrawingRevision::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15823,7 +16937,7 @@ impl IDrawingRevisionSequence for DrawingRevisionSequence {
     }
 }
 impl DrawingRevisionSequence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DrawingRevisionSequence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15857,7 +16971,7 @@ impl ISymbolRepresentation for DrawingSheetLayout {}
 impl IDraughtingSymbolRepresentation for DrawingSheetLayout {}
 impl IDrawingSheetLayout for DrawingSheetLayout {}
 impl DrawingSheetLayout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DrawingSheetLayout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15903,7 +17017,7 @@ impl IDrawingSheetRevision for DrawingSheetRevision {
     }
 }
 impl DrawingSheetRevision {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DrawingSheetRevision::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -15911,6 +17025,16 @@ impl DrawingSheetRevision {
                 1usize => entity.items = parameter.into(),
                 2usize => entity.context_of_items = parameter.into(),
                 3usize => entity.revision_identifier = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DrawingSheetRevision::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.revision_identifier = parameter.into(),
                 _ => {}
             }
         }
@@ -15940,13 +17064,23 @@ impl IDrawingSheetRevisionUsage for DrawingSheetRevisionUsage {
     }
 }
 impl DrawingSheetRevisionUsage {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = DrawingSheetRevisionUsage::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.area = parameter.into(),
                 1usize => entity.in_set = parameter.into(),
                 2usize => entity.sheet_number = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = DrawingSheetRevisionUsage::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.sheet_number = parameter.into(),
                 _ => {}
             }
         }
@@ -15978,13 +17112,24 @@ impl IEdge for Edge {
     }
 }
 impl Edge {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Edge::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.edge_start = parameter.into(),
                 2usize => entity.edge_end = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Edge::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.edge_start = parameter.into(),
+                1usize => entity.edge_end = parameter.into(),
                 _ => {}
             }
         }
@@ -16011,12 +17156,22 @@ impl IEdgeBasedWireframeModel for EdgeBasedWireframeModel {
     }
 }
 impl EdgeBasedWireframeModel {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EdgeBasedWireframeModel::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.ebwm_boundary = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = EdgeBasedWireframeModel::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.ebwm_boundary = parameter.into(),
                 _ => {}
             }
         }
@@ -16044,7 +17199,7 @@ impl IRepresentation for EdgeBasedWireframeShapeRepresentation {
 impl IShapeRepresentation for EdgeBasedWireframeShapeRepresentation {}
 impl IEdgeBasedWireframeShapeRepresentation for EdgeBasedWireframeShapeRepresentation {}
 impl EdgeBasedWireframeShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EdgeBasedWireframeShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16093,7 +17248,7 @@ impl IEdgeCurve for EdgeCurve {
 }
 impl IGeometricRepresentationItem for EdgeCurve {}
 impl EdgeCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EdgeCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16102,6 +17257,17 @@ impl EdgeCurve {
                 2usize => entity.edge_end = parameter.into(),
                 3usize => entity.edge_geometry = parameter.into(),
                 4usize => entity.same_sense = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = EdgeCurve::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.edge_geometry = parameter.into(),
+                1usize => entity.same_sense = parameter.into(),
                 _ => {}
             }
         }
@@ -16128,7 +17294,7 @@ impl IPath for EdgeLoop {
     }
 }
 impl EdgeLoop {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EdgeLoop::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16165,7 +17331,7 @@ impl IShapeAspect for EdgeRound {
 impl ITransitionFeature for EdgeRound {}
 impl IEdgeRound for EdgeRound {}
 impl EdgeRound {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EdgeRound::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16198,7 +17364,7 @@ impl IEffectivity for Effectivity {
     }
 }
 impl Effectivity {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Effectivity::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16234,7 +17400,7 @@ impl IEffectivityContextRole for EffectivityContextRole {
     }
 }
 impl EffectivityContextRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EffectivityContextRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16280,7 +17446,7 @@ impl IEffectivityRelationship for EffectivityRelationship {
     }
 }
 impl EffectivityRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EffectivityRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16316,7 +17482,7 @@ impl IMeasureWithUnit for ElectricCurrentMeasureWithUnit {
 }
 impl IElectricCurrentMeasureWithUnit for ElectricCurrentMeasureWithUnit {}
 impl ElectricCurrentMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ElectricCurrentMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16340,7 +17506,7 @@ impl INamedUnit for ElectricCurrentUnit {
 }
 impl IElectricCurrentUnit for ElectricCurrentUnit {}
 impl ElectricCurrentUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ElectricCurrentUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16371,7 +17537,7 @@ impl IAction for ElementDelivery {
 }
 impl IElementDelivery for ElementDelivery {}
 impl ElementDelivery {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ElementDelivery::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16411,12 +17577,22 @@ impl IElementarySurface for ElementarySurface {
     }
 }
 impl ElementarySurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ElementarySurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.position = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ElementarySurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.position = parameter.into(),
                 _ => {}
             }
         }
@@ -16455,7 +17631,7 @@ impl IEllipse for Ellipse {
     }
 }
 impl Ellipse {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Ellipse::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16463,6 +17639,17 @@ impl Ellipse {
                 1usize => entity.position = parameter.into(),
                 2usize => entity.semi_axis_1 = parameter.into(),
                 3usize => entity.semi_axis_2 = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Ellipse::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.semi_axis_1 = parameter.into(),
+                1usize => entity.semi_axis_2 = parameter.into(),
                 _ => {}
             }
         }
@@ -16487,7 +17674,7 @@ impl IEnvironment for Environment {
     }
 }
 impl Environment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Environment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16515,7 +17702,7 @@ impl IBinaryGenericExpression for EqualsExpression {
 }
 impl IEqualsExpression for EqualsExpression {}
 impl EqualsExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EqualsExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16557,7 +17744,7 @@ impl IEvaluatedDegeneratePcurve for EvaluatedDegeneratePcurve {
     }
 }
 impl EvaluatedDegeneratePcurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EvaluatedDegeneratePcurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16565,6 +17752,16 @@ impl EvaluatedDegeneratePcurve {
                 1usize => entity.basis_surface = parameter.into(),
                 2usize => entity.reference_to_curve = parameter.into(),
                 3usize => entity.equivalent_point = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = EvaluatedDegeneratePcurve::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.equivalent_point = parameter.into(),
                 _ => {}
             }
         }
@@ -16594,7 +17791,7 @@ impl IEventOccurrence for EventOccurrence {
     }
 }
 impl EventOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EventOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16639,7 +17836,7 @@ impl IEventOccurrenceContextRole for EventOccurrenceContextRole {
     }
 }
 impl EventOccurrenceContextRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EventOccurrenceContextRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16675,7 +17872,7 @@ impl IEventOccurrenceRole for EventOccurrenceRole {
     }
 }
 impl EventOccurrenceRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = EventOccurrenceRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16710,7 +17907,7 @@ impl IGroup for ExclusiveProductConceptFeatureCategory {
 impl IProductConceptFeatureCategory for ExclusiveProductConceptFeatureCategory {}
 impl IExclusiveProductConceptFeatureCategory for ExclusiveProductConceptFeatureCategory {}
 impl ExclusiveProductConceptFeatureCategory {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExclusiveProductConceptFeatureCategory::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16748,7 +17945,7 @@ impl IAction for ExecutedAction {
 }
 impl IExecutedAction for ExecutedAction {}
 impl ExecutedAction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExecutedAction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16788,7 +17985,7 @@ impl IUnaryGenericExpression for ExpFunction {
 impl IUnaryFunctionCall for ExpFunction {}
 impl IExpFunction for ExpFunction {}
 impl ExpFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExpFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16819,7 +18016,7 @@ impl IContextDependentUnit for ExpressionConversionBasedUnit {
 impl IVariableSemantics for ExpressionConversionBasedUnit {}
 impl IExpressionConversionBasedUnit for ExpressionConversionBasedUnit {}
 impl ExpressionConversionBasedUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExpressionConversionBasedUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16856,7 +18053,7 @@ impl IShapeAspect for Extension {
 impl IDerivedShapeAspect for Extension {}
 impl IExtension for Extension {}
 impl Extension {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Extension::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16892,7 +18089,7 @@ impl IExternalSource for ExternalSource {
     }
 }
 impl ExternalSource {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternalSource::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16919,7 +18116,7 @@ impl IExternallyDefinedItem for ExternallyDefinedCharacterGlyph {
 }
 impl IExternallyDefinedCharacterGlyph for ExternallyDefinedCharacterGlyph {}
 impl ExternallyDefinedCharacterGlyph {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedCharacterGlyph::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16958,7 +18155,7 @@ impl IExternallyDefinedItem for ExternallyDefinedClass {
 }
 impl IExternallyDefinedClass for ExternallyDefinedClass {}
 impl ExternallyDefinedClass {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedClass::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -16994,7 +18191,7 @@ impl IExternallyDefinedItem for ExternallyDefinedCurveFont {
 }
 impl IExternallyDefinedCurveFont for ExternallyDefinedCurveFont {}
 impl ExternallyDefinedCurveFont {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedCurveFont::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17032,7 +18229,7 @@ impl IExternallyDefinedItem for ExternallyDefinedDimensionDefinition {
 }
 impl IExternallyDefinedDimensionDefinition for ExternallyDefinedDimensionDefinition {}
 impl ExternallyDefinedDimensionDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedDimensionDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17073,7 +18270,7 @@ impl IExternallyDefinedItem for ExternallyDefinedFeatureDefinition {
 }
 impl IExternallyDefinedFeatureDefinition for ExternallyDefinedFeatureDefinition {}
 impl ExternallyDefinedFeatureDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedFeatureDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17123,7 +18320,7 @@ impl IExternallyDefinedItem for ExternallyDefinedGeneralProperty {
 }
 impl IExternallyDefinedGeneralProperty for ExternallyDefinedGeneralProperty {}
 impl ExternallyDefinedGeneralProperty {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedGeneralProperty::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17167,7 +18364,7 @@ impl IRepresentationItem for ExternallyDefinedHatchStyle {
 impl IGeometricRepresentationItem for ExternallyDefinedHatchStyle {}
 impl IExternallyDefinedHatchStyle for ExternallyDefinedHatchStyle {}
 impl ExternallyDefinedHatchStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedHatchStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17198,7 +18395,7 @@ impl IExternallyDefinedItem for ExternallyDefinedItem {
     }
 }
 impl ExternallyDefinedItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17238,7 +18435,7 @@ impl IExternallyDefinedItemRelationship for ExternallyDefinedItemRelationship {
     }
 }
 impl ExternallyDefinedItemRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedItemRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17275,7 +18472,7 @@ impl IExternallyDefinedItem for ExternallyDefinedStyle {
 impl IFoundedItem for ExternallyDefinedStyle {}
 impl IExternallyDefinedStyle for ExternallyDefinedStyle {}
 impl ExternallyDefinedStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17303,7 +18500,7 @@ impl IExternallyDefinedItem for ExternallyDefinedSymbol {
 }
 impl IExternallyDefinedSymbol for ExternallyDefinedSymbol {}
 impl ExternallyDefinedSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17331,7 +18528,7 @@ impl IExternallyDefinedItem for ExternallyDefinedTextFont {
 }
 impl IExternallyDefinedTextFont for ExternallyDefinedTextFont {}
 impl ExternallyDefinedTextFont {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedTextFont::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17366,7 +18563,7 @@ impl IRepresentationItem for ExternallyDefinedTileStyle {
 impl IGeometricRepresentationItem for ExternallyDefinedTileStyle {}
 impl IExternallyDefinedTileStyle for ExternallyDefinedTileStyle {}
 impl ExternallyDefinedTileStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExternallyDefinedTileStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17411,7 +18608,7 @@ impl IExtrudedAreaSolid for ExtrudedAreaSolid {
     }
 }
 impl ExtrudedAreaSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExtrudedAreaSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17419,6 +18616,17 @@ impl ExtrudedAreaSolid {
                 1usize => entity.swept_area = parameter.into(),
                 2usize => entity.extruded_direction = parameter.into(),
                 3usize => entity.depth = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ExtrudedAreaSolid::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.extruded_direction = parameter.into(),
+                1usize => entity.depth = parameter.into(),
                 _ => {}
             }
         }
@@ -17457,7 +18665,7 @@ impl IExtrudedFaceSolid for ExtrudedFaceSolid {
     }
 }
 impl ExtrudedFaceSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ExtrudedFaceSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17465,6 +18673,17 @@ impl ExtrudedFaceSolid {
                 1usize => entity.swept_face = parameter.into(),
                 2usize => entity.extruded_direction = parameter.into(),
                 3usize => entity.depth = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ExtrudedFaceSolid::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.extruded_direction = parameter.into(),
+                1usize => entity.depth = parameter.into(),
                 _ => {}
             }
         }
@@ -17491,12 +18710,22 @@ impl IFace for Face {
     }
 }
 impl Face {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Face::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.bounds = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Face::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.bounds = parameter.into(),
                 _ => {}
             }
         }
@@ -17523,12 +18752,22 @@ impl IFaceBasedSurfaceModel for FaceBasedSurfaceModel {
     }
 }
 impl FaceBasedSurfaceModel {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FaceBasedSurfaceModel::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.fbsm_faces = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = FaceBasedSurfaceModel::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.fbsm_faces = parameter.into(),
                 _ => {}
             }
         }
@@ -17560,13 +18799,24 @@ impl IFaceBound for FaceBound {
     }
 }
 impl FaceBound {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FaceBound::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.bound = parameter.into(),
                 2usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = FaceBound::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.bound = parameter.into(),
+                1usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -17596,7 +18846,7 @@ impl IFaceBound for FaceOuterBound {
 }
 impl IFaceOuterBound for FaceOuterBound {}
 impl FaceOuterBound {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FaceOuterBound::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17630,7 +18880,7 @@ impl IRepresentation for FaceShapeRepresentation {
 impl IShapeRepresentation for FaceShapeRepresentation {}
 impl IFaceShapeRepresentation for FaceShapeRepresentation {}
 impl FaceShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FaceShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17675,7 +18925,7 @@ impl IFaceSurface for FaceSurface {
 }
 impl IGeometricRepresentationItem for FaceSurface {}
 impl FaceSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FaceSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17683,6 +18933,17 @@ impl FaceSurface {
                 1usize => entity.bounds = parameter.into(),
                 2usize => entity.face_geometry = parameter.into(),
                 3usize => entity.same_sense = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = FaceSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.face_geometry = parameter.into(),
+                1usize => entity.same_sense = parameter.into(),
                 _ => {}
             }
         }
@@ -17709,7 +18970,7 @@ impl IManifoldSolidBrep for FacetedBrep {
 }
 impl IFacetedBrep for FacetedBrep {}
 impl FacetedBrep {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FacetedBrep::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17742,7 +19003,7 @@ impl IRepresentation for FacetedBrepShapeRepresentation {
 impl IShapeRepresentation for FacetedBrepShapeRepresentation {}
 impl IFacetedBrepShapeRepresentation for FacetedBrepShapeRepresentation {}
 impl FacetedBrepShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FacetedBrepShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17771,7 +19032,7 @@ impl ICharacterizedObject for FeatureComponentDefinition {
 }
 impl IFeatureComponentDefinition for FeatureComponentDefinition {}
 impl FeatureComponentDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FeatureComponentDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17813,7 +19074,7 @@ impl IShapeAspectRelationship for FeatureComponentRelationship {
 }
 impl IFeatureComponentRelationship for FeatureComponentRelationship {}
 impl FeatureComponentRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FeatureComponentRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17849,7 +19110,7 @@ impl ICharacterizedObject for FeatureDefinition {
 }
 impl IFeatureDefinition for FeatureDefinition {}
 impl FeatureDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FeatureDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17884,7 +19145,7 @@ impl ICharacterizedObject for FeatureInPanel {
 impl IFeatureDefinition for FeatureInPanel {}
 impl IFeatureInPanel for FeatureInPanel {}
 impl FeatureInPanel {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FeatureInPanel::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17920,7 +19181,7 @@ impl IFeatureDefinition for FeaturePattern {}
 impl IReplicateFeature for FeaturePattern {}
 impl IFeaturePattern for FeaturePattern {}
 impl FeaturePattern {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FeaturePattern::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17959,7 +19220,7 @@ impl IPropertyDefinition for FeaturedShape {
 impl IProductDefinitionShape for FeaturedShape {}
 impl IFeaturedShape for FeaturedShape {}
 impl FeaturedShape {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FeaturedShape::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -17997,7 +19258,7 @@ impl IFillAreaStyle for FillAreaStyle {
     }
 }
 impl FillAreaStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FillAreaStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18027,7 +19288,7 @@ impl IFillAreaStyleColour for FillAreaStyleColour {
     }
 }
 impl FillAreaStyleColour {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FillAreaStyleColour::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18079,7 +19340,7 @@ impl IFillAreaStyleHatching for FillAreaStyleHatching {
     }
 }
 impl FillAreaStyleHatching {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FillAreaStyleHatching::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18089,6 +19350,20 @@ impl FillAreaStyleHatching {
                 3usize => entity.point_of_reference_hatch_line = parameter.into(),
                 4usize => entity.pattern_start = parameter.into(),
                 5usize => entity.hatch_line_angle = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = FillAreaStyleHatching::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.hatch_line_appearance = parameter.into(),
+                1usize => entity.start_of_next_hatch_line = parameter.into(),
+                2usize => entity.point_of_reference_hatch_line = parameter.into(),
+                3usize => entity.pattern_start = parameter.into(),
+                4usize => entity.hatch_line_angle = parameter.into(),
                 _ => {}
             }
         }
@@ -18115,12 +19390,22 @@ impl IFillAreaStyleTileSymbolWithStyle for FillAreaStyleTileSymbolWithStyle {
     }
 }
 impl FillAreaStyleTileSymbolWithStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FillAreaStyleTileSymbolWithStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.symbol = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = FillAreaStyleTileSymbolWithStyle::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.symbol = parameter.into(),
                 _ => {}
             }
         }
@@ -18157,7 +19442,7 @@ impl IFillAreaStyleTiles for FillAreaStyleTiles {
     }
 }
 impl FillAreaStyleTiles {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FillAreaStyleTiles::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18165,6 +19450,18 @@ impl FillAreaStyleTiles {
                 1usize => entity.tiling_pattern = parameter.into(),
                 2usize => entity.tiles = parameter.into(),
                 3usize => entity.tiling_scale = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = FillAreaStyleTiles::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.tiling_pattern = parameter.into(),
+                1usize => entity.tiles = parameter.into(),
+                2usize => entity.tiling_scale = parameter.into(),
                 _ => {}
             }
         }
@@ -18196,7 +19493,7 @@ impl IShapeAspect for Fillet {
 impl ITransitionFeature for Fillet {}
 impl IFillet for Fillet {}
 impl Fillet {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Fillet::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18240,7 +19537,7 @@ impl IGeometricTolerance for FlatnessTolerance {
 }
 impl IFlatnessTolerance for FlatnessTolerance {}
 impl FlatnessTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FlatnessTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18269,7 +19566,7 @@ impl IBinaryGenericExpression for FormatFunction {
     }
 }
 impl FormatFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FormatFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18285,7 +19582,7 @@ pub trait IFoundedItem {}
 pub struct FoundedItem {}
 impl IFoundedItem for FoundedItem {}
 impl FoundedItem {
-    pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(_parameters: Vec<Parameter>) -> Self {
         FoundedItem::default()
     }
 }
@@ -18319,13 +19616,24 @@ impl IFoundedKinematicPath for FoundedKinematicPath {
     }
 }
 impl FoundedKinematicPath {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FoundedKinematicPath::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.items = parameter.into(),
                 2usize => entity.context_of_items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = FoundedKinematicPath::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
+                1usize => entity.context_of_items = parameter.into(),
                 _ => {}
             }
         }
@@ -18362,7 +19670,7 @@ impl IKinematicPair for FullyConstrainedPair {
 }
 impl IFullyConstrainedPair for FullyConstrainedPair {}
 impl FullyConstrainedPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FullyConstrainedPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18401,7 +19709,7 @@ impl IFunctionallyDefinedTransformation for FunctionallyDefinedTransformation {
     }
 }
 impl FunctionallyDefinedTransformation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = FunctionallyDefinedTransformation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18476,7 +19784,7 @@ impl IGearPair for GearPair {
     }
 }
 impl GearPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GearPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18496,6 +19804,20 @@ impl GearPair {
                 7usize => entity.bevel = parameter.into(),
                 8usize => entity.helical_angle = parameter.into(),
                 9usize => entity.gear_ratio = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = GearPair::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.radius_first_link = parameter.into(),
+                1usize => entity.radius_second_link = parameter.into(),
+                2usize => entity.bevel = parameter.into(),
+                3usize => entity.helical_angle = parameter.into(),
+                4usize => entity.gear_ratio = parameter.into(),
                 _ => {}
             }
         }
@@ -18530,7 +19852,7 @@ impl IGearPairRange for GearPairRange {
     }
 }
 impl GearPairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GearPairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18566,7 +19888,7 @@ impl IGearPairValue for GearPairValue {
     }
 }
 impl GearPairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GearPairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18595,7 +19917,7 @@ impl ICharacterizedObject for GeneralFeature {
 impl IFeatureDefinition for GeneralFeature {}
 impl IGeneralFeature for GeneralFeature {}
 impl GeneralFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeneralFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18633,7 +19955,7 @@ impl IGeneralProperty for GeneralMaterialProperty {
 }
 impl IGeneralMaterialProperty for GeneralMaterialProperty {}
 impl GeneralMaterialProperty {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeneralMaterialProperty::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18675,7 +19997,7 @@ impl IGeneralProperty for GeneralProperty {
     }
 }
 impl GeneralProperty {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeneralProperty::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18722,7 +20044,7 @@ impl IGeneralPropertyAssociation for GeneralPropertyAssociation {
     }
 }
 impl GeneralPropertyAssociation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeneralPropertyAssociation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18770,7 +20092,7 @@ impl IGeneralPropertyRelationship for GeneralPropertyRelationship {
     }
 }
 impl GeneralPropertyRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeneralPropertyRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18819,7 +20141,7 @@ impl IShapeAspect for GeometricAlignment {
 impl IDerivedShapeAspect for GeometricAlignment {}
 impl IGeometricAlignment for GeometricAlignment {}
 impl GeometricAlignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricAlignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18858,7 +20180,7 @@ impl IGeometricSet for GeometricCurveSet {
 }
 impl IGeometricCurveSet for GeometricCurveSet {}
 impl GeometricCurveSet {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricCurveSet::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18895,7 +20217,7 @@ impl IShapeAspect for GeometricIntersection {
 impl IDerivedShapeAspect for GeometricIntersection {}
 impl IGeometricIntersection for GeometricIntersection {}
 impl GeometricIntersection {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricIntersection::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18957,7 +20279,7 @@ impl IGeometricItemSpecificUsage for GeometricItemSpecificUsage {
     }
 }
 impl GeometricItemSpecificUsage {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricItemSpecificUsage::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -18972,6 +20294,18 @@ impl GeometricItemSpecificUsage {
                 2usize => entity.definition = parameter.into(),
                 3usize => entity.used_representation = parameter.into(),
                 4usize => entity.identified_item = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = GeometricItemSpecificUsage::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.definition = parameter.into(),
+                1usize => entity.used_representation = parameter.into(),
+                2usize => entity.identified_item = parameter.into(),
                 _ => {}
             }
         }
@@ -19001,13 +20335,23 @@ impl IGeometricRepresentationContext for GeometricRepresentationContext {
     }
 }
 impl GeometricRepresentationContext {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricRepresentationContext::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.context_identifier = parameter.into(),
                 1usize => entity.context_type = parameter.into(),
                 2usize => entity.coordinate_space_dimension = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = GeometricRepresentationContext::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.coordinate_space_dimension = parameter.into(),
                 _ => {}
             }
         }
@@ -19026,7 +20370,7 @@ impl IRepresentationItem for GeometricRepresentationItem {
 }
 impl IGeometricRepresentationItem for GeometricRepresentationItem {}
 impl GeometricRepresentationItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricRepresentationItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19057,12 +20401,22 @@ impl IGeometricSet for GeometricSet {
     }
 }
 impl GeometricSet {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricSet::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.elements = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = GeometricSet::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.elements = parameter.into(),
                 _ => {}
             }
         }
@@ -19097,7 +20451,7 @@ impl IGeometricTolerance for GeometricTolerance {
     }
 }
 impl GeometricTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19139,7 +20493,7 @@ impl IGeometricToleranceRelationship for GeometricToleranceRelationship {
     }
 }
 impl GeometricToleranceRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricToleranceRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19184,7 +20538,7 @@ impl IGeometricToleranceWithDatumReference for GeometricToleranceWithDatumRefere
     }
 }
 impl GeometricToleranceWithDatumReference {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricToleranceWithDatumReference::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19193,6 +20547,16 @@ impl GeometricToleranceWithDatumReference {
                 2usize => entity.magnitude = parameter.into(),
                 3usize => entity.toleranced_shape_aspect = parameter.into(),
                 4usize => entity.datum_system = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = GeometricToleranceWithDatumReference::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.datum_system = parameter.into(),
                 _ => {}
             }
         }
@@ -19230,7 +20594,7 @@ impl IGeometricToleranceWithDefinedUnit for GeometricToleranceWithDefinedUnit {
     }
 }
 impl GeometricToleranceWithDefinedUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricToleranceWithDefinedUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19239,6 +20603,16 @@ impl GeometricToleranceWithDefinedUnit {
                 2usize => entity.magnitude = parameter.into(),
                 3usize => entity.toleranced_shape_aspect = parameter.into(),
                 4usize => entity.unit_size = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = GeometricToleranceWithDefinedUnit::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.unit_size = parameter.into(),
                 _ => {}
             }
         }
@@ -19264,7 +20638,7 @@ impl IDraughtingCallout for GeometricalToleranceCallout {
 }
 impl IGeometricalToleranceCallout for GeometricalToleranceCallout {}
 impl GeometricalToleranceCallout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricalToleranceCallout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19297,7 +20671,7 @@ impl IRepresentation for GeometricallyBounded2dWireframeRepresentation {
 impl IShapeRepresentation for GeometricallyBounded2dWireframeRepresentation {}
 impl IGeometricallyBounded2dWireframeRepresentation for GeometricallyBounded2dWireframeRepresentation {}
 impl GeometricallyBounded2dWireframeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricallyBounded2dWireframeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19331,7 +20705,7 @@ impl IRepresentation for GeometricallyBoundedSurfaceShapeRepresentation {
 impl IShapeRepresentation for GeometricallyBoundedSurfaceShapeRepresentation {}
 impl IGeometricallyBoundedSurfaceShapeRepresentation for GeometricallyBoundedSurfaceShapeRepresentation {}
 impl GeometricallyBoundedSurfaceShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricallyBoundedSurfaceShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19365,7 +20739,7 @@ impl IRepresentation for GeometricallyBoundedWireframeShapeRepresentation {
 impl IShapeRepresentation for GeometricallyBoundedWireframeShapeRepresentation {}
 impl IGeometricallyBoundedWireframeShapeRepresentation for GeometricallyBoundedWireframeShapeRepresentation {}
 impl GeometricallyBoundedWireframeShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GeometricallyBoundedWireframeShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19401,13 +20775,23 @@ impl IGlobalUncertaintyAssignedContext for GlobalUncertaintyAssignedContext {
     }
 }
 impl GlobalUncertaintyAssignedContext {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GlobalUncertaintyAssignedContext::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.context_identifier = parameter.into(),
                 1usize => entity.context_type = parameter.into(),
                 2usize => entity.uncertainty = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = GlobalUncertaintyAssignedContext::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.uncertainty = parameter.into(),
                 _ => {}
             }
         }
@@ -19437,13 +20821,23 @@ impl IGlobalUnitAssignedContext for GlobalUnitAssignedContext {
     }
 }
 impl GlobalUnitAssignedContext {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GlobalUnitAssignedContext::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.context_identifier = parameter.into(),
                 1usize => entity.context_type = parameter.into(),
                 2usize => entity.units = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = GlobalUnitAssignedContext::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.units = parameter.into(),
                 _ => {}
             }
         }
@@ -19468,7 +20862,7 @@ impl IGroup for Group {
     }
 }
 impl Group {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Group::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19517,7 +20911,7 @@ impl IGroupRelationship for GroupRelationship {
     }
 }
 impl GroupRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = GroupRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19562,13 +20956,24 @@ impl IHalfSpaceSolid for HalfSpaceSolid {
     }
 }
 impl HalfSpaceSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = HalfSpaceSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.base_surface = parameter.into(),
                 2usize => entity.agreement_flag = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = HalfSpaceSolid::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.base_surface = parameter.into(),
+                1usize => entity.agreement_flag = parameter.into(),
                 _ => {}
             }
         }
@@ -19595,7 +21000,7 @@ impl IRepresentation for HardnessRepresentation {
 }
 impl IHardnessRepresentation for HardnessRepresentation {}
 impl HardnessRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = HardnessRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19642,7 +21047,7 @@ impl IContextDependentOverRidingStyledItem for HiddenElementOverRidingStyledItem
 }
 impl IHiddenElementOverRidingStyledItem for HiddenElementOverRidingStyledItem {}
 impl HiddenElementOverRidingStyledItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = HiddenElementOverRidingStyledItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19681,7 +21086,7 @@ impl IShapeAspect for HoleBottom {
 }
 impl IHoleBottom for HoleBottom {}
 impl HoleBottom {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = HoleBottom::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19718,7 +21123,7 @@ impl ICharacterizedObject for HoleInPanel {
 impl IFeatureDefinition for HoleInPanel {}
 impl IHoleInPanel for HoleInPanel {}
 impl HoleInPanel {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = HoleInPanel::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19772,7 +21177,7 @@ impl IUniversalPair for HomokineticPair {
 }
 impl IHomokineticPair for HomokineticPair {}
 impl HomokineticPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = HomokineticPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19832,7 +21237,7 @@ impl IHyperbola for Hyperbola {
     }
 }
 impl Hyperbola {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Hyperbola::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19840,6 +21245,17 @@ impl Hyperbola {
                 1usize => entity.position = parameter.into(),
                 2usize => entity.semi_axis = parameter.into(),
                 3usize => entity.semi_imag_axis = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Hyperbola::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.semi_axis = parameter.into(),
+                1usize => entity.semi_imag_axis = parameter.into(),
                 _ => {}
             }
         }
@@ -19864,7 +21280,7 @@ impl IIdAttribute for IdAttribute {
     }
 }
 impl IdAttribute {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = IdAttribute::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19898,7 +21314,7 @@ impl IIdentificationRole for IdentificationRole {
     }
 }
 impl IdentificationRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = IdentificationRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19942,7 +21358,7 @@ impl IConditionalConceptFeature for InclusionProductConceptFeature {
 }
 impl IInclusionProductConceptFeature for InclusionProductConceptFeature {}
 impl InclusionProductConceptFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = InclusionProductConceptFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -19977,7 +21393,7 @@ impl IBinaryGenericExpression for IndexExpression {
     }
 }
 impl IndexExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = IndexExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20006,7 +21422,7 @@ impl IInitialState for InitialState {
     }
 }
 impl InitialState {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = InitialState::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20051,7 +21467,7 @@ impl ICharacterizedObject for InstancedFeature {
 impl IFeatureDefinition for InstancedFeature {}
 impl IInstancedFeature for InstancedFeature {}
 impl InstancedFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = InstancedFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20095,7 +21511,7 @@ impl IIntLiteral for IntLiteral {
     }
 }
 impl IntLiteral {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = IntLiteral::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20119,7 +21535,7 @@ impl IVariable for IntNumericVariable {}
 impl IGenericVariable for IntNumericVariable {}
 impl IIntNumericVariable for IntNumericVariable {}
 impl IntNumericVariable {
-    pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(_parameters: Vec<Parameter>) -> Self {
         IntNumericVariable::default()
     }
 }
@@ -20143,7 +21559,7 @@ impl IUnaryGenericExpression for IntValueFunction {
 }
 impl IIntValueFunction for IntValueFunction {}
 impl IntValueFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = IntValueFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20168,7 +21584,7 @@ impl IInterpolatedConfigurationSequence for InterpolatedConfigurationSequence {
     }
 }
 impl InterpolatedConfigurationSequence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = InterpolatedConfigurationSequence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20207,7 +21623,7 @@ impl ISurfaceCurve for IntersectionCurve {
 }
 impl IIntersectionCurve for IntersectionCurve {}
 impl IntersectionCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = IntersectionCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20236,7 +21652,7 @@ impl IMultipleArityGenericExpression for IntervalExpression {
     }
 }
 impl IntervalExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = IntervalExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20260,7 +21676,7 @@ impl IInvisibility for Invisibility {
     }
 }
 impl Invisibility {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Invisibility::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20299,7 +21715,7 @@ impl IItemDefinedTransformation for ItemDefinedTransformation {
     }
 }
 impl ItemDefinedTransformation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ItemDefinedTransformation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20352,7 +21768,7 @@ impl IItemIdentifiedRepresentationUsage for ItemIdentifiedRepresentationUsage {
     }
 }
 impl ItemIdentifiedRepresentationUsage {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ItemIdentifiedRepresentationUsage::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20390,7 +21806,7 @@ impl ICharacterizedObject for Joggle {
 impl IFeatureDefinition for Joggle {}
 impl IJoggle for Joggle {}
 impl Joggle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Joggle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20432,7 +21848,7 @@ impl IShapeAspect for JoggleTermination {
 }
 impl IJoggleTermination for JoggleTermination {}
 impl JoggleTermination {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = JoggleTermination::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20470,7 +21886,7 @@ impl IKinematicAnalysisConsistency for KinematicAnalysisConsistency {
     }
 }
 impl KinematicAnalysisConsistency {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicAnalysisConsistency::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20500,7 +21916,7 @@ impl IKinematicAnalysisResult for KinematicAnalysisResult {
     }
 }
 impl KinematicAnalysisResult {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicAnalysisResult::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20530,7 +21946,7 @@ impl IKinematicControl for KinematicControl {
     }
 }
 impl KinematicControl {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicControl::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20572,13 +21988,24 @@ impl IKinematicFrameBackgroundRepresentation for KinematicFrameBackgroundReprese
     }
 }
 impl KinematicFrameBackgroundRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicFrameBackgroundRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.items = parameter.into(),
                 2usize => entity.context_of_items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = KinematicFrameBackgroundRepresentation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
+                1usize => entity.context_of_items = parameter.into(),
                 _ => {}
             }
         }
@@ -20621,7 +22048,7 @@ impl IKinematicFrameBackgroundRepresentationAssociation for KinematicFrameBackgr
     }
 }
 impl KinematicFrameBackgroundRepresentationAssociation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicFrameBackgroundRepresentationAssociation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20636,6 +22063,16 @@ impl KinematicFrameBackgroundRepresentationAssociation {
                 2usize => entity.rep_1 = parameter.into(),
                 3usize => entity.rep_2 = parameter.into(),
                 4usize => entity.transformation_operator = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = KinematicFrameBackgroundRepresentationAssociation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.transformation_operator = parameter.into(),
                 _ => {}
             }
         }
@@ -20673,7 +22110,7 @@ impl IKinematicFrameBasedTransformation for KinematicFrameBasedTransformation {
     }
 }
 impl KinematicFrameBasedTransformation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicFrameBasedTransformation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20686,6 +22123,16 @@ impl KinematicFrameBasedTransformation {
                     }
                 }
                 2usize => entity.transformator = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = KinematicFrameBasedTransformation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.transformator = parameter.into(),
                 _ => {}
             }
         }
@@ -20712,7 +22159,7 @@ impl IRepresentation for KinematicGroundRepresentation {
 }
 impl IKinematicGroundRepresentation for KinematicGroundRepresentation {}
 impl KinematicGroundRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicGroundRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20743,7 +22190,7 @@ impl IKinematicJoint for KinematicJoint {
     }
 }
 impl KinematicJoint {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicJoint::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20760,7 +22207,7 @@ pub trait IKinematicLink {}
 pub struct KinematicLink {}
 impl IKinematicLink for KinematicLink {}
 impl KinematicLink {
-    pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(_parameters: Vec<Parameter>) -> Self {
         KinematicLink::default()
     }
 }
@@ -20790,13 +22237,23 @@ impl IKinematicLinkRepresentation for KinematicLinkRepresentation {
     }
 }
 impl KinematicLinkRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicLinkRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.items = parameter.into(),
                 2usize => entity.context_of_items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = KinematicLinkRepresentation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.context_of_items = parameter.into(),
                 _ => {}
             }
         }
@@ -20833,7 +22290,7 @@ impl IKinematicLinkRepresentationAssociation for KinematicLinkRepresentationAsso
     }
 }
 impl KinematicLinkRepresentationAssociation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicLinkRepresentationAssociation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20847,6 +22304,16 @@ impl KinematicLinkRepresentationAssociation {
                 }
                 2usize => entity.rep_2 = parameter.into(),
                 3usize => entity.rep_1 = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = KinematicLinkRepresentationAssociation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.rep_1 = parameter.into(),
                 _ => {}
             }
         }
@@ -20871,7 +22338,7 @@ impl IKinematicLinkRepresentationRelation for KinematicLinkRepresentationRelatio
     }
 }
 impl KinematicLinkRepresentationRelation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicLinkRepresentationRelation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20914,7 +22381,7 @@ impl IKinematicPair for KinematicPair {
     }
 }
 impl KinematicPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20934,6 +22401,16 @@ impl KinematicPair {
         }
         entity
     }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = KinematicPair::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.joint = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
 }
 pub trait IKinematicPath: IRepresentationItem {}
 #[derive(Default, Debug)]
@@ -20947,7 +22424,7 @@ impl IRepresentationItem for KinematicPath {
 }
 impl IKinematicPath for KinematicPath {}
 impl KinematicPath {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicPath::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20985,7 +22462,7 @@ impl IKinematicPropertyDefinition for KinematicPropertyDefinition {
     }
 }
 impl KinematicPropertyDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicPropertyDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -20999,6 +22476,16 @@ impl KinematicPropertyDefinition {
                 }
                 2usize => entity.definition = parameter.into(),
                 3usize => entity.ground_definition = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = KinematicPropertyDefinition::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.ground_definition = parameter.into(),
                 _ => {}
             }
         }
@@ -21021,7 +22508,7 @@ impl IPropertyDefinitionRepresentation for KinematicPropertyRepresentationRelati
 }
 impl IKinematicPropertyRepresentationRelation for KinematicPropertyRepresentationRelation {}
 impl KinematicPropertyRepresentationRelation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicPropertyRepresentationRelation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21046,7 +22533,7 @@ impl IKinematicStructure for KinematicStructure {
     }
 }
 impl KinematicStructure {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KinematicStructure::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21075,7 +22562,7 @@ impl IPreDefinedItem for KnownSource {
 }
 impl IKnownSource for KnownSource {}
 impl KnownSource {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = KnownSource::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21103,7 +22590,7 @@ impl IGroup for Language {
 }
 impl ILanguage for Language {}
 impl Language {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Language::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21144,13 +22631,23 @@ impl ILanguageAssignment for LanguageAssignment {
     }
 }
 impl LanguageAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LanguageAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_class = parameter.into(),
                 1usize => entity.role = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = LanguageAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -21185,7 +22682,7 @@ impl IAnnotationCurveOccurrence for LeaderCurve {
 }
 impl ILeaderCurve for LeaderCurve {}
 impl LeaderCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LeaderCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21217,7 +22714,7 @@ impl IDraughtingCallout for LeaderDirectedCallout {
 }
 impl ILeaderDirectedCallout for LeaderDirectedCallout {}
 impl LeaderDirectedCallout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LeaderDirectedCallout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21249,7 +22746,7 @@ impl IDraughtingCallout for LeaderDirectedDimension {
 impl ILeaderDirectedCallout for LeaderDirectedDimension {}
 impl ILeaderDirectedDimension for LeaderDirectedDimension {}
 impl LeaderDirectedDimension {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LeaderDirectedDimension::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21295,7 +22792,7 @@ impl ITerminatorSymbol for LeaderTerminator {
 }
 impl ILeaderTerminator for LeaderTerminator {}
 impl LeaderTerminator {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LeaderTerminator::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21330,7 +22827,7 @@ impl IUnaryGenericExpression for LengthFunction {
     }
 }
 impl LengthFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LengthFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21357,7 +22854,7 @@ impl IMeasureWithUnit for LengthMeasureWithUnit {
 }
 impl ILengthMeasureWithUnit for LengthMeasureWithUnit {}
 impl LengthMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LengthMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21381,7 +22878,7 @@ impl INamedUnit for LengthUnit {
 }
 impl ILengthUnit for LengthUnit {}
 impl LengthUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LengthUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21412,12 +22909,22 @@ impl ILightSource for LightSource {
     }
 }
 impl LightSource {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LightSource::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.light_colour = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = LightSource::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.light_colour = parameter.into(),
                 _ => {}
             }
         }
@@ -21443,7 +22950,7 @@ impl ILightSource for LightSourceAmbient {
 }
 impl ILightSourceAmbient for LightSourceAmbient {}
 impl LightSourceAmbient {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LightSourceAmbient::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21481,13 +22988,23 @@ impl ILightSourceDirectional for LightSourceDirectional {
     }
 }
 impl LightSourceDirectional {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LightSourceDirectional::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.light_colour = parameter.into(),
                 2usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = LightSourceDirectional::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -21530,7 +23047,7 @@ impl ILightSourcePositional for LightSourcePositional {
     }
 }
 impl LightSourcePositional {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LightSourcePositional::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21539,6 +23056,18 @@ impl LightSourcePositional {
                 2usize => entity.position = parameter.into(),
                 3usize => entity.constant_attenuation = parameter.into(),
                 4usize => entity.distance_attenuation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = LightSourcePositional::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.position = parameter.into(),
+                1usize => entity.constant_attenuation = parameter.into(),
+                2usize => entity.distance_attenuation = parameter.into(),
                 _ => {}
             }
         }
@@ -21596,7 +23125,7 @@ impl ILightSourceSpot for LightSourceSpot {
     }
 }
 impl LightSourceSpot {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LightSourceSpot::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21608,6 +23137,21 @@ impl LightSourceSpot {
                 5usize => entity.constant_attenuation = parameter.into(),
                 6usize => entity.distance_attenuation = parameter.into(),
                 7usize => entity.spread_angle = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = LightSourceSpot::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.position = parameter.into(),
+                1usize => entity.orientation = parameter.into(),
+                2usize => entity.concentration_exponent = parameter.into(),
+                3usize => entity.constant_attenuation = parameter.into(),
+                4usize => entity.distance_attenuation = parameter.into(),
+                5usize => entity.spread_angle = parameter.into(),
                 _ => {}
             }
         }
@@ -21634,7 +23178,7 @@ impl IBinaryGenericExpression for LikeExpression {
 }
 impl ILikeExpression for LikeExpression {}
 impl LikeExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LikeExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21673,7 +23217,7 @@ impl ILimitsAndFits for LimitsAndFits {
     }
 }
 impl LimitsAndFits {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LimitsAndFits::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21713,13 +23257,24 @@ impl ILine for Line {
     }
 }
 impl Line {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Line::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.pnt = parameter.into(),
                 2usize => entity.dir = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Line::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.pnt = parameter.into(),
+                1usize => entity.dir = parameter.into(),
                 _ => {}
             }
         }
@@ -21750,7 +23305,7 @@ impl IGeometricTolerance for LineProfileTolerance {
 }
 impl ILineProfileTolerance for LineProfileTolerance {}
 impl LineProfileTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LineProfileTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21784,7 +23339,7 @@ impl IDraughtingCallout for LinearDimension {
 impl IDimensionCurveDirectedCallout for LinearDimension {}
 impl ILinearDimension for LinearDimension {}
 impl LinearDimension {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LinearDimension::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21827,7 +23382,7 @@ impl ILocalTime for LocalTime {
     }
 }
 impl LocalTime {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LocalTime::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21874,7 +23429,7 @@ impl IRepresentation for LocationShapeRepresentation {
 impl IShapeRepresentation for LocationShapeRepresentation {}
 impl ILocationShapeRepresentation for LocationShapeRepresentation {}
 impl LocationShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LocationShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21904,7 +23459,7 @@ impl ICharacterizedObject for Locator {
 impl IFeatureDefinition for Locator {}
 impl ILocator for Locator {}
 impl Locator {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Locator::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21943,7 +23498,7 @@ impl IUnaryGenericExpression for Log10Function {
 impl IUnaryFunctionCall for Log10Function {}
 impl ILog10Function for Log10Function {}
 impl Log10Function {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Log10Function::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -21975,7 +23530,7 @@ impl IUnaryGenericExpression for Log2Function {
 impl IUnaryFunctionCall for Log2Function {}
 impl ILog2Function for Log2Function {}
 impl Log2Function {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Log2Function::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22007,7 +23562,7 @@ impl IUnaryGenericExpression for LogFunction {
 impl IUnaryFunctionCall for LogFunction {}
 impl ILogFunction for LogFunction {}
 impl LogFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LogFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22031,7 +23586,7 @@ impl IRepresentationItem for Loop {
 impl ITopologicalRepresentationItem for Loop {}
 impl ILoop for Loop {}
 impl Loop {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Loop::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22066,13 +23621,24 @@ impl ILotEffectivity for LotEffectivity {
     }
 }
 impl LotEffectivity {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LotEffectivity::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.id = parameter.into(),
                 1usize => entity.effectivity_lot_id = parameter.into(),
                 2usize => entity.effectivity_lot_size = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = LotEffectivity::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.effectivity_lot_id = parameter.into(),
+                1usize => entity.effectivity_lot_size = parameter.into(),
                 _ => {}
             }
         }
@@ -22095,7 +23661,7 @@ impl IMeasureWithUnit for LuminousIntensityMeasureWithUnit {
 }
 impl ILuminousIntensityMeasureWithUnit for LuminousIntensityMeasureWithUnit {}
 impl LuminousIntensityMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LuminousIntensityMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22119,7 +23685,7 @@ impl INamedUnit for LuminousIntensityUnit {
 }
 impl ILuminousIntensityUnit for LuminousIntensityUnit {}
 impl LuminousIntensityUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = LuminousIntensityUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22176,7 +23742,7 @@ impl IMakeFromUsageOption for MakeFromUsageOption {
     }
 }
 impl MakeFromUsageOption {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MakeFromUsageOption::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22194,6 +23760,18 @@ impl MakeFromUsageOption {
                 5usize => entity.ranking = parameter.into(),
                 6usize => entity.ranking_rationale = parameter.into(),
                 7usize => entity.quantity = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = MakeFromUsageOption::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.ranking = parameter.into(),
+                1usize => entity.ranking_rationale = parameter.into(),
+                2usize => entity.quantity = parameter.into(),
                 _ => {}
             }
         }
@@ -22221,12 +23799,22 @@ impl IManifoldSolidBrep for ManifoldSolidBrep {
     }
 }
 impl ManifoldSolidBrep {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ManifoldSolidBrep::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.outer = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ManifoldSolidBrep::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.outer = parameter.into(),
                 _ => {}
             }
         }
@@ -22254,7 +23842,7 @@ impl IRepresentation for ManifoldSubsurfaceShapeRepresentation {
 impl IShapeRepresentation for ManifoldSubsurfaceShapeRepresentation {}
 impl IManifoldSubsurfaceShapeRepresentation for ManifoldSubsurfaceShapeRepresentation {}
 impl ManifoldSubsurfaceShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ManifoldSubsurfaceShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22288,7 +23876,7 @@ impl IRepresentation for ManifoldSurfaceShapeRepresentation {
 impl IShapeRepresentation for ManifoldSurfaceShapeRepresentation {}
 impl IManifoldSurfaceShapeRepresentation for ManifoldSurfaceShapeRepresentation {}
 impl ManifoldSurfaceShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ManifoldSurfaceShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22325,13 +23913,24 @@ impl IMappedItem for MappedItem {
     }
 }
 impl MappedItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MappedItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.mapping_source = parameter.into(),
                 2usize => entity.mapping_target = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = MappedItem::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.mapping_source = parameter.into(),
+                1usize => entity.mapping_target = parameter.into(),
                 _ => {}
             }
         }
@@ -22354,7 +23953,7 @@ impl IMeasureWithUnit for MassMeasureWithUnit {
 }
 impl IMassMeasureWithUnit for MassMeasureWithUnit {}
 impl MassMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MassMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22378,7 +23977,7 @@ impl INamedUnit for MassUnit {
 }
 impl IMassUnit for MassUnit {}
 impl MassUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MassUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22407,7 +24006,7 @@ impl IMaterialDesignation for MaterialDesignation {
     }
 }
 impl MaterialDesignation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MaterialDesignation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22447,7 +24046,7 @@ impl IMaterialDesignationCharacterization for MaterialDesignationCharacterizatio
     }
 }
 impl MaterialDesignationCharacterization {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MaterialDesignationCharacterization::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22481,7 +24080,7 @@ impl IPropertyDefinition for MaterialProperty {
 }
 impl IMaterialProperty for MaterialProperty {}
 impl MaterialProperty {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MaterialProperty::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22523,13 +24122,23 @@ impl IMaterialPropertyRepresentation for MaterialPropertyRepresentation {
     }
 }
 impl MaterialPropertyRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MaterialPropertyRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.definition = parameter.into(),
                 1usize => entity.used_representation = parameter.into(),
                 2usize => entity.dependent_environment = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = MaterialPropertyRepresentation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.dependent_environment = parameter.into(),
                 _ => {}
             }
         }
@@ -22557,7 +24166,7 @@ impl IMultipleArityGenericExpression for MaximumFunction {
 impl IMultipleArityFunctionCall for MaximumFunction {}
 impl IMaximumFunction for MaximumFunction {}
 impl MaximumFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MaximumFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22596,7 +24205,7 @@ impl IMeasureQualification for MeasureQualification {
     }
 }
 impl MeasureQualification {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MeasureQualification::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22632,7 +24241,7 @@ impl IMeasureWithUnit for MeasureRepresentationItem {
 }
 impl IMeasureRepresentationItem for MeasureRepresentationItem {}
 impl MeasureRepresentationItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MeasureRepresentationItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22663,7 +24272,7 @@ impl IMeasureWithUnit for MeasureWithUnit {
     }
 }
 impl MeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22701,7 +24310,7 @@ impl IPresentationRepresentation for MechanicalDesignGeometricPresentationArea {
 impl IPresentationArea for MechanicalDesignGeometricPresentationArea {}
 impl IMechanicalDesignGeometricPresentationArea for MechanicalDesignGeometricPresentationArea {}
 impl MechanicalDesignGeometricPresentationArea {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MechanicalDesignGeometricPresentationArea::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22734,7 +24343,7 @@ impl IRepresentation for MechanicalDesignGeometricPresentationRepresentation {
 }
 impl IMechanicalDesignGeometricPresentationRepresentation for MechanicalDesignGeometricPresentationRepresentation {}
 impl MechanicalDesignGeometricPresentationRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MechanicalDesignGeometricPresentationRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22770,7 +24379,7 @@ impl IMechanism for Mechanism {
     }
 }
 impl Mechanism {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Mechanism::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22824,7 +24433,7 @@ impl IMechanismBasePlacement for MechanismBasePlacement {
     }
 }
 impl MechanismBasePlacement {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MechanismBasePlacement::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22840,6 +24449,17 @@ impl MechanismBasePlacement {
                 3usize => entity.rep_2 = parameter.into(),
                 4usize => entity.base_of_mechanism = parameter.into(),
                 5usize => entity.transformation_operator = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = MechanismBasePlacement::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.base_of_mechanism = parameter.into(),
+                1usize => entity.transformation_operator = parameter.into(),
                 _ => {}
             }
         }
@@ -22867,7 +24487,7 @@ impl IMultipleArityGenericExpression for MinimumFunction {
 impl IMultipleArityFunctionCall for MinimumFunction {}
 impl IMinimumFunction for MinimumFunction {}
 impl MinimumFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MinimumFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22898,7 +24518,7 @@ impl IBinaryGenericExpression for MinusExpression {
 }
 impl IMinusExpression for MinusExpression {}
 impl MinusExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MinusExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22930,7 +24550,7 @@ impl IUnaryGenericExpression for MinusFunction {
 impl IUnaryFunctionCall for MinusFunction {}
 impl IMinusFunction for MinusFunction {}
 impl MinusFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MinusFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -22961,7 +24581,7 @@ impl IBinaryGenericExpression for ModExpression {
 }
 impl IModExpression for ModExpression {}
 impl ModExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ModExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23003,7 +24623,7 @@ impl IModifiedGeometricTolerance for ModifiedGeometricTolerance {
     }
 }
 impl ModifiedGeometricTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ModifiedGeometricTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23012,6 +24632,16 @@ impl ModifiedGeometricTolerance {
                 2usize => entity.magnitude = parameter.into(),
                 3usize => entity.toleranced_shape_aspect = parameter.into(),
                 4usize => entity.modifier = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ModifiedGeometricTolerance::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.modifier = parameter.into(),
                 _ => {}
             }
         }
@@ -23036,7 +24666,7 @@ impl IFeatureDefinition for ModifiedPattern {}
 impl IReplicateFeature for ModifiedPattern {}
 impl IModifiedPattern for ModifiedPattern {}
 impl ModifiedPattern {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ModifiedPattern::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23074,7 +24704,7 @@ impl IRepresentation for MomentsOfInertiaRepresentation {
 }
 impl IMomentsOfInertiaRepresentation for MomentsOfInertiaRepresentation {}
 impl MomentsOfInertiaRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MomentsOfInertiaRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23126,7 +24756,7 @@ impl IMotionLinkRelationship for MotionLinkRelationship {
     }
 }
 impl MotionLinkRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MotionLinkRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23141,6 +24771,18 @@ impl MotionLinkRelationship {
                 2usize => entity.rep_1 = parameter.into(),
                 3usize => entity.rep_2 = parameter.into(),
                 4usize => entity.related_frame = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = MotionLinkRelationship::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.rep_1 = parameter.into(),
+                1usize => entity.rep_2 = parameter.into(),
+                2usize => entity.related_frame = parameter.into(),
                 _ => {}
             }
         }
@@ -23167,7 +24809,7 @@ impl IMultipleArityGenericExpression for MultExpression {
 }
 impl IMultExpression for MultExpression {}
 impl MultExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MultExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23205,7 +24847,7 @@ impl IMultiLanguageAttributeAssignment for MultiLanguageAttributeAssignment {
     }
 }
 impl MultiLanguageAttributeAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = MultiLanguageAttributeAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23213,6 +24855,16 @@ impl MultiLanguageAttributeAssignment {
                 1usize => entity.attribute_value = parameter.into(),
                 2usize => entity.role = parameter.into(),
                 3usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = MultiLanguageAttributeAssignment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -23250,7 +24902,7 @@ impl INameAttribute for NameAttribute {
     }
 }
 impl NameAttribute {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = NameAttribute::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23275,7 +24927,7 @@ impl INamedUnit for NamedUnit {
     }
 }
 impl NamedUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = NamedUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23299,7 +24951,7 @@ impl INamedUnit for NamedUnitVariable {
 impl IVariableSemantics for NamedUnitVariable {}
 impl INamedUnitVariable for NamedUnitVariable {}
 impl NamedUnitVariable {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = NamedUnitVariable::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23345,7 +24997,7 @@ impl IAssemblyComponentUsage for NextAssemblyUsageOccurrence {
 }
 impl INextAssemblyUsageOccurrence for NextAssemblyUsageOccurrence {}
 impl NextAssemblyUsageOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = NextAssemblyUsageOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23397,7 +25049,7 @@ impl IShapeAspect for NgonClosedProfile {
 }
 impl INgonClosedProfile for NgonClosedProfile {}
 impl NgonClosedProfile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = NgonClosedProfile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23438,7 +25090,7 @@ impl IRepresentation for NonManifoldSurfaceShapeRepresentation {
 impl IShapeRepresentation for NonManifoldSurfaceShapeRepresentation {}
 impl INonManifoldSurfaceShapeRepresentation for NonManifoldSurfaceShapeRepresentation {}
 impl NonManifoldSurfaceShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = NonManifoldSurfaceShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23473,7 +25125,7 @@ impl INotExpression for NotExpression {
     }
 }
 impl NotExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = NotExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23498,7 +25150,7 @@ impl INumericVariable for NumericVariable {}
 impl IVariable for NumericVariable {}
 impl IGenericVariable for NumericVariable {}
 impl NumericVariable {
-    pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(_parameters: Vec<Parameter>) -> Self {
         NumericVariable::default()
     }
 }
@@ -23520,7 +25172,7 @@ impl IObjectRole for ObjectRole {
     }
 }
 impl ObjectRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ObjectRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23560,7 +25212,7 @@ impl IOddFunction for OddFunction {
     }
 }
 impl OddFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OddFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23602,7 +25254,7 @@ impl IOffsetCurve2d for OffsetCurve2d {
     }
 }
 impl OffsetCurve2d {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OffsetCurve2d::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23610,6 +25262,18 @@ impl OffsetCurve2d {
                 1usize => entity.basis_curve = parameter.into(),
                 2usize => entity.distance = parameter.into(),
                 3usize => entity.self_intersect = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OffsetCurve2d::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.basis_curve = parameter.into(),
+                1usize => entity.distance = parameter.into(),
+                2usize => entity.self_intersect = parameter.into(),
                 _ => {}
             }
         }
@@ -23652,7 +25316,7 @@ impl IOffsetCurve3d for OffsetCurve3d {
     }
 }
 impl OffsetCurve3d {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OffsetCurve3d::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23661,6 +25325,19 @@ impl OffsetCurve3d {
                 2usize => entity.distance = parameter.into(),
                 3usize => entity.self_intersect = parameter.into(),
                 4usize => entity.ref_direction = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OffsetCurve3d::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.basis_curve = parameter.into(),
+                1usize => entity.distance = parameter.into(),
+                2usize => entity.self_intersect = parameter.into(),
+                3usize => entity.ref_direction = parameter.into(),
                 _ => {}
             }
         }
@@ -23698,7 +25375,7 @@ impl IOffsetSurface for OffsetSurface {
     }
 }
 impl OffsetSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OffsetSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23706,6 +25383,18 @@ impl OffsetSurface {
                 1usize => entity.basis_surface = parameter.into(),
                 2usize => entity.distance = parameter.into(),
                 3usize => entity.self_intersect = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OffsetSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.basis_surface = parameter.into(),
+                1usize => entity.distance = parameter.into(),
+                2usize => entity.self_intersect = parameter.into(),
                 _ => {}
             }
         }
@@ -23732,12 +25421,22 @@ impl IOneDirectionRepeatFactor for OneDirectionRepeatFactor {
     }
 }
 impl OneDirectionRepeatFactor {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OneDirectionRepeatFactor::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.repeat_factor = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OneDirectionRepeatFactor::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.repeat_factor = parameter.into(),
                 _ => {}
             }
         }
@@ -23768,7 +25467,7 @@ impl IShapeAspect for OpenPathProfile {
 }
 impl IOpenPathProfile for OpenPathProfile {}
 impl OpenPathProfile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OpenPathProfile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23807,7 +25506,7 @@ impl IConnectedFaceSet for OpenShell {
 }
 impl IOpenShell for OpenShell {}
 impl OpenShell {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OpenShell::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23839,7 +25538,7 @@ impl IMultipleArityGenericExpression for OrExpression {
 }
 impl IOrExpression for OrExpression {}
 impl OrExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23870,7 +25569,7 @@ impl IDraughtingCallout for OrdinateDimension {
 impl IProjectionDirectedCallout for OrdinateDimension {}
 impl IOrdinateDimension for OrdinateDimension {}
 impl OrdinateDimension {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrdinateDimension::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23905,7 +25604,7 @@ impl IOrganization for Organization {
     }
 }
 impl Organization {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Organization::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23962,7 +25661,7 @@ impl IOrganizationRelationship for OrganizationRelationship {
     }
 }
 impl OrganizationRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrganizationRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -23995,7 +25694,7 @@ impl IOrganizationRole for OrganizationRole {
     }
 }
 impl OrganizationRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrganizationRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24074,7 +25773,7 @@ impl IOrganizationalAddress for OrganizationalAddress {
     }
 }
 impl OrganizationalAddress {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrganizationalAddress::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24175,6 +25874,23 @@ impl OrganizationalAddress {
         }
         entity
     }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OrganizationalAddress::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.organizations = parameter.into(),
+                1usize => {
+                    entity.description = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
 }
 pub trait IOrganizationalProject {
     fn name(&self) -> &Label;
@@ -24199,7 +25915,7 @@ impl IOrganizationalProject for OrganizationalProject {
     }
 }
 impl OrganizationalProject {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrganizationalProject::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24250,7 +25966,7 @@ impl IOrganizationalProjectRelationship for OrganizationalProjectRelationship {
     }
 }
 impl OrganizationalProjectRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrganizationalProjectRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24288,7 +26004,7 @@ impl IOrganizationalProjectRole for OrganizationalProjectRole {
     }
 }
 impl OrganizationalProjectRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrganizationalProjectRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24338,7 +26054,7 @@ impl IOrientedClosedShell for OrientedClosedShell {
     }
 }
 impl OrientedClosedShell {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrientedClosedShell::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24346,6 +26062,17 @@ impl OrientedClosedShell {
                 1usize => entity.cfs_faces = parameter.into(),
                 2usize => entity.closed_shell_element = parameter.into(),
                 3usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OrientedClosedShell::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.closed_shell_element = parameter.into(),
+                1usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -24387,7 +26114,7 @@ impl IOrientedEdge for OrientedEdge {
     }
 }
 impl OrientedEdge {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrientedEdge::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24396,6 +26123,17 @@ impl OrientedEdge {
                 2usize => entity.edge_end = parameter.into(),
                 3usize => entity.edge_element = parameter.into(),
                 4usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OrientedEdge::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.edge_element = parameter.into(),
+                1usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -24433,7 +26171,7 @@ impl IOrientedFace for OrientedFace {
     }
 }
 impl OrientedFace {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrientedFace::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24441,6 +26179,17 @@ impl OrientedFace {
                 1usize => entity.bounds = parameter.into(),
                 2usize => entity.face_element = parameter.into(),
                 3usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OrientedFace::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.face_element = parameter.into(),
+                1usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -24479,7 +26228,7 @@ impl IOrientedOpenShell for OrientedOpenShell {
     }
 }
 impl OrientedOpenShell {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrientedOpenShell::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24487,6 +26236,17 @@ impl OrientedOpenShell {
                 1usize => entity.cfs_faces = parameter.into(),
                 2usize => entity.open_shell_element = parameter.into(),
                 3usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OrientedOpenShell::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.open_shell_element = parameter.into(),
+                1usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -24524,7 +26284,7 @@ impl IOrientedPath for OrientedPath {
     }
 }
 impl OrientedPath {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrientedPath::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24532,6 +26292,17 @@ impl OrientedPath {
                 1usize => entity.edge_list = parameter.into(),
                 2usize => entity.path_element = parameter.into(),
                 3usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OrientedPath::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.path_element = parameter.into(),
+                1usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -24559,12 +26330,22 @@ impl IOrientedSurface for OrientedSurface {
     }
 }
 impl OrientedSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OrientedSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OrientedSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -24598,7 +26379,7 @@ impl ICompositeCurveOnSurface for OuterBoundaryCurve {}
 impl IBoundaryCurve for OuterBoundaryCurve {}
 impl IOuterBoundaryCurve for OuterBoundaryCurve {}
 impl OuterBoundaryCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OuterBoundaryCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24640,7 +26421,7 @@ impl IOverRidingStyledItem for OverRidingStyledItem {
     }
 }
 impl OverRidingStyledItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = OverRidingStyledItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24648,6 +26429,16 @@ impl OverRidingStyledItem {
                 1usize => entity.styles = parameter.into(),
                 2usize => entity.item = parameter.into(),
                 3usize => entity.over_ridden_style = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = OverRidingStyledItem::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.over_ridden_style = parameter.into(),
                 _ => {}
             }
         }
@@ -24674,7 +26465,7 @@ impl IProductConceptFeature for PackageProductConceptFeature {
 }
 impl IPackageProductConceptFeature for PackageProductConceptFeature {}
 impl PackageProductConceptFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PackageProductConceptFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24711,7 +26502,7 @@ impl IPairActuator for PairActuator {
     }
 }
 impl PairActuator {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PairActuator::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24736,7 +26527,7 @@ impl IPairValue for PairValue {
     }
 }
 impl PairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24774,13 +26565,23 @@ impl IParabola for Parabola {
     }
 }
 impl Parabola {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Parabola::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.position = parameter.into(),
                 2usize => entity.focal_dist = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Parabola::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.focal_dist = parameter.into(),
                 _ => {}
             }
         }
@@ -24819,7 +26620,7 @@ impl IParallelOffset for ParallelOffset {
     }
 }
 impl ParallelOffset {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ParallelOffset::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24834,6 +26635,16 @@ impl ParallelOffset {
                 2usize => entity.of_shape = parameter.into(),
                 3usize => entity.product_definitional = parameter.into(),
                 4usize => entity.offset = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ParallelOffset::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.offset = parameter.into(),
                 _ => {}
             }
         }
@@ -24870,7 +26681,7 @@ impl IGeometricToleranceWithDatumReference for ParallelismTolerance {
 }
 impl IParallelismTolerance for ParallelismTolerance {}
 impl ParallelismTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ParallelismTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24901,7 +26712,7 @@ impl IRepresentationContext for ParametricRepresentationContext {
 }
 impl IParametricRepresentationContext for ParametricRepresentationContext {}
 impl ParametricRepresentationContext {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ParametricRepresentationContext::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24937,7 +26748,7 @@ impl IShapeAspect for PartialCircularProfile {
 }
 impl IPartialCircularProfile for PartialCircularProfile {}
 impl PartialCircularProfile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PartialCircularProfile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -24977,12 +26788,22 @@ impl IPath for Path {
     }
 }
 impl Path {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Path::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.edge_list = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Path::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.edge_list = parameter.into(),
                 _ => {}
             }
         }
@@ -25013,7 +26834,7 @@ impl IShapeAspect for PathFeatureComponent {
 }
 impl IPathFeatureComponent for PathFeatureComponent {}
 impl PathFeatureComponent {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PathFeatureComponent::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25054,7 +26875,7 @@ impl IRepresentation for PathShapeRepresentation {
 impl IShapeRepresentation for PathShapeRepresentation {}
 impl IPathShapeRepresentation for PathShapeRepresentation {}
 impl PathShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PathShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25092,7 +26913,7 @@ impl IShapeAspectRelationship for PatternOffsetMembership {
 impl IFeatureComponentRelationship for PatternOffsetMembership {}
 impl IPatternOffsetMembership for PatternOffsetMembership {}
 impl PatternOffsetMembership {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PatternOffsetMembership::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25137,7 +26958,7 @@ impl IShapeAspectRelationship for PatternOmitMembership {
 impl IFeatureComponentRelationship for PatternOmitMembership {}
 impl IPatternOmitMembership for PatternOmitMembership {}
 impl PatternOmitMembership {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PatternOmitMembership::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25183,13 +27004,24 @@ impl IPcurve for Pcurve {
     }
 }
 impl Pcurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Pcurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.basis_surface = parameter.into(),
                 2usize => entity.reference_to_curve = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Pcurve::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.basis_surface = parameter.into(),
+                1usize => entity.reference_to_curve = parameter.into(),
                 _ => {}
             }
         }
@@ -25221,7 +27053,7 @@ impl IShapeAspect for PerpendicularTo {
 impl IDerivedShapeAspect for PerpendicularTo {}
 impl IPerpendicularTo for PerpendicularTo {}
 impl PerpendicularTo {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PerpendicularTo::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25271,7 +27103,7 @@ impl IGeometricToleranceWithDatumReference for PerpendicularityTolerance {
 }
 impl IPerpendicularityTolerance for PerpendicularityTolerance {}
 impl PerpendicularityTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PerpendicularityTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25324,7 +27156,7 @@ impl IPerson for Person {
     }
 }
 impl Person {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Person::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25388,7 +27220,7 @@ impl IPersonAndOrganization for PersonAndOrganization {
     }
 }
 impl PersonAndOrganization {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PersonAndOrganization::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25475,7 +27307,7 @@ impl IPersonalAddress for PersonAndOrganizationAddress {
     }
 }
 impl PersonAndOrganizationAddress {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PersonAndOrganizationAddress::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25595,7 +27427,7 @@ impl IPersonAndOrganizationRole for PersonAndOrganizationRole {
     }
 }
 impl PersonAndOrganizationRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PersonAndOrganizationRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25674,7 +27506,7 @@ impl IPersonalAddress for PersonalAddress {
     }
 }
 impl PersonalAddress {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PersonalAddress::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25775,6 +27607,23 @@ impl PersonalAddress {
         }
         entity
     }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PersonalAddress::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.people = parameter.into(),
+                1usize => {
+                    entity.description = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
 }
 pub trait IPhysicallyModelledProductDefinition: IProductDefinitionWithAssociatedDocuments {}
 #[derive(Default, Debug)]
@@ -25806,7 +27655,7 @@ impl IProductDefinitionWithAssociatedDocuments for PhysicallyModelledProductDefi
 }
 impl IPhysicallyModelledProductDefinition for PhysicallyModelledProductDefinition {}
 impl PhysicallyModelledProductDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PhysicallyModelledProductDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25857,7 +27706,7 @@ impl IDatumTarget for PlacedDatumTargetFeature {
 }
 impl IPlacedDatumTargetFeature for PlacedDatumTargetFeature {}
 impl PlacedDatumTargetFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlacedDatumTargetFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25902,7 +27751,7 @@ impl IShapeAspect for PlacedFeature {
 }
 impl IPlacedFeature for PlacedFeature {}
 impl PlacedFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlacedFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25942,12 +27791,22 @@ impl IPlacement for Placement {
     }
 }
 impl Placement {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Placement::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.location = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Placement::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.location = parameter.into(),
                 _ => {}
             }
         }
@@ -25984,7 +27843,7 @@ impl IPlanarBox for PlanarBox {
     }
 }
 impl PlanarBox {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlanarBox::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -25992,6 +27851,16 @@ impl PlanarBox {
                 1usize => entity.size_in_x = parameter.into(),
                 2usize => entity.size_in_y = parameter.into(),
                 3usize => entity.placement = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PlanarBox::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.placement = parameter.into(),
                 _ => {}
             }
         }
@@ -26045,7 +27914,7 @@ impl IPlanarCurvePair for PlanarCurvePair {
     }
 }
 impl PlanarCurvePair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlanarCurvePair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26063,6 +27932,18 @@ impl PlanarCurvePair {
                 5usize => entity.curve_1 = parameter.into(),
                 6usize => entity.curve_2 = parameter.into(),
                 7usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PlanarCurvePair::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.curve_1 = parameter.into(),
+                1usize => entity.curve_2 = parameter.into(),
+                2usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -26097,7 +27978,7 @@ impl IPlanarCurvePairRange for PlanarCurvePairRange {
     }
 }
 impl PlanarCurvePairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlanarCurvePairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26135,13 +28016,24 @@ impl IPlanarExtent for PlanarExtent {
     }
 }
 impl PlanarExtent {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlanarExtent::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.size_in_x = parameter.into(),
                 2usize => entity.size_in_y = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PlanarExtent::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.size_in_x = parameter.into(),
+                1usize => entity.size_in_y = parameter.into(),
                 _ => {}
             }
         }
@@ -26178,7 +28070,7 @@ impl IKinematicPair for PlanarPair {
 }
 impl IPlanarPair for PlanarPair {}
 impl PlanarPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlanarPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26247,7 +28139,7 @@ impl IPlanarPairRange for PlanarPairRange {
     }
 }
 impl PlanarPairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlanarPairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26297,7 +28189,7 @@ impl IPlanarPairValue for PlanarPairValue {
     }
 }
 impl PlanarPairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlanarPairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26332,7 +28224,7 @@ impl IRepresentation for PlanarShapeRepresentation {
 impl IShapeRepresentation for PlanarShapeRepresentation {}
 impl IPlanarShapeRepresentation for PlanarShapeRepresentation {}
 impl PlanarShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlanarShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26365,7 +28257,7 @@ impl IElementarySurface for Plane {
 }
 impl IPlane for Plane {}
 impl Plane {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Plane::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26393,7 +28285,7 @@ impl IMeasureWithUnit for PlaneAngleMeasureWithUnit {
 }
 impl IPlaneAngleMeasureWithUnit for PlaneAngleMeasureWithUnit {}
 impl PlaneAngleMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlaneAngleMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26417,7 +28309,7 @@ impl INamedUnit for PlaneAngleUnit {
 }
 impl IPlaneAngleUnit for PlaneAngleUnit {}
 impl PlaneAngleUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlaneAngleUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26448,7 +28340,7 @@ impl IMultipleArityGenericExpression for PlusExpression {
 }
 impl IPlusExpression for PlusExpression {}
 impl PlusExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlusExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26477,7 +28369,7 @@ impl IPlusMinusTolerance for PlusMinusTolerance {
     }
 }
 impl PlusMinusTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PlusMinusTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26506,7 +28398,7 @@ impl ICharacterizedObject for Pocket {
 impl IFeatureDefinition for Pocket {}
 impl IPocket for Pocket {}
 impl Pocket {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Pocket::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26548,7 +28440,7 @@ impl IShapeAspect for PocketBottom {
 }
 impl IPocketBottom for PocketBottom {}
 impl PocketBottom {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PocketBottom::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26581,7 +28473,7 @@ impl IRepresentationItem for Point {
 impl IGeometricRepresentationItem for Point {}
 impl IPoint for Point {}
 impl Point {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Point::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26618,13 +28510,24 @@ impl IPointOnCurve for PointOnCurve {
     }
 }
 impl PointOnCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointOnCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.basis_curve = parameter.into(),
                 2usize => entity.point_parameter = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PointOnCurve::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.basis_curve = parameter.into(),
+                1usize => entity.point_parameter = parameter.into(),
                 _ => {}
             }
         }
@@ -26673,7 +28576,7 @@ impl IPointOnPlanarCurvePair for PointOnPlanarCurvePair {
     }
 }
 impl PointOnPlanarCurvePair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointOnPlanarCurvePair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26690,6 +28593,17 @@ impl PointOnPlanarCurvePair {
                 4usize => entity.joint = parameter.into(),
                 5usize => entity.pair_curve = parameter.into(),
                 6usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PointOnPlanarCurvePair::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.pair_curve = parameter.into(),
+                1usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -26749,7 +28663,7 @@ impl IPointOnPlanarCurvePairRange for PointOnPlanarCurvePairRange {
     }
 }
 impl PointOnPlanarCurvePairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointOnPlanarCurvePairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26795,7 +28709,7 @@ impl IPointOnPlanarCurvePairValue for PointOnPlanarCurvePairValue {
     }
 }
 impl PointOnPlanarCurvePairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointOnPlanarCurvePairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26839,7 +28753,7 @@ impl IPointOnSurface for PointOnSurface {
     }
 }
 impl PointOnSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointOnSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26847,6 +28761,18 @@ impl PointOnSurface {
                 1usize => entity.basis_surface = parameter.into(),
                 2usize => entity.point_parameter_u = parameter.into(),
                 3usize => entity.point_parameter_v = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PointOnSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.basis_surface = parameter.into(),
+                1usize => entity.point_parameter_u = parameter.into(),
+                2usize => entity.point_parameter_v = parameter.into(),
                 _ => {}
             }
         }
@@ -26890,7 +28816,7 @@ impl IPointOnSurfacePair for PointOnSurfacePair {
     }
 }
 impl PointOnSurfacePair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointOnSurfacePair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -26906,6 +28832,16 @@ impl PointOnSurfacePair {
                 3usize => entity.transform_item_2 = parameter.into(),
                 4usize => entity.joint = parameter.into(),
                 5usize => entity.pair_surface = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PointOnSurfacePair::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.pair_surface = parameter.into(),
                 _ => {}
             }
         }
@@ -26965,7 +28901,7 @@ impl IPointOnSurfacePairRange for PointOnSurfacePairRange {
     }
 }
 impl PointOnSurfacePairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointOnSurfacePairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27011,7 +28947,7 @@ impl IPointOnSurfacePairValue for PointOnSurfacePairValue {
     }
 }
 impl PointOnSurfacePairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointOnSurfacePairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27045,7 +28981,7 @@ impl IRepresentation for PointPlacementShapeRepresentation {
 impl IShapeRepresentation for PointPlacementShapeRepresentation {}
 impl IPointPlacementShapeRepresentation for PointPlacementShapeRepresentation {}
 impl PointPlacementShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointPlacementShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27084,13 +29020,24 @@ impl IPointReplica for PointReplica {
     }
 }
 impl PointReplica {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointReplica::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.parent_pt = parameter.into(),
                 2usize => entity.transformation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PointReplica::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.parent_pt = parameter.into(),
+                1usize => entity.transformation = parameter.into(),
                 _ => {}
             }
         }
@@ -27126,7 +29073,7 @@ impl IPointStyle for PointStyle {
     }
 }
 impl PointStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PointStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27162,12 +29109,22 @@ impl IPolyLoop for PolyLoop {
 }
 impl IGeometricRepresentationItem for PolyLoop {}
 impl PolyLoop {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PolyLoop::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.polygon = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PolyLoop::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.polygon = parameter.into(),
                 _ => {}
             }
         }
@@ -27196,12 +29153,22 @@ impl IPolyline for Polyline {
     }
 }
 impl Polyline {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Polyline::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.points = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Polyline::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.points = parameter.into(),
                 _ => {}
             }
         }
@@ -27232,7 +29199,7 @@ impl IGeometricTolerance for PositionTolerance {
 }
 impl IPositionTolerance for PositionTolerance {}
 impl PositionTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PositionTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27266,7 +29233,7 @@ impl IBinaryGenericExpression for PowerExpression {
 }
 impl IPowerExpression for PowerExpression {}
 impl PowerExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PowerExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27290,7 +29257,7 @@ impl IPreDefinedItem for PreDefinedColour {
 impl IColour for PreDefinedColour {}
 impl IPreDefinedColour for PreDefinedColour {}
 impl PreDefinedColour {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedColour::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27313,7 +29280,7 @@ impl IPreDefinedItem for PreDefinedCurveFont {
 }
 impl IPreDefinedCurveFont for PreDefinedCurveFont {}
 impl PreDefinedCurveFont {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedCurveFont::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27337,7 +29304,7 @@ impl IPreDefinedItem for PreDefinedDimensionSymbol {
 impl IPreDefinedSymbol for PreDefinedDimensionSymbol {}
 impl IPreDefinedDimensionSymbol for PreDefinedDimensionSymbol {}
 impl PreDefinedDimensionSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedDimensionSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27361,7 +29328,7 @@ impl IPreDefinedItem for PreDefinedGeometricalToleranceSymbol {
 impl IPreDefinedSymbol for PreDefinedGeometricalToleranceSymbol {}
 impl IPreDefinedGeometricalToleranceSymbol for PreDefinedGeometricalToleranceSymbol {}
 impl PreDefinedGeometricalToleranceSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedGeometricalToleranceSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27385,7 +29352,7 @@ impl IPreDefinedItem for PreDefinedItem {
     }
 }
 impl PreDefinedItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27408,7 +29375,7 @@ impl IPreDefinedItem for PreDefinedMarker {
 }
 impl IPreDefinedMarker for PreDefinedMarker {}
 impl PreDefinedMarker {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedMarker::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27433,7 +29400,7 @@ impl IPreDefinedMarker for PreDefinedPointMarkerSymbol {}
 impl IPreDefinedPointMarkerSymbol for PreDefinedPointMarkerSymbol {}
 impl IPreDefinedSymbol for PreDefinedPointMarkerSymbol {}
 impl PreDefinedPointMarkerSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedPointMarkerSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27457,7 +29424,7 @@ impl IPreDefinedItem for PreDefinedPresentationStyle {
 }
 impl IPreDefinedPresentationStyle for PreDefinedPresentationStyle {}
 impl PreDefinedPresentationStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedPresentationStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27481,7 +29448,7 @@ impl IPreDefinedItem for PreDefinedSurfaceConditionSymbol {
 impl IPreDefinedSymbol for PreDefinedSurfaceConditionSymbol {}
 impl IPreDefinedSurfaceConditionSymbol for PreDefinedSurfaceConditionSymbol {}
 impl PreDefinedSurfaceConditionSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedSurfaceConditionSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27504,7 +29471,7 @@ impl IPreDefinedItem for PreDefinedSymbol {
 }
 impl IPreDefinedSymbol for PreDefinedSymbol {}
 impl PreDefinedSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27528,7 +29495,7 @@ impl IPreDefinedItem for PreDefinedTerminatorSymbol {
 impl IPreDefinedSymbol for PreDefinedTerminatorSymbol {}
 impl IPreDefinedTerminatorSymbol for PreDefinedTerminatorSymbol {}
 impl PreDefinedTerminatorSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedTerminatorSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27551,7 +29518,7 @@ impl IPreDefinedItem for PreDefinedTextFont {
 }
 impl IPreDefinedTextFont for PreDefinedTextFont {}
 impl PreDefinedTextFont {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PreDefinedTextFont::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27575,7 +29542,7 @@ impl IPrecisionQualifier for PrecisionQualifier {
     }
 }
 impl PrecisionQualifier {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PrecisionQualifier::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27611,7 +29578,7 @@ impl IPresentationRepresentation for PresentationArea {
 }
 impl IPresentationArea for PresentationArea {}
 impl PresentationArea {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PresentationArea::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27647,7 +29614,7 @@ impl IPresentationLayerAssignment for PresentationLayerAssignment {
     }
 }
 impl PresentationLayerAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PresentationLayerAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27686,7 +29653,7 @@ impl IPresentationRepresentation for PresentationRepresentation {
     }
 }
 impl PresentationRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PresentationRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27698,13 +29665,23 @@ impl PresentationRepresentation {
         }
         entity
     }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PresentationRepresentation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.context_of_items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
 }
 pub trait IPresentationSet {}
 #[derive(Default, Debug)]
 pub struct PresentationSet {}
 impl IPresentationSet for PresentationSet {}
 impl PresentationSet {
-    pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(_parameters: Vec<Parameter>) -> Self {
         PresentationSet::default()
     }
 }
@@ -27726,7 +29703,7 @@ impl IPresentationSize for PresentationSize {
     }
 }
 impl PresentationSize {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PresentationSize::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27752,7 +29729,7 @@ impl IPresentationStyleAssignment for PresentationStyleAssignment {
     }
 }
 impl PresentationStyleAssignment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PresentationStyleAssignment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27783,12 +29760,22 @@ impl IPresentationStyleByContext for PresentationStyleByContext {
     }
 }
 impl PresentationStyleByContext {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PresentationStyleByContext::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.styles = parameter.into(),
                 1usize => entity.style_context = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PresentationStyleByContext::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.style_context = parameter.into(),
                 _ => {}
             }
         }
@@ -27820,7 +29807,7 @@ impl IPresentationRepresentation for PresentationView {
 }
 impl IPresentationView for PresentationView {}
 impl PresentationView {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PresentationView::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27852,7 +29839,7 @@ impl IPresentedItemRepresentation for PresentedItemRepresentation {
     }
 }
 impl PresentedItemRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PresentedItemRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27894,7 +29881,7 @@ impl IKinematicPair for PrismaticPair {
 }
 impl IPrismaticPair for PrismaticPair {}
 impl PrismaticPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PrismaticPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27943,7 +29930,7 @@ impl IPrismaticPairRange for PrismaticPairRange {
     }
 }
 impl PrismaticPairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PrismaticPairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -27979,7 +29966,7 @@ impl IPrismaticPairValue for PrismaticPairValue {
     }
 }
 impl PrismaticPairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PrismaticPairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28015,7 +30002,7 @@ impl IActionMethod for ProcessOperation {
 }
 impl IProcessOperation for ProcessOperation {}
 impl ProcessOperation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProcessOperation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28055,7 +30042,7 @@ impl IAction for ProcessPlan {
 }
 impl IProcessPlan for ProcessPlan {}
 impl ProcessPlan {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProcessPlan::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28102,7 +30089,7 @@ impl IProcessProductAssociation for ProcessProductAssociation {
     }
 }
 impl ProcessProductAssociation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProcessProductAssociation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28144,7 +30131,7 @@ impl IProcessPropertyAssociation for ProcessPropertyAssociation {
     }
 }
 impl ProcessPropertyAssociation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProcessPropertyAssociation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28186,7 +30173,7 @@ impl IProduct for Product {
     }
 }
 impl Product {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Product::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28224,7 +30211,7 @@ impl IProductCategory for ProductCategory {
     }
 }
 impl ProductCategory {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductCategory::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28270,7 +30257,7 @@ impl IProductCategoryRelationship for ProductCategoryRelationship {
     }
 }
 impl ProductCategoryRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductCategoryRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28322,7 +30309,7 @@ impl ICharacterizedObject for ProductClass {
 }
 impl IProductClass for ProductClass {}
 impl ProductClass {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductClass::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28370,7 +30357,7 @@ impl IProductConcept for ProductConcept {
     }
 }
 impl ProductConcept {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductConcept::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28413,13 +30400,23 @@ impl IProductConceptContext for ProductConceptContext {
     }
 }
 impl ProductConceptContext {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductConceptContext::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.frame_of_reference = parameter.into(),
                 2usize => entity.market_segment_type = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ProductConceptContext::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.market_segment_type = parameter.into(),
                 _ => {}
             }
         }
@@ -28449,7 +30446,7 @@ impl IProductConceptFeature for ProductConceptFeature {
     }
 }
 impl ProductConceptFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductConceptFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28496,7 +30493,7 @@ impl IProductConceptFeatureAssociation for ProductConceptFeatureAssociation {
     }
 }
 impl ProductConceptFeatureAssociation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductConceptFeatureAssociation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28532,7 +30529,7 @@ impl IGroup for ProductConceptFeatureCategory {
 }
 impl IProductConceptFeatureCategory for ProductConceptFeatureCategory {}
 impl ProductConceptFeatureCategory {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductConceptFeatureCategory::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28569,12 +30566,22 @@ impl IProductConceptFeatureCategoryUsage for ProductConceptFeatureCategoryUsage 
     }
 }
 impl ProductConceptFeatureCategoryUsage {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductConceptFeatureCategoryUsage::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.assigned_group = parameter.into(),
                 1usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ProductConceptFeatureCategoryUsage::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -28609,7 +30616,7 @@ impl IProductConceptRelationship for ProductConceptRelationship {
     }
 }
 impl ProductConceptRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductConceptRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28652,13 +30659,23 @@ impl IProductContext for ProductContext {
     }
 }
 impl ProductContext {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductContext::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.frame_of_reference = parameter.into(),
                 2usize => entity.discipline_type = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ProductContext::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.discipline_type = parameter.into(),
                 _ => {}
             }
         }
@@ -28693,7 +30710,7 @@ impl IProductDefinition for ProductDefinition {
     }
 }
 impl ProductDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28736,13 +30753,23 @@ impl IProductDefinitionContext for ProductDefinitionContext {
     }
 }
 impl ProductDefinitionContext {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionContext::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.frame_of_reference = parameter.into(),
                 2usize => entity.life_cycle_stage = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ProductDefinitionContext::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.life_cycle_stage = parameter.into(),
                 _ => {}
             }
         }
@@ -28772,7 +30799,7 @@ impl IProductDefinitionContextAssociation for ProductDefinitionContextAssociatio
     }
 }
 impl ProductDefinitionContextAssociation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionContextAssociation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28803,7 +30830,7 @@ impl IProductDefinitionContextRole for ProductDefinitionContextRole {
     }
 }
 impl ProductDefinitionContextRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionContextRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28840,12 +30867,22 @@ impl IProductDefinitionEffectivity for ProductDefinitionEffectivity {
     }
 }
 impl ProductDefinitionEffectivity {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionEffectivity::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.id = parameter.into(),
                 1usize => entity.usage = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ProductDefinitionEffectivity::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.usage = parameter.into(),
                 _ => {}
             }
         }
@@ -28875,7 +30912,7 @@ impl IProductDefinitionFormation for ProductDefinitionFormation {
     }
 }
 impl ProductDefinitionFormation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionFormation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28927,7 +30964,7 @@ impl IProductDefinitionFormationRelationship for ProductDefinitionFormationRelat
     }
 }
 impl ProductDefinitionFormationRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionFormationRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28975,7 +31012,7 @@ impl IProductDefinitionFormationWithSpecifiedSource for ProductDefinitionFormati
     }
 }
 impl ProductDefinitionFormationWithSpecifiedSource {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionFormationWithSpecifiedSource::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -28989,6 +31026,16 @@ impl ProductDefinitionFormationWithSpecifiedSource {
                 }
                 2usize => entity.of_product = parameter.into(),
                 3usize => entity.make_or_buy = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ProductDefinitionFormationWithSpecifiedSource::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.make_or_buy = parameter.into(),
                 _ => {}
             }
         }
@@ -29023,7 +31070,7 @@ impl IProductDefinitionOccurrenceRelationship for ProductDefinitionOccurrenceRel
     }
 }
 impl ProductDefinitionOccurrenceRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionOccurrenceRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29070,7 +31117,7 @@ impl IProductDefinitionProcess for ProductDefinitionProcess {
     }
 }
 impl ProductDefinitionProcess {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionProcess::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29084,6 +31131,16 @@ impl ProductDefinitionProcess {
                 }
                 2usize => entity.chosen_method = parameter.into(),
                 3usize => entity.identification = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ProductDefinitionProcess::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.identification = parameter.into(),
                 _ => {}
             }
         }
@@ -29123,7 +31180,7 @@ impl IProductDefinitionRelationship for ProductDefinitionRelationship {
     }
 }
 impl ProductDefinitionRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29185,7 +31242,7 @@ impl IProductDefinition for ProductDefinitionResource {
 }
 impl IProductDefinitionResource for ProductDefinitionResource {}
 impl ProductDefinitionResource {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionResource::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29228,7 +31285,7 @@ impl IPropertyDefinition for ProductDefinitionShape {
 }
 impl IProductDefinitionShape for ProductDefinitionShape {}
 impl ProductDefinitionShape {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionShape::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29270,7 +31327,7 @@ impl IProductDefinitionSubstitute for ProductDefinitionSubstitute {
     }
 }
 impl ProductDefinitionSubstitute {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionSubstitute::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29317,7 +31374,7 @@ impl IProductDefinitionRelationship for ProductDefinitionUsage {
 }
 impl IProductDefinitionUsage for ProductDefinitionUsage {}
 impl ProductDefinitionUsage {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionUsage::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29369,7 +31426,7 @@ impl IProductDefinitionWithAssociatedDocuments for ProductDefinitionWithAssociat
     }
 }
 impl ProductDefinitionWithAssociatedDocuments {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductDefinitionWithAssociatedDocuments::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29384,6 +31441,16 @@ impl ProductDefinitionWithAssociatedDocuments {
                 2usize => entity.formation = parameter.into(),
                 3usize => entity.frame_of_reference = parameter.into(),
                 4usize => entity.documentation_ids = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ProductDefinitionWithAssociatedDocuments::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.documentation_ids = parameter.into(),
                 _ => {}
             }
         }
@@ -29426,7 +31493,7 @@ impl ICharacterizedObject for ProductIdentification {
 }
 impl IProductIdentification for ProductIdentification {}
 impl ProductIdentification {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductIdentification::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29479,7 +31546,7 @@ impl IProductDefinitionProcess for ProductProcessPlan {
 }
 impl IProductProcessPlan for ProductProcessPlan {}
 impl ProductProcessPlan {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductProcessPlan::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29522,7 +31589,7 @@ impl IProductRelatedProductCategory for ProductRelatedProductCategory {
     }
 }
 impl ProductRelatedProductCategory {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductRelatedProductCategory::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29535,6 +31602,16 @@ impl ProductRelatedProductCategory {
                     }
                 }
                 2usize => entity.products = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ProductRelatedProductCategory::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.products = parameter.into(),
                 _ => {}
             }
         }
@@ -29584,7 +31661,7 @@ impl IConfigurableItem for ProductSpecification {
     }
 }
 impl ProductSpecification {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProductSpecification::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29640,7 +31717,7 @@ impl IProjectedZoneDefinition for ProjectedZoneDefinition {
     }
 }
 impl ProjectedZoneDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProjectedZoneDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29648,6 +31725,17 @@ impl ProjectedZoneDefinition {
                 1usize => entity.boundaries = parameter.into(),
                 2usize => entity.projection_end = parameter.into(),
                 3usize => entity.projected_length = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ProjectedZoneDefinition::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.projection_end = parameter.into(),
+                1usize => entity.projected_length = parameter.into(),
                 _ => {}
             }
         }
@@ -29682,7 +31770,7 @@ impl IAnnotationCurveOccurrence for ProjectionCurve {
 }
 impl IProjectionCurve for ProjectionCurve {}
 impl ProjectionCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProjectionCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29714,7 +31802,7 @@ impl IDraughtingCallout for ProjectionDirectedCallout {
 }
 impl IProjectionDirectedCallout for ProjectionDirectedCallout {}
 impl ProjectionDirectedCallout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ProjectionDirectedCallout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29761,7 +31849,7 @@ impl IAssemblyComponentUsage for PromissoryUsageOccurrence {
 }
 impl IPromissoryUsageOccurrence for PromissoryUsageOccurrence {}
 impl PromissoryUsageOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PromissoryUsageOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29812,7 +31900,7 @@ impl IPropertyDefinition for PropertyDefinition {
     }
 }
 impl PropertyDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PropertyDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29859,7 +31947,7 @@ impl IPropertyDefinitionRelationship for PropertyDefinitionRelationship {
     }
 }
 impl PropertyDefinitionRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PropertyDefinitionRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29891,7 +31979,7 @@ impl IPropertyDefinitionRepresentation for PropertyDefinitionRepresentation {
     }
 }
 impl PropertyDefinitionRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PropertyDefinitionRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29930,7 +32018,7 @@ impl IPropertyProcess for PropertyProcess {
     }
 }
 impl PropertyProcess {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = PropertyProcess::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -29944,6 +32032,16 @@ impl PropertyProcess {
                 }
                 2usize => entity.chosen_method = parameter.into(),
                 3usize => entity.identification = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = PropertyProcess::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.identification = parameter.into(),
                 _ => {}
             }
         }
@@ -29969,12 +32067,22 @@ impl IQualifiedRepresentationItem for QualifiedRepresentationItem {
     }
 }
 impl QualifiedRepresentationItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = QualifiedRepresentationItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.qualifiers = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = QualifiedRepresentationItem::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.qualifiers = parameter.into(),
                 _ => {}
             }
         }
@@ -30004,13 +32112,23 @@ impl IQualitativeUncertainty for QualitativeUncertainty {
     }
 }
 impl QualitativeUncertainty {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = QualitativeUncertainty::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.measure_name = parameter.into(),
                 1usize => entity.description = parameter.into(),
                 2usize => entity.uncertainty_value = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = QualitativeUncertainty::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.uncertainty_value = parameter.into(),
                 _ => {}
             }
         }
@@ -30059,7 +32177,7 @@ impl IQuantifiedAssemblyComponentUsage for QuantifiedAssemblyComponentUsage {
     }
 }
 impl QuantifiedAssemblyComponentUsage {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = QuantifiedAssemblyComponentUsage::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30082,6 +32200,16 @@ impl QuantifiedAssemblyComponentUsage {
                     }
                 }
                 6usize => entity.quantity = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = QuantifiedAssemblyComponentUsage::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.quantity = parameter.into(),
                 _ => {}
             }
         }
@@ -30125,7 +32253,7 @@ impl IBSplineCurve for QuasiUniformCurve {
 }
 impl IQuasiUniformCurve for QuasiUniformCurve {}
 impl QuasiUniformCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = QuasiUniformCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30186,7 +32314,7 @@ impl IBSplineSurface for QuasiUniformSurface {
 }
 impl IQuasiUniformSurface for QuasiUniformSurface {}
 impl QuasiUniformSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = QuasiUniformSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30241,7 +32369,7 @@ impl IRackAndPinionPair for RackAndPinionPair {
     }
 }
 impl RackAndPinionPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RackAndPinionPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30257,6 +32385,16 @@ impl RackAndPinionPair {
                 3usize => entity.transform_item_2 = parameter.into(),
                 4usize => entity.joint = parameter.into(),
                 5usize => entity.pinion_radius = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RackAndPinionPair::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.pinion_radius = parameter.into(),
                 _ => {}
             }
         }
@@ -30291,7 +32429,7 @@ impl IRackAndPinionPairRange for RackAndPinionPairRange {
     }
 }
 impl RackAndPinionPairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RackAndPinionPairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30327,7 +32465,7 @@ impl IRackAndPinionPairValue for RackAndPinionPairValue {
     }
 }
 impl RackAndPinionPairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RackAndPinionPairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30359,7 +32497,7 @@ impl IDraughtingCallout for RadiusDimension {
 impl IDimensionCurveDirectedCallout for RadiusDimension {}
 impl IRadiusDimension for RadiusDimension {}
 impl RadiusDimension {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RadiusDimension::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30387,7 +32525,7 @@ impl IMeasureWithUnit for RatioMeasureWithUnit {
 }
 impl IRatioMeasureWithUnit for RatioMeasureWithUnit {}
 impl RatioMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RatioMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30411,7 +32549,7 @@ impl INamedUnit for RatioUnit {
 }
 impl IRatioUnit for RatioUnit {}
 impl RatioUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RatioUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30466,7 +32604,7 @@ impl IRationalBSplineCurve for RationalBSplineCurve {
     }
 }
 impl RationalBSplineCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RationalBSplineCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30477,6 +32615,16 @@ impl RationalBSplineCurve {
                 4usize => entity.closed_curve = parameter.into(),
                 5usize => entity.self_intersect = parameter.into(),
                 6usize => entity.weights_data = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RationalBSplineCurve::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.weights_data = parameter.into(),
                 _ => {}
             }
         }
@@ -30535,7 +32683,7 @@ impl IRationalBSplineSurface for RationalBSplineSurface {
     }
 }
 impl RationalBSplineSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RationalBSplineSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30548,6 +32696,16 @@ impl RationalBSplineSurface {
                 6usize => entity.v_closed = parameter.into(),
                 7usize => entity.self_intersect = parameter.into(),
                 8usize => entity.weights_data = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RationalBSplineSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.weights_data = parameter.into(),
                 _ => {}
             }
         }
@@ -30579,7 +32737,7 @@ impl IRealLiteral for RealLiteral {
     }
 }
 impl RealLiteral {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RealLiteral::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30603,7 +32761,7 @@ impl IVariable for RealNumericVariable {}
 impl IGenericVariable for RealNumericVariable {}
 impl IRealNumericVariable for RealNumericVariable {}
 impl RealNumericVariable {
-    pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(_parameters: Vec<Parameter>) -> Self {
         RealNumericVariable::default()
     }
 }
@@ -30631,7 +32789,7 @@ impl IShapeAspect for RectangularClosedProfile {
 }
 impl IRectangularClosedProfile for RectangularClosedProfile {}
 impl RectangularClosedProfile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RectangularClosedProfile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30673,12 +32831,22 @@ impl IRectangularCompositeSurface for RectangularCompositeSurface {
     }
 }
 impl RectangularCompositeSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RectangularCompositeSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.segments = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RectangularCompositeSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.segments = parameter.into(),
                 _ => {}
             }
         }
@@ -30703,7 +32871,7 @@ impl IFeatureDefinition for RectangularPattern {}
 impl IReplicateFeature for RectangularPattern {}
 impl IRectangularPattern for RectangularPattern {}
 impl RectangularPattern {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RectangularPattern::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30773,7 +32941,7 @@ impl IRectangularTrimmedSurface for RectangularTrimmedSurface {
     }
 }
 impl RectangularTrimmedSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RectangularTrimmedSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30785,6 +32953,22 @@ impl RectangularTrimmedSurface {
                 5usize => entity.v2 = parameter.into(),
                 6usize => entity.usense = parameter.into(),
                 7usize => entity.vsense = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RectangularTrimmedSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.basis_surface = parameter.into(),
+                1usize => entity.u1 = parameter.into(),
+                2usize => entity.u2 = parameter.into(),
+                3usize => entity.v1 = parameter.into(),
+                4usize => entity.v2 = parameter.into(),
+                5usize => entity.usense = parameter.into(),
+                6usize => entity.vsense = parameter.into(),
                 _ => {}
             }
         }
@@ -30814,13 +32998,23 @@ impl IReferencedModifiedDatum for ReferencedModifiedDatum {
     }
 }
 impl ReferencedModifiedDatum {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ReferencedModifiedDatum::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.precedence = parameter.into(),
                 1usize => entity.referenced_datum = parameter.into(),
                 2usize => entity.modifier = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ReferencedModifiedDatum::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.modifier = parameter.into(),
                 _ => {}
             }
         }
@@ -30859,7 +33053,7 @@ impl IRelativeEventOccurrence for RelativeEventOccurrence {
     }
 }
 impl RelativeEventOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RelativeEventOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30874,6 +33068,17 @@ impl RelativeEventOccurrence {
                 }
                 3usize => entity.base_event = parameter.into(),
                 4usize => entity.offset = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RelativeEventOccurrence::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.base_event = parameter.into(),
+                1usize => entity.offset = parameter.into(),
                 _ => {}
             }
         }
@@ -30901,7 +33106,7 @@ impl IRepresentationItem for RepItemGroup {
 }
 impl IRepItemGroup for RepItemGroup {}
 impl RepItemGroup {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RepItemGroup::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30947,7 +33152,7 @@ impl IReparametrisedCompositeCurveSegment for ReparametrisedCompositeCurveSegmen
     }
 }
 impl ReparametrisedCompositeCurveSegment {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ReparametrisedCompositeCurveSegment::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -30955,6 +33160,16 @@ impl ReparametrisedCompositeCurveSegment {
                 1usize => entity.same_sense = parameter.into(),
                 2usize => entity.parent_curve = parameter.into(),
                 3usize => entity.param_length = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ReparametrisedCompositeCurveSegment::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.param_length = parameter.into(),
                 _ => {}
             }
         }
@@ -30978,7 +33193,7 @@ impl ICharacterizedObject for ReplicateFeature {
 impl IFeatureDefinition for ReplicateFeature {}
 impl IReplicateFeature for ReplicateFeature {}
 impl ReplicateFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ReplicateFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31019,7 +33234,7 @@ impl IRepresentation for Representation {
     }
 }
 impl Representation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Representation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31050,7 +33265,7 @@ impl IRepresentationContext for RepresentationContext {
     }
 }
 impl RepresentationContext {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RepresentationContext::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31075,7 +33290,7 @@ impl IRepresentationItem for RepresentationItem {
     }
 }
 impl RepresentationItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RepresentationItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31104,7 +33319,7 @@ impl IRepresentationMap for RepresentationMap {
     }
 }
 impl RepresentationMap {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RepresentationMap::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31144,7 +33359,7 @@ impl IRepresentationRelationship for RepresentationRelationship {
     }
 }
 impl RepresentationRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RepresentationRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31195,7 +33410,7 @@ impl IRepresentationRelationshipWithTransformation for RepresentationRelationshi
     }
 }
 impl RepresentationRelationshipWithTransformation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RepresentationRelationshipWithTransformation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31210,6 +33425,16 @@ impl RepresentationRelationshipWithTransformation {
                 2usize => entity.rep_1 = parameter.into(),
                 3usize => entity.rep_2 = parameter.into(),
                 4usize => entity.transformation_operator = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RepresentationRelationshipWithTransformation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.transformation_operator = parameter.into(),
                 _ => {}
             }
         }
@@ -31247,7 +33472,7 @@ impl IRequirementForActionResource for RequirementForActionResource {
     }
 }
 impl RequirementForActionResource {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RequirementForActionResource::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31256,6 +33481,16 @@ impl RequirementForActionResource {
                 2usize => entity.kind = parameter.into(),
                 3usize => entity.operations = parameter.into(),
                 4usize => entity.resources = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RequirementForActionResource::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.resources = parameter.into(),
                 _ => {}
             }
         }
@@ -31285,7 +33520,7 @@ impl IResourceProperty for ResourceProperty {
     }
 }
 impl ResourceProperty {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ResourceProperty::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31326,7 +33561,7 @@ impl IResourcePropertyRepresentation for ResourcePropertyRepresentation {
     }
 }
 impl ResourcePropertyRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ResourcePropertyRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31358,7 +33593,7 @@ impl IResourceRequirementType for ResourceRequirementType {
     }
 }
 impl ResourceRequirementType {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ResourceRequirementType::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31413,7 +33648,7 @@ impl IResultingPath for ResultingPath {
     }
 }
 impl ResultingPath {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ResultingPath::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31429,6 +33664,16 @@ impl ResultingPath {
                 3usize => entity.rep_2 = parameter.into(),
                 4usize => entity.related_frame = parameter.into(),
                 5usize => entity.controlling_joints = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ResultingPath::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.controlling_joints = parameter.into(),
                 _ => {}
             }
         }
@@ -31455,7 +33700,7 @@ impl IAction for Retention {
 }
 impl IRetention for Retention {}
 impl Retention {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Retention::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31504,7 +33749,7 @@ impl IKinematicPair for RevolutePair {
 }
 impl IRevolutePair for RevolutePair {}
 impl RevolutePair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RevolutePair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31553,7 +33798,7 @@ impl IRevolutePairRange for RevolutePairRange {
     }
 }
 impl RevolutePairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RevolutePairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31589,7 +33834,7 @@ impl IRevolutePairValue for RevolutePairValue {
     }
 }
 impl RevolutePairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RevolutePairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31633,7 +33878,7 @@ impl IRevolvedAreaSolid for RevolvedAreaSolid {
     }
 }
 impl RevolvedAreaSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RevolvedAreaSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31641,6 +33886,17 @@ impl RevolvedAreaSolid {
                 1usize => entity.swept_area = parameter.into(),
                 2usize => entity.axis = parameter.into(),
                 3usize => entity.angle = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RevolvedAreaSolid::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.axis = parameter.into(),
+                1usize => entity.angle = parameter.into(),
                 _ => {}
             }
         }
@@ -31679,7 +33935,7 @@ impl IRevolvedFaceSolid for RevolvedFaceSolid {
     }
 }
 impl RevolvedFaceSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RevolvedFaceSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31687,6 +33943,17 @@ impl RevolvedFaceSolid {
                 1usize => entity.swept_face = parameter.into(),
                 2usize => entity.axis = parameter.into(),
                 3usize => entity.angle = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RevolvedFaceSolid::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.axis = parameter.into(),
+                1usize => entity.angle = parameter.into(),
                 _ => {}
             }
         }
@@ -31710,7 +33977,7 @@ impl ICharacterizedObject for Rib {
 impl IFeatureDefinition for Rib {}
 impl IRib for Rib {}
 impl Rib {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Rib::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31768,7 +34035,7 @@ impl IRightAngularWedge for RightAngularWedge {
     }
 }
 impl RightAngularWedge {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RightAngularWedge::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31778,6 +34045,20 @@ impl RightAngularWedge {
                 3usize => entity.y = parameter.into(),
                 4usize => entity.z = parameter.into(),
                 5usize => entity.ltx = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RightAngularWedge::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.position = parameter.into(),
+                1usize => entity.x = parameter.into(),
+                2usize => entity.y = parameter.into(),
+                3usize => entity.z = parameter.into(),
+                4usize => entity.ltx = parameter.into(),
                 _ => {}
             }
         }
@@ -31819,7 +34100,7 @@ impl IRightCircularCone for RightCircularCone {
     }
 }
 impl RightCircularCone {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RightCircularCone::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31828,6 +34109,19 @@ impl RightCircularCone {
                 2usize => entity.height = parameter.into(),
                 3usize => entity.radius = parameter.into(),
                 4usize => entity.semi_angle = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RightCircularCone::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.position = parameter.into(),
+                1usize => entity.height = parameter.into(),
+                2usize => entity.radius = parameter.into(),
+                3usize => entity.semi_angle = parameter.into(),
                 _ => {}
             }
         }
@@ -31864,7 +34158,7 @@ impl IRightCircularCylinder for RightCircularCylinder {
     }
 }
 impl RightCircularCylinder {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RightCircularCylinder::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31872,6 +34166,18 @@ impl RightCircularCylinder {
                 1usize => entity.position = parameter.into(),
                 2usize => entity.height = parameter.into(),
                 3usize => entity.radius = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RightCircularCylinder::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.position = parameter.into(),
+                1usize => entity.height = parameter.into(),
+                2usize => entity.radius = parameter.into(),
                 _ => {}
             }
         }
@@ -31896,7 +34202,7 @@ impl IRoleAssociation for RoleAssociation {
     }
 }
 impl RoleAssociation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RoleAssociation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31952,7 +34258,7 @@ impl IPlanarCurvePair for RollingCurvePair {
 }
 impl IRollingCurvePair for RollingCurvePair {}
 impl RollingCurvePair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RollingCurvePair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -31999,7 +34305,7 @@ impl IRollingCurvePairValue for RollingCurvePairValue {
     }
 }
 impl RollingCurvePairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RollingCurvePairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32055,7 +34361,7 @@ impl ISurfacePair for RollingSurfacePair {
 }
 impl IRollingSurfacePair for RollingSurfacePair {}
 impl RollingSurfacePair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RollingSurfacePair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32107,7 +34413,7 @@ impl IRollingSurfacePairValue for RollingSurfacePairValue {
     }
 }
 impl RollingSurfacePairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RollingSurfacePairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32138,7 +34444,7 @@ impl IRotationAboutDirection for RotationAboutDirection {
     }
 }
 impl RotationAboutDirection {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RotationAboutDirection::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32167,7 +34473,7 @@ impl ICharacterizedObject for RoundHole {
 impl IFeatureDefinition for RoundHole {}
 impl IRoundHole for RoundHole {}
 impl RoundHole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RoundHole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32209,7 +34515,7 @@ impl IShapeAspect for RoundedUProfile {
 }
 impl IRoundedUProfile for RoundedUProfile {}
 impl RoundedUProfile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RoundedUProfile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32253,7 +34559,7 @@ impl IGeometricTolerance for RoundnessTolerance {
 }
 impl IRoundnessTolerance for RoundnessTolerance {}
 impl RoundnessTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RoundnessTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32305,7 +34611,7 @@ impl ISurfaceCurveSweptAreaSolid for RuledSurfaceSweptAreaSolid {
 }
 impl IRuledSurfaceSweptAreaSolid for RuledSurfaceSweptAreaSolid {}
 impl RuledSurfaceSweptAreaSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RuledSurfaceSweptAreaSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32344,13 +34650,23 @@ impl IRunoutZoneDefinition for RunoutZoneDefinition {
     }
 }
 impl RunoutZoneDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RunoutZoneDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.zone = parameter.into(),
                 1usize => entity.boundaries = parameter.into(),
                 2usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RunoutZoneDefinition::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -32370,7 +34686,7 @@ impl IRunoutZoneOrientation for RunoutZoneOrientation {
     }
 }
 impl RunoutZoneOrientation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RunoutZoneOrientation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32400,12 +34716,22 @@ impl IRunoutZoneOrientationReferenceDirection for RunoutZoneOrientationReference
     }
 }
 impl RunoutZoneOrientationReferenceDirection {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = RunoutZoneOrientationReferenceDirection::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.angle = parameter.into(),
                 1usize => entity.orientation_defining_relationship = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = RunoutZoneOrientationReferenceDirection::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.orientation_defining_relationship = parameter.into(),
                 _ => {}
             }
         }
@@ -32449,7 +34775,7 @@ impl IScrewPair for ScrewPair {
     }
 }
 impl ScrewPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ScrewPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32465,6 +34791,16 @@ impl ScrewPair {
                 3usize => entity.transform_item_2 = parameter.into(),
                 4usize => entity.joint = parameter.into(),
                 5usize => entity.pitch = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ScrewPair::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.pitch = parameter.into(),
                 _ => {}
             }
         }
@@ -32499,7 +34835,7 @@ impl IScrewPairRange for ScrewPairRange {
     }
 }
 impl ScrewPairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ScrewPairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32535,7 +34871,7 @@ impl IScrewPairValue for ScrewPairValue {
     }
 }
 impl ScrewPairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ScrewPairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32575,7 +34911,7 @@ impl ISurfaceCurve for SeamCurve {
 }
 impl ISeamCurve for SeamCurve {}
 impl SeamCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SeamCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32629,7 +34965,7 @@ impl ISeamEdge for SeamEdge {
     }
 }
 impl SeamEdge {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SeamEdge::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32639,6 +34975,16 @@ impl SeamEdge {
                 3usize => entity.edge_element = parameter.into(),
                 4usize => entity.orientation = parameter.into(),
                 5usize => entity.pcurve_reference = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SeamEdge::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.pcurve_reference = parameter.into(),
                 _ => {}
             }
         }
@@ -32668,7 +35014,7 @@ impl ISecurityClassification for SecurityClassification {
     }
 }
 impl SecurityClassification {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SecurityClassification::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32697,7 +35043,7 @@ impl ISecurityClassificationLevel for SecurityClassificationLevel {
     }
 }
 impl SecurityClassificationLevel {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SecurityClassificationLevel::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32732,13 +35078,30 @@ impl ISerialNumberedEffectivity for SerialNumberedEffectivity {
     }
 }
 impl SerialNumberedEffectivity {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SerialNumberedEffectivity::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.id = parameter.into(),
                 1usize => entity.effectivity_start_id = parameter.into(),
                 2usize => {
+                    entity.effectivity_end_id = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SerialNumberedEffectivity::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.effectivity_start_id = parameter.into(),
+                1usize => {
                     entity.effectivity_end_id = if parameter.is_null() {
                         None
                     } else {
@@ -32779,7 +35142,7 @@ impl IShapeAspect for ShapeAspect {
     }
 }
 impl ShapeAspect {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeAspect::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32823,7 +35186,7 @@ impl IShapeAspectRelationship for ShapeAspectAssociativity {
 }
 impl IShapeAspectAssociativity for ShapeAspectAssociativity {}
 impl ShapeAspectAssociativity {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeAspectAssociativity::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32867,7 +35230,7 @@ impl IShapeAspectRelationship for ShapeAspectDerivingRelationship {
 }
 impl IShapeAspectDerivingRelationship for ShapeAspectDerivingRelationship {}
 impl ShapeAspectDerivingRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeAspectDerivingRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32915,7 +35278,7 @@ impl IShapeAspectRelationship for ShapeAspectRelationship {
     }
 }
 impl ShapeAspectRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeAspectRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -32959,7 +35322,7 @@ impl IShapeAspectRelationship for ShapeAspectTransition {
 }
 impl IShapeAspectTransition for ShapeAspectTransition {}
 impl ShapeAspectTransition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeAspectTransition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33003,7 +35366,7 @@ impl IShapeAspectRelationship for ShapeDefiningRelationship {
 }
 impl IShapeDefiningRelationship for ShapeDefiningRelationship {}
 impl ShapeDefiningRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeDefiningRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33039,7 +35402,7 @@ impl IPropertyDefinitionRepresentation for ShapeDefinitionRepresentation {
 }
 impl IShapeDefinitionRepresentation for ShapeDefinitionRepresentation {}
 impl ShapeDefinitionRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeDefinitionRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33072,7 +35435,7 @@ impl IRepresentation for ShapeDimensionRepresentation {
 impl IShapeRepresentation for ShapeDimensionRepresentation {}
 impl IShapeDimensionRepresentation for ShapeDimensionRepresentation {}
 impl ShapeDimensionRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeDimensionRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33105,7 +35468,7 @@ impl IRepresentation for ShapeRepresentation {
 }
 impl IShapeRepresentation for ShapeRepresentation {}
 impl ShapeRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33142,7 +35505,7 @@ impl IRepresentationRelationship for ShapeRepresentationRelationship {
 }
 impl IShapeRepresentationRelationship for ShapeRepresentationRelationship {}
 impl ShapeRepresentationRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeRepresentationRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33183,7 +35546,7 @@ impl IRepresentation for ShapeRepresentationWithParameters {
 impl IShapeRepresentation for ShapeRepresentationWithParameters {}
 impl IShapeRepresentationWithParameters for ShapeRepresentationWithParameters {}
 impl ShapeRepresentationWithParameters {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShapeRepresentationWithParameters::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33216,12 +35579,22 @@ impl IShellBasedSurfaceModel for ShellBasedSurfaceModel {
     }
 }
 impl ShellBasedSurfaceModel {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ShellBasedSurfaceModel::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.sbsm_boundary = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ShellBasedSurfaceModel::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.sbsm_boundary = parameter.into(),
                 _ => {}
             }
         }
@@ -33252,7 +35625,7 @@ impl ISiUnit for SiUnit {
     }
 }
 impl SiUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SiUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33265,6 +35638,23 @@ impl SiUnit {
                     }
                 }
                 2usize => entity.name = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SiUnit::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
+                    entity.prefix = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                1usize => entity.name = parameter.into(),
                 _ => {}
             }
         }
@@ -33287,7 +35677,7 @@ impl ISimplePairRange for SimplePairRange {
     }
 }
 impl SimplePairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SimplePairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33320,7 +35710,7 @@ impl IUnaryGenericExpression for SinFunction {
 impl IUnaryFunctionCall for SinFunction {}
 impl ISinFunction for SinFunction {}
 impl SinFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SinFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33351,7 +35741,7 @@ impl IBinaryGenericExpression for SlashExpression {
 }
 impl ISlashExpression for SlashExpression {}
 impl SlashExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SlashExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33406,7 +35796,7 @@ impl IPlanarCurvePair for SlidingCurvePair {
 }
 impl ISlidingCurvePair for SlidingCurvePair {}
 impl SlidingCurvePair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SlidingCurvePair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33458,7 +35848,7 @@ impl ISlidingCurvePairValue for SlidingCurvePairValue {
     }
 }
 impl SlidingCurvePairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SlidingCurvePairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33515,7 +35905,7 @@ impl ISurfacePair for SlidingSurfacePair {
 }
 impl ISlidingSurfacePair for SlidingSurfacePair {}
 impl SlidingSurfacePair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SlidingSurfacePair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33572,7 +35962,7 @@ impl ISlidingSurfacePairValue for SlidingSurfacePairValue {
     }
 }
 impl SlidingSurfacePairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SlidingSurfacePairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33603,7 +35993,7 @@ impl ICharacterizedObject for Slot {
 impl IFeatureDefinition for Slot {}
 impl ISlot for Slot {}
 impl Slot {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Slot::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33645,7 +36035,7 @@ impl IShapeAspect for SlotEnd {
 }
 impl ISlotEnd for SlotEnd {}
 impl SlotEnd {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SlotEnd::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33681,7 +36071,7 @@ impl IMeasureWithUnit for SolidAngleMeasureWithUnit {
 }
 impl ISolidAngleMeasureWithUnit for SolidAngleMeasureWithUnit {}
 impl SolidAngleMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SolidAngleMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33705,7 +36095,7 @@ impl INamedUnit for SolidAngleUnit {
 }
 impl ISolidAngleUnit for SolidAngleUnit {}
 impl SolidAngleUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SolidAngleUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33729,7 +36119,7 @@ impl IRepresentationItem for SolidModel {
 impl IGeometricRepresentationItem for SolidModel {}
 impl ISolidModel for SolidModel {}
 impl SolidModel {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SolidModel::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33766,13 +36156,24 @@ impl ISolidReplica for SolidReplica {
     }
 }
 impl SolidReplica {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SolidReplica::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.parent_solid = parameter.into(),
                 2usize => entity.transformation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SolidReplica::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.parent_solid = parameter.into(),
+                1usize => entity.transformation = parameter.into(),
                 _ => {}
             }
         }
@@ -33826,7 +36227,7 @@ impl ISpecifiedHigherUsageOccurrence for SpecifiedHigherUsageOccurrence {
     }
 }
 impl SpecifiedHigherUsageOccurrence {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SpecifiedHigherUsageOccurrence::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33850,6 +36251,17 @@ impl SpecifiedHigherUsageOccurrence {
                 }
                 6usize => entity.upper_usage = parameter.into(),
                 7usize => entity.next_usage = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SpecifiedHigherUsageOccurrence::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.upper_usage = parameter.into(),
+                1usize => entity.next_usage = parameter.into(),
                 _ => {}
             }
         }
@@ -33881,13 +36293,24 @@ impl ISphere for Sphere {
     }
 }
 impl Sphere {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Sphere::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.radius = parameter.into(),
                 2usize => entity.centre = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Sphere::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.radius = parameter.into(),
+                1usize => entity.centre = parameter.into(),
                 _ => {}
             }
         }
@@ -33924,7 +36347,7 @@ impl IKinematicPair for SphericalPair {
 }
 impl ISphericalPair for SphericalPair {}
 impl SphericalPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SphericalPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -33993,7 +36416,7 @@ impl ISphericalPairRange for SphericalPairRange {
     }
 }
 impl SphericalPairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SphericalPairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34033,7 +36456,7 @@ impl ISphericalPairValue for SphericalPairValue {
     }
 }
 impl SphericalPairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SphericalPairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34072,13 +36495,23 @@ impl ISphericalSurface for SphericalSurface {
     }
 }
 impl SphericalSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SphericalSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.position = parameter.into(),
                 2usize => entity.radius = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SphericalSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.radius = parameter.into(),
                 _ => {}
             }
         }
@@ -34107,7 +36540,7 @@ impl IUnaryGenericExpression for SquareRootFunction {
 impl IUnaryFunctionCall for SquareRootFunction {}
 impl ISquareRootFunction for SquareRootFunction {}
 impl SquareRootFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SquareRootFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34142,7 +36575,7 @@ impl IShapeAspect for SquareUProfile {
 }
 impl ISquareUProfile for SquareUProfile {}
 impl SquareUProfile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SquareUProfile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34185,13 +36618,23 @@ impl IStandardUncertainty for StandardUncertainty {
     }
 }
 impl StandardUncertainty {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = StandardUncertainty::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.measure_name = parameter.into(),
                 1usize => entity.description = parameter.into(),
                 2usize => entity.uncertainty_value = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = StandardUncertainty::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.uncertainty_value = parameter.into(),
                 _ => {}
             }
         }
@@ -34222,7 +36665,7 @@ impl IGeometricTolerance for StraightnessTolerance {
 }
 impl IStraightnessTolerance for StraightnessTolerance {}
 impl StraightnessTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = StraightnessTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34257,7 +36700,7 @@ impl IStringLiteral for StringLiteral {
 }
 impl IGenericLiteral for StringLiteral {}
 impl StringLiteral {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = StringLiteral::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34280,7 +36723,7 @@ impl IStringVariable for StringVariable {}
 impl IVariable for StringVariable {}
 impl IGenericVariable for StringVariable {}
 impl StringVariable {
-    pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(_parameters: Vec<Parameter>) -> Self {
         StringVariable::default()
     }
 }
@@ -34303,7 +36746,7 @@ impl IDraughtingCallout for StructuredDimensionCallout {
 }
 impl IStructuredDimensionCallout for StructuredDimensionCallout {}
 impl StructuredDimensionCallout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = StructuredDimensionCallout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34339,13 +36782,24 @@ impl IStyledItem for StyledItem {
     }
 }
 impl StyledItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = StyledItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.styles = parameter.into(),
                 2usize => entity.item = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = StyledItem::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.styles = parameter.into(),
+                1usize => entity.item = parameter.into(),
                 _ => {}
             }
         }
@@ -34382,7 +36836,7 @@ impl ISubedge for Subedge {
     }
 }
 impl Subedge {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Subedge::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34390,6 +36844,16 @@ impl Subedge {
                 1usize => entity.edge_start = parameter.into(),
                 2usize => entity.edge_end = parameter.into(),
                 3usize => entity.parent_edge = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Subedge::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.parent_edge = parameter.into(),
                 _ => {}
             }
         }
@@ -34422,13 +36886,23 @@ impl ISubface for Subface {
     }
 }
 impl Subface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Subface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.bounds = parameter.into(),
                 2usize => entity.parent_face = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Subface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.parent_face = parameter.into(),
                 _ => {}
             }
         }
@@ -34450,7 +36924,7 @@ impl IMultipleArityGenericExpression for SubstringExpression {
     }
 }
 impl SubstringExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SubstringExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34474,7 +36948,7 @@ impl IRepresentationItem for Surface {
 impl IGeometricRepresentationItem for Surface {}
 impl ISurface for Surface {}
 impl Surface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Surface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34504,7 +36978,7 @@ impl IDraughtingCallout for SurfaceConditionCallout {
 }
 impl ISurfaceConditionCallout for SurfaceConditionCallout {}
 impl SurfaceConditionCallout {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceConditionCallout::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34547,7 +37021,7 @@ impl ISurfaceCurve for SurfaceCurve {
     }
 }
 impl SurfaceCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34555,6 +37029,18 @@ impl SurfaceCurve {
                 1usize => entity.curve_3d = parameter.into(),
                 2usize => entity.associated_geometry = parameter.into(),
                 3usize => entity.master_representation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SurfaceCurve::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.curve_3d = parameter.into(),
+                1usize => entity.associated_geometry = parameter.into(),
+                2usize => entity.master_representation = parameter.into(),
                 _ => {}
             }
         }
@@ -34603,7 +37089,7 @@ impl ISurfaceCurveSweptAreaSolid for SurfaceCurveSweptAreaSolid {
     }
 }
 impl SurfaceCurveSweptAreaSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceCurveSweptAreaSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34613,6 +37099,19 @@ impl SurfaceCurveSweptAreaSolid {
                 3usize => entity.start_param = parameter.into(),
                 4usize => entity.end_param = parameter.into(),
                 5usize => entity.reference_surface = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SurfaceCurveSweptAreaSolid::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.directrix = parameter.into(),
+                1usize => entity.start_param = parameter.into(),
+                2usize => entity.end_param = parameter.into(),
+                3usize => entity.reference_surface = parameter.into(),
                 _ => {}
             }
         }
@@ -34646,13 +37145,23 @@ impl ISurfaceOfLinearExtrusion for SurfaceOfLinearExtrusion {
     }
 }
 impl SurfaceOfLinearExtrusion {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceOfLinearExtrusion::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.swept_curve = parameter.into(),
                 2usize => entity.extrusion_axis = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SurfaceOfLinearExtrusion::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.extrusion_axis = parameter.into(),
                 _ => {}
             }
         }
@@ -34686,13 +37195,23 @@ impl ISurfaceOfRevolution for SurfaceOfRevolution {
     }
 }
 impl SurfaceOfRevolution {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceOfRevolution::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.swept_curve = parameter.into(),
                 2usize => entity.axis_position = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SurfaceOfRevolution::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.axis_position = parameter.into(),
                 _ => {}
             }
         }
@@ -34746,7 +37265,7 @@ impl ISurfacePair for SurfacePair {
     }
 }
 impl SurfacePair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfacePair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34764,6 +37283,18 @@ impl SurfacePair {
                 5usize => entity.surface_1 = parameter.into(),
                 6usize => entity.surface_2 = parameter.into(),
                 7usize => entity.orientation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SurfacePair::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.surface_1 = parameter.into(),
+                1usize => entity.surface_2 = parameter.into(),
+                2usize => entity.orientation = parameter.into(),
                 _ => {}
             }
         }
@@ -34808,7 +37339,7 @@ impl ISurfacePairRange for SurfacePairRange {
     }
 }
 impl SurfacePairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfacePairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34857,7 +37388,7 @@ impl ISurfacePatch for SurfacePatch {
     }
 }
 impl SurfacePatch {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfacePatch::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34896,7 +37427,7 @@ impl IGeometricTolerance for SurfaceProfileTolerance {
 }
 impl ISurfaceProfileTolerance for SurfaceProfileTolerance {}
 impl SurfaceProfileTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceProfileTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34923,7 +37454,7 @@ impl ISurfaceRenderingProperties for SurfaceRenderingProperties {
     }
 }
 impl SurfaceRenderingProperties {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceRenderingProperties::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -34960,13 +37491,24 @@ impl ISurfaceReplica for SurfaceReplica {
     }
 }
 impl SurfaceReplica {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceReplica::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.parent_surface = parameter.into(),
                 2usize => entity.transformation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SurfaceReplica::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.parent_surface = parameter.into(),
+                1usize => entity.transformation = parameter.into(),
                 _ => {}
             }
         }
@@ -34992,7 +37534,7 @@ impl ISurfaceSideStyle for SurfaceSideStyle {
     }
 }
 impl SurfaceSideStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceSideStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35018,7 +37560,7 @@ impl ISurfaceStyleBoundary for SurfaceStyleBoundary {
     }
 }
 impl SurfaceStyleBoundary {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleBoundary::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35043,7 +37585,7 @@ impl ISurfaceStyleControlGrid for SurfaceStyleControlGrid {
     }
 }
 impl SurfaceStyleControlGrid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleControlGrid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35068,7 +37610,7 @@ impl ISurfaceStyleFillArea for SurfaceStyleFillArea {
     }
 }
 impl SurfaceStyleFillArea {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleFillArea::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35098,7 +37640,7 @@ impl ISurfaceStyleParameterLine for SurfaceStyleParameterLine {
     }
 }
 impl SurfaceStyleParameterLine {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleParameterLine::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35123,7 +37665,7 @@ impl ISurfaceStyleReflectanceAmbient for SurfaceStyleReflectanceAmbient {
     }
 }
 impl SurfaceStyleReflectanceAmbient {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleReflectanceAmbient::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35153,12 +37695,22 @@ impl ISurfaceStyleReflectanceAmbientDiffuse for SurfaceStyleReflectanceAmbientDi
     }
 }
 impl SurfaceStyleReflectanceAmbientDiffuse {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleReflectanceAmbientDiffuse::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.ambient_reflectance = parameter.into(),
                 1usize => entity.diffuse_reflectance = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SurfaceStyleReflectanceAmbientDiffuse::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.diffuse_reflectance = parameter.into(),
                 _ => {}
             }
         }
@@ -35200,7 +37752,7 @@ impl ISurfaceStyleReflectanceAmbientDiffuseSpecular for SurfaceStyleReflectanceA
     }
 }
 impl SurfaceStyleReflectanceAmbientDiffuseSpecular {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleReflectanceAmbientDiffuseSpecular::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35209,6 +37761,18 @@ impl SurfaceStyleReflectanceAmbientDiffuseSpecular {
                 2usize => entity.specular_reflectance = parameter.into(),
                 3usize => entity.specular_exponent = parameter.into(),
                 4usize => entity.specular_colour = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SurfaceStyleReflectanceAmbientDiffuseSpecular::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.specular_reflectance = parameter.into(),
+                1usize => entity.specular_exponent = parameter.into(),
+                2usize => entity.specular_colour = parameter.into(),
                 _ => {}
             }
         }
@@ -35233,7 +37797,7 @@ impl ISurfaceStyleRendering for SurfaceStyleRendering {
     }
 }
 impl SurfaceStyleRendering {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleRendering::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35268,13 +37832,23 @@ impl ISurfaceStyleRenderingWithProperties for SurfaceStyleRenderingWithPropertie
     }
 }
 impl SurfaceStyleRenderingWithProperties {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleRenderingWithProperties::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.rendering_method = parameter.into(),
                 1usize => entity.surface_colour = parameter.into(),
                 2usize => entity.properties = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SurfaceStyleRenderingWithProperties::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.properties = parameter.into(),
                 _ => {}
             }
         }
@@ -35295,7 +37869,7 @@ impl ISurfaceStyleSegmentationCurve for SurfaceStyleSegmentationCurve {
     }
 }
 impl SurfaceStyleSegmentationCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleSegmentationCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35320,7 +37894,7 @@ impl ISurfaceStyleSilhouette for SurfaceStyleSilhouette {
     }
 }
 impl SurfaceStyleSilhouette {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleSilhouette::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35344,7 +37918,7 @@ impl ISurfaceStyleTransparent for SurfaceStyleTransparent {
     }
 }
 impl SurfaceStyleTransparent {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleTransparent::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35374,7 +37948,7 @@ impl ISurfaceStyleUsage for SurfaceStyleUsage {
     }
 }
 impl SurfaceStyleUsage {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceStyleUsage::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35406,7 +37980,7 @@ impl IRepresentation for SurfaceTextureRepresentation {
 }
 impl ISurfaceTextureRepresentation for SurfaceTextureRepresentation {}
 impl SurfaceTextureRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SurfaceTextureRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35440,12 +38014,22 @@ impl ISweptAreaSolid for SweptAreaSolid {
     }
 }
 impl SweptAreaSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SweptAreaSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.swept_area = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SweptAreaSolid::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.swept_area = parameter.into(),
                 _ => {}
             }
         }
@@ -35493,7 +38077,7 @@ impl ISweptDiskSolid for SweptDiskSolid {
     }
 }
 impl SweptDiskSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SweptDiskSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35509,6 +38093,26 @@ impl SweptDiskSolid {
                 }
                 4usize => entity.start_param = parameter.into(),
                 5usize => entity.end_param = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SweptDiskSolid::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.directrix = parameter.into(),
+                1usize => entity.radius = parameter.into(),
+                2usize => {
+                    entity.inner_radius = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                3usize => entity.start_param = parameter.into(),
+                4usize => entity.end_param = parameter.into(),
                 _ => {}
             }
         }
@@ -35536,12 +38140,22 @@ impl ISweptFaceSolid for SweptFaceSolid {
     }
 }
 impl SweptFaceSolid {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SweptFaceSolid::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.swept_face = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SweptFaceSolid::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.swept_face = parameter.into(),
                 _ => {}
             }
         }
@@ -35569,12 +38183,22 @@ impl ISweptSurface for SweptSurface {
     }
 }
 impl SweptSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SweptSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.swept_curve = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SweptSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.swept_curve = parameter.into(),
                 _ => {}
             }
         }
@@ -35594,7 +38218,7 @@ impl ISymbolColour for SymbolColour {
     }
 }
 impl SymbolColour {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SymbolColour::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35625,7 +38249,7 @@ impl IRepresentation for SymbolRepresentation {
 }
 impl ISymbolRepresentation for SymbolRepresentation {}
 impl SymbolRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SymbolRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35664,7 +38288,7 @@ impl ISymbolRepresentationMap for SymbolRepresentationMap {
     }
 }
 impl SymbolRepresentationMap {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SymbolRepresentationMap::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35695,7 +38319,7 @@ impl ISymbolStyle for SymbolStyle {
     }
 }
 impl SymbolStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SymbolStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35737,7 +38361,7 @@ impl ISymbolTarget for SymbolTarget {
     }
 }
 impl SymbolTarget {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SymbolTarget::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35745,6 +38369,18 @@ impl SymbolTarget {
                 1usize => entity.placement = parameter.into(),
                 2usize => entity.x_scale = parameter.into(),
                 3usize => entity.y_scale = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = SymbolTarget::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.placement = parameter.into(),
+                1usize => entity.x_scale = parameter.into(),
+                2usize => entity.y_scale = parameter.into(),
                 _ => {}
             }
         }
@@ -35775,7 +38411,7 @@ impl IShapeAspect for SymmetricShapeAspect {
 }
 impl ISymmetricShapeAspect for SymmetricShapeAspect {}
 impl SymmetricShapeAspect {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SymmetricShapeAspect::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35825,7 +38461,7 @@ impl IGeometricToleranceWithDatumReference for SymmetryTolerance {
 }
 impl ISymmetryTolerance for SymmetryTolerance {}
 impl SymmetryTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = SymmetryTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35860,7 +38496,7 @@ impl IRepresentation for TactileAppearanceRepresentation {
 }
 impl ITactileAppearanceRepresentation for TactileAppearanceRepresentation {}
 impl TactileAppearanceRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TactileAppearanceRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35894,7 +38530,7 @@ impl IUnaryGenericExpression for TanFunction {
 impl IUnaryFunctionCall for TanFunction {}
 impl ITanFunction for TanFunction {}
 impl TanFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TanFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35930,7 +38566,7 @@ impl IShapeAspect for Tangent {
 impl IDerivedShapeAspect for Tangent {}
 impl ITangent for Tangent {}
 impl Tangent {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Tangent::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -35974,7 +38610,7 @@ impl IShapeAspect for Taper {
 }
 impl ITaper for Taper {}
 impl Taper {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Taper::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36018,7 +38654,7 @@ impl IShapeAspect for TeeProfile {
 }
 impl ITeeProfile for TeeProfile {}
 impl TeeProfile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TeeProfile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36073,7 +38709,7 @@ impl ITerminatorSymbol for TerminatorSymbol {
     }
 }
 impl TerminatorSymbol {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TerminatorSymbol::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36081,6 +38717,16 @@ impl TerminatorSymbol {
                 1usize => entity.styles = parameter.into(),
                 2usize => entity.item = parameter.into(),
                 3usize => entity.annotated_curve = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TerminatorSymbol::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.annotated_curve = parameter.into(),
                 _ => {}
             }
         }
@@ -36127,7 +38773,7 @@ impl ITextLiteral for TextLiteral {
     }
 }
 impl TextLiteral {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextLiteral::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36137,6 +38783,20 @@ impl TextLiteral {
                 3usize => entity.alignment = parameter.into(),
                 4usize => entity.path = parameter.into(),
                 5usize => entity.font = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TextLiteral::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.literal = parameter.into(),
+                1usize => entity.placement = parameter.into(),
+                2usize => entity.alignment = parameter.into(),
+                3usize => entity.path = parameter.into(),
+                4usize => entity.font = parameter.into(),
                 _ => {}
             }
         }
@@ -36185,7 +38845,7 @@ impl ITextLiteralWithAssociatedCurves for TextLiteralWithAssociatedCurves {
     }
 }
 impl TextLiteralWithAssociatedCurves {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextLiteralWithAssociatedCurves::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36196,6 +38856,16 @@ impl TextLiteralWithAssociatedCurves {
                 4usize => entity.path = parameter.into(),
                 5usize => entity.font = parameter.into(),
                 6usize => entity.associated_curves = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TextLiteralWithAssociatedCurves::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.associated_curves = parameter.into(),
                 _ => {}
             }
         }
@@ -36244,7 +38914,7 @@ impl ITextLiteralWithBlankingBox for TextLiteralWithBlankingBox {
     }
 }
 impl TextLiteralWithBlankingBox {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextLiteralWithBlankingBox::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36255,6 +38925,16 @@ impl TextLiteralWithBlankingBox {
                 4usize => entity.path = parameter.into(),
                 5usize => entity.font = parameter.into(),
                 6usize => entity.blanking = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TextLiteralWithBlankingBox::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.blanking = parameter.into(),
                 _ => {}
             }
         }
@@ -36303,7 +38983,7 @@ impl ITextLiteralWithDelineation for TextLiteralWithDelineation {
     }
 }
 impl TextLiteralWithDelineation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextLiteralWithDelineation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36314,6 +38994,16 @@ impl TextLiteralWithDelineation {
                 4usize => entity.path = parameter.into(),
                 5usize => entity.font = parameter.into(),
                 6usize => entity.delineation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TextLiteralWithDelineation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.delineation = parameter.into(),
                 _ => {}
             }
         }
@@ -36362,7 +39052,7 @@ impl ITextLiteralWithExtent for TextLiteralWithExtent {
     }
 }
 impl TextLiteralWithExtent {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextLiteralWithExtent::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36373,6 +39063,16 @@ impl TextLiteralWithExtent {
                 4usize => entity.path = parameter.into(),
                 5usize => entity.font = parameter.into(),
                 6usize => entity.extent = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TextLiteralWithExtent::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.extent = parameter.into(),
                 _ => {}
             }
         }
@@ -36405,13 +39105,23 @@ impl ITextStringRepresentation for TextStringRepresentation {
     }
 }
 impl TextStringRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextStringRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.context_of_items = parameter.into(),
                 2usize => entity.items = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TextStringRepresentation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.items = parameter.into(),
                 _ => {}
             }
         }
@@ -36437,7 +39147,7 @@ impl ITextStyle for TextStyle {
     }
 }
 impl TextStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36462,7 +39172,7 @@ impl ITextStyleForDefinedFont for TextStyleForDefinedFont {
     }
 }
 impl TextStyleForDefinedFont {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextStyleForDefinedFont::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36497,13 +39207,23 @@ impl ITextStyleWithBoxCharacteristics for TextStyleWithBoxCharacteristics {
     }
 }
 impl TextStyleWithBoxCharacteristics {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextStyleWithBoxCharacteristics::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.character_appearance = parameter.into(),
                 2usize => entity.characteristics = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TextStyleWithBoxCharacteristics::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.characteristics = parameter.into(),
                 _ => {}
             }
         }
@@ -36534,13 +39254,23 @@ impl ITextStyleWithMirror for TextStyleWithMirror {
     }
 }
 impl TextStyleWithMirror {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextStyleWithMirror::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.character_appearance = parameter.into(),
                 2usize => entity.mirror_placement = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TextStyleWithMirror::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.mirror_placement = parameter.into(),
                 _ => {}
             }
         }
@@ -36571,13 +39301,23 @@ impl ITextStyleWithSpacing for TextStyleWithSpacing {
     }
 }
 impl TextStyleWithSpacing {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TextStyleWithSpacing::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.character_appearance = parameter.into(),
                 2usize => entity.character_spacing = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TextStyleWithSpacing::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.character_spacing = parameter.into(),
                 _ => {}
             }
         }
@@ -36600,7 +39340,7 @@ impl IMeasureWithUnit for ThermodynamicTemperatureMeasureWithUnit {
 }
 impl IThermodynamicTemperatureMeasureWithUnit for ThermodynamicTemperatureMeasureWithUnit {}
 impl ThermodynamicTemperatureMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ThermodynamicTemperatureMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36624,7 +39364,7 @@ impl INamedUnit for ThermodynamicTemperatureUnit {
 }
 impl IThermodynamicTemperatureUnit for ThermodynamicTemperatureUnit {}
 impl ThermodynamicTemperatureUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ThermodynamicTemperatureUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36652,7 +39392,7 @@ impl ICharacterizedObject for Thread {
 impl IFeatureDefinition for Thread {}
 impl IThread for Thread {}
 impl Thread {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Thread::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36693,7 +39433,7 @@ impl ITimeInterval for TimeInterval {
     }
 }
 impl TimeInterval {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TimeInterval::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36735,12 +39475,22 @@ impl ITimeIntervalBasedEffectivity for TimeIntervalBasedEffectivity {
     }
 }
 impl TimeIntervalBasedEffectivity {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TimeIntervalBasedEffectivity::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.id = parameter.into(),
                 1usize => entity.effectivity_period = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TimeIntervalBasedEffectivity::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.effectivity_period = parameter.into(),
                 _ => {}
             }
         }
@@ -36765,7 +39515,7 @@ impl ITimeIntervalRole for TimeIntervalRole {
     }
 }
 impl TimeIntervalRole {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TimeIntervalRole::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36820,7 +39570,7 @@ impl ITimeIntervalWithBounds for TimeIntervalWithBounds {
     }
 }
 impl TimeIntervalWithBounds {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TimeIntervalWithBounds::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36859,6 +39609,36 @@ impl TimeIntervalWithBounds {
         }
         entity
     }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TimeIntervalWithBounds::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
+                    entity.primary_bound = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                1usize => {
+                    entity.secondary_bound = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                2usize => {
+                    entity.duration = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
 }
 pub trait ITimeMeasureWithUnit: IMeasureWithUnit {}
 #[derive(Default, Debug)]
@@ -36876,7 +39656,7 @@ impl IMeasureWithUnit for TimeMeasureWithUnit {
 }
 impl ITimeMeasureWithUnit for TimeMeasureWithUnit {}
 impl TimeMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TimeMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36900,7 +39680,7 @@ impl INamedUnit for TimeUnit {
 }
 impl ITimeUnit for TimeUnit {}
 impl TimeUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TimeUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36929,7 +39709,7 @@ impl IToleranceValue for ToleranceValue {
     }
 }
 impl ToleranceValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ToleranceValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36977,7 +39757,7 @@ impl IToleranceZone for ToleranceZone {
     }
 }
 impl ToleranceZone {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ToleranceZone::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -36993,6 +39773,17 @@ impl ToleranceZone {
                 3usize => entity.product_definitional = parameter.into(),
                 4usize => entity.defining_tolerance = parameter.into(),
                 5usize => entity.form = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ToleranceZone::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.defining_tolerance = parameter.into(),
+                1usize => entity.form = parameter.into(),
                 _ => {}
             }
         }
@@ -37017,7 +39808,7 @@ impl IToleranceZoneDefinition for ToleranceZoneDefinition {
     }
 }
 impl ToleranceZoneDefinition {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ToleranceZoneDefinition::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37042,7 +39833,7 @@ impl IToleranceZoneForm for ToleranceZoneForm {
     }
 }
 impl ToleranceZoneForm {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ToleranceZoneForm::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37065,7 +39856,7 @@ impl IRepresentationItem for TopologicalRepresentationItem {
 }
 impl ITopologicalRepresentationItem for TopologicalRepresentationItem {}
 impl TopologicalRepresentationItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TopologicalRepresentationItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37108,7 +39899,7 @@ impl IToroidalSurface for ToroidalSurface {
     }
 }
 impl ToroidalSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ToroidalSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37116,6 +39907,17 @@ impl ToroidalSurface {
                 1usize => entity.position = parameter.into(),
                 2usize => entity.major_radius = parameter.into(),
                 3usize => entity.minor_radius = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ToroidalSurface::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.major_radius = parameter.into(),
+                1usize => entity.minor_radius = parameter.into(),
                 _ => {}
             }
         }
@@ -37152,7 +39954,7 @@ impl ITorus for Torus {
     }
 }
 impl Torus {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Torus::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37160,6 +39962,18 @@ impl Torus {
                 1usize => entity.position = parameter.into(),
                 2usize => entity.major_radius = parameter.into(),
                 3usize => entity.minor_radius = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Torus::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.position = parameter.into(),
+                1usize => entity.major_radius = parameter.into(),
+                2usize => entity.minor_radius = parameter.into(),
                 _ => {}
             }
         }
@@ -37196,7 +40010,7 @@ impl IGeometricToleranceWithDatumReference for TotalRunoutTolerance {
 }
 impl ITotalRunoutTolerance for TotalRunoutTolerance {}
 impl TotalRunoutTolerance {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TotalRunoutTolerance::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37235,7 +40049,7 @@ impl IShapeAspect for TransitionFeature {
 }
 impl ITransitionFeature for TransitionFeature {}
 impl TransitionFeature {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TransitionFeature::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37297,7 +40111,7 @@ impl ITrimmedCurve for TrimmedCurve {
     }
 }
 impl TrimmedCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TrimmedCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37307,6 +40121,20 @@ impl TrimmedCurve {
                 3usize => entity.trim_2 = parameter.into(),
                 4usize => entity.sense_agreement = parameter.into(),
                 5usize => entity.master_representation = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TrimmedCurve::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.basis_curve = parameter.into(),
+                1usize => entity.trim_1 = parameter.into(),
+                2usize => entity.trim_2 = parameter.into(),
+                3usize => entity.sense_agreement = parameter.into(),
+                4usize => entity.master_representation = parameter.into(),
                 _ => {}
             }
         }
@@ -37339,13 +40167,23 @@ impl ITwoDirectionRepeatFactor for TwoDirectionRepeatFactor {
     }
 }
 impl TwoDirectionRepeatFactor {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TwoDirectionRepeatFactor::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.repeat_factor = parameter.into(),
                 2usize => entity.second_repeat_factor = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = TwoDirectionRepeatFactor::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.second_repeat_factor = parameter.into(),
                 _ => {}
             }
         }
@@ -37365,7 +40203,7 @@ impl ITypeQualifier for TypeQualifier {
     }
 }
 impl TypeQualifier {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = TypeQualifier::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37411,7 +40249,7 @@ impl IUncertaintyAssignedRepresentation for UncertaintyAssignedRepresentation {
     }
 }
 impl UncertaintyAssignedRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = UncertaintyAssignedRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37419,6 +40257,16 @@ impl UncertaintyAssignedRepresentation {
                 1usize => entity.items = parameter.into(),
                 2usize => entity.context_of_items = parameter.into(),
                 3usize => entity.uncertainty = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = UncertaintyAssignedRepresentation::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.uncertainty = parameter.into(),
                 _ => {}
             }
         }
@@ -37453,7 +40301,7 @@ impl IUncertaintyMeasureWithUnit for UncertaintyMeasureWithUnit {
     }
 }
 impl UncertaintyMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = UncertaintyMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37461,6 +40309,23 @@ impl UncertaintyMeasureWithUnit {
                 1usize => entity.unit_component = parameter.into(),
                 2usize => entity.name = parameter.into(),
                 3usize => {
+                    entity.description = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = UncertaintyMeasureWithUnit::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.name = parameter.into(),
+                1usize => {
                     entity.description = if parameter.is_null() {
                         None
                     } else {
@@ -37491,7 +40356,7 @@ impl IUncertaintyQualifier for UncertaintyQualifier {
     }
 }
 impl UncertaintyQualifier {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = UncertaintyQualifier::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37533,7 +40398,7 @@ impl IKinematicPair for UnconstrainedPair {
 }
 impl IUnconstrainedPair for UnconstrainedPair {}
 impl UnconstrainedPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = UnconstrainedPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37577,7 +40442,7 @@ impl IUnconstrainedPairValue for UnconstrainedPairValue {
     }
 }
 impl UnconstrainedPairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = UnconstrainedPairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37626,7 +40491,7 @@ impl IBSplineCurve for UniformCurve {
 }
 impl IUniformCurve for UniformCurve {}
 impl UniformCurve {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = UniformCurve::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37687,7 +40552,7 @@ impl IBSplineSurface for UniformSurface {
 }
 impl IUniformSurface for UniformSurface {}
 impl UniformSurface {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = UniformSurface::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37742,7 +40607,7 @@ impl IUniversalPair for UniversalPair {
     }
 }
 impl UniversalPair {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = UniversalPair::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37758,6 +40623,22 @@ impl UniversalPair {
                 3usize => entity.transform_item_2 = parameter.into(),
                 4usize => entity.joint = parameter.into(),
                 5usize => {
+                    entity.input_skew_angle = if parameter.is_null() {
+                        None
+                    } else {
+                        Some(parameter.into())
+                    }
+                }
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = UniversalPair::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => {
                     entity.input_skew_angle = if parameter.is_null() {
                         None
                     } else {
@@ -37808,7 +40689,7 @@ impl IUniversalPairRange for UniversalPairRange {
     }
 }
 impl UniversalPairRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = UniversalPairRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37851,7 +40732,7 @@ impl IUniversalPairValue for UniversalPairValue {
     }
 }
 impl UniversalPairValue {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = UniversalPairValue::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37885,7 +40766,7 @@ impl IUnaryGenericExpression for ValueFunction {
     }
 }
 impl ValueFunction {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ValueFunction::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37914,7 +40795,7 @@ impl ICompoundRepresentationItem for ValueRange {
 }
 impl IValueRange for ValueRange {}
 impl ValueRange {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ValueRange::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -37945,12 +40826,22 @@ impl IValueRepresentationItem for ValueRepresentationItem {
     }
 }
 impl ValueRepresentationItem {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ValueRepresentationItem::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.value_component = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = ValueRepresentationItem::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.value_component = parameter.into(),
                 _ => {}
             }
         }
@@ -37984,13 +40875,24 @@ impl IVector for Vector {
     }
 }
 impl Vector {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Vector::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.orientation = parameter.into(),
                 2usize => entity.magnitude = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = Vector::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.orientation = parameter.into(),
+                1usize => entity.magnitude = parameter.into(),
                 _ => {}
             }
         }
@@ -38029,7 +40931,7 @@ impl ICurveStyle for VectorStyle {
 }
 impl IVectorStyle for VectorStyle {}
 impl VectorStyle {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = VectorStyle::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -38067,7 +40969,7 @@ impl IShapeAspect for VeeProfile {
 }
 impl IVeeProfile for VeeProfile {}
 impl VeeProfile {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = VeeProfile::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -38115,7 +41017,7 @@ impl IVersionedActionRequest for VersionedActionRequest {
     }
 }
 impl VersionedActionRequest {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = VersionedActionRequest::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -38168,7 +41070,7 @@ impl IVersionedActionRequestRelationship for VersionedActionRequestRelationship 
     }
 }
 impl VersionedActionRequestRelationship {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = VersionedActionRequestRelationship::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -38202,7 +41104,7 @@ impl IRepresentationItem for Vertex {
 impl ITopologicalRepresentationItem for Vertex {}
 impl IVertex for Vertex {}
 impl Vertex {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = Vertex::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -38234,12 +41136,22 @@ impl IVertexLoop for VertexLoop {
     }
 }
 impl VertexLoop {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = VertexLoop::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.loop_vertex = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = VertexLoop::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.loop_vertex = parameter.into(),
                 _ => {}
             }
         }
@@ -38268,12 +41180,22 @@ impl IVertexPoint for VertexPoint {
 }
 impl IGeometricRepresentationItem for VertexPoint {}
 impl VertexPoint {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = VertexPoint::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
                 0usize => entity.name = parameter.into(),
                 1usize => entity.vertex_geometry = parameter.into(),
+                _ => {}
+            }
+        }
+        entity
+    }
+    pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+        let mut entity = VertexPoint::default();
+        for (index, parameter) in parameters.into_iter().enumerate() {
+            match index {
+                0usize => entity.vertex_geometry = parameter.into(),
                 _ => {}
             }
         }
@@ -38334,7 +41256,7 @@ impl IViewVolume for ViewVolume {
     }
 }
 impl ViewVolume {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = ViewVolume::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -38373,7 +41295,7 @@ impl IRepresentation for VisualAppearanceRepresentation {
 }
 impl IVisualAppearanceRepresentation for VisualAppearanceRepresentation {}
 impl VisualAppearanceRepresentation {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = VisualAppearanceRepresentation::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -38402,7 +41324,7 @@ impl IMeasureWithUnit for VolumeMeasureWithUnit {
 }
 impl IVolumeMeasureWithUnit for VolumeMeasureWithUnit {}
 impl VolumeMeasureWithUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = VolumeMeasureWithUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -38426,7 +41348,7 @@ impl IDerivedUnit for VolumeUnit {
 }
 impl IVolumeUnit for VolumeUnit {}
 impl VolumeUnit {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = VolumeUnit::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -38459,7 +41381,7 @@ impl IXorExpression for XorExpression {
     }
 }
 impl XorExpression {
-    pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+    pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
         let mut entity = XorExpression::default();
         for (index, parameter) in parameters.into_iter().enumerate() {
             match index {
@@ -38518,14 +41440,18 @@ impl StepReader for Ap214Reader {
         self.type_ids.entry(type_id).or_insert(vec![]).push(id);
         self.type_names.entry(type_id).or_insert(type_name);
     }
-    fn create_entity(&self, typed_parameter: TypedParameter) -> Option<(TypeId, &'static str, Box<dyn Any>)> {
+    fn create_simple_entity(
+        &self,
+        typed_parameter: TypedParameter,
+        own_parameters_only: bool,
+    ) -> Option<(TypeId, &'static str, Box<dyn Any>)> {
         match typed_parameter.type_name.as_str() {
             "ABS_FUNCTION" => {
-                let entity = AbsFunction::form_parameters(typed_parameter.parameters);
+                let entity = AbsFunction::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<AbsFunction>(), Box::new(entity)))
             }
             "ACOS_FUNCTION" => {
-                let entity = AcosFunction::form_parameters(typed_parameter.parameters);
+                let entity = AcosFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AcosFunction>(),
@@ -38533,11 +41459,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION" => {
-                let entity = Action::form_parameters(typed_parameter.parameters);
+                let entity = Action::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Action>(), Box::new(entity)))
             }
             "ACTION_DIRECTIVE" => {
-                let entity = ActionDirective::form_parameters(typed_parameter.parameters);
+                let entity = ActionDirective::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionDirective>(),
@@ -38545,7 +41471,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_METHOD" => {
-                let entity = ActionMethod::form_parameters(typed_parameter.parameters);
+                let entity = ActionMethod::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionMethod>(),
@@ -38553,7 +41479,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_METHOD_RELATIONSHIP" => {
-                let entity = ActionMethodRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ActionMethodRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionMethodRelationship>(),
@@ -38561,7 +41487,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_PROPERTY" => {
-                let entity = ActionProperty::form_parameters(typed_parameter.parameters);
+                let entity = ActionProperty::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionProperty>(),
@@ -38569,7 +41495,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_PROPERTY_REPRESENTATION" => {
-                let entity = ActionPropertyRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = ActionPropertyRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionPropertyRepresentation>(),
@@ -38577,7 +41503,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_RELATIONSHIP" => {
-                let entity = ActionRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ActionRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionRelationship>(),
@@ -38585,7 +41511,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_REQUEST_SOLUTION" => {
-                let entity = ActionRequestSolution::form_parameters(typed_parameter.parameters);
+                let entity = ActionRequestSolution::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionRequestSolution>(),
@@ -38593,7 +41519,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_REQUEST_STATUS" => {
-                let entity = ActionRequestStatus::form_parameters(typed_parameter.parameters);
+                let entity = ActionRequestStatus::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionRequestStatus>(),
@@ -38601,7 +41527,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_RESOURCE" => {
-                let entity = ActionResource::form_parameters(typed_parameter.parameters);
+                let entity = ActionResource::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionResource>(),
@@ -38609,7 +41535,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_RESOURCE_REQUIREMENT" => {
-                let entity = ActionResourceRequirement::form_parameters(typed_parameter.parameters);
+                let entity = ActionResourceRequirement::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionResourceRequirement>(),
@@ -38617,7 +41543,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_RESOURCE_TYPE" => {
-                let entity = ActionResourceType::form_parameters(typed_parameter.parameters);
+                let entity = ActionResourceType::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionResourceType>(),
@@ -38625,7 +41551,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ACTION_STATUS" => {
-                let entity = ActionStatus::form_parameters(typed_parameter.parameters);
+                let entity = ActionStatus::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ActionStatus>(),
@@ -38633,11 +41559,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ADDRESS" => {
-                let entity = Address::form_parameters(typed_parameter.parameters);
+                let entity = Address::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Address>(), Box::new(entity)))
             }
             "ADVANCED_BREP_SHAPE_REPRESENTATION" => {
-                let entity = AdvancedBrepShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = AdvancedBrepShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AdvancedBrepShapeRepresentation>(),
@@ -38645,7 +41571,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ADVANCED_FACE" => {
-                let entity = AdvancedFace::form_parameters(typed_parameter.parameters);
+                let entity = AdvancedFace::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AdvancedFace>(),
@@ -38653,7 +41579,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ALTERNATE_PRODUCT_RELATIONSHIP" => {
-                let entity = AlternateProductRelationship::form_parameters(typed_parameter.parameters);
+                let entity = AlternateProductRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AlternateProductRelationship>(),
@@ -38661,7 +41587,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "AMOUNT_OF_SUBSTANCE_MEASURE_WITH_UNIT" => {
-                let entity = AmountOfSubstanceMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = AmountOfSubstanceMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AmountOfSubstanceMeasureWithUnit>(),
@@ -38669,7 +41595,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "AMOUNT_OF_SUBSTANCE_UNIT" => {
-                let entity = AmountOfSubstanceUnit::form_parameters(typed_parameter.parameters);
+                let entity = AmountOfSubstanceUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AmountOfSubstanceUnit>(),
@@ -38677,7 +41603,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "AND_EXPRESSION" => {
-                let entity = AndExpression::form_parameters(typed_parameter.parameters);
+                let entity = AndExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AndExpression>(),
@@ -38685,7 +41611,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANGULAR_DIMENSION" => {
-                let entity = AngularDimension::form_parameters(typed_parameter.parameters);
+                let entity = AngularDimension::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AngularDimension>(),
@@ -38693,7 +41619,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANGULAR_LOCATION" => {
-                let entity = AngularLocation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AngularLocation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AngularLocation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AngularLocation>(),
@@ -38701,11 +41631,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANGULAR_SIZE" => {
-                let entity = AngularSize::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AngularSize::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AngularSize::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<AngularSize>(), Box::new(entity)))
             }
             "ANGULARITY_TOLERANCE" => {
-                let entity = AngularityTolerance::form_parameters(typed_parameter.parameters);
+                let entity = AngularityTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AngularityTolerance>(),
@@ -38713,7 +41647,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_CURVE_OCCURRENCE" => {
-                let entity = AnnotationCurveOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AnnotationCurveOccurrence::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AnnotationCurveOccurrence::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationCurveOccurrence>(),
@@ -38721,7 +41659,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_FILL_AREA" => {
-                let entity = AnnotationFillArea::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AnnotationFillArea::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AnnotationFillArea::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationFillArea>(),
@@ -38729,7 +41671,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_FILL_AREA_OCCURRENCE" => {
-                let entity = AnnotationFillAreaOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AnnotationFillAreaOccurrence::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AnnotationFillAreaOccurrence::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationFillAreaOccurrence>(),
@@ -38737,7 +41683,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_OCCURRENCE" => {
-                let entity = AnnotationOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = AnnotationOccurrence::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationOccurrence>(),
@@ -38745,7 +41691,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_OCCURRENCE_ASSOCIATIVITY" => {
-                let entity = AnnotationOccurrenceAssociativity::form_parameters(typed_parameter.parameters);
+                let entity = AnnotationOccurrenceAssociativity::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationOccurrenceAssociativity>(),
@@ -38753,7 +41699,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_OCCURRENCE_RELATIONSHIP" => {
-                let entity = AnnotationOccurrenceRelationship::form_parameters(typed_parameter.parameters);
+                let entity = AnnotationOccurrenceRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationOccurrenceRelationship>(),
@@ -38761,7 +41707,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_PLANE" => {
-                let entity = AnnotationPlane::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AnnotationPlane::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AnnotationPlane::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationPlane>(),
@@ -38769,7 +41719,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_SUBFIGURE_OCCURRENCE" => {
-                let entity = AnnotationSubfigureOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = AnnotationSubfigureOccurrence::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationSubfigureOccurrence>(),
@@ -38777,7 +41727,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_SYMBOL" => {
-                let entity = AnnotationSymbol::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AnnotationSymbol::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AnnotationSymbol::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationSymbol>(),
@@ -38785,7 +41739,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_SYMBOL_OCCURRENCE" => {
-                let entity = AnnotationSymbolOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AnnotationSymbolOccurrence::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AnnotationSymbolOccurrence::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationSymbolOccurrence>(),
@@ -38793,7 +41751,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_TEXT" => {
-                let entity = AnnotationText::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AnnotationText::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AnnotationText::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationText>(),
@@ -38801,7 +41763,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_TEXT_CHARACTER" => {
-                let entity = AnnotationTextCharacter::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AnnotationTextCharacter::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AnnotationTextCharacter::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationTextCharacter>(),
@@ -38809,7 +41775,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ANNOTATION_TEXT_OCCURRENCE" => {
-                let entity = AnnotationTextOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AnnotationTextOccurrence::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AnnotationTextOccurrence::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AnnotationTextOccurrence>(),
@@ -38817,11 +41787,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APEX" => {
-                let entity = Apex::form_parameters(typed_parameter.parameters);
+                let entity = Apex::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Apex>(), Box::new(entity)))
             }
             "APPLICATION_CONTEXT" => {
-                let entity = ApplicationContext::form_parameters(typed_parameter.parameters);
+                let entity = ApplicationContext::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApplicationContext>(),
@@ -38829,7 +41799,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLICATION_CONTEXT_ELEMENT" => {
-                let entity = ApplicationContextElement::form_parameters(typed_parameter.parameters);
+                let entity = ApplicationContextElement::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApplicationContextElement>(),
@@ -38837,7 +41807,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLICATION_CONTEXT_RELATIONSHIP" => {
-                let entity = ApplicationContextRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ApplicationContextRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApplicationContextRelationship>(),
@@ -38845,7 +41815,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLICATION_PROTOCOL_DEFINITION" => {
-                let entity = ApplicationProtocolDefinition::form_parameters(typed_parameter.parameters);
+                let entity = ApplicationProtocolDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApplicationProtocolDefinition>(),
@@ -38853,7 +41823,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_ACTION_ASSIGNMENT" => {
-                let entity = AppliedActionAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedActionAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedActionAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedActionAssignment>(),
@@ -38861,7 +41835,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_ACTION_REQUEST_ASSIGNMENT" => {
-                let entity = AppliedActionRequestAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedActionRequestAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedActionRequestAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedActionRequestAssignment>(),
@@ -38869,7 +41847,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_APPROVAL_ASSIGNMENT" => {
-                let entity = AppliedApprovalAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedApprovalAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedApprovalAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedApprovalAssignment>(),
@@ -38877,11 +41859,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_AREA" => {
-                let entity = AppliedArea::form_parameters(typed_parameter.parameters);
+                let entity = AppliedArea::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<AppliedArea>(), Box::new(entity)))
             }
             "APPLIED_CERTIFICATION_ASSIGNMENT" => {
-                let entity = AppliedCertificationAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedCertificationAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedCertificationAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedCertificationAssignment>(),
@@ -38889,7 +41875,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_CLASSIFICATION_ASSIGNMENT" => {
-                let entity = AppliedClassificationAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedClassificationAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedClassificationAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedClassificationAssignment>(),
@@ -38897,7 +41887,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_CONTRACT_ASSIGNMENT" => {
-                let entity = AppliedContractAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedContractAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedContractAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedContractAssignment>(),
@@ -38905,7 +41899,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_DATE_AND_TIME_ASSIGNMENT" => {
-                let entity = AppliedDateAndTimeAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedDateAndTimeAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedDateAndTimeAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedDateAndTimeAssignment>(),
@@ -38913,7 +41911,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_DATE_ASSIGNMENT" => {
-                let entity = AppliedDateAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedDateAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedDateAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedDateAssignment>(),
@@ -38921,7 +41923,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_DOCUMENT_REFERENCE" => {
-                let entity = AppliedDocumentReference::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedDocumentReference::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedDocumentReference::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedDocumentReference>(),
@@ -38929,7 +41935,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_DOCUMENT_USAGE_CONSTRAINT_ASSIGNMENT" => {
-                let entity = AppliedDocumentUsageConstraintAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedDocumentUsageConstraintAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedDocumentUsageConstraintAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedDocumentUsageConstraintAssignment>(),
@@ -38937,7 +41947,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_EFFECTIVITY_ASSIGNMENT" => {
-                let entity = AppliedEffectivityAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedEffectivityAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedEffectivityAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedEffectivityAssignment>(),
@@ -38945,7 +41959,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_EVENT_OCCURRENCE_ASSIGNMENT" => {
-                let entity = AppliedEventOccurrenceAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedEventOccurrenceAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedEventOccurrenceAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedEventOccurrenceAssignment>(),
@@ -38953,7 +41971,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_EXTERNAL_IDENTIFICATION_ASSIGNMENT" => {
-                let entity = AppliedExternalIdentificationAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedExternalIdentificationAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedExternalIdentificationAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedExternalIdentificationAssignment>(),
@@ -38961,7 +41983,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_GROUP_ASSIGNMENT" => {
-                let entity = AppliedGroupAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedGroupAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedGroupAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedGroupAssignment>(),
@@ -38969,7 +41995,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_IDENTIFICATION_ASSIGNMENT" => {
-                let entity = AppliedIdentificationAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedIdentificationAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedIdentificationAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedIdentificationAssignment>(),
@@ -38977,7 +42007,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_INEFFECTIVITY_ASSIGNMENT" => {
-                let entity = AppliedIneffectivityAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedIneffectivityAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedIneffectivityAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedIneffectivityAssignment>(),
@@ -38985,7 +42019,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_NAME_ASSIGNMENT" => {
-                let entity = AppliedNameAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedNameAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedNameAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedNameAssignment>(),
@@ -38993,7 +42031,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_ORGANIZATION_ASSIGNMENT" => {
-                let entity = AppliedOrganizationAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedOrganizationAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedOrganizationAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedOrganizationAssignment>(),
@@ -39001,7 +42043,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_ORGANIZATIONAL_PROJECT_ASSIGNMENT" => {
-                let entity = AppliedOrganizationalProjectAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedOrganizationalProjectAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedOrganizationalProjectAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedOrganizationalProjectAssignment>(),
@@ -39009,7 +42055,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_PERSON_AND_ORGANIZATION_ASSIGNMENT" => {
-                let entity = AppliedPersonAndOrganizationAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedPersonAndOrganizationAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedPersonAndOrganizationAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedPersonAndOrganizationAssignment>(),
@@ -39017,7 +42067,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_PRESENTED_ITEM" => {
-                let entity = AppliedPresentedItem::form_parameters(typed_parameter.parameters);
+                let entity = AppliedPresentedItem::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedPresentedItem>(),
@@ -39025,7 +42075,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_SECURITY_CLASSIFICATION_ASSIGNMENT" => {
-                let entity = AppliedSecurityClassificationAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedSecurityClassificationAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedSecurityClassificationAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedSecurityClassificationAssignment>(),
@@ -39033,7 +42087,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPLIED_TIME_INTERVAL_ASSIGNMENT" => {
-                let entity = AppliedTimeIntervalAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AppliedTimeIntervalAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AppliedTimeIntervalAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AppliedTimeIntervalAssignment>(),
@@ -39041,11 +42099,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPROVAL" => {
-                let entity = Approval::form_parameters(typed_parameter.parameters);
+                let entity = Approval::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Approval>(), Box::new(entity)))
             }
             "APPROVAL_DATE_TIME" => {
-                let entity = ApprovalDateTime::form_parameters(typed_parameter.parameters);
+                let entity = ApprovalDateTime::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApprovalDateTime>(),
@@ -39053,7 +42111,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPROVAL_PERSON_ORGANIZATION" => {
-                let entity = ApprovalPersonOrganization::form_parameters(typed_parameter.parameters);
+                let entity = ApprovalPersonOrganization::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApprovalPersonOrganization>(),
@@ -39061,7 +42119,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPROVAL_RELATIONSHIP" => {
-                let entity = ApprovalRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ApprovalRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApprovalRelationship>(),
@@ -39069,7 +42127,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPROVAL_ROLE" => {
-                let entity = ApprovalRole::form_parameters(typed_parameter.parameters);
+                let entity = ApprovalRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApprovalRole>(),
@@ -39077,7 +42135,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPROVAL_STATUS" => {
-                let entity = ApprovalStatus::form_parameters(typed_parameter.parameters);
+                let entity = ApprovalStatus::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApprovalStatus>(),
@@ -39085,7 +42143,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPROXIMATION_TOLERANCE" => {
-                let entity = ApproximationTolerance::form_parameters(typed_parameter.parameters);
+                let entity = ApproximationTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApproximationTolerance>(),
@@ -39093,7 +42151,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPROXIMATION_TOLERANCE_DEVIATION" => {
-                let entity = ApproximationToleranceDeviation::form_parameters(typed_parameter.parameters);
+                let entity = ApproximationToleranceDeviation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApproximationToleranceDeviation>(),
@@ -39101,7 +42159,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "APPROXIMATION_TOLERANCE_PARAMETER" => {
-                let entity = ApproximationToleranceParameter::form_parameters(typed_parameter.parameters);
+                let entity = ApproximationToleranceParameter::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ApproximationToleranceParameter>(),
@@ -39109,11 +42167,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "AREA_IN_SET" => {
-                let entity = AreaInSet::form_parameters(typed_parameter.parameters);
+                let entity = AreaInSet::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<AreaInSet>(), Box::new(entity)))
             }
             "AREA_MEASURE_WITH_UNIT" => {
-                let entity = AreaMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = AreaMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AreaMeasureWithUnit>(),
@@ -39121,11 +42179,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "AREA_UNIT" => {
-                let entity = AreaUnit::form_parameters(typed_parameter.parameters);
+                let entity = AreaUnit::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<AreaUnit>(), Box::new(entity)))
             }
             "ASIN_FUNCTION" => {
-                let entity = AsinFunction::form_parameters(typed_parameter.parameters);
+                let entity = AsinFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AsinFunction>(),
@@ -39133,7 +42191,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ASSEMBLY_COMPONENT_USAGE" => {
-                let entity = AssemblyComponentUsage::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AssemblyComponentUsage::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AssemblyComponentUsage::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AssemblyComponentUsage>(),
@@ -39141,7 +42203,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ASSEMBLY_COMPONENT_USAGE_SUBSTITUTE" => {
-                let entity = AssemblyComponentUsageSubstitute::form_parameters(typed_parameter.parameters);
+                let entity = AssemblyComponentUsageSubstitute::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AssemblyComponentUsageSubstitute>(),
@@ -39149,7 +42211,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ATAN_FUNCTION" => {
-                let entity = AtanFunction::form_parameters(typed_parameter.parameters);
+                let entity = AtanFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AtanFunction>(),
@@ -39157,7 +42219,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ATTRIBUTE_LANGUAGE_ASSIGNMENT" => {
-                let entity = AttributeLanguageAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    AttributeLanguageAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    AttributeLanguageAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AttributeLanguageAssignment>(),
@@ -39165,7 +42231,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ATTRIBUTE_VALUE_ROLE" => {
-                let entity = AttributeValueRole::form_parameters(typed_parameter.parameters);
+                let entity = AttributeValueRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<AttributeValueRole>(),
@@ -39173,7 +42239,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "AXIS1_PLACEMENT" => {
-                let entity = Axis1Placement::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Axis1Placement::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Axis1Placement::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<Axis1Placement>(),
@@ -39181,7 +42251,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "AXIS2_PLACEMENT_2D" => {
-                let entity = Axis2Placement2d::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Axis2Placement2d::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Axis2Placement2d::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<Axis2Placement2d>(),
@@ -39189,7 +42263,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "AXIS2_PLACEMENT_3D" => {
-                let entity = Axis2Placement3d::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Axis2Placement3d::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Axis2Placement3d::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<Axis2Placement3d>(),
@@ -39197,7 +42275,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "B_SPLINE_CURVE" => {
-                let entity = BSplineCurve::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    BSplineCurve::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    BSplineCurve::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BSplineCurve>(),
@@ -39205,7 +42287,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "B_SPLINE_CURVE_WITH_KNOTS" => {
-                let entity = BSplineCurveWithKnots::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    BSplineCurveWithKnots::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    BSplineCurveWithKnots::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BSplineCurveWithKnots>(),
@@ -39213,7 +42299,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "B_SPLINE_SURFACE" => {
-                let entity = BSplineSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    BSplineSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    BSplineSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BSplineSurface>(),
@@ -39221,7 +42311,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "B_SPLINE_SURFACE_WITH_KNOTS" => {
-                let entity = BSplineSurfaceWithKnots::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    BSplineSurfaceWithKnots::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    BSplineSurfaceWithKnots::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BSplineSurfaceWithKnots>(),
@@ -39229,7 +42323,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BACKGROUND_COLOUR" => {
-                let entity = BackgroundColour::form_parameters(typed_parameter.parameters);
+                let entity = BackgroundColour::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BackgroundColour>(),
@@ -39237,23 +42331,23 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BARRING_HOLE" => {
-                let entity = BarringHole::form_parameters(typed_parameter.parameters);
+                let entity = BarringHole::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<BarringHole>(), Box::new(entity)))
             }
             "BEAD" => {
-                let entity = Bead::form_parameters(typed_parameter.parameters);
+                let entity = Bead::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Bead>(), Box::new(entity)))
             }
             "BEAD_END" => {
-                let entity = BeadEnd::form_parameters(typed_parameter.parameters);
+                let entity = BeadEnd::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<BeadEnd>(), Box::new(entity)))
             }
             "BEZIER_CURVE" => {
-                let entity = BezierCurve::form_parameters(typed_parameter.parameters);
+                let entity = BezierCurve::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<BezierCurve>(), Box::new(entity)))
             }
             "BEZIER_SURFACE" => {
-                let entity = BezierSurface::form_parameters(typed_parameter.parameters);
+                let entity = BezierSurface::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BezierSurface>(),
@@ -39261,11 +42355,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BLOCK" => {
-                let entity = Block::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Block::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Block::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Block>(), Box::new(entity)))
             }
             "BOOLEAN_LITERAL" => {
-                let entity = BooleanLiteral::form_parameters(typed_parameter.parameters);
+                let entity = BooleanLiteral::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BooleanLiteral>(),
@@ -39273,7 +42371,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BOOLEAN_RESULT" => {
-                let entity = BooleanResult::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    BooleanResult::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    BooleanResult::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BooleanResult>(),
@@ -39281,7 +42383,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BOOLEAN_VARIABLE" => {
-                let entity = BooleanVariable::form_parameters(typed_parameter.parameters);
+                let entity = BooleanVariable::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BooleanVariable>(),
@@ -39289,15 +42391,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BOSS" => {
-                let entity = Boss::form_parameters(typed_parameter.parameters);
+                let entity = Boss::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Boss>(), Box::new(entity)))
             }
             "BOSS_TOP" => {
-                let entity = BossTop::form_parameters(typed_parameter.parameters);
+                let entity = BossTop::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<BossTop>(), Box::new(entity)))
             }
             "BOUNDARY_CURVE" => {
-                let entity = BoundaryCurve::form_parameters(typed_parameter.parameters);
+                let entity = BoundaryCurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BoundaryCurve>(),
@@ -39305,7 +42407,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BOUNDED_CURVE" => {
-                let entity = BoundedCurve::form_parameters(typed_parameter.parameters);
+                let entity = BoundedCurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BoundedCurve>(),
@@ -39313,7 +42415,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BOUNDED_PCURVE" => {
-                let entity = BoundedPcurve::form_parameters(typed_parameter.parameters);
+                let entity = BoundedPcurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BoundedPcurve>(),
@@ -39321,7 +42423,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BOUNDED_SURFACE" => {
-                let entity = BoundedSurface::form_parameters(typed_parameter.parameters);
+                let entity = BoundedSurface::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BoundedSurface>(),
@@ -39329,7 +42431,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BOUNDED_SURFACE_CURVE" => {
-                let entity = BoundedSurfaceCurve::form_parameters(typed_parameter.parameters);
+                let entity = BoundedSurfaceCurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BoundedSurfaceCurve>(),
@@ -39337,11 +42439,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BOX_DOMAIN" => {
-                let entity = BoxDomain::form_parameters(typed_parameter.parameters);
+                let entity = BoxDomain::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<BoxDomain>(), Box::new(entity)))
             }
             "BOXED_HALF_SPACE" => {
-                let entity = BoxedHalfSpace::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    BoxedHalfSpace::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    BoxedHalfSpace::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BoxedHalfSpace>(),
@@ -39349,7 +42455,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "BREP_WITH_VOIDS" => {
-                let entity = BrepWithVoids::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    BrepWithVoids::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    BrepWithVoids::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<BrepWithVoids>(),
@@ -39357,7 +42467,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CALENDAR_DATE" => {
-                let entity = CalendarDate::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CalendarDate::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CalendarDate::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CalendarDate>(),
@@ -39365,11 +42479,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CAMERA_IMAGE" => {
-                let entity = CameraImage::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CameraImage::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CameraImage::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<CameraImage>(), Box::new(entity)))
             }
             "CAMERA_IMAGE_2D_WITH_SCALE" => {
-                let entity = CameraImage2dWithScale::form_parameters(typed_parameter.parameters);
+                let entity = CameraImage2dWithScale::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CameraImage2dWithScale>(),
@@ -39377,7 +42495,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CAMERA_IMAGE_3D_WITH_SCALE" => {
-                let entity = CameraImage3dWithScale::form_parameters(typed_parameter.parameters);
+                let entity = CameraImage3dWithScale::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CameraImage3dWithScale>(),
@@ -39385,7 +42503,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CAMERA_MODEL_D2" => {
-                let entity = CameraModelD2::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CameraModelD2::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CameraModelD2::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CameraModelD2>(),
@@ -39393,7 +42515,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CAMERA_MODEL_D3" => {
-                let entity = CameraModelD3::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CameraModelD3::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CameraModelD3::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CameraModelD3>(),
@@ -39401,7 +42527,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CAMERA_MODEL_D3_WITH_HLHSR" => {
-                let entity = CameraModelD3WithHlhsr::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CameraModelD3WithHlhsr::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CameraModelD3WithHlhsr::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CameraModelD3WithHlhsr>(),
@@ -39409,11 +42539,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CAMERA_USAGE" => {
-                let entity = CameraUsage::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CameraUsage::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CameraUsage::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<CameraUsage>(), Box::new(entity)))
             }
             "CARTESIAN_POINT" => {
-                let entity = CartesianPoint::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CartesianPoint::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CartesianPoint::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CartesianPoint>(),
@@ -39421,7 +42559,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CARTESIAN_TRANSFORMATION_OPERATOR" => {
-                let entity = CartesianTransformationOperator::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CartesianTransformationOperator::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CartesianTransformationOperator::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CartesianTransformationOperator>(),
@@ -39429,7 +42571,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CARTESIAN_TRANSFORMATION_OPERATOR_2D" => {
-                let entity = CartesianTransformationOperator2d::form_parameters(typed_parameter.parameters);
+                let entity = CartesianTransformationOperator2d::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CartesianTransformationOperator2d>(),
@@ -39437,7 +42579,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CARTESIAN_TRANSFORMATION_OPERATOR_3D" => {
-                let entity = CartesianTransformationOperator3d::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CartesianTransformationOperator3d::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CartesianTransformationOperator3d::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CartesianTransformationOperator3d>(),
@@ -39445,7 +42591,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CELSIUS_TEMPERATURE_MEASURE_WITH_UNIT" => {
-                let entity = CelsiusTemperatureMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = CelsiusTemperatureMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CelsiusTemperatureMeasureWithUnit>(),
@@ -39453,7 +42599,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CENTRE_OF_SYMMETRY" => {
-                let entity = CentreOfSymmetry::form_parameters(typed_parameter.parameters);
+                let entity = CentreOfSymmetry::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CentreOfSymmetry>(),
@@ -39461,7 +42607,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CERTIFICATION" => {
-                let entity = Certification::form_parameters(typed_parameter.parameters);
+                let entity = Certification::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<Certification>(),
@@ -39469,7 +42615,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CERTIFICATION_TYPE" => {
-                let entity = CertificationType::form_parameters(typed_parameter.parameters);
+                let entity = CertificationType::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CertificationType>(),
@@ -39477,11 +42623,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CHAMFER" => {
-                let entity = Chamfer::form_parameters(typed_parameter.parameters);
+                let entity = Chamfer::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Chamfer>(), Box::new(entity)))
             }
             "CHAMFER_OFFSET" => {
-                let entity = ChamferOffset::form_parameters(typed_parameter.parameters);
+                let entity = ChamferOffset::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ChamferOffset>(),
@@ -39489,7 +42635,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CHARACTER_GLYPH_SYMBOL" => {
-                let entity = CharacterGlyphSymbol::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CharacterGlyphSymbol::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CharacterGlyphSymbol::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CharacterGlyphSymbol>(),
@@ -39497,7 +42647,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CHARACTERIZED_CLASS" => {
-                let entity = CharacterizedClass::form_parameters(typed_parameter.parameters);
+                let entity = CharacterizedClass::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CharacterizedClass>(),
@@ -39505,7 +42655,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CHARACTERIZED_OBJECT" => {
-                let entity = CharacterizedObject::form_parameters(typed_parameter.parameters);
+                let entity = CharacterizedObject::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CharacterizedObject>(),
@@ -39513,11 +42663,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CIRCLE" => {
-                let entity = Circle::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Circle::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Circle::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Circle>(), Box::new(entity)))
             }
             "CIRCULAR_CLOSED_PROFILE" => {
-                let entity = CircularClosedProfile::form_parameters(typed_parameter.parameters);
+                let entity = CircularClosedProfile::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CircularClosedProfile>(),
@@ -39525,7 +42679,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CIRCULAR_PATTERN" => {
-                let entity = CircularPattern::form_parameters(typed_parameter.parameters);
+                let entity = CircularPattern::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CircularPattern>(),
@@ -39533,7 +42687,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CIRCULAR_RUNOUT_TOLERANCE" => {
-                let entity = CircularRunoutTolerance::form_parameters(typed_parameter.parameters);
+                let entity = CircularRunoutTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CircularRunoutTolerance>(),
@@ -39541,15 +42695,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CLASS" => {
-                let entity = Class::form_parameters(typed_parameter.parameters);
+                let entity = Class::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Class>(), Box::new(entity)))
             }
             "CLASS_SYSTEM" => {
-                let entity = ClassSystem::form_parameters(typed_parameter.parameters);
+                let entity = ClassSystem::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<ClassSystem>(), Box::new(entity)))
             }
             "CLASS_USAGE_EFFECTIVITY_CONTEXT_ASSIGNMENT" => {
-                let entity = ClassUsageEffectivityContextAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ClassUsageEffectivityContextAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ClassUsageEffectivityContextAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ClassUsageEffectivityContextAssignment>(),
@@ -39557,7 +42715,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CLASSIFICATION_ROLE" => {
-                let entity = ClassificationRole::form_parameters(typed_parameter.parameters);
+                let entity = ClassificationRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ClassificationRole>(),
@@ -39565,7 +42723,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CLOSED_PATH_PROFILE" => {
-                let entity = ClosedPathProfile::form_parameters(typed_parameter.parameters);
+                let entity = ClosedPathProfile::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ClosedPathProfile>(),
@@ -39573,11 +42731,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CLOSED_SHELL" => {
-                let entity = ClosedShell::form_parameters(typed_parameter.parameters);
+                let entity = ClosedShell::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<ClosedShell>(), Box::new(entity)))
             }
             "COAXIALITY_TOLERANCE" => {
-                let entity = CoaxialityTolerance::form_parameters(typed_parameter.parameters);
+                let entity = CoaxialityTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CoaxialityTolerance>(),
@@ -39585,15 +42743,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COLOUR" => {
-                let entity = Colour::form_parameters(typed_parameter.parameters);
+                let entity = Colour::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Colour>(), Box::new(entity)))
             }
             "COLOUR_RGB" => {
-                let entity = ColourRgb::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ColourRgb::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ColourRgb::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<ColourRgb>(), Box::new(entity)))
             }
             "COLOUR_SPECIFICATION" => {
-                let entity = ColourSpecification::form_parameters(typed_parameter.parameters);
+                let entity = ColourSpecification::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ColourSpecification>(),
@@ -39601,11 +42763,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMMON_DATUM" => {
-                let entity = CommonDatum::form_parameters(typed_parameter.parameters);
+                let entity = CommonDatum::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<CommonDatum>(), Box::new(entity)))
             }
             "COMPARISON_EQUAL" => {
-                let entity = ComparisonEqual::form_parameters(typed_parameter.parameters);
+                let entity = ComparisonEqual::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ComparisonEqual>(),
@@ -39613,7 +42775,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPARISON_GREATER" => {
-                let entity = ComparisonGreater::form_parameters(typed_parameter.parameters);
+                let entity = ComparisonGreater::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ComparisonGreater>(),
@@ -39621,7 +42783,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPARISON_GREATER_EQUAL" => {
-                let entity = ComparisonGreaterEqual::form_parameters(typed_parameter.parameters);
+                let entity = ComparisonGreaterEqual::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ComparisonGreaterEqual>(),
@@ -39629,7 +42791,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPARISON_LESS" => {
-                let entity = ComparisonLess::form_parameters(typed_parameter.parameters);
+                let entity = ComparisonLess::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ComparisonLess>(),
@@ -39637,7 +42799,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPARISON_LESS_EQUAL" => {
-                let entity = ComparisonLessEqual::form_parameters(typed_parameter.parameters);
+                let entity = ComparisonLessEqual::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ComparisonLessEqual>(),
@@ -39645,7 +42807,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPARISON_NOT_EQUAL" => {
-                let entity = ComparisonNotEqual::form_parameters(typed_parameter.parameters);
+                let entity = ComparisonNotEqual::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ComparisonNotEqual>(),
@@ -39653,7 +42815,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOSITE_CURVE" => {
-                let entity = CompositeCurve::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CompositeCurve::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CompositeCurve::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompositeCurve>(),
@@ -39661,7 +42827,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOSITE_CURVE_ON_SURFACE" => {
-                let entity = CompositeCurveOnSurface::form_parameters(typed_parameter.parameters);
+                let entity = CompositeCurveOnSurface::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompositeCurveOnSurface>(),
@@ -39669,7 +42835,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOSITE_CURVE_SEGMENT" => {
-                let entity = CompositeCurveSegment::form_parameters(typed_parameter.parameters);
+                let entity = CompositeCurveSegment::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompositeCurveSegment>(),
@@ -39677,7 +42843,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOSITE_HOLE" => {
-                let entity = CompositeHole::form_parameters(typed_parameter.parameters);
+                let entity = CompositeHole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompositeHole>(),
@@ -39685,7 +42851,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOSITE_SHAPE_ASPECT" => {
-                let entity = CompositeShapeAspect::form_parameters(typed_parameter.parameters);
+                let entity = CompositeShapeAspect::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompositeShapeAspect>(),
@@ -39693,7 +42859,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOSITE_TEXT" => {
-                let entity = CompositeText::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CompositeText::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CompositeText::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompositeText>(),
@@ -39701,7 +42871,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOSITE_TEXT_WITH_ASSOCIATED_CURVES" => {
-                let entity = CompositeTextWithAssociatedCurves::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CompositeTextWithAssociatedCurves::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CompositeTextWithAssociatedCurves::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompositeTextWithAssociatedCurves>(),
@@ -39709,7 +42883,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOSITE_TEXT_WITH_BLANKING_BOX" => {
-                let entity = CompositeTextWithBlankingBox::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CompositeTextWithBlankingBox::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CompositeTextWithBlankingBox::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompositeTextWithBlankingBox>(),
@@ -39717,7 +42895,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOSITE_TEXT_WITH_EXTENT" => {
-                let entity = CompositeTextWithExtent::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CompositeTextWithExtent::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CompositeTextWithExtent::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompositeTextWithExtent>(),
@@ -39725,7 +42907,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOUND_FEATURE" => {
-                let entity = CompoundFeature::form_parameters(typed_parameter.parameters);
+                let entity = CompoundFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompoundFeature>(),
@@ -39733,7 +42915,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOUND_REPRESENTATION_ITEM" => {
-                let entity = CompoundRepresentationItem::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CompoundRepresentationItem::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CompoundRepresentationItem::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompoundRepresentationItem>(),
@@ -39741,7 +42927,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COMPOUND_SHAPE_REPRESENTATION" => {
-                let entity = CompoundShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = CompoundShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CompoundShapeRepresentation>(),
@@ -39749,7 +42935,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONCAT_EXPRESSION" => {
-                let entity = ConcatExpression::form_parameters(typed_parameter.parameters);
+                let entity = ConcatExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConcatExpression>(),
@@ -39757,7 +42943,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONCENTRICITY_TOLERANCE" => {
-                let entity = ConcentricityTolerance::form_parameters(typed_parameter.parameters);
+                let entity = ConcentricityTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConcentricityTolerance>(),
@@ -39765,7 +42951,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONCEPT_FEATURE_OPERATOR" => {
-                let entity = ConceptFeatureOperator::form_parameters(typed_parameter.parameters);
+                let entity = ConceptFeatureOperator::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConceptFeatureOperator>(),
@@ -39773,7 +42959,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONCEPT_FEATURE_RELATIONSHIP" => {
-                let entity = ConceptFeatureRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ConceptFeatureRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConceptFeatureRelationship>(),
@@ -39781,7 +42967,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONCEPT_FEATURE_RELATIONSHIP_WITH_CONDITION" => {
-                let entity = ConceptFeatureRelationshipWithCondition::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConceptFeatureRelationshipWithCondition::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConceptFeatureRelationshipWithCondition::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConceptFeatureRelationshipWithCondition>(),
@@ -39789,7 +42979,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONDITIONAL_CONCEPT_FEATURE" => {
-                let entity = ConditionalConceptFeature::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConditionalConceptFeature::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConditionalConceptFeature::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConditionalConceptFeature>(),
@@ -39797,7 +42991,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONFIGURABLE_ITEM" => {
-                let entity = ConfigurableItem::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConfigurableItem::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConfigurableItem::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConfigurableItem>(),
@@ -39805,7 +43003,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONFIGURATION_DEFINITION" => {
-                let entity = ConfigurationDefinition::form_parameters(typed_parameter.parameters);
+                let entity = ConfigurationDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConfigurationDefinition>(),
@@ -39813,7 +43011,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONFIGURATION_DESIGN" => {
-                let entity = ConfigurationDesign::form_parameters(typed_parameter.parameters);
+                let entity = ConfigurationDesign::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConfigurationDesign>(),
@@ -39821,7 +43019,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONFIGURATION_EFFECTIVITY" => {
-                let entity = ConfigurationEffectivity::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConfigurationEffectivity::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConfigurationEffectivity::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConfigurationEffectivity>(),
@@ -39829,7 +43031,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONFIGURATION_INTERPOLATION" => {
-                let entity = ConfigurationInterpolation::form_parameters(typed_parameter.parameters);
+                let entity = ConfigurationInterpolation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConfigurationInterpolation>(),
@@ -39837,7 +43039,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONFIGURATION_ITEM" => {
-                let entity = ConfigurationItem::form_parameters(typed_parameter.parameters);
+                let entity = ConfigurationItem::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConfigurationItem>(),
@@ -39845,7 +43047,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONFIGURED_EFFECTIVITY_ASSIGNMENT" => {
-                let entity = ConfiguredEffectivityAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConfiguredEffectivityAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConfiguredEffectivityAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConfiguredEffectivityAssignment>(),
@@ -39853,7 +43059,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONFIGURED_EFFECTIVITY_CONTEXT_ASSIGNMENT" => {
-                let entity = ConfiguredEffectivityContextAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConfiguredEffectivityContextAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConfiguredEffectivityContextAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConfiguredEffectivityContextAssignment>(),
@@ -39861,11 +43071,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONIC" => {
-                let entity = Conic::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Conic::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Conic::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Conic>(), Box::new(entity)))
             }
             "CONICAL_SURFACE" => {
-                let entity = ConicalSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConicalSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConicalSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConicalSurface>(),
@@ -39873,7 +43091,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONNECTED_EDGE_SET" => {
-                let entity = ConnectedEdgeSet::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConnectedEdgeSet::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConnectedEdgeSet::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConnectedEdgeSet>(),
@@ -39881,7 +43103,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONNECTED_FACE_SET" => {
-                let entity = ConnectedFaceSet::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConnectedFaceSet::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConnectedFaceSet::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConnectedFaceSet>(),
@@ -39889,7 +43115,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONNECTED_FACE_SUB_SET" => {
-                let entity = ConnectedFaceSubSet::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConnectedFaceSubSet::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConnectedFaceSubSet::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConnectedFaceSubSet>(),
@@ -39897,7 +43127,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONSTRUCTIVE_GEOMETRY_REPRESENTATION" => {
-                let entity = ConstructiveGeometryRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = ConstructiveGeometryRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConstructiveGeometryRepresentation>(),
@@ -39906,7 +43136,7 @@ impl StepReader for Ap214Reader {
             }
             "CONSTRUCTIVE_GEOMETRY_REPRESENTATION_RELATIONSHIP" => {
                 let entity =
-                    ConstructiveGeometryRepresentationRelationship::form_parameters(typed_parameter.parameters);
+                    ConstructiveGeometryRepresentationRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConstructiveGeometryRepresentationRelationship>(),
@@ -39914,7 +43144,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONTACT_RATIO_REPRESENTATION" => {
-                let entity = ContactRatioRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = ContactRatioRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ContactRatioRepresentation>(),
@@ -39922,7 +43152,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONTEXT_DEPENDENT_INVISIBILITY" => {
-                let entity = ContextDependentInvisibility::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ContextDependentInvisibility::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ContextDependentInvisibility::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ContextDependentInvisibility>(),
@@ -39930,7 +43164,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONTEXT_DEPENDENT_OVER_RIDING_STYLED_ITEM" => {
-                let entity = ContextDependentOverRidingStyledItem::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ContextDependentOverRidingStyledItem::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ContextDependentOverRidingStyledItem::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ContextDependentOverRidingStyledItem>(),
@@ -39938,7 +43176,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONTEXT_DEPENDENT_SHAPE_REPRESENTATION" => {
-                let entity = ContextDependentShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = ContextDependentShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ContextDependentShapeRepresentation>(),
@@ -39946,7 +43184,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONTEXT_DEPENDENT_UNIT" => {
-                let entity = ContextDependentUnit::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ContextDependentUnit::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ContextDependentUnit::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ContextDependentUnit>(),
@@ -39954,11 +43196,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONTRACT" => {
-                let entity = Contract::form_parameters(typed_parameter.parameters);
+                let entity = Contract::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Contract>(), Box::new(entity)))
             }
             "CONTRACT_TYPE" => {
-                let entity = ContractType::form_parameters(typed_parameter.parameters);
+                let entity = ContractType::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ContractType>(),
@@ -39966,7 +43208,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CONVERSION_BASED_UNIT" => {
-                let entity = ConversionBasedUnit::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ConversionBasedUnit::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ConversionBasedUnit::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ConversionBasedUnit>(),
@@ -39974,7 +43220,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COORDINATED_UNIVERSAL_TIME_OFFSET" => {
-                let entity = CoordinatedUniversalTimeOffset::form_parameters(typed_parameter.parameters);
+                let entity = CoordinatedUniversalTimeOffset::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CoordinatedUniversalTimeOffset>(),
@@ -39982,11 +43228,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "COS_FUNCTION" => {
-                let entity = CosFunction::form_parameters(typed_parameter.parameters);
+                let entity = CosFunction::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<CosFunction>(), Box::new(entity)))
             }
             "CSG_SHAPE_REPRESENTATION" => {
-                let entity = CsgShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = CsgShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CsgShapeRepresentation>(),
@@ -39994,15 +43240,23 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CSG_SOLID" => {
-                let entity = CsgSolid::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CsgSolid::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CsgSolid::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<CsgSolid>(), Box::new(entity)))
             }
             "CURVE" => {
-                let entity = Curve::form_parameters(typed_parameter.parameters);
+                let entity = Curve::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Curve>(), Box::new(entity)))
             }
             "CURVE_BOUNDED_SURFACE" => {
-                let entity = CurveBoundedSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CurveBoundedSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CurveBoundedSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CurveBoundedSurface>(),
@@ -40010,7 +43264,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CURVE_DIMENSION" => {
-                let entity = CurveDimension::form_parameters(typed_parameter.parameters);
+                let entity = CurveDimension::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CurveDimension>(),
@@ -40018,7 +43272,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CURVE_REPLICA" => {
-                let entity = CurveReplica::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CurveReplica::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CurveReplica::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CurveReplica>(),
@@ -40026,11 +43284,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CURVE_STYLE" => {
-                let entity = CurveStyle::form_parameters(typed_parameter.parameters);
+                let entity = CurveStyle::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<CurveStyle>(), Box::new(entity)))
             }
             "CURVE_STYLE_FONT" => {
-                let entity = CurveStyleFont::form_parameters(typed_parameter.parameters);
+                let entity = CurveStyleFont::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CurveStyleFont>(),
@@ -40038,7 +43296,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CURVE_STYLE_FONT_PATTERN" => {
-                let entity = CurveStyleFontPattern::form_parameters(typed_parameter.parameters);
+                let entity = CurveStyleFontPattern::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CurveStyleFontPattern>(),
@@ -40046,7 +43304,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CURVE_STYLE_RENDERING" => {
-                let entity = CurveStyleRendering::form_parameters(typed_parameter.parameters);
+                let entity = CurveStyleRendering::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CurveStyleRendering>(),
@@ -40054,7 +43312,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CURVE_SWEPT_SOLID_SHAPE_REPRESENTATION" => {
-                let entity = CurveSweptSolidShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = CurveSweptSolidShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CurveSweptSolidShapeRepresentation>(),
@@ -40062,7 +43320,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CYLINDRICAL_PAIR" => {
-                let entity = CylindricalPair::form_parameters(typed_parameter.parameters);
+                let entity = CylindricalPair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CylindricalPair>(),
@@ -40070,7 +43328,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CYLINDRICAL_PAIR_RANGE" => {
-                let entity = CylindricalPairRange::form_parameters(typed_parameter.parameters);
+                let entity = CylindricalPairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CylindricalPairRange>(),
@@ -40078,7 +43336,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CYLINDRICAL_PAIR_VALUE" => {
-                let entity = CylindricalPairValue::form_parameters(typed_parameter.parameters);
+                let entity = CylindricalPairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CylindricalPairValue>(),
@@ -40086,7 +43344,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CYLINDRICAL_SURFACE" => {
-                let entity = CylindricalSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    CylindricalSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    CylindricalSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CylindricalSurface>(),
@@ -40094,7 +43356,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "CYLINDRICITY_TOLERANCE" => {
-                let entity = CylindricityTolerance::form_parameters(typed_parameter.parameters);
+                let entity = CylindricityTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<CylindricityTolerance>(),
@@ -40102,7 +43364,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DATA_ENVIRONMENT" => {
-                let entity = DataEnvironment::form_parameters(typed_parameter.parameters);
+                let entity = DataEnvironment::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DataEnvironment>(),
@@ -40110,19 +43372,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DATE" => {
-                let entity = Date::form_parameters(typed_parameter.parameters);
+                let entity = Date::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Date>(), Box::new(entity)))
             }
             "DATE_AND_TIME" => {
-                let entity = DateAndTime::form_parameters(typed_parameter.parameters);
+                let entity = DateAndTime::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<DateAndTime>(), Box::new(entity)))
             }
             "DATE_ROLE" => {
-                let entity = DateRole::form_parameters(typed_parameter.parameters);
+                let entity = DateRole::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<DateRole>(), Box::new(entity)))
             }
             "DATE_TIME_ROLE" => {
-                let entity = DateTimeRole::form_parameters(typed_parameter.parameters);
+                let entity = DateTimeRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DateTimeRole>(),
@@ -40130,7 +43392,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DATED_EFFECTIVITY" => {
-                let entity = DatedEffectivity::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DatedEffectivity::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DatedEffectivity::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DatedEffectivity>(),
@@ -40138,11 +43404,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DATUM" => {
-                let entity = Datum::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Datum::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Datum::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Datum>(), Box::new(entity)))
             }
             "DATUM_FEATURE" => {
-                let entity = DatumFeature::form_parameters(typed_parameter.parameters);
+                let entity = DatumFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DatumFeature>(),
@@ -40150,7 +43420,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DATUM_FEATURE_CALLOUT" => {
-                let entity = DatumFeatureCallout::form_parameters(typed_parameter.parameters);
+                let entity = DatumFeatureCallout::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DatumFeatureCallout>(),
@@ -40158,7 +43428,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DATUM_REFERENCE" => {
-                let entity = DatumReference::form_parameters(typed_parameter.parameters);
+                let entity = DatumReference::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DatumReference>(),
@@ -40166,11 +43436,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DATUM_TARGET" => {
-                let entity = DatumTarget::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DatumTarget::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DatumTarget::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<DatumTarget>(), Box::new(entity)))
             }
             "DATUM_TARGET_CALLOUT" => {
-                let entity = DatumTargetCallout::form_parameters(typed_parameter.parameters);
+                let entity = DatumTargetCallout::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DatumTargetCallout>(),
@@ -40178,7 +43452,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DEFAULT_TOLERANCE_TABLE" => {
-                let entity = DefaultToleranceTable::form_parameters(typed_parameter.parameters);
+                let entity = DefaultToleranceTable::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DefaultToleranceTable>(),
@@ -40186,7 +43460,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DEFAULT_TOLERANCE_TABLE_CELL" => {
-                let entity = DefaultToleranceTableCell::form_parameters(typed_parameter.parameters);
+                let entity = DefaultToleranceTableCell::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DefaultToleranceTableCell>(),
@@ -40194,7 +43468,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DEFINED_CHARACTER_GLYPH" => {
-                let entity = DefinedCharacterGlyph::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DefinedCharacterGlyph::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DefinedCharacterGlyph::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DefinedCharacterGlyph>(),
@@ -40202,7 +43480,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DEFINED_SYMBOL" => {
-                let entity = DefinedSymbol::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DefinedSymbol::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DefinedSymbol::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DefinedSymbol>(),
@@ -40210,7 +43492,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DEFINITIONAL_REPRESENTATION" => {
-                let entity = DefinitionalRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = DefinitionalRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DefinitionalRepresentation>(),
@@ -40218,7 +43500,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DEGENERATE_PCURVE" => {
-                let entity = DegeneratePcurve::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DegeneratePcurve::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DegeneratePcurve::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DegeneratePcurve>(),
@@ -40226,7 +43512,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DEGENERATE_TOROIDAL_SURFACE" => {
-                let entity = DegenerateToroidalSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DegenerateToroidalSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DegenerateToroidalSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DegenerateToroidalSurface>(),
@@ -40234,7 +43524,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DERIVED_SHAPE_ASPECT" => {
-                let entity = DerivedShapeAspect::form_parameters(typed_parameter.parameters);
+                let entity = DerivedShapeAspect::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DerivedShapeAspect>(),
@@ -40242,11 +43532,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DERIVED_UNIT" => {
-                let entity = DerivedUnit::form_parameters(typed_parameter.parameters);
+                let entity = DerivedUnit::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<DerivedUnit>(), Box::new(entity)))
             }
             "DERIVED_UNIT_ELEMENT" => {
-                let entity = DerivedUnitElement::form_parameters(typed_parameter.parameters);
+                let entity = DerivedUnitElement::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DerivedUnitElement>(),
@@ -40254,7 +43544,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DERIVED_UNIT_VARIABLE" => {
-                let entity = DerivedUnitVariable::form_parameters(typed_parameter.parameters);
+                let entity = DerivedUnitVariable::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DerivedUnitVariable>(),
@@ -40262,7 +43552,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DESCRIPTION_ATTRIBUTE" => {
-                let entity = DescriptionAttribute::form_parameters(typed_parameter.parameters);
+                let entity = DescriptionAttribute::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DescriptionAttribute>(),
@@ -40270,7 +43560,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DESCRIPTIVE_REPRESENTATION_ITEM" => {
-                let entity = DescriptiveRepresentationItem::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DescriptiveRepresentationItem::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DescriptiveRepresentationItem::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DescriptiveRepresentationItem>(),
@@ -40278,7 +43572,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIAMETER_DIMENSION" => {
-                let entity = DiameterDimension::form_parameters(typed_parameter.parameters);
+                let entity = DiameterDimension::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DiameterDimension>(),
@@ -40286,7 +43580,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSION_CALLOUT" => {
-                let entity = DimensionCallout::form_parameters(typed_parameter.parameters);
+                let entity = DimensionCallout::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionCallout>(),
@@ -40294,7 +43588,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSION_CALLOUT_COMPONENT_RELATIONSHIP" => {
-                let entity = DimensionCalloutComponentRelationship::form_parameters(typed_parameter.parameters);
+                let entity = DimensionCalloutComponentRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionCalloutComponentRelationship>(),
@@ -40302,7 +43596,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSION_CALLOUT_RELATIONSHIP" => {
-                let entity = DimensionCalloutRelationship::form_parameters(typed_parameter.parameters);
+                let entity = DimensionCalloutRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionCalloutRelationship>(),
@@ -40310,7 +43604,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSION_CURVE" => {
-                let entity = DimensionCurve::form_parameters(typed_parameter.parameters);
+                let entity = DimensionCurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionCurve>(),
@@ -40318,7 +43612,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSION_CURVE_DIRECTED_CALLOUT" => {
-                let entity = DimensionCurveDirectedCallout::form_parameters(typed_parameter.parameters);
+                let entity = DimensionCurveDirectedCallout::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionCurveDirectedCallout>(),
@@ -40326,7 +43620,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSION_CURVE_TERMINATOR" => {
-                let entity = DimensionCurveTerminator::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DimensionCurveTerminator::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DimensionCurveTerminator::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionCurveTerminator>(),
@@ -40334,7 +43632,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSION_PAIR" => {
-                let entity = DimensionPair::form_parameters(typed_parameter.parameters);
+                let entity = DimensionPair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionPair>(),
@@ -40342,7 +43640,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSION_RELATED_TOLERANCE_ZONE_ELEMENT" => {
-                let entity = DimensionRelatedToleranceZoneElement::form_parameters(typed_parameter.parameters);
+                let entity = DimensionRelatedToleranceZoneElement::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionRelatedToleranceZoneElement>(),
@@ -40350,7 +43648,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSION_TEXT_ASSOCIATIVITY" => {
-                let entity = DimensionTextAssociativity::form_parameters(typed_parameter.parameters);
+                let entity = DimensionTextAssociativity::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionTextAssociativity>(),
@@ -40358,7 +43656,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSIONAL_CHARACTERISTIC_REPRESENTATION" => {
-                let entity = DimensionalCharacteristicRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = DimensionalCharacteristicRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionalCharacteristicRepresentation>(),
@@ -40366,7 +43664,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSIONAL_EXPONENTS" => {
-                let entity = DimensionalExponents::form_parameters(typed_parameter.parameters);
+                let entity = DimensionalExponents::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionalExponents>(),
@@ -40374,7 +43672,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSIONAL_LOCATION" => {
-                let entity = DimensionalLocation::form_parameters(typed_parameter.parameters);
+                let entity = DimensionalLocation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionalLocation>(),
@@ -40382,7 +43680,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSIONAL_LOCATION_WITH_PATH" => {
-                let entity = DimensionalLocationWithPath::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DimensionalLocationWithPath::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DimensionalLocationWithPath::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionalLocationWithPath>(),
@@ -40390,7 +43692,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSIONAL_SIZE" => {
-                let entity = DimensionalSize::form_parameters(typed_parameter.parameters);
+                let entity = DimensionalSize::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionalSize>(),
@@ -40398,7 +43700,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIMENSIONAL_SIZE_WITH_PATH" => {
-                let entity = DimensionalSizeWithPath::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DimensionalSizeWithPath::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DimensionalSizeWithPath::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DimensionalSizeWithPath>(),
@@ -40406,7 +43712,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIRECTED_ACTION" => {
-                let entity = DirectedAction::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DirectedAction::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DirectedAction::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DirectedAction>(),
@@ -40414,7 +43724,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIRECTED_ANGLE" => {
-                let entity = DirectedAngle::form_parameters(typed_parameter.parameters);
+                let entity = DirectedAngle::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DirectedAngle>(),
@@ -40422,7 +43732,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIRECTED_DIMENSIONAL_LOCATION" => {
-                let entity = DirectedDimensionalLocation::form_parameters(typed_parameter.parameters);
+                let entity = DirectedDimensionalLocation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DirectedDimensionalLocation>(),
@@ -40430,11 +43740,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIRECTION" => {
-                let entity = Direction::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Direction::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Direction::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Direction>(), Box::new(entity)))
             }
             "DIRECTION_SHAPE_REPRESENTATION" => {
-                let entity = DirectionShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = DirectionShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DirectionShapeRepresentation>(),
@@ -40442,7 +43756,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DIV_EXPRESSION" => {
-                let entity = DivExpression::form_parameters(typed_parameter.parameters);
+                let entity = DivExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DivExpression>(),
@@ -40450,11 +43764,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DOCUMENT" => {
-                let entity = Document::form_parameters(typed_parameter.parameters);
+                let entity = Document::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Document>(), Box::new(entity)))
             }
             "DOCUMENT_FILE" => {
-                let entity = DocumentFile::form_parameters(typed_parameter.parameters);
+                let entity = DocumentFile::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DocumentFile>(),
@@ -40462,7 +43776,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DOCUMENT_PRODUCT_ASSOCIATION" => {
-                let entity = DocumentProductAssociation::form_parameters(typed_parameter.parameters);
+                let entity = DocumentProductAssociation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DocumentProductAssociation>(),
@@ -40470,7 +43784,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DOCUMENT_PRODUCT_EQUIVALENCE" => {
-                let entity = DocumentProductEquivalence::form_parameters(typed_parameter.parameters);
+                let entity = DocumentProductEquivalence::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DocumentProductEquivalence>(),
@@ -40478,7 +43792,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DOCUMENT_RELATIONSHIP" => {
-                let entity = DocumentRelationship::form_parameters(typed_parameter.parameters);
+                let entity = DocumentRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DocumentRelationship>(),
@@ -40486,7 +43800,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DOCUMENT_REPRESENTATION_TYPE" => {
-                let entity = DocumentRepresentationType::form_parameters(typed_parameter.parameters);
+                let entity = DocumentRepresentationType::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DocumentRepresentationType>(),
@@ -40494,7 +43808,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DOCUMENT_TYPE" => {
-                let entity = DocumentType::form_parameters(typed_parameter.parameters);
+                let entity = DocumentType::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DocumentType>(),
@@ -40502,7 +43816,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DOCUMENT_USAGE_CONSTRAINT" => {
-                let entity = DocumentUsageConstraint::form_parameters(typed_parameter.parameters);
+                let entity = DocumentUsageConstraint::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DocumentUsageConstraint>(),
@@ -40510,7 +43824,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DOCUMENT_USAGE_ROLE" => {
-                let entity = DocumentUsageRole::form_parameters(typed_parameter.parameters);
+                let entity = DocumentUsageRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DocumentUsageRole>(),
@@ -40518,7 +43832,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_ANNOTATION_OCCURRENCE" => {
-                let entity = DraughtingAnnotationOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingAnnotationOccurrence::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingAnnotationOccurrence>(),
@@ -40526,7 +43840,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_CALLOUT" => {
-                let entity = DraughtingCallout::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DraughtingCallout::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DraughtingCallout::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingCallout>(),
@@ -40534,7 +43852,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_CALLOUT_RELATIONSHIP" => {
-                let entity = DraughtingCalloutRelationship::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingCalloutRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingCalloutRelationship>(),
@@ -40542,7 +43860,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_ELEMENTS" => {
-                let entity = DraughtingElements::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingElements::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingElements>(),
@@ -40550,7 +43868,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_MODEL" => {
-                let entity = DraughtingModel::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingModel::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingModel>(),
@@ -40558,7 +43876,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_MODEL_ITEM_ASSOCIATION" => {
-                let entity = DraughtingModelItemAssociation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DraughtingModelItemAssociation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DraughtingModelItemAssociation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingModelItemAssociation>(),
@@ -40566,7 +43888,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_PRE_DEFINED_COLOUR" => {
-                let entity = DraughtingPreDefinedColour::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingPreDefinedColour::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingPreDefinedColour>(),
@@ -40574,7 +43896,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_PRE_DEFINED_CURVE_FONT" => {
-                let entity = DraughtingPreDefinedCurveFont::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingPreDefinedCurveFont::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingPreDefinedCurveFont>(),
@@ -40582,7 +43904,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_PRE_DEFINED_TEXT_FONT" => {
-                let entity = DraughtingPreDefinedTextFont::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingPreDefinedTextFont::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingPreDefinedTextFont>(),
@@ -40590,7 +43912,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_SPECIFICATION_REFERENCE" => {
-                let entity = DraughtingSpecificationReference::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DraughtingSpecificationReference::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DraughtingSpecificationReference::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingSpecificationReference>(),
@@ -40598,7 +43924,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_SUBFIGURE_REPRESENTATION" => {
-                let entity = DraughtingSubfigureRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingSubfigureRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingSubfigureRepresentation>(),
@@ -40606,7 +43932,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_SYMBOL_REPRESENTATION" => {
-                let entity = DraughtingSymbolRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingSymbolRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingSymbolRepresentation>(),
@@ -40614,7 +43940,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_TEXT_LITERAL_WITH_DELINEATION" => {
-                let entity = DraughtingTextLiteralWithDelineation::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingTextLiteralWithDelineation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingTextLiteralWithDelineation>(),
@@ -40622,7 +43948,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAUGHTING_TITLE" => {
-                let entity = DraughtingTitle::form_parameters(typed_parameter.parameters);
+                let entity = DraughtingTitle::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DraughtingTitle>(),
@@ -40630,7 +43956,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAWING_DEFINITION" => {
-                let entity = DrawingDefinition::form_parameters(typed_parameter.parameters);
+                let entity = DrawingDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DrawingDefinition>(),
@@ -40638,7 +43964,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAWING_REVISION" => {
-                let entity = DrawingRevision::form_parameters(typed_parameter.parameters);
+                let entity = DrawingRevision::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DrawingRevision>(),
@@ -40646,7 +43972,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAWING_REVISION_SEQUENCE" => {
-                let entity = DrawingRevisionSequence::form_parameters(typed_parameter.parameters);
+                let entity = DrawingRevisionSequence::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DrawingRevisionSequence>(),
@@ -40654,7 +43980,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAWING_SHEET_LAYOUT" => {
-                let entity = DrawingSheetLayout::form_parameters(typed_parameter.parameters);
+                let entity = DrawingSheetLayout::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DrawingSheetLayout>(),
@@ -40662,7 +43988,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAWING_SHEET_REVISION" => {
-                let entity = DrawingSheetRevision::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DrawingSheetRevision::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DrawingSheetRevision::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DrawingSheetRevision>(),
@@ -40670,7 +44000,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "DRAWING_SHEET_REVISION_USAGE" => {
-                let entity = DrawingSheetRevisionUsage::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    DrawingSheetRevisionUsage::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    DrawingSheetRevisionUsage::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<DrawingSheetRevisionUsage>(),
@@ -40678,11 +44012,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EDGE" => {
-                let entity = Edge::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Edge::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Edge::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Edge>(), Box::new(entity)))
             }
             "EDGE_BASED_WIREFRAME_MODEL" => {
-                let entity = EdgeBasedWireframeModel::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    EdgeBasedWireframeModel::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    EdgeBasedWireframeModel::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<EdgeBasedWireframeModel>(),
@@ -40690,7 +44032,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EDGE_BASED_WIREFRAME_SHAPE_REPRESENTATION" => {
-                let entity = EdgeBasedWireframeShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = EdgeBasedWireframeShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<EdgeBasedWireframeShapeRepresentation>(),
@@ -40698,23 +44040,27 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EDGE_CURVE" => {
-                let entity = EdgeCurve::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    EdgeCurve::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    EdgeCurve::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<EdgeCurve>(), Box::new(entity)))
             }
             "EDGE_LOOP" => {
-                let entity = EdgeLoop::form_parameters(typed_parameter.parameters);
+                let entity = EdgeLoop::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<EdgeLoop>(), Box::new(entity)))
             }
             "EDGE_ROUND" => {
-                let entity = EdgeRound::form_parameters(typed_parameter.parameters);
+                let entity = EdgeRound::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<EdgeRound>(), Box::new(entity)))
             }
             "EFFECTIVITY" => {
-                let entity = Effectivity::form_parameters(typed_parameter.parameters);
+                let entity = Effectivity::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Effectivity>(), Box::new(entity)))
             }
             "EFFECTIVITY_CONTEXT_ROLE" => {
-                let entity = EffectivityContextRole::form_parameters(typed_parameter.parameters);
+                let entity = EffectivityContextRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<EffectivityContextRole>(),
@@ -40722,7 +44068,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EFFECTIVITY_RELATIONSHIP" => {
-                let entity = EffectivityRelationship::form_parameters(typed_parameter.parameters);
+                let entity = EffectivityRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<EffectivityRelationship>(),
@@ -40730,7 +44076,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ELECTRIC_CURRENT_MEASURE_WITH_UNIT" => {
-                let entity = ElectricCurrentMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = ElectricCurrentMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ElectricCurrentMeasureWithUnit>(),
@@ -40738,7 +44084,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ELECTRIC_CURRENT_UNIT" => {
-                let entity = ElectricCurrentUnit::form_parameters(typed_parameter.parameters);
+                let entity = ElectricCurrentUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ElectricCurrentUnit>(),
@@ -40746,7 +44092,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ELEMENT_DELIVERY" => {
-                let entity = ElementDelivery::form_parameters(typed_parameter.parameters);
+                let entity = ElementDelivery::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ElementDelivery>(),
@@ -40754,7 +44100,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ELEMENTARY_SURFACE" => {
-                let entity = ElementarySurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ElementarySurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ElementarySurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ElementarySurface>(),
@@ -40762,15 +44112,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ELLIPSE" => {
-                let entity = Ellipse::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Ellipse::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Ellipse::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Ellipse>(), Box::new(entity)))
             }
             "ENVIRONMENT" => {
-                let entity = Environment::form_parameters(typed_parameter.parameters);
+                let entity = Environment::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Environment>(), Box::new(entity)))
             }
             "EQUALS_EXPRESSION" => {
-                let entity = EqualsExpression::form_parameters(typed_parameter.parameters);
+                let entity = EqualsExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<EqualsExpression>(),
@@ -40778,7 +44132,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EVALUATED_DEGENERATE_PCURVE" => {
-                let entity = EvaluatedDegeneratePcurve::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    EvaluatedDegeneratePcurve::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    EvaluatedDegeneratePcurve::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<EvaluatedDegeneratePcurve>(),
@@ -40786,7 +44144,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EVENT_OCCURRENCE" => {
-                let entity = EventOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = EventOccurrence::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<EventOccurrence>(),
@@ -40794,7 +44152,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EVENT_OCCURRENCE_CONTEXT_ROLE" => {
-                let entity = EventOccurrenceContextRole::form_parameters(typed_parameter.parameters);
+                let entity = EventOccurrenceContextRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<EventOccurrenceContextRole>(),
@@ -40802,7 +44160,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EVENT_OCCURRENCE_ROLE" => {
-                let entity = EventOccurrenceRole::form_parameters(typed_parameter.parameters);
+                let entity = EventOccurrenceRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<EventOccurrenceRole>(),
@@ -40810,7 +44168,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXCLUSIVE_PRODUCT_CONCEPT_FEATURE_CATEGORY" => {
-                let entity = ExclusiveProductConceptFeatureCategory::form_parameters(typed_parameter.parameters);
+                let entity = ExclusiveProductConceptFeatureCategory::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExclusiveProductConceptFeatureCategory>(),
@@ -40818,7 +44176,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXECUTED_ACTION" => {
-                let entity = ExecutedAction::form_parameters(typed_parameter.parameters);
+                let entity = ExecutedAction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExecutedAction>(),
@@ -40826,11 +44184,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXP_FUNCTION" => {
-                let entity = ExpFunction::form_parameters(typed_parameter.parameters);
+                let entity = ExpFunction::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<ExpFunction>(), Box::new(entity)))
             }
             "EXPRESSION_CONVERSION_BASED_UNIT" => {
-                let entity = ExpressionConversionBasedUnit::form_parameters(typed_parameter.parameters);
+                let entity = ExpressionConversionBasedUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExpressionConversionBasedUnit>(),
@@ -40838,11 +44196,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTENSION" => {
-                let entity = Extension::form_parameters(typed_parameter.parameters);
+                let entity = Extension::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Extension>(), Box::new(entity)))
             }
             "EXTERNAL_SOURCE" => {
-                let entity = ExternalSource::form_parameters(typed_parameter.parameters);
+                let entity = ExternalSource::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternalSource>(),
@@ -40850,7 +44208,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_CHARACTER_GLYPH" => {
-                let entity = ExternallyDefinedCharacterGlyph::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedCharacterGlyph::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedCharacterGlyph>(),
@@ -40858,7 +44216,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_CLASS" => {
-                let entity = ExternallyDefinedClass::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedClass::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedClass>(),
@@ -40866,7 +44224,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_CURVE_FONT" => {
-                let entity = ExternallyDefinedCurveFont::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedCurveFont::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedCurveFont>(),
@@ -40874,7 +44232,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_DIMENSION_DEFINITION" => {
-                let entity = ExternallyDefinedDimensionDefinition::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedDimensionDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedDimensionDefinition>(),
@@ -40882,7 +44240,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_FEATURE_DEFINITION" => {
-                let entity = ExternallyDefinedFeatureDefinition::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedFeatureDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedFeatureDefinition>(),
@@ -40890,7 +44248,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_GENERAL_PROPERTY" => {
-                let entity = ExternallyDefinedGeneralProperty::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedGeneralProperty::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedGeneralProperty>(),
@@ -40898,7 +44256,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_HATCH_STYLE" => {
-                let entity = ExternallyDefinedHatchStyle::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedHatchStyle::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedHatchStyle>(),
@@ -40906,7 +44264,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_ITEM" => {
-                let entity = ExternallyDefinedItem::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedItem::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedItem>(),
@@ -40914,7 +44272,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_ITEM_RELATIONSHIP" => {
-                let entity = ExternallyDefinedItemRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedItemRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedItemRelationship>(),
@@ -40922,7 +44280,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_STYLE" => {
-                let entity = ExternallyDefinedStyle::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedStyle::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedStyle>(),
@@ -40930,7 +44288,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_SYMBOL" => {
-                let entity = ExternallyDefinedSymbol::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedSymbol::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedSymbol>(),
@@ -40938,7 +44296,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_TEXT_FONT" => {
-                let entity = ExternallyDefinedTextFont::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedTextFont::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedTextFont>(),
@@ -40946,7 +44304,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTERNALLY_DEFINED_TILE_STYLE" => {
-                let entity = ExternallyDefinedTileStyle::form_parameters(typed_parameter.parameters);
+                let entity = ExternallyDefinedTileStyle::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExternallyDefinedTileStyle>(),
@@ -40954,7 +44312,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTRUDED_AREA_SOLID" => {
-                let entity = ExtrudedAreaSolid::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ExtrudedAreaSolid::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ExtrudedAreaSolid::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExtrudedAreaSolid>(),
@@ -40962,7 +44324,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "EXTRUDED_FACE_SOLID" => {
-                let entity = ExtrudedFaceSolid::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ExtrudedFaceSolid::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ExtrudedFaceSolid::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ExtrudedFaceSolid>(),
@@ -40970,11 +44336,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FACE" => {
-                let entity = Face::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Face::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Face::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Face>(), Box::new(entity)))
             }
             "FACE_BASED_SURFACE_MODEL" => {
-                let entity = FaceBasedSurfaceModel::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    FaceBasedSurfaceModel::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    FaceBasedSurfaceModel::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FaceBasedSurfaceModel>(),
@@ -40982,11 +44356,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FACE_BOUND" => {
-                let entity = FaceBound::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    FaceBound::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    FaceBound::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<FaceBound>(), Box::new(entity)))
             }
             "FACE_OUTER_BOUND" => {
-                let entity = FaceOuterBound::form_parameters(typed_parameter.parameters);
+                let entity = FaceOuterBound::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FaceOuterBound>(),
@@ -40994,7 +44372,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FACE_SHAPE_REPRESENTATION" => {
-                let entity = FaceShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = FaceShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FaceShapeRepresentation>(),
@@ -41002,15 +44380,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FACE_SURFACE" => {
-                let entity = FaceSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    FaceSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    FaceSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<FaceSurface>(), Box::new(entity)))
             }
             "FACETED_BREP" => {
-                let entity = FacetedBrep::form_parameters(typed_parameter.parameters);
+                let entity = FacetedBrep::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<FacetedBrep>(), Box::new(entity)))
             }
             "FACETED_BREP_SHAPE_REPRESENTATION" => {
-                let entity = FacetedBrepShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = FacetedBrepShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FacetedBrepShapeRepresentation>(),
@@ -41018,7 +44400,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FEATURE_COMPONENT_DEFINITION" => {
-                let entity = FeatureComponentDefinition::form_parameters(typed_parameter.parameters);
+                let entity = FeatureComponentDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FeatureComponentDefinition>(),
@@ -41026,7 +44408,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FEATURE_COMPONENT_RELATIONSHIP" => {
-                let entity = FeatureComponentRelationship::form_parameters(typed_parameter.parameters);
+                let entity = FeatureComponentRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FeatureComponentRelationship>(),
@@ -41034,7 +44416,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FEATURE_DEFINITION" => {
-                let entity = FeatureDefinition::form_parameters(typed_parameter.parameters);
+                let entity = FeatureDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FeatureDefinition>(),
@@ -41042,7 +44424,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FEATURE_IN_PANEL" => {
-                let entity = FeatureInPanel::form_parameters(typed_parameter.parameters);
+                let entity = FeatureInPanel::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FeatureInPanel>(),
@@ -41050,7 +44432,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FEATURE_PATTERN" => {
-                let entity = FeaturePattern::form_parameters(typed_parameter.parameters);
+                let entity = FeaturePattern::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FeaturePattern>(),
@@ -41058,7 +44440,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FEATURED_SHAPE" => {
-                let entity = FeaturedShape::form_parameters(typed_parameter.parameters);
+                let entity = FeaturedShape::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FeaturedShape>(),
@@ -41066,7 +44448,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FILL_AREA_STYLE" => {
-                let entity = FillAreaStyle::form_parameters(typed_parameter.parameters);
+                let entity = FillAreaStyle::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FillAreaStyle>(),
@@ -41074,7 +44456,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FILL_AREA_STYLE_COLOUR" => {
-                let entity = FillAreaStyleColour::form_parameters(typed_parameter.parameters);
+                let entity = FillAreaStyleColour::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FillAreaStyleColour>(),
@@ -41082,7 +44464,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FILL_AREA_STYLE_HATCHING" => {
-                let entity = FillAreaStyleHatching::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    FillAreaStyleHatching::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    FillAreaStyleHatching::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FillAreaStyleHatching>(),
@@ -41090,7 +44476,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FILL_AREA_STYLE_TILE_SYMBOL_WITH_STYLE" => {
-                let entity = FillAreaStyleTileSymbolWithStyle::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    FillAreaStyleTileSymbolWithStyle::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    FillAreaStyleTileSymbolWithStyle::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FillAreaStyleTileSymbolWithStyle>(),
@@ -41098,7 +44488,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FILL_AREA_STYLE_TILES" => {
-                let entity = FillAreaStyleTiles::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    FillAreaStyleTiles::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    FillAreaStyleTiles::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FillAreaStyleTiles>(),
@@ -41106,11 +44500,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FILLET" => {
-                let entity = Fillet::form_parameters(typed_parameter.parameters);
+                let entity = Fillet::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Fillet>(), Box::new(entity)))
             }
             "FLATNESS_TOLERANCE" => {
-                let entity = FlatnessTolerance::form_parameters(typed_parameter.parameters);
+                let entity = FlatnessTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FlatnessTolerance>(),
@@ -41118,7 +44512,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FORMAT_FUNCTION" => {
-                let entity = FormatFunction::form_parameters(typed_parameter.parameters);
+                let entity = FormatFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FormatFunction>(),
@@ -41126,11 +44520,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FOUNDED_ITEM" => {
-                let entity = FoundedItem::form_parameters(typed_parameter.parameters);
+                let entity = FoundedItem::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<FoundedItem>(), Box::new(entity)))
             }
             "FOUNDED_KINEMATIC_PATH" => {
-                let entity = FoundedKinematicPath::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    FoundedKinematicPath::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    FoundedKinematicPath::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FoundedKinematicPath>(),
@@ -41138,7 +44536,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FULLY_CONSTRAINED_PAIR" => {
-                let entity = FullyConstrainedPair::form_parameters(typed_parameter.parameters);
+                let entity = FullyConstrainedPair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FullyConstrainedPair>(),
@@ -41146,7 +44544,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "FUNCTIONALLY_DEFINED_TRANSFORMATION" => {
-                let entity = FunctionallyDefinedTransformation::form_parameters(typed_parameter.parameters);
+                let entity = FunctionallyDefinedTransformation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<FunctionallyDefinedTransformation>(),
@@ -41154,11 +44552,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEAR_PAIR" => {
-                let entity = GearPair::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    GearPair::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    GearPair::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<GearPair>(), Box::new(entity)))
             }
             "GEAR_PAIR_RANGE" => {
-                let entity = GearPairRange::form_parameters(typed_parameter.parameters);
+                let entity = GearPairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GearPairRange>(),
@@ -41166,7 +44568,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEAR_PAIR_VALUE" => {
-                let entity = GearPairValue::form_parameters(typed_parameter.parameters);
+                let entity = GearPairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GearPairValue>(),
@@ -41174,7 +44576,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GENERAL_FEATURE" => {
-                let entity = GeneralFeature::form_parameters(typed_parameter.parameters);
+                let entity = GeneralFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeneralFeature>(),
@@ -41182,7 +44584,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GENERAL_MATERIAL_PROPERTY" => {
-                let entity = GeneralMaterialProperty::form_parameters(typed_parameter.parameters);
+                let entity = GeneralMaterialProperty::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeneralMaterialProperty>(),
@@ -41190,7 +44592,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GENERAL_PROPERTY" => {
-                let entity = GeneralProperty::form_parameters(typed_parameter.parameters);
+                let entity = GeneralProperty::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeneralProperty>(),
@@ -41198,7 +44600,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GENERAL_PROPERTY_ASSOCIATION" => {
-                let entity = GeneralPropertyAssociation::form_parameters(typed_parameter.parameters);
+                let entity = GeneralPropertyAssociation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeneralPropertyAssociation>(),
@@ -41206,7 +44608,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GENERAL_PROPERTY_RELATIONSHIP" => {
-                let entity = GeneralPropertyRelationship::form_parameters(typed_parameter.parameters);
+                let entity = GeneralPropertyRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeneralPropertyRelationship>(),
@@ -41214,7 +44616,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_ALIGNMENT" => {
-                let entity = GeometricAlignment::form_parameters(typed_parameter.parameters);
+                let entity = GeometricAlignment::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricAlignment>(),
@@ -41222,7 +44624,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_CURVE_SET" => {
-                let entity = GeometricCurveSet::form_parameters(typed_parameter.parameters);
+                let entity = GeometricCurveSet::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricCurveSet>(),
@@ -41230,7 +44632,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_INTERSECTION" => {
-                let entity = GeometricIntersection::form_parameters(typed_parameter.parameters);
+                let entity = GeometricIntersection::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricIntersection>(),
@@ -41238,7 +44640,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_ITEM_SPECIFIC_USAGE" => {
-                let entity = GeometricItemSpecificUsage::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    GeometricItemSpecificUsage::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    GeometricItemSpecificUsage::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricItemSpecificUsage>(),
@@ -41246,7 +44652,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_REPRESENTATION_CONTEXT" => {
-                let entity = GeometricRepresentationContext::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    GeometricRepresentationContext::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    GeometricRepresentationContext::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricRepresentationContext>(),
@@ -41254,7 +44664,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_REPRESENTATION_ITEM" => {
-                let entity = GeometricRepresentationItem::form_parameters(typed_parameter.parameters);
+                let entity = GeometricRepresentationItem::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricRepresentationItem>(),
@@ -41262,7 +44672,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_SET" => {
-                let entity = GeometricSet::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    GeometricSet::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    GeometricSet::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricSet>(),
@@ -41270,7 +44684,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_TOLERANCE" => {
-                let entity = GeometricTolerance::form_parameters(typed_parameter.parameters);
+                let entity = GeometricTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricTolerance>(),
@@ -41278,7 +44692,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_TOLERANCE_RELATIONSHIP" => {
-                let entity = GeometricToleranceRelationship::form_parameters(typed_parameter.parameters);
+                let entity = GeometricToleranceRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricToleranceRelationship>(),
@@ -41286,7 +44700,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_TOLERANCE_WITH_DATUM_REFERENCE" => {
-                let entity = GeometricToleranceWithDatumReference::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    GeometricToleranceWithDatumReference::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    GeometricToleranceWithDatumReference::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricToleranceWithDatumReference>(),
@@ -41294,7 +44712,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRIC_TOLERANCE_WITH_DEFINED_UNIT" => {
-                let entity = GeometricToleranceWithDefinedUnit::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    GeometricToleranceWithDefinedUnit::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    GeometricToleranceWithDefinedUnit::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricToleranceWithDefinedUnit>(),
@@ -41302,7 +44724,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRICAL_TOLERANCE_CALLOUT" => {
-                let entity = GeometricalToleranceCallout::form_parameters(typed_parameter.parameters);
+                let entity = GeometricalToleranceCallout::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricalToleranceCallout>(),
@@ -41310,7 +44732,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GEOMETRICALLY_BOUNDED_2D_WIREFRAME_REPRESENTATION" => {
-                let entity = GeometricallyBounded2dWireframeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = GeometricallyBounded2dWireframeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricallyBounded2dWireframeRepresentation>(),
@@ -41319,7 +44741,7 @@ impl StepReader for Ap214Reader {
             }
             "GEOMETRICALLY_BOUNDED_SURFACE_SHAPE_REPRESENTATION" => {
                 let entity =
-                    GeometricallyBoundedSurfaceShapeRepresentation::form_parameters(typed_parameter.parameters);
+                    GeometricallyBoundedSurfaceShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricallyBoundedSurfaceShapeRepresentation>(),
@@ -41328,7 +44750,7 @@ impl StepReader for Ap214Reader {
             }
             "GEOMETRICALLY_BOUNDED_WIREFRAME_SHAPE_REPRESENTATION" => {
                 let entity =
-                    GeometricallyBoundedWireframeShapeRepresentation::form_parameters(typed_parameter.parameters);
+                    GeometricallyBoundedWireframeShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GeometricallyBoundedWireframeShapeRepresentation>(),
@@ -41336,7 +44758,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GLOBAL_UNCERTAINTY_ASSIGNED_CONTEXT" => {
-                let entity = GlobalUncertaintyAssignedContext::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    GlobalUncertaintyAssignedContext::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    GlobalUncertaintyAssignedContext::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GlobalUncertaintyAssignedContext>(),
@@ -41344,7 +44770,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GLOBAL_UNIT_ASSIGNED_CONTEXT" => {
-                let entity = GlobalUnitAssignedContext::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    GlobalUnitAssignedContext::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    GlobalUnitAssignedContext::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GlobalUnitAssignedContext>(),
@@ -41352,11 +44782,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "GROUP" => {
-                let entity = Group::form_parameters(typed_parameter.parameters);
+                let entity = Group::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Group>(), Box::new(entity)))
             }
             "GROUP_RELATIONSHIP" => {
-                let entity = GroupRelationship::form_parameters(typed_parameter.parameters);
+                let entity = GroupRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<GroupRelationship>(),
@@ -41364,7 +44794,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "HALF_SPACE_SOLID" => {
-                let entity = HalfSpaceSolid::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    HalfSpaceSolid::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    HalfSpaceSolid::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<HalfSpaceSolid>(),
@@ -41372,7 +44806,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "HARDNESS_REPRESENTATION" => {
-                let entity = HardnessRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = HardnessRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<HardnessRepresentation>(),
@@ -41380,7 +44814,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "HIDDEN_ELEMENT_OVER_RIDING_STYLED_ITEM" => {
-                let entity = HiddenElementOverRidingStyledItem::form_parameters(typed_parameter.parameters);
+                let entity = HiddenElementOverRidingStyledItem::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<HiddenElementOverRidingStyledItem>(),
@@ -41388,15 +44822,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "HOLE_BOTTOM" => {
-                let entity = HoleBottom::form_parameters(typed_parameter.parameters);
+                let entity = HoleBottom::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<HoleBottom>(), Box::new(entity)))
             }
             "HOLE_IN_PANEL" => {
-                let entity = HoleInPanel::form_parameters(typed_parameter.parameters);
+                let entity = HoleInPanel::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<HoleInPanel>(), Box::new(entity)))
             }
             "HOMOKINETIC_PAIR" => {
-                let entity = HomokineticPair::form_parameters(typed_parameter.parameters);
+                let entity = HomokineticPair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<HomokineticPair>(),
@@ -41404,15 +44838,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "HYPERBOLA" => {
-                let entity = Hyperbola::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Hyperbola::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Hyperbola::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Hyperbola>(), Box::new(entity)))
             }
             "ID_ATTRIBUTE" => {
-                let entity = IdAttribute::form_parameters(typed_parameter.parameters);
+                let entity = IdAttribute::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<IdAttribute>(), Box::new(entity)))
             }
             "IDENTIFICATION_ROLE" => {
-                let entity = IdentificationRole::form_parameters(typed_parameter.parameters);
+                let entity = IdentificationRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<IdentificationRole>(),
@@ -41420,7 +44858,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "INCLUSION_PRODUCT_CONCEPT_FEATURE" => {
-                let entity = InclusionProductConceptFeature::form_parameters(typed_parameter.parameters);
+                let entity = InclusionProductConceptFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<InclusionProductConceptFeature>(),
@@ -41428,7 +44866,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "INDEX_EXPRESSION" => {
-                let entity = IndexExpression::form_parameters(typed_parameter.parameters);
+                let entity = IndexExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<IndexExpression>(),
@@ -41436,7 +44874,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "INITIAL_STATE" => {
-                let entity = InitialState::form_parameters(typed_parameter.parameters);
+                let entity = InitialState::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<InitialState>(),
@@ -41444,7 +44882,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "INSTANCED_FEATURE" => {
-                let entity = InstancedFeature::form_parameters(typed_parameter.parameters);
+                let entity = InstancedFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<InstancedFeature>(),
@@ -41452,11 +44890,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "INT_LITERAL" => {
-                let entity = IntLiteral::form_parameters(typed_parameter.parameters);
+                let entity = IntLiteral::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<IntLiteral>(), Box::new(entity)))
             }
             "INT_NUMERIC_VARIABLE" => {
-                let entity = IntNumericVariable::form_parameters(typed_parameter.parameters);
+                let entity = IntNumericVariable::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<IntNumericVariable>(),
@@ -41464,7 +44902,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "INT_VALUE_FUNCTION" => {
-                let entity = IntValueFunction::form_parameters(typed_parameter.parameters);
+                let entity = IntValueFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<IntValueFunction>(),
@@ -41472,7 +44910,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "INTERPOLATED_CONFIGURATION_SEQUENCE" => {
-                let entity = InterpolatedConfigurationSequence::form_parameters(typed_parameter.parameters);
+                let entity = InterpolatedConfigurationSequence::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<InterpolatedConfigurationSequence>(),
@@ -41480,7 +44918,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "INTERSECTION_CURVE" => {
-                let entity = IntersectionCurve::form_parameters(typed_parameter.parameters);
+                let entity = IntersectionCurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<IntersectionCurve>(),
@@ -41488,7 +44926,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "INTERVAL_EXPRESSION" => {
-                let entity = IntervalExpression::form_parameters(typed_parameter.parameters);
+                let entity = IntervalExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<IntervalExpression>(),
@@ -41496,7 +44934,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "INVISIBILITY" => {
-                let entity = Invisibility::form_parameters(typed_parameter.parameters);
+                let entity = Invisibility::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<Invisibility>(),
@@ -41504,7 +44942,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ITEM_DEFINED_TRANSFORMATION" => {
-                let entity = ItemDefinedTransformation::form_parameters(typed_parameter.parameters);
+                let entity = ItemDefinedTransformation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ItemDefinedTransformation>(),
@@ -41512,7 +44950,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ITEM_IDENTIFIED_REPRESENTATION_USAGE" => {
-                let entity = ItemIdentifiedRepresentationUsage::form_parameters(typed_parameter.parameters);
+                let entity = ItemIdentifiedRepresentationUsage::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ItemIdentifiedRepresentationUsage>(),
@@ -41520,11 +44958,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "JOGGLE" => {
-                let entity = Joggle::form_parameters(typed_parameter.parameters);
+                let entity = Joggle::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Joggle>(), Box::new(entity)))
             }
             "JOGGLE_TERMINATION" => {
-                let entity = JoggleTermination::form_parameters(typed_parameter.parameters);
+                let entity = JoggleTermination::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<JoggleTermination>(),
@@ -41532,7 +44970,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_ANALYSIS_CONSISTENCY" => {
-                let entity = KinematicAnalysisConsistency::form_parameters(typed_parameter.parameters);
+                let entity = KinematicAnalysisConsistency::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicAnalysisConsistency>(),
@@ -41540,7 +44978,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_ANALYSIS_RESULT" => {
-                let entity = KinematicAnalysisResult::form_parameters(typed_parameter.parameters);
+                let entity = KinematicAnalysisResult::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicAnalysisResult>(),
@@ -41548,7 +44986,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_CONTROL" => {
-                let entity = KinematicControl::form_parameters(typed_parameter.parameters);
+                let entity = KinematicControl::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicControl>(),
@@ -41556,7 +44994,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_FRAME_BACKGROUND_REPRESENTATION" => {
-                let entity = KinematicFrameBackgroundRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    KinematicFrameBackgroundRepresentation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    KinematicFrameBackgroundRepresentation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicFrameBackgroundRepresentation>(),
@@ -41564,8 +45006,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_FRAME_BACKGROUND_REPRESENTATION_ASSOCIATION" => {
-                let entity =
-                    KinematicFrameBackgroundRepresentationAssociation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    KinematicFrameBackgroundRepresentationAssociation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    KinematicFrameBackgroundRepresentationAssociation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicFrameBackgroundRepresentationAssociation>(),
@@ -41573,7 +45018,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_FRAME_BASED_TRANSFORMATION" => {
-                let entity = KinematicFrameBasedTransformation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    KinematicFrameBasedTransformation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    KinematicFrameBasedTransformation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicFrameBasedTransformation>(),
@@ -41581,7 +45030,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_GROUND_REPRESENTATION" => {
-                let entity = KinematicGroundRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = KinematicGroundRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicGroundRepresentation>(),
@@ -41589,7 +45038,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_JOINT" => {
-                let entity = KinematicJoint::form_parameters(typed_parameter.parameters);
+                let entity = KinematicJoint::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicJoint>(),
@@ -41597,7 +45046,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_LINK" => {
-                let entity = KinematicLink::form_parameters(typed_parameter.parameters);
+                let entity = KinematicLink::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicLink>(),
@@ -41605,7 +45054,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_LINK_REPRESENTATION" => {
-                let entity = KinematicLinkRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    KinematicLinkRepresentation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    KinematicLinkRepresentation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicLinkRepresentation>(),
@@ -41613,7 +45066,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_LINK_REPRESENTATION_ASSOCIATION" => {
-                let entity = KinematicLinkRepresentationAssociation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    KinematicLinkRepresentationAssociation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    KinematicLinkRepresentationAssociation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicLinkRepresentationAssociation>(),
@@ -41621,7 +45078,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_LINK_REPRESENTATION_RELATION" => {
-                let entity = KinematicLinkRepresentationRelation::form_parameters(typed_parameter.parameters);
+                let entity = KinematicLinkRepresentationRelation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicLinkRepresentationRelation>(),
@@ -41629,7 +45086,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_PAIR" => {
-                let entity = KinematicPair::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    KinematicPair::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    KinematicPair::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicPair>(),
@@ -41637,7 +45098,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_PATH" => {
-                let entity = KinematicPath::form_parameters(typed_parameter.parameters);
+                let entity = KinematicPath::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicPath>(),
@@ -41645,7 +45106,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_PROPERTY_DEFINITION" => {
-                let entity = KinematicPropertyDefinition::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    KinematicPropertyDefinition::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    KinematicPropertyDefinition::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicPropertyDefinition>(),
@@ -41653,7 +45118,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_PROPERTY_REPRESENTATION_RELATION" => {
-                let entity = KinematicPropertyRepresentationRelation::form_parameters(typed_parameter.parameters);
+                let entity = KinematicPropertyRepresentationRelation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicPropertyRepresentationRelation>(),
@@ -41661,7 +45126,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KINEMATIC_STRUCTURE" => {
-                let entity = KinematicStructure::form_parameters(typed_parameter.parameters);
+                let entity = KinematicStructure::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<KinematicStructure>(),
@@ -41669,15 +45134,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "KNOWN_SOURCE" => {
-                let entity = KnownSource::form_parameters(typed_parameter.parameters);
+                let entity = KnownSource::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<KnownSource>(), Box::new(entity)))
             }
             "LANGUAGE" => {
-                let entity = Language::form_parameters(typed_parameter.parameters);
+                let entity = Language::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Language>(), Box::new(entity)))
             }
             "LANGUAGE_ASSIGNMENT" => {
-                let entity = LanguageAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    LanguageAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    LanguageAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LanguageAssignment>(),
@@ -41685,11 +45154,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LEADER_CURVE" => {
-                let entity = LeaderCurve::form_parameters(typed_parameter.parameters);
+                let entity = LeaderCurve::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<LeaderCurve>(), Box::new(entity)))
             }
             "LEADER_DIRECTED_CALLOUT" => {
-                let entity = LeaderDirectedCallout::form_parameters(typed_parameter.parameters);
+                let entity = LeaderDirectedCallout::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LeaderDirectedCallout>(),
@@ -41697,7 +45166,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LEADER_DIRECTED_DIMENSION" => {
-                let entity = LeaderDirectedDimension::form_parameters(typed_parameter.parameters);
+                let entity = LeaderDirectedDimension::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LeaderDirectedDimension>(),
@@ -41705,7 +45174,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LEADER_TERMINATOR" => {
-                let entity = LeaderTerminator::form_parameters(typed_parameter.parameters);
+                let entity = LeaderTerminator::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LeaderTerminator>(),
@@ -41713,7 +45182,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LENGTH_FUNCTION" => {
-                let entity = LengthFunction::form_parameters(typed_parameter.parameters);
+                let entity = LengthFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LengthFunction>(),
@@ -41721,7 +45190,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LENGTH_MEASURE_WITH_UNIT" => {
-                let entity = LengthMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = LengthMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LengthMeasureWithUnit>(),
@@ -41729,15 +45198,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LENGTH_UNIT" => {
-                let entity = LengthUnit::form_parameters(typed_parameter.parameters);
+                let entity = LengthUnit::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<LengthUnit>(), Box::new(entity)))
             }
             "LIGHT_SOURCE" => {
-                let entity = LightSource::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    LightSource::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    LightSource::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<LightSource>(), Box::new(entity)))
             }
             "LIGHT_SOURCE_AMBIENT" => {
-                let entity = LightSourceAmbient::form_parameters(typed_parameter.parameters);
+                let entity = LightSourceAmbient::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LightSourceAmbient>(),
@@ -41745,7 +45218,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LIGHT_SOURCE_DIRECTIONAL" => {
-                let entity = LightSourceDirectional::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    LightSourceDirectional::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    LightSourceDirectional::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LightSourceDirectional>(),
@@ -41753,7 +45230,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LIGHT_SOURCE_POSITIONAL" => {
-                let entity = LightSourcePositional::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    LightSourcePositional::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    LightSourcePositional::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LightSourcePositional>(),
@@ -41761,7 +45242,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LIGHT_SOURCE_SPOT" => {
-                let entity = LightSourceSpot::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    LightSourceSpot::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    LightSourceSpot::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LightSourceSpot>(),
@@ -41769,7 +45254,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LIKE_EXPRESSION" => {
-                let entity = LikeExpression::form_parameters(typed_parameter.parameters);
+                let entity = LikeExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LikeExpression>(),
@@ -41777,7 +45262,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LIMITS_AND_FITS" => {
-                let entity = LimitsAndFits::form_parameters(typed_parameter.parameters);
+                let entity = LimitsAndFits::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LimitsAndFits>(),
@@ -41785,11 +45270,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LINE" => {
-                let entity = Line::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Line::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Line::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Line>(), Box::new(entity)))
             }
             "LINE_PROFILE_TOLERANCE" => {
-                let entity = LineProfileTolerance::form_parameters(typed_parameter.parameters);
+                let entity = LineProfileTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LineProfileTolerance>(),
@@ -41797,7 +45286,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LINEAR_DIMENSION" => {
-                let entity = LinearDimension::form_parameters(typed_parameter.parameters);
+                let entity = LinearDimension::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LinearDimension>(),
@@ -41805,11 +45294,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LOCAL_TIME" => {
-                let entity = LocalTime::form_parameters(typed_parameter.parameters);
+                let entity = LocalTime::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<LocalTime>(), Box::new(entity)))
             }
             "LOCATION_SHAPE_REPRESENTATION" => {
-                let entity = LocationShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = LocationShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LocationShapeRepresentation>(),
@@ -41817,11 +45306,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LOCATOR" => {
-                let entity = Locator::form_parameters(typed_parameter.parameters);
+                let entity = Locator::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Locator>(), Box::new(entity)))
             }
             "LOG10_FUNCTION" => {
-                let entity = Log10Function::form_parameters(typed_parameter.parameters);
+                let entity = Log10Function::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<Log10Function>(),
@@ -41829,7 +45318,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LOG2_FUNCTION" => {
-                let entity = Log2Function::form_parameters(typed_parameter.parameters);
+                let entity = Log2Function::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<Log2Function>(),
@@ -41837,15 +45326,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LOG_FUNCTION" => {
-                let entity = LogFunction::form_parameters(typed_parameter.parameters);
+                let entity = LogFunction::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<LogFunction>(), Box::new(entity)))
             }
             "LOOP" => {
-                let entity = Loop::form_parameters(typed_parameter.parameters);
+                let entity = Loop::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Loop>(), Box::new(entity)))
             }
             "LOT_EFFECTIVITY" => {
-                let entity = LotEffectivity::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    LotEffectivity::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    LotEffectivity::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LotEffectivity>(),
@@ -41853,7 +45346,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LUMINOUS_INTENSITY_MEASURE_WITH_UNIT" => {
-                let entity = LuminousIntensityMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = LuminousIntensityMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LuminousIntensityMeasureWithUnit>(),
@@ -41861,7 +45354,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "LUMINOUS_INTENSITY_UNIT" => {
-                let entity = LuminousIntensityUnit::form_parameters(typed_parameter.parameters);
+                let entity = LuminousIntensityUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<LuminousIntensityUnit>(),
@@ -41869,7 +45362,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MAKE_FROM_USAGE_OPTION" => {
-                let entity = MakeFromUsageOption::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    MakeFromUsageOption::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    MakeFromUsageOption::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MakeFromUsageOption>(),
@@ -41877,7 +45374,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MANIFOLD_SOLID_BREP" => {
-                let entity = ManifoldSolidBrep::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ManifoldSolidBrep::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ManifoldSolidBrep::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ManifoldSolidBrep>(),
@@ -41885,7 +45386,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MANIFOLD_SUBSURFACE_SHAPE_REPRESENTATION" => {
-                let entity = ManifoldSubsurfaceShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = ManifoldSubsurfaceShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ManifoldSubsurfaceShapeRepresentation>(),
@@ -41893,7 +45394,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MANIFOLD_SURFACE_SHAPE_REPRESENTATION" => {
-                let entity = ManifoldSurfaceShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = ManifoldSurfaceShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ManifoldSurfaceShapeRepresentation>(),
@@ -41901,11 +45402,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MAPPED_ITEM" => {
-                let entity = MappedItem::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    MappedItem::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    MappedItem::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<MappedItem>(), Box::new(entity)))
             }
             "MASS_MEASURE_WITH_UNIT" => {
-                let entity = MassMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = MassMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MassMeasureWithUnit>(),
@@ -41913,11 +45418,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MASS_UNIT" => {
-                let entity = MassUnit::form_parameters(typed_parameter.parameters);
+                let entity = MassUnit::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<MassUnit>(), Box::new(entity)))
             }
             "MATERIAL_DESIGNATION" => {
-                let entity = MaterialDesignation::form_parameters(typed_parameter.parameters);
+                let entity = MaterialDesignation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MaterialDesignation>(),
@@ -41925,7 +45430,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MATERIAL_DESIGNATION_CHARACTERIZATION" => {
-                let entity = MaterialDesignationCharacterization::form_parameters(typed_parameter.parameters);
+                let entity = MaterialDesignationCharacterization::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MaterialDesignationCharacterization>(),
@@ -41933,7 +45438,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MATERIAL_PROPERTY" => {
-                let entity = MaterialProperty::form_parameters(typed_parameter.parameters);
+                let entity = MaterialProperty::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MaterialProperty>(),
@@ -41941,7 +45446,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MATERIAL_PROPERTY_REPRESENTATION" => {
-                let entity = MaterialPropertyRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    MaterialPropertyRepresentation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    MaterialPropertyRepresentation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MaterialPropertyRepresentation>(),
@@ -41949,7 +45458,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MAXIMUM_FUNCTION" => {
-                let entity = MaximumFunction::form_parameters(typed_parameter.parameters);
+                let entity = MaximumFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MaximumFunction>(),
@@ -41957,7 +45466,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MEASURE_QUALIFICATION" => {
-                let entity = MeasureQualification::form_parameters(typed_parameter.parameters);
+                let entity = MeasureQualification::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MeasureQualification>(),
@@ -41965,7 +45474,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MEASURE_REPRESENTATION_ITEM" => {
-                let entity = MeasureRepresentationItem::form_parameters(typed_parameter.parameters);
+                let entity = MeasureRepresentationItem::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MeasureRepresentationItem>(),
@@ -41973,7 +45482,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MEASURE_WITH_UNIT" => {
-                let entity = MeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = MeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MeasureWithUnit>(),
@@ -41981,7 +45490,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MECHANICAL_DESIGN_GEOMETRIC_PRESENTATION_AREA" => {
-                let entity = MechanicalDesignGeometricPresentationArea::form_parameters(typed_parameter.parameters);
+                let entity = MechanicalDesignGeometricPresentationArea::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MechanicalDesignGeometricPresentationArea>(),
@@ -41990,7 +45499,7 @@ impl StepReader for Ap214Reader {
             }
             "MECHANICAL_DESIGN_GEOMETRIC_PRESENTATION_REPRESENTATION" => {
                 let entity =
-                    MechanicalDesignGeometricPresentationRepresentation::form_parameters(typed_parameter.parameters);
+                    MechanicalDesignGeometricPresentationRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MechanicalDesignGeometricPresentationRepresentation>(),
@@ -41998,11 +45507,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MECHANISM" => {
-                let entity = Mechanism::form_parameters(typed_parameter.parameters);
+                let entity = Mechanism::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Mechanism>(), Box::new(entity)))
             }
             "MECHANISM_BASE_PLACEMENT" => {
-                let entity = MechanismBasePlacement::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    MechanismBasePlacement::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    MechanismBasePlacement::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MechanismBasePlacement>(),
@@ -42010,7 +45523,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MINIMUM_FUNCTION" => {
-                let entity = MinimumFunction::form_parameters(typed_parameter.parameters);
+                let entity = MinimumFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MinimumFunction>(),
@@ -42018,7 +45531,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MINUS_EXPRESSION" => {
-                let entity = MinusExpression::form_parameters(typed_parameter.parameters);
+                let entity = MinusExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MinusExpression>(),
@@ -42026,7 +45539,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MINUS_FUNCTION" => {
-                let entity = MinusFunction::form_parameters(typed_parameter.parameters);
+                let entity = MinusFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MinusFunction>(),
@@ -42034,7 +45547,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MOD_EXPRESSION" => {
-                let entity = ModExpression::form_parameters(typed_parameter.parameters);
+                let entity = ModExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ModExpression>(),
@@ -42042,7 +45555,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MODIFIED_GEOMETRIC_TOLERANCE" => {
-                let entity = ModifiedGeometricTolerance::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ModifiedGeometricTolerance::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ModifiedGeometricTolerance::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ModifiedGeometricTolerance>(),
@@ -42050,7 +45567,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MODIFIED_PATTERN" => {
-                let entity = ModifiedPattern::form_parameters(typed_parameter.parameters);
+                let entity = ModifiedPattern::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ModifiedPattern>(),
@@ -42058,7 +45575,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MOMENTS_OF_INERTIA_REPRESENTATION" => {
-                let entity = MomentsOfInertiaRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = MomentsOfInertiaRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MomentsOfInertiaRepresentation>(),
@@ -42066,7 +45583,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MOTION_LINK_RELATIONSHIP" => {
-                let entity = MotionLinkRelationship::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    MotionLinkRelationship::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    MotionLinkRelationship::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MotionLinkRelationship>(),
@@ -42074,7 +45595,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MULT_EXPRESSION" => {
-                let entity = MultExpression::form_parameters(typed_parameter.parameters);
+                let entity = MultExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MultExpression>(),
@@ -42082,7 +45603,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "MULTI_LANGUAGE_ATTRIBUTE_ASSIGNMENT" => {
-                let entity = MultiLanguageAttributeAssignment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    MultiLanguageAttributeAssignment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    MultiLanguageAttributeAssignment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<MultiLanguageAttributeAssignment>(),
@@ -42090,7 +45615,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "NAME_ATTRIBUTE" => {
-                let entity = NameAttribute::form_parameters(typed_parameter.parameters);
+                let entity = NameAttribute::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<NameAttribute>(),
@@ -42098,11 +45623,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "NAMED_UNIT" => {
-                let entity = NamedUnit::form_parameters(typed_parameter.parameters);
+                let entity = NamedUnit::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<NamedUnit>(), Box::new(entity)))
             }
             "NAMED_UNIT_VARIABLE" => {
-                let entity = NamedUnitVariable::form_parameters(typed_parameter.parameters);
+                let entity = NamedUnitVariable::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<NamedUnitVariable>(),
@@ -42110,7 +45635,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "NEXT_ASSEMBLY_USAGE_OCCURRENCE" => {
-                let entity = NextAssemblyUsageOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = NextAssemblyUsageOccurrence::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<NextAssemblyUsageOccurrence>(),
@@ -42118,7 +45643,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "NGON_CLOSED_PROFILE" => {
-                let entity = NgonClosedProfile::form_parameters(typed_parameter.parameters);
+                let entity = NgonClosedProfile::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<NgonClosedProfile>(),
@@ -42126,7 +45651,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "NON_MANIFOLD_SURFACE_SHAPE_REPRESENTATION" => {
-                let entity = NonManifoldSurfaceShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = NonManifoldSurfaceShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<NonManifoldSurfaceShapeRepresentation>(),
@@ -42134,7 +45659,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "NOT_EXPRESSION" => {
-                let entity = NotExpression::form_parameters(typed_parameter.parameters);
+                let entity = NotExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<NotExpression>(),
@@ -42142,7 +45667,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "NUMERIC_VARIABLE" => {
-                let entity = NumericVariable::form_parameters(typed_parameter.parameters);
+                let entity = NumericVariable::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<NumericVariable>(),
@@ -42150,15 +45675,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "OBJECT_ROLE" => {
-                let entity = ObjectRole::form_parameters(typed_parameter.parameters);
+                let entity = ObjectRole::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<ObjectRole>(), Box::new(entity)))
             }
             "ODD_FUNCTION" => {
-                let entity = OddFunction::form_parameters(typed_parameter.parameters);
+                let entity = OddFunction::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<OddFunction>(), Box::new(entity)))
             }
             "OFFSET_CURVE_2D" => {
-                let entity = OffsetCurve2d::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OffsetCurve2d::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OffsetCurve2d::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OffsetCurve2d>(),
@@ -42166,7 +45695,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "OFFSET_CURVE_3D" => {
-                let entity = OffsetCurve3d::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OffsetCurve3d::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OffsetCurve3d::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OffsetCurve3d>(),
@@ -42174,7 +45707,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "OFFSET_SURFACE" => {
-                let entity = OffsetSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OffsetSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OffsetSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OffsetSurface>(),
@@ -42182,7 +45719,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ONE_DIRECTION_REPEAT_FACTOR" => {
-                let entity = OneDirectionRepeatFactor::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OneDirectionRepeatFactor::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OneDirectionRepeatFactor::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OneDirectionRepeatFactor>(),
@@ -42190,7 +45731,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "OPEN_PATH_PROFILE" => {
-                let entity = OpenPathProfile::form_parameters(typed_parameter.parameters);
+                let entity = OpenPathProfile::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OpenPathProfile>(),
@@ -42198,11 +45739,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "OPEN_SHELL" => {
-                let entity = OpenShell::form_parameters(typed_parameter.parameters);
+                let entity = OpenShell::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<OpenShell>(), Box::new(entity)))
             }
             "OR_EXPRESSION" => {
-                let entity = OrExpression::form_parameters(typed_parameter.parameters);
+                let entity = OrExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrExpression>(),
@@ -42210,7 +45751,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORDINATE_DIMENSION" => {
-                let entity = OrdinateDimension::form_parameters(typed_parameter.parameters);
+                let entity = OrdinateDimension::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrdinateDimension>(),
@@ -42218,7 +45759,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORGANIZATION" => {
-                let entity = Organization::form_parameters(typed_parameter.parameters);
+                let entity = Organization::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<Organization>(),
@@ -42226,7 +45767,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORGANIZATION_RELATIONSHIP" => {
-                let entity = OrganizationRelationship::form_parameters(typed_parameter.parameters);
+                let entity = OrganizationRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrganizationRelationship>(),
@@ -42234,7 +45775,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORGANIZATION_ROLE" => {
-                let entity = OrganizationRole::form_parameters(typed_parameter.parameters);
+                let entity = OrganizationRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrganizationRole>(),
@@ -42242,7 +45783,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORGANIZATIONAL_ADDRESS" => {
-                let entity = OrganizationalAddress::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OrganizationalAddress::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OrganizationalAddress::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrganizationalAddress>(),
@@ -42250,7 +45795,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORGANIZATIONAL_PROJECT" => {
-                let entity = OrganizationalProject::form_parameters(typed_parameter.parameters);
+                let entity = OrganizationalProject::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrganizationalProject>(),
@@ -42258,7 +45803,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORGANIZATIONAL_PROJECT_RELATIONSHIP" => {
-                let entity = OrganizationalProjectRelationship::form_parameters(typed_parameter.parameters);
+                let entity = OrganizationalProjectRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrganizationalProjectRelationship>(),
@@ -42266,7 +45811,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORGANIZATIONAL_PROJECT_ROLE" => {
-                let entity = OrganizationalProjectRole::form_parameters(typed_parameter.parameters);
+                let entity = OrganizationalProjectRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrganizationalProjectRole>(),
@@ -42274,7 +45819,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORIENTED_CLOSED_SHELL" => {
-                let entity = OrientedClosedShell::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OrientedClosedShell::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OrientedClosedShell::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrientedClosedShell>(),
@@ -42282,7 +45831,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORIENTED_EDGE" => {
-                let entity = OrientedEdge::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OrientedEdge::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OrientedEdge::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrientedEdge>(),
@@ -42290,7 +45843,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORIENTED_FACE" => {
-                let entity = OrientedFace::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OrientedFace::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OrientedFace::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrientedFace>(),
@@ -42298,7 +45855,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORIENTED_OPEN_SHELL" => {
-                let entity = OrientedOpenShell::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OrientedOpenShell::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OrientedOpenShell::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrientedOpenShell>(),
@@ -42306,7 +45867,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORIENTED_PATH" => {
-                let entity = OrientedPath::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OrientedPath::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OrientedPath::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrientedPath>(),
@@ -42314,7 +45879,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ORIENTED_SURFACE" => {
-                let entity = OrientedSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OrientedSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OrientedSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OrientedSurface>(),
@@ -42322,7 +45891,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "OUTER_BOUNDARY_CURVE" => {
-                let entity = OuterBoundaryCurve::form_parameters(typed_parameter.parameters);
+                let entity = OuterBoundaryCurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OuterBoundaryCurve>(),
@@ -42330,7 +45899,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "OVER_RIDING_STYLED_ITEM" => {
-                let entity = OverRidingStyledItem::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    OverRidingStyledItem::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    OverRidingStyledItem::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<OverRidingStyledItem>(),
@@ -42338,7 +45911,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PACKAGE_PRODUCT_CONCEPT_FEATURE" => {
-                let entity = PackageProductConceptFeature::form_parameters(typed_parameter.parameters);
+                let entity = PackageProductConceptFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PackageProductConceptFeature>(),
@@ -42346,7 +45919,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PAIR_ACTUATOR" => {
-                let entity = PairActuator::form_parameters(typed_parameter.parameters);
+                let entity = PairActuator::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PairActuator>(),
@@ -42354,15 +45927,23 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PAIR_VALUE" => {
-                let entity = PairValue::form_parameters(typed_parameter.parameters);
+                let entity = PairValue::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<PairValue>(), Box::new(entity)))
             }
             "PARABOLA" => {
-                let entity = Parabola::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Parabola::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Parabola::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Parabola>(), Box::new(entity)))
             }
             "PARALLEL_OFFSET" => {
-                let entity = ParallelOffset::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ParallelOffset::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ParallelOffset::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ParallelOffset>(),
@@ -42370,7 +45951,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PARALLELISM_TOLERANCE" => {
-                let entity = ParallelismTolerance::form_parameters(typed_parameter.parameters);
+                let entity = ParallelismTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ParallelismTolerance>(),
@@ -42378,7 +45959,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PARAMETRIC_REPRESENTATION_CONTEXT" => {
-                let entity = ParametricRepresentationContext::form_parameters(typed_parameter.parameters);
+                let entity = ParametricRepresentationContext::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ParametricRepresentationContext>(),
@@ -42386,7 +45967,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PARTIAL_CIRCULAR_PROFILE" => {
-                let entity = PartialCircularProfile::form_parameters(typed_parameter.parameters);
+                let entity = PartialCircularProfile::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PartialCircularProfile>(),
@@ -42394,11 +45975,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PATH" => {
-                let entity = Path::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Path::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Path::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Path>(), Box::new(entity)))
             }
             "PATH_FEATURE_COMPONENT" => {
-                let entity = PathFeatureComponent::form_parameters(typed_parameter.parameters);
+                let entity = PathFeatureComponent::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PathFeatureComponent>(),
@@ -42406,7 +45991,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PATH_SHAPE_REPRESENTATION" => {
-                let entity = PathShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = PathShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PathShapeRepresentation>(),
@@ -42414,7 +45999,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PATTERN_OFFSET_MEMBERSHIP" => {
-                let entity = PatternOffsetMembership::form_parameters(typed_parameter.parameters);
+                let entity = PatternOffsetMembership::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PatternOffsetMembership>(),
@@ -42422,7 +46007,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PATTERN_OMIT_MEMBERSHIP" => {
-                let entity = PatternOmitMembership::form_parameters(typed_parameter.parameters);
+                let entity = PatternOmitMembership::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PatternOmitMembership>(),
@@ -42430,11 +46015,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PCURVE" => {
-                let entity = Pcurve::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Pcurve::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Pcurve::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Pcurve>(), Box::new(entity)))
             }
             "PERPENDICULAR_TO" => {
-                let entity = PerpendicularTo::form_parameters(typed_parameter.parameters);
+                let entity = PerpendicularTo::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PerpendicularTo>(),
@@ -42442,7 +46031,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PERPENDICULARITY_TOLERANCE" => {
-                let entity = PerpendicularityTolerance::form_parameters(typed_parameter.parameters);
+                let entity = PerpendicularityTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PerpendicularityTolerance>(),
@@ -42450,11 +46039,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PERSON" => {
-                let entity = Person::form_parameters(typed_parameter.parameters);
+                let entity = Person::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Person>(), Box::new(entity)))
             }
             "PERSON_AND_ORGANIZATION" => {
-                let entity = PersonAndOrganization::form_parameters(typed_parameter.parameters);
+                let entity = PersonAndOrganization::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PersonAndOrganization>(),
@@ -42462,7 +46051,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PERSON_AND_ORGANIZATION_ADDRESS" => {
-                let entity = PersonAndOrganizationAddress::form_parameters(typed_parameter.parameters);
+                let entity = PersonAndOrganizationAddress::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PersonAndOrganizationAddress>(),
@@ -42470,7 +46059,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PERSON_AND_ORGANIZATION_ROLE" => {
-                let entity = PersonAndOrganizationRole::form_parameters(typed_parameter.parameters);
+                let entity = PersonAndOrganizationRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PersonAndOrganizationRole>(),
@@ -42478,7 +46067,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PERSONAL_ADDRESS" => {
-                let entity = PersonalAddress::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PersonalAddress::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PersonalAddress::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PersonalAddress>(),
@@ -42486,7 +46079,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PHYSICALLY_MODELLED_PRODUCT_DEFINITION" => {
-                let entity = PhysicallyModelledProductDefinition::form_parameters(typed_parameter.parameters);
+                let entity = PhysicallyModelledProductDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PhysicallyModelledProductDefinition>(),
@@ -42494,7 +46087,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLACED_DATUM_TARGET_FEATURE" => {
-                let entity = PlacedDatumTargetFeature::form_parameters(typed_parameter.parameters);
+                let entity = PlacedDatumTargetFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlacedDatumTargetFeature>(),
@@ -42502,7 +46095,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLACED_FEATURE" => {
-                let entity = PlacedFeature::form_parameters(typed_parameter.parameters);
+                let entity = PlacedFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlacedFeature>(),
@@ -42510,15 +46103,27 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLACEMENT" => {
-                let entity = Placement::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Placement::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Placement::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Placement>(), Box::new(entity)))
             }
             "PLANAR_BOX" => {
-                let entity = PlanarBox::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PlanarBox::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PlanarBox::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<PlanarBox>(), Box::new(entity)))
             }
             "PLANAR_CURVE_PAIR" => {
-                let entity = PlanarCurvePair::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PlanarCurvePair::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PlanarCurvePair::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlanarCurvePair>(),
@@ -42526,7 +46131,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLANAR_CURVE_PAIR_RANGE" => {
-                let entity = PlanarCurvePairRange::form_parameters(typed_parameter.parameters);
+                let entity = PlanarCurvePairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlanarCurvePairRange>(),
@@ -42534,7 +46139,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLANAR_EXTENT" => {
-                let entity = PlanarExtent::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PlanarExtent::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PlanarExtent::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlanarExtent>(),
@@ -42542,11 +46151,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLANAR_PAIR" => {
-                let entity = PlanarPair::form_parameters(typed_parameter.parameters);
+                let entity = PlanarPair::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<PlanarPair>(), Box::new(entity)))
             }
             "PLANAR_PAIR_RANGE" => {
-                let entity = PlanarPairRange::form_parameters(typed_parameter.parameters);
+                let entity = PlanarPairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlanarPairRange>(),
@@ -42554,7 +46163,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLANAR_PAIR_VALUE" => {
-                let entity = PlanarPairValue::form_parameters(typed_parameter.parameters);
+                let entity = PlanarPairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlanarPairValue>(),
@@ -42562,7 +46171,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLANAR_SHAPE_REPRESENTATION" => {
-                let entity = PlanarShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = PlanarShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlanarShapeRepresentation>(),
@@ -42570,11 +46179,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLANE" => {
-                let entity = Plane::form_parameters(typed_parameter.parameters);
+                let entity = Plane::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Plane>(), Box::new(entity)))
             }
             "PLANE_ANGLE_MEASURE_WITH_UNIT" => {
-                let entity = PlaneAngleMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = PlaneAngleMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlaneAngleMeasureWithUnit>(),
@@ -42582,7 +46191,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLANE_ANGLE_UNIT" => {
-                let entity = PlaneAngleUnit::form_parameters(typed_parameter.parameters);
+                let entity = PlaneAngleUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlaneAngleUnit>(),
@@ -42590,7 +46199,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLUS_EXPRESSION" => {
-                let entity = PlusExpression::form_parameters(typed_parameter.parameters);
+                let entity = PlusExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlusExpression>(),
@@ -42598,7 +46207,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PLUS_MINUS_TOLERANCE" => {
-                let entity = PlusMinusTolerance::form_parameters(typed_parameter.parameters);
+                let entity = PlusMinusTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PlusMinusTolerance>(),
@@ -42606,11 +46215,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POCKET" => {
-                let entity = Pocket::form_parameters(typed_parameter.parameters);
+                let entity = Pocket::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Pocket>(), Box::new(entity)))
             }
             "POCKET_BOTTOM" => {
-                let entity = PocketBottom::form_parameters(typed_parameter.parameters);
+                let entity = PocketBottom::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PocketBottom>(),
@@ -42618,11 +46227,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT" => {
-                let entity = Point::form_parameters(typed_parameter.parameters);
+                let entity = Point::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Point>(), Box::new(entity)))
             }
             "POINT_ON_CURVE" => {
-                let entity = PointOnCurve::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PointOnCurve::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PointOnCurve::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PointOnCurve>(),
@@ -42630,7 +46243,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT_ON_PLANAR_CURVE_PAIR" => {
-                let entity = PointOnPlanarCurvePair::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PointOnPlanarCurvePair::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PointOnPlanarCurvePair::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PointOnPlanarCurvePair>(),
@@ -42638,7 +46255,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT_ON_PLANAR_CURVE_PAIR_RANGE" => {
-                let entity = PointOnPlanarCurvePairRange::form_parameters(typed_parameter.parameters);
+                let entity = PointOnPlanarCurvePairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PointOnPlanarCurvePairRange>(),
@@ -42646,7 +46263,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT_ON_PLANAR_CURVE_PAIR_VALUE" => {
-                let entity = PointOnPlanarCurvePairValue::form_parameters(typed_parameter.parameters);
+                let entity = PointOnPlanarCurvePairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PointOnPlanarCurvePairValue>(),
@@ -42654,7 +46271,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT_ON_SURFACE" => {
-                let entity = PointOnSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PointOnSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PointOnSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PointOnSurface>(),
@@ -42662,7 +46283,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT_ON_SURFACE_PAIR" => {
-                let entity = PointOnSurfacePair::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PointOnSurfacePair::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PointOnSurfacePair::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PointOnSurfacePair>(),
@@ -42670,7 +46295,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT_ON_SURFACE_PAIR_RANGE" => {
-                let entity = PointOnSurfacePairRange::form_parameters(typed_parameter.parameters);
+                let entity = PointOnSurfacePairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PointOnSurfacePairRange>(),
@@ -42678,7 +46303,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT_ON_SURFACE_PAIR_VALUE" => {
-                let entity = PointOnSurfacePairValue::form_parameters(typed_parameter.parameters);
+                let entity = PointOnSurfacePairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PointOnSurfacePairValue>(),
@@ -42686,7 +46311,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT_PLACEMENT_SHAPE_REPRESENTATION" => {
-                let entity = PointPlacementShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = PointPlacementShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PointPlacementShapeRepresentation>(),
@@ -42694,7 +46319,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT_REPLICA" => {
-                let entity = PointReplica::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PointReplica::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PointReplica::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PointReplica>(),
@@ -42702,19 +46331,27 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POINT_STYLE" => {
-                let entity = PointStyle::form_parameters(typed_parameter.parameters);
+                let entity = PointStyle::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<PointStyle>(), Box::new(entity)))
             }
             "POLY_LOOP" => {
-                let entity = PolyLoop::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PolyLoop::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PolyLoop::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<PolyLoop>(), Box::new(entity)))
             }
             "POLYLINE" => {
-                let entity = Polyline::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Polyline::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Polyline::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Polyline>(), Box::new(entity)))
             }
             "POSITION_TOLERANCE" => {
-                let entity = PositionTolerance::form_parameters(typed_parameter.parameters);
+                let entity = PositionTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PositionTolerance>(),
@@ -42722,7 +46359,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "POWER_EXPRESSION" => {
-                let entity = PowerExpression::form_parameters(typed_parameter.parameters);
+                let entity = PowerExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PowerExpression>(),
@@ -42730,7 +46367,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_COLOUR" => {
-                let entity = PreDefinedColour::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedColour::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedColour>(),
@@ -42738,7 +46375,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_CURVE_FONT" => {
-                let entity = PreDefinedCurveFont::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedCurveFont::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedCurveFont>(),
@@ -42746,7 +46383,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_DIMENSION_SYMBOL" => {
-                let entity = PreDefinedDimensionSymbol::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedDimensionSymbol::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedDimensionSymbol>(),
@@ -42754,7 +46391,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_GEOMETRICAL_TOLERANCE_SYMBOL" => {
-                let entity = PreDefinedGeometricalToleranceSymbol::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedGeometricalToleranceSymbol::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedGeometricalToleranceSymbol>(),
@@ -42762,7 +46399,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_ITEM" => {
-                let entity = PreDefinedItem::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedItem::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedItem>(),
@@ -42770,7 +46407,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_MARKER" => {
-                let entity = PreDefinedMarker::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedMarker::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedMarker>(),
@@ -42778,7 +46415,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_POINT_MARKER_SYMBOL" => {
-                let entity = PreDefinedPointMarkerSymbol::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedPointMarkerSymbol::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedPointMarkerSymbol>(),
@@ -42786,7 +46423,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_PRESENTATION_STYLE" => {
-                let entity = PreDefinedPresentationStyle::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedPresentationStyle::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedPresentationStyle>(),
@@ -42794,7 +46431,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_SURFACE_CONDITION_SYMBOL" => {
-                let entity = PreDefinedSurfaceConditionSymbol::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedSurfaceConditionSymbol::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedSurfaceConditionSymbol>(),
@@ -42802,7 +46439,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_SYMBOL" => {
-                let entity = PreDefinedSymbol::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedSymbol::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedSymbol>(),
@@ -42810,7 +46447,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_TERMINATOR_SYMBOL" => {
-                let entity = PreDefinedTerminatorSymbol::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedTerminatorSymbol::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedTerminatorSymbol>(),
@@ -42818,7 +46455,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRE_DEFINED_TEXT_FONT" => {
-                let entity = PreDefinedTextFont::form_parameters(typed_parameter.parameters);
+                let entity = PreDefinedTextFont::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PreDefinedTextFont>(),
@@ -42826,7 +46463,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRECISION_QUALIFIER" => {
-                let entity = PrecisionQualifier::form_parameters(typed_parameter.parameters);
+                let entity = PrecisionQualifier::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PrecisionQualifier>(),
@@ -42834,7 +46471,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRESENTATION_AREA" => {
-                let entity = PresentationArea::form_parameters(typed_parameter.parameters);
+                let entity = PresentationArea::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PresentationArea>(),
@@ -42842,7 +46479,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRESENTATION_LAYER_ASSIGNMENT" => {
-                let entity = PresentationLayerAssignment::form_parameters(typed_parameter.parameters);
+                let entity = PresentationLayerAssignment::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PresentationLayerAssignment>(),
@@ -42850,7 +46487,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRESENTATION_REPRESENTATION" => {
-                let entity = PresentationRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PresentationRepresentation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PresentationRepresentation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PresentationRepresentation>(),
@@ -42858,7 +46499,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRESENTATION_SET" => {
-                let entity = PresentationSet::form_parameters(typed_parameter.parameters);
+                let entity = PresentationSet::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PresentationSet>(),
@@ -42866,7 +46507,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRESENTATION_SIZE" => {
-                let entity = PresentationSize::form_parameters(typed_parameter.parameters);
+                let entity = PresentationSize::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PresentationSize>(),
@@ -42874,7 +46515,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRESENTATION_STYLE_ASSIGNMENT" => {
-                let entity = PresentationStyleAssignment::form_parameters(typed_parameter.parameters);
+                let entity = PresentationStyleAssignment::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PresentationStyleAssignment>(),
@@ -42882,7 +46523,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRESENTATION_STYLE_BY_CONTEXT" => {
-                let entity = PresentationStyleByContext::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PresentationStyleByContext::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PresentationStyleByContext::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PresentationStyleByContext>(),
@@ -42890,7 +46535,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRESENTATION_VIEW" => {
-                let entity = PresentationView::form_parameters(typed_parameter.parameters);
+                let entity = PresentationView::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PresentationView>(),
@@ -42898,7 +46543,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRESENTED_ITEM_REPRESENTATION" => {
-                let entity = PresentedItemRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = PresentedItemRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PresentedItemRepresentation>(),
@@ -42906,7 +46551,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRISMATIC_PAIR" => {
-                let entity = PrismaticPair::form_parameters(typed_parameter.parameters);
+                let entity = PrismaticPair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PrismaticPair>(),
@@ -42914,7 +46559,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRISMATIC_PAIR_RANGE" => {
-                let entity = PrismaticPairRange::form_parameters(typed_parameter.parameters);
+                let entity = PrismaticPairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PrismaticPairRange>(),
@@ -42922,7 +46567,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRISMATIC_PAIR_VALUE" => {
-                let entity = PrismaticPairValue::form_parameters(typed_parameter.parameters);
+                let entity = PrismaticPairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PrismaticPairValue>(),
@@ -42930,7 +46575,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROCESS_OPERATION" => {
-                let entity = ProcessOperation::form_parameters(typed_parameter.parameters);
+                let entity = ProcessOperation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProcessOperation>(),
@@ -42938,11 +46583,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROCESS_PLAN" => {
-                let entity = ProcessPlan::form_parameters(typed_parameter.parameters);
+                let entity = ProcessPlan::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<ProcessPlan>(), Box::new(entity)))
             }
             "PROCESS_PRODUCT_ASSOCIATION" => {
-                let entity = ProcessProductAssociation::form_parameters(typed_parameter.parameters);
+                let entity = ProcessProductAssociation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProcessProductAssociation>(),
@@ -42950,7 +46595,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROCESS_PROPERTY_ASSOCIATION" => {
-                let entity = ProcessPropertyAssociation::form_parameters(typed_parameter.parameters);
+                let entity = ProcessPropertyAssociation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProcessPropertyAssociation>(),
@@ -42958,11 +46603,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT" => {
-                let entity = Product::form_parameters(typed_parameter.parameters);
+                let entity = Product::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Product>(), Box::new(entity)))
             }
             "PRODUCT_CATEGORY" => {
-                let entity = ProductCategory::form_parameters(typed_parameter.parameters);
+                let entity = ProductCategory::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductCategory>(),
@@ -42970,7 +46615,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_CATEGORY_RELATIONSHIP" => {
-                let entity = ProductCategoryRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ProductCategoryRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductCategoryRelationship>(),
@@ -42978,7 +46623,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_CLASS" => {
-                let entity = ProductClass::form_parameters(typed_parameter.parameters);
+                let entity = ProductClass::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductClass>(),
@@ -42986,7 +46631,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_CONCEPT" => {
-                let entity = ProductConcept::form_parameters(typed_parameter.parameters);
+                let entity = ProductConcept::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductConcept>(),
@@ -42994,7 +46639,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_CONCEPT_CONTEXT" => {
-                let entity = ProductConceptContext::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ProductConceptContext::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ProductConceptContext::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductConceptContext>(),
@@ -43002,7 +46651,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_CONCEPT_FEATURE" => {
-                let entity = ProductConceptFeature::form_parameters(typed_parameter.parameters);
+                let entity = ProductConceptFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductConceptFeature>(),
@@ -43010,7 +46659,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_CONCEPT_FEATURE_ASSOCIATION" => {
-                let entity = ProductConceptFeatureAssociation::form_parameters(typed_parameter.parameters);
+                let entity = ProductConceptFeatureAssociation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductConceptFeatureAssociation>(),
@@ -43018,7 +46667,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_CONCEPT_FEATURE_CATEGORY" => {
-                let entity = ProductConceptFeatureCategory::form_parameters(typed_parameter.parameters);
+                let entity = ProductConceptFeatureCategory::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductConceptFeatureCategory>(),
@@ -43026,7 +46675,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_CONCEPT_FEATURE_CATEGORY_USAGE" => {
-                let entity = ProductConceptFeatureCategoryUsage::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ProductConceptFeatureCategoryUsage::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ProductConceptFeatureCategoryUsage::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductConceptFeatureCategoryUsage>(),
@@ -43034,7 +46687,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_CONCEPT_RELATIONSHIP" => {
-                let entity = ProductConceptRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ProductConceptRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductConceptRelationship>(),
@@ -43042,7 +46695,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_CONTEXT" => {
-                let entity = ProductContext::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ProductContext::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ProductContext::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductContext>(),
@@ -43050,7 +46707,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION" => {
-                let entity = ProductDefinition::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinition>(),
@@ -43058,7 +46715,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_CONTEXT" => {
-                let entity = ProductDefinitionContext::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ProductDefinitionContext::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ProductDefinitionContext::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionContext>(),
@@ -43066,7 +46727,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_CONTEXT_ASSOCIATION" => {
-                let entity = ProductDefinitionContextAssociation::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinitionContextAssociation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionContextAssociation>(),
@@ -43074,7 +46735,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_CONTEXT_ROLE" => {
-                let entity = ProductDefinitionContextRole::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinitionContextRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionContextRole>(),
@@ -43082,7 +46743,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_EFFECTIVITY" => {
-                let entity = ProductDefinitionEffectivity::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ProductDefinitionEffectivity::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ProductDefinitionEffectivity::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionEffectivity>(),
@@ -43090,7 +46755,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_FORMATION" => {
-                let entity = ProductDefinitionFormation::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinitionFormation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionFormation>(),
@@ -43098,7 +46763,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_FORMATION_RELATIONSHIP" => {
-                let entity = ProductDefinitionFormationRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinitionFormationRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionFormationRelationship>(),
@@ -43106,7 +46771,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_FORMATION_WITH_SPECIFIED_SOURCE" => {
-                let entity = ProductDefinitionFormationWithSpecifiedSource::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ProductDefinitionFormationWithSpecifiedSource::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ProductDefinitionFormationWithSpecifiedSource::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionFormationWithSpecifiedSource>(),
@@ -43114,7 +46783,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_OCCURRENCE_RELATIONSHIP" => {
-                let entity = ProductDefinitionOccurrenceRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinitionOccurrenceRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionOccurrenceRelationship>(),
@@ -43122,7 +46791,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_PROCESS" => {
-                let entity = ProductDefinitionProcess::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ProductDefinitionProcess::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ProductDefinitionProcess::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionProcess>(),
@@ -43130,7 +46803,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_RELATIONSHIP" => {
-                let entity = ProductDefinitionRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinitionRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionRelationship>(),
@@ -43138,7 +46811,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_RESOURCE" => {
-                let entity = ProductDefinitionResource::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinitionResource::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionResource>(),
@@ -43146,7 +46819,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_SHAPE" => {
-                let entity = ProductDefinitionShape::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinitionShape::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionShape>(),
@@ -43154,7 +46827,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_SUBSTITUTE" => {
-                let entity = ProductDefinitionSubstitute::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinitionSubstitute::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionSubstitute>(),
@@ -43162,7 +46835,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_USAGE" => {
-                let entity = ProductDefinitionUsage::form_parameters(typed_parameter.parameters);
+                let entity = ProductDefinitionUsage::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionUsage>(),
@@ -43170,7 +46843,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_DEFINITION_WITH_ASSOCIATED_DOCUMENTS" => {
-                let entity = ProductDefinitionWithAssociatedDocuments::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ProductDefinitionWithAssociatedDocuments::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ProductDefinitionWithAssociatedDocuments::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductDefinitionWithAssociatedDocuments>(),
@@ -43178,7 +46855,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_IDENTIFICATION" => {
-                let entity = ProductIdentification::form_parameters(typed_parameter.parameters);
+                let entity = ProductIdentification::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductIdentification>(),
@@ -43186,7 +46863,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_PROCESS_PLAN" => {
-                let entity = ProductProcessPlan::form_parameters(typed_parameter.parameters);
+                let entity = ProductProcessPlan::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductProcessPlan>(),
@@ -43194,7 +46871,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_RELATED_PRODUCT_CATEGORY" => {
-                let entity = ProductRelatedProductCategory::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ProductRelatedProductCategory::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ProductRelatedProductCategory::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductRelatedProductCategory>(),
@@ -43202,7 +46883,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PRODUCT_SPECIFICATION" => {
-                let entity = ProductSpecification::form_parameters(typed_parameter.parameters);
+                let entity = ProductSpecification::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProductSpecification>(),
@@ -43210,7 +46891,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROJECTED_ZONE_DEFINITION" => {
-                let entity = ProjectedZoneDefinition::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ProjectedZoneDefinition::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ProjectedZoneDefinition::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProjectedZoneDefinition>(),
@@ -43218,7 +46903,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROJECTION_CURVE" => {
-                let entity = ProjectionCurve::form_parameters(typed_parameter.parameters);
+                let entity = ProjectionCurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProjectionCurve>(),
@@ -43226,7 +46911,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROJECTION_DIRECTED_CALLOUT" => {
-                let entity = ProjectionDirectedCallout::form_parameters(typed_parameter.parameters);
+                let entity = ProjectionDirectedCallout::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ProjectionDirectedCallout>(),
@@ -43234,7 +46919,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROMISSORY_USAGE_OCCURRENCE" => {
-                let entity = PromissoryUsageOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = PromissoryUsageOccurrence::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PromissoryUsageOccurrence>(),
@@ -43242,7 +46927,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROPERTY_DEFINITION" => {
-                let entity = PropertyDefinition::form_parameters(typed_parameter.parameters);
+                let entity = PropertyDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PropertyDefinition>(),
@@ -43250,7 +46935,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROPERTY_DEFINITION_RELATIONSHIP" => {
-                let entity = PropertyDefinitionRelationship::form_parameters(typed_parameter.parameters);
+                let entity = PropertyDefinitionRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PropertyDefinitionRelationship>(),
@@ -43258,7 +46943,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROPERTY_DEFINITION_REPRESENTATION" => {
-                let entity = PropertyDefinitionRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = PropertyDefinitionRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PropertyDefinitionRepresentation>(),
@@ -43266,7 +46951,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "PROPERTY_PROCESS" => {
-                let entity = PropertyProcess::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    PropertyProcess::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    PropertyProcess::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<PropertyProcess>(),
@@ -43274,7 +46963,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "QUALIFIED_REPRESENTATION_ITEM" => {
-                let entity = QualifiedRepresentationItem::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    QualifiedRepresentationItem::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    QualifiedRepresentationItem::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<QualifiedRepresentationItem>(),
@@ -43282,7 +46975,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "QUALITATIVE_UNCERTAINTY" => {
-                let entity = QualitativeUncertainty::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    QualitativeUncertainty::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    QualitativeUncertainty::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<QualitativeUncertainty>(),
@@ -43290,7 +46987,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "QUANTIFIED_ASSEMBLY_COMPONENT_USAGE" => {
-                let entity = QuantifiedAssemblyComponentUsage::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    QuantifiedAssemblyComponentUsage::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    QuantifiedAssemblyComponentUsage::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<QuantifiedAssemblyComponentUsage>(),
@@ -43298,7 +46999,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "QUASI_UNIFORM_CURVE" => {
-                let entity = QuasiUniformCurve::form_parameters(typed_parameter.parameters);
+                let entity = QuasiUniformCurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<QuasiUniformCurve>(),
@@ -43306,7 +47007,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "QUASI_UNIFORM_SURFACE" => {
-                let entity = QuasiUniformSurface::form_parameters(typed_parameter.parameters);
+                let entity = QuasiUniformSurface::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<QuasiUniformSurface>(),
@@ -43314,7 +47015,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RACK_AND_PINION_PAIR" => {
-                let entity = RackAndPinionPair::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RackAndPinionPair::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RackAndPinionPair::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RackAndPinionPair>(),
@@ -43322,7 +47027,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RACK_AND_PINION_PAIR_RANGE" => {
-                let entity = RackAndPinionPairRange::form_parameters(typed_parameter.parameters);
+                let entity = RackAndPinionPairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RackAndPinionPairRange>(),
@@ -43330,7 +47035,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RACK_AND_PINION_PAIR_VALUE" => {
-                let entity = RackAndPinionPairValue::form_parameters(typed_parameter.parameters);
+                let entity = RackAndPinionPairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RackAndPinionPairValue>(),
@@ -43338,7 +47043,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RADIUS_DIMENSION" => {
-                let entity = RadiusDimension::form_parameters(typed_parameter.parameters);
+                let entity = RadiusDimension::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RadiusDimension>(),
@@ -43346,7 +47051,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RATIO_MEASURE_WITH_UNIT" => {
-                let entity = RatioMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = RatioMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RatioMeasureWithUnit>(),
@@ -43354,11 +47059,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RATIO_UNIT" => {
-                let entity = RatioUnit::form_parameters(typed_parameter.parameters);
+                let entity = RatioUnit::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<RatioUnit>(), Box::new(entity)))
             }
             "RATIONAL_B_SPLINE_CURVE" => {
-                let entity = RationalBSplineCurve::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RationalBSplineCurve::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RationalBSplineCurve::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RationalBSplineCurve>(),
@@ -43366,7 +47075,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RATIONAL_B_SPLINE_SURFACE" => {
-                let entity = RationalBSplineSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RationalBSplineSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RationalBSplineSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RationalBSplineSurface>(),
@@ -43374,11 +47087,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REAL_LITERAL" => {
-                let entity = RealLiteral::form_parameters(typed_parameter.parameters);
+                let entity = RealLiteral::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<RealLiteral>(), Box::new(entity)))
             }
             "REAL_NUMERIC_VARIABLE" => {
-                let entity = RealNumericVariable::form_parameters(typed_parameter.parameters);
+                let entity = RealNumericVariable::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RealNumericVariable>(),
@@ -43386,7 +47099,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RECTANGULAR_CLOSED_PROFILE" => {
-                let entity = RectangularClosedProfile::form_parameters(typed_parameter.parameters);
+                let entity = RectangularClosedProfile::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RectangularClosedProfile>(),
@@ -43394,7 +47107,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RECTANGULAR_COMPOSITE_SURFACE" => {
-                let entity = RectangularCompositeSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RectangularCompositeSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RectangularCompositeSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RectangularCompositeSurface>(),
@@ -43402,7 +47119,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RECTANGULAR_PATTERN" => {
-                let entity = RectangularPattern::form_parameters(typed_parameter.parameters);
+                let entity = RectangularPattern::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RectangularPattern>(),
@@ -43410,7 +47127,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RECTANGULAR_TRIMMED_SURFACE" => {
-                let entity = RectangularTrimmedSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RectangularTrimmedSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RectangularTrimmedSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RectangularTrimmedSurface>(),
@@ -43418,7 +47139,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REFERENCED_MODIFIED_DATUM" => {
-                let entity = ReferencedModifiedDatum::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ReferencedModifiedDatum::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ReferencedModifiedDatum::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ReferencedModifiedDatum>(),
@@ -43426,7 +47151,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RELATIVE_EVENT_OCCURRENCE" => {
-                let entity = RelativeEventOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RelativeEventOccurrence::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RelativeEventOccurrence::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RelativeEventOccurrence>(),
@@ -43434,7 +47163,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REP_ITEM_GROUP" => {
-                let entity = RepItemGroup::form_parameters(typed_parameter.parameters);
+                let entity = RepItemGroup::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RepItemGroup>(),
@@ -43442,7 +47171,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REPARAMETRISED_COMPOSITE_CURVE_SEGMENT" => {
-                let entity = ReparametrisedCompositeCurveSegment::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ReparametrisedCompositeCurveSegment::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ReparametrisedCompositeCurveSegment::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ReparametrisedCompositeCurveSegment>(),
@@ -43450,7 +47183,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REPLICATE_FEATURE" => {
-                let entity = ReplicateFeature::form_parameters(typed_parameter.parameters);
+                let entity = ReplicateFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ReplicateFeature>(),
@@ -43458,7 +47191,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REPRESENTATION" => {
-                let entity = Representation::form_parameters(typed_parameter.parameters);
+                let entity = Representation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<Representation>(),
@@ -43466,7 +47199,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REPRESENTATION_CONTEXT" => {
-                let entity = RepresentationContext::form_parameters(typed_parameter.parameters);
+                let entity = RepresentationContext::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RepresentationContext>(),
@@ -43474,7 +47207,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REPRESENTATION_ITEM" => {
-                let entity = RepresentationItem::form_parameters(typed_parameter.parameters);
+                let entity = RepresentationItem::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RepresentationItem>(),
@@ -43482,7 +47215,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REPRESENTATION_MAP" => {
-                let entity = RepresentationMap::form_parameters(typed_parameter.parameters);
+                let entity = RepresentationMap::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RepresentationMap>(),
@@ -43490,7 +47223,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REPRESENTATION_RELATIONSHIP" => {
-                let entity = RepresentationRelationship::form_parameters(typed_parameter.parameters);
+                let entity = RepresentationRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RepresentationRelationship>(),
@@ -43498,7 +47231,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REPRESENTATION_RELATIONSHIP_WITH_TRANSFORMATION" => {
-                let entity = RepresentationRelationshipWithTransformation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RepresentationRelationshipWithTransformation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RepresentationRelationshipWithTransformation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RepresentationRelationshipWithTransformation>(),
@@ -43506,7 +47243,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REQUIREMENT_FOR_ACTION_RESOURCE" => {
-                let entity = RequirementForActionResource::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RequirementForActionResource::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RequirementForActionResource::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RequirementForActionResource>(),
@@ -43514,7 +47255,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RESOURCE_PROPERTY" => {
-                let entity = ResourceProperty::form_parameters(typed_parameter.parameters);
+                let entity = ResourceProperty::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ResourceProperty>(),
@@ -43522,7 +47263,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RESOURCE_PROPERTY_REPRESENTATION" => {
-                let entity = ResourcePropertyRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = ResourcePropertyRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ResourcePropertyRepresentation>(),
@@ -43530,7 +47271,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RESOURCE_REQUIREMENT_TYPE" => {
-                let entity = ResourceRequirementType::form_parameters(typed_parameter.parameters);
+                let entity = ResourceRequirementType::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ResourceRequirementType>(),
@@ -43538,7 +47279,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RESULTING_PATH" => {
-                let entity = ResultingPath::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ResultingPath::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ResultingPath::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ResultingPath>(),
@@ -43546,11 +47291,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RETENTION" => {
-                let entity = Retention::form_parameters(typed_parameter.parameters);
+                let entity = Retention::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Retention>(), Box::new(entity)))
             }
             "REVOLUTE_PAIR" => {
-                let entity = RevolutePair::form_parameters(typed_parameter.parameters);
+                let entity = RevolutePair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RevolutePair>(),
@@ -43558,7 +47303,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REVOLUTE_PAIR_RANGE" => {
-                let entity = RevolutePairRange::form_parameters(typed_parameter.parameters);
+                let entity = RevolutePairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RevolutePairRange>(),
@@ -43566,7 +47311,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REVOLUTE_PAIR_VALUE" => {
-                let entity = RevolutePairValue::form_parameters(typed_parameter.parameters);
+                let entity = RevolutePairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RevolutePairValue>(),
@@ -43574,7 +47319,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REVOLVED_AREA_SOLID" => {
-                let entity = RevolvedAreaSolid::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RevolvedAreaSolid::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RevolvedAreaSolid::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RevolvedAreaSolid>(),
@@ -43582,7 +47331,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "REVOLVED_FACE_SOLID" => {
-                let entity = RevolvedFaceSolid::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RevolvedFaceSolid::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RevolvedFaceSolid::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RevolvedFaceSolid>(),
@@ -43590,11 +47343,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RIB" => {
-                let entity = Rib::form_parameters(typed_parameter.parameters);
+                let entity = Rib::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Rib>(), Box::new(entity)))
             }
             "RIGHT_ANGULAR_WEDGE" => {
-                let entity = RightAngularWedge::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RightAngularWedge::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RightAngularWedge::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RightAngularWedge>(),
@@ -43602,7 +47359,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RIGHT_CIRCULAR_CONE" => {
-                let entity = RightCircularCone::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RightCircularCone::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RightCircularCone::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RightCircularCone>(),
@@ -43610,7 +47371,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RIGHT_CIRCULAR_CYLINDER" => {
-                let entity = RightCircularCylinder::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RightCircularCylinder::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RightCircularCylinder::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RightCircularCylinder>(),
@@ -43618,7 +47383,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ROLE_ASSOCIATION" => {
-                let entity = RoleAssociation::form_parameters(typed_parameter.parameters);
+                let entity = RoleAssociation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RoleAssociation>(),
@@ -43626,7 +47391,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ROLLING_CURVE_PAIR" => {
-                let entity = RollingCurvePair::form_parameters(typed_parameter.parameters);
+                let entity = RollingCurvePair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RollingCurvePair>(),
@@ -43634,7 +47399,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ROLLING_CURVE_PAIR_VALUE" => {
-                let entity = RollingCurvePairValue::form_parameters(typed_parameter.parameters);
+                let entity = RollingCurvePairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RollingCurvePairValue>(),
@@ -43642,7 +47407,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ROLLING_SURFACE_PAIR" => {
-                let entity = RollingSurfacePair::form_parameters(typed_parameter.parameters);
+                let entity = RollingSurfacePair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RollingSurfacePair>(),
@@ -43650,7 +47415,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ROLLING_SURFACE_PAIR_VALUE" => {
-                let entity = RollingSurfacePairValue::form_parameters(typed_parameter.parameters);
+                let entity = RollingSurfacePairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RollingSurfacePairValue>(),
@@ -43658,7 +47423,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ROTATION_ABOUT_DIRECTION" => {
-                let entity = RotationAboutDirection::form_parameters(typed_parameter.parameters);
+                let entity = RotationAboutDirection::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RotationAboutDirection>(),
@@ -43666,11 +47431,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ROUND_HOLE" => {
-                let entity = RoundHole::form_parameters(typed_parameter.parameters);
+                let entity = RoundHole::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<RoundHole>(), Box::new(entity)))
             }
             "ROUNDED_U_PROFILE" => {
-                let entity = RoundedUProfile::form_parameters(typed_parameter.parameters);
+                let entity = RoundedUProfile::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RoundedUProfile>(),
@@ -43678,7 +47443,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "ROUNDNESS_TOLERANCE" => {
-                let entity = RoundnessTolerance::form_parameters(typed_parameter.parameters);
+                let entity = RoundnessTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RoundnessTolerance>(),
@@ -43686,7 +47451,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RULED_SURFACE_SWEPT_AREA_SOLID" => {
-                let entity = RuledSurfaceSweptAreaSolid::form_parameters(typed_parameter.parameters);
+                let entity = RuledSurfaceSweptAreaSolid::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RuledSurfaceSweptAreaSolid>(),
@@ -43694,7 +47459,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RUNOUT_ZONE_DEFINITION" => {
-                let entity = RunoutZoneDefinition::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RunoutZoneDefinition::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RunoutZoneDefinition::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RunoutZoneDefinition>(),
@@ -43702,7 +47471,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RUNOUT_ZONE_ORIENTATION" => {
-                let entity = RunoutZoneOrientation::form_parameters(typed_parameter.parameters);
+                let entity = RunoutZoneOrientation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RunoutZoneOrientation>(),
@@ -43710,7 +47479,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "RUNOUT_ZONE_ORIENTATION_REFERENCE_DIRECTION" => {
-                let entity = RunoutZoneOrientationReferenceDirection::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    RunoutZoneOrientationReferenceDirection::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    RunoutZoneOrientationReferenceDirection::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<RunoutZoneOrientationReferenceDirection>(),
@@ -43718,11 +47491,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SCREW_PAIR" => {
-                let entity = ScrewPair::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ScrewPair::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ScrewPair::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<ScrewPair>(), Box::new(entity)))
             }
             "SCREW_PAIR_RANGE" => {
-                let entity = ScrewPairRange::form_parameters(typed_parameter.parameters);
+                let entity = ScrewPairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ScrewPairRange>(),
@@ -43730,7 +47507,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SCREW_PAIR_VALUE" => {
-                let entity = ScrewPairValue::form_parameters(typed_parameter.parameters);
+                let entity = ScrewPairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ScrewPairValue>(),
@@ -43738,15 +47515,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SEAM_CURVE" => {
-                let entity = SeamCurve::form_parameters(typed_parameter.parameters);
+                let entity = SeamCurve::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<SeamCurve>(), Box::new(entity)))
             }
             "SEAM_EDGE" => {
-                let entity = SeamEdge::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SeamEdge::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SeamEdge::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<SeamEdge>(), Box::new(entity)))
             }
             "SECURITY_CLASSIFICATION" => {
-                let entity = SecurityClassification::form_parameters(typed_parameter.parameters);
+                let entity = SecurityClassification::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SecurityClassification>(),
@@ -43754,7 +47535,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SECURITY_CLASSIFICATION_LEVEL" => {
-                let entity = SecurityClassificationLevel::form_parameters(typed_parameter.parameters);
+                let entity = SecurityClassificationLevel::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SecurityClassificationLevel>(),
@@ -43762,7 +47543,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SERIAL_NUMBERED_EFFECTIVITY" => {
-                let entity = SerialNumberedEffectivity::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SerialNumberedEffectivity::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SerialNumberedEffectivity::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SerialNumberedEffectivity>(),
@@ -43770,11 +47555,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHAPE_ASPECT" => {
-                let entity = ShapeAspect::form_parameters(typed_parameter.parameters);
+                let entity = ShapeAspect::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<ShapeAspect>(), Box::new(entity)))
             }
             "SHAPE_ASPECT_ASSOCIATIVITY" => {
-                let entity = ShapeAspectAssociativity::form_parameters(typed_parameter.parameters);
+                let entity = ShapeAspectAssociativity::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShapeAspectAssociativity>(),
@@ -43782,7 +47567,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHAPE_ASPECT_DERIVING_RELATIONSHIP" => {
-                let entity = ShapeAspectDerivingRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ShapeAspectDerivingRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShapeAspectDerivingRelationship>(),
@@ -43790,7 +47575,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHAPE_ASPECT_RELATIONSHIP" => {
-                let entity = ShapeAspectRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ShapeAspectRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShapeAspectRelationship>(),
@@ -43798,7 +47583,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHAPE_ASPECT_TRANSITION" => {
-                let entity = ShapeAspectTransition::form_parameters(typed_parameter.parameters);
+                let entity = ShapeAspectTransition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShapeAspectTransition>(),
@@ -43806,7 +47591,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHAPE_DEFINING_RELATIONSHIP" => {
-                let entity = ShapeDefiningRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ShapeDefiningRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShapeDefiningRelationship>(),
@@ -43814,7 +47599,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHAPE_DEFINITION_REPRESENTATION" => {
-                let entity = ShapeDefinitionRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = ShapeDefinitionRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShapeDefinitionRepresentation>(),
@@ -43822,7 +47607,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHAPE_DIMENSION_REPRESENTATION" => {
-                let entity = ShapeDimensionRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = ShapeDimensionRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShapeDimensionRepresentation>(),
@@ -43830,7 +47615,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHAPE_REPRESENTATION" => {
-                let entity = ShapeRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = ShapeRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShapeRepresentation>(),
@@ -43838,7 +47623,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHAPE_REPRESENTATION_RELATIONSHIP" => {
-                let entity = ShapeRepresentationRelationship::form_parameters(typed_parameter.parameters);
+                let entity = ShapeRepresentationRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShapeRepresentationRelationship>(),
@@ -43846,7 +47631,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHAPE_REPRESENTATION_WITH_PARAMETERS" => {
-                let entity = ShapeRepresentationWithParameters::form_parameters(typed_parameter.parameters);
+                let entity = ShapeRepresentationWithParameters::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShapeRepresentationWithParameters>(),
@@ -43854,7 +47639,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SHELL_BASED_SURFACE_MODEL" => {
-                let entity = ShellBasedSurfaceModel::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ShellBasedSurfaceModel::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ShellBasedSurfaceModel::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ShellBasedSurfaceModel>(),
@@ -43862,11 +47651,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SI_UNIT" => {
-                let entity = SiUnit::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SiUnit::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SiUnit::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<SiUnit>(), Box::new(entity)))
             }
             "SIMPLE_PAIR_RANGE" => {
-                let entity = SimplePairRange::form_parameters(typed_parameter.parameters);
+                let entity = SimplePairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SimplePairRange>(),
@@ -43874,11 +47667,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SIN_FUNCTION" => {
-                let entity = SinFunction::form_parameters(typed_parameter.parameters);
+                let entity = SinFunction::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<SinFunction>(), Box::new(entity)))
             }
             "SLASH_EXPRESSION" => {
-                let entity = SlashExpression::form_parameters(typed_parameter.parameters);
+                let entity = SlashExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SlashExpression>(),
@@ -43886,7 +47679,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SLIDING_CURVE_PAIR" => {
-                let entity = SlidingCurvePair::form_parameters(typed_parameter.parameters);
+                let entity = SlidingCurvePair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SlidingCurvePair>(),
@@ -43894,7 +47687,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SLIDING_CURVE_PAIR_VALUE" => {
-                let entity = SlidingCurvePairValue::form_parameters(typed_parameter.parameters);
+                let entity = SlidingCurvePairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SlidingCurvePairValue>(),
@@ -43902,7 +47695,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SLIDING_SURFACE_PAIR" => {
-                let entity = SlidingSurfacePair::form_parameters(typed_parameter.parameters);
+                let entity = SlidingSurfacePair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SlidingSurfacePair>(),
@@ -43910,7 +47703,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SLIDING_SURFACE_PAIR_VALUE" => {
-                let entity = SlidingSurfacePairValue::form_parameters(typed_parameter.parameters);
+                let entity = SlidingSurfacePairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SlidingSurfacePairValue>(),
@@ -43918,15 +47711,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SLOT" => {
-                let entity = Slot::form_parameters(typed_parameter.parameters);
+                let entity = Slot::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Slot>(), Box::new(entity)))
             }
             "SLOT_END" => {
-                let entity = SlotEnd::form_parameters(typed_parameter.parameters);
+                let entity = SlotEnd::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<SlotEnd>(), Box::new(entity)))
             }
             "SOLID_ANGLE_MEASURE_WITH_UNIT" => {
-                let entity = SolidAngleMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = SolidAngleMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SolidAngleMeasureWithUnit>(),
@@ -43934,7 +47727,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SOLID_ANGLE_UNIT" => {
-                let entity = SolidAngleUnit::form_parameters(typed_parameter.parameters);
+                let entity = SolidAngleUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SolidAngleUnit>(),
@@ -43942,11 +47735,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SOLID_MODEL" => {
-                let entity = SolidModel::form_parameters(typed_parameter.parameters);
+                let entity = SolidModel::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<SolidModel>(), Box::new(entity)))
             }
             "SOLID_REPLICA" => {
-                let entity = SolidReplica::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SolidReplica::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SolidReplica::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SolidReplica>(),
@@ -43954,7 +47751,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SPECIFIED_HIGHER_USAGE_OCCURRENCE" => {
-                let entity = SpecifiedHigherUsageOccurrence::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SpecifiedHigherUsageOccurrence::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SpecifiedHigherUsageOccurrence::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SpecifiedHigherUsageOccurrence>(),
@@ -43962,11 +47763,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SPHERE" => {
-                let entity = Sphere::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Sphere::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Sphere::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Sphere>(), Box::new(entity)))
             }
             "SPHERICAL_PAIR" => {
-                let entity = SphericalPair::form_parameters(typed_parameter.parameters);
+                let entity = SphericalPair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SphericalPair>(),
@@ -43974,7 +47779,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SPHERICAL_PAIR_RANGE" => {
-                let entity = SphericalPairRange::form_parameters(typed_parameter.parameters);
+                let entity = SphericalPairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SphericalPairRange>(),
@@ -43982,7 +47787,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SPHERICAL_PAIR_VALUE" => {
-                let entity = SphericalPairValue::form_parameters(typed_parameter.parameters);
+                let entity = SphericalPairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SphericalPairValue>(),
@@ -43990,7 +47795,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SPHERICAL_SURFACE" => {
-                let entity = SphericalSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SphericalSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SphericalSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SphericalSurface>(),
@@ -43998,7 +47807,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SQUARE_ROOT_FUNCTION" => {
-                let entity = SquareRootFunction::form_parameters(typed_parameter.parameters);
+                let entity = SquareRootFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SquareRootFunction>(),
@@ -44006,7 +47815,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SQUARE_U_PROFILE" => {
-                let entity = SquareUProfile::form_parameters(typed_parameter.parameters);
+                let entity = SquareUProfile::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SquareUProfile>(),
@@ -44014,7 +47823,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "STANDARD_UNCERTAINTY" => {
-                let entity = StandardUncertainty::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    StandardUncertainty::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    StandardUncertainty::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<StandardUncertainty>(),
@@ -44022,7 +47835,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "STRAIGHTNESS_TOLERANCE" => {
-                let entity = StraightnessTolerance::form_parameters(typed_parameter.parameters);
+                let entity = StraightnessTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<StraightnessTolerance>(),
@@ -44030,7 +47843,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "STRING_LITERAL" => {
-                let entity = StringLiteral::form_parameters(typed_parameter.parameters);
+                let entity = StringLiteral::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<StringLiteral>(),
@@ -44038,7 +47851,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "STRING_VARIABLE" => {
-                let entity = StringVariable::form_parameters(typed_parameter.parameters);
+                let entity = StringVariable::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<StringVariable>(),
@@ -44046,7 +47859,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "STRUCTURED_DIMENSION_CALLOUT" => {
-                let entity = StructuredDimensionCallout::form_parameters(typed_parameter.parameters);
+                let entity = StructuredDimensionCallout::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<StructuredDimensionCallout>(),
@@ -44054,19 +47867,31 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "STYLED_ITEM" => {
-                let entity = StyledItem::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    StyledItem::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    StyledItem::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<StyledItem>(), Box::new(entity)))
             }
             "SUBEDGE" => {
-                let entity = Subedge::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Subedge::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Subedge::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Subedge>(), Box::new(entity)))
             }
             "SUBFACE" => {
-                let entity = Subface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Subface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Subface::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Subface>(), Box::new(entity)))
             }
             "SUBSTRING_EXPRESSION" => {
-                let entity = SubstringExpression::form_parameters(typed_parameter.parameters);
+                let entity = SubstringExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SubstringExpression>(),
@@ -44074,11 +47899,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE" => {
-                let entity = Surface::form_parameters(typed_parameter.parameters);
+                let entity = Surface::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Surface>(), Box::new(entity)))
             }
             "SURFACE_CONDITION_CALLOUT" => {
-                let entity = SurfaceConditionCallout::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceConditionCallout::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceConditionCallout>(),
@@ -44086,7 +47911,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_CURVE" => {
-                let entity = SurfaceCurve::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SurfaceCurve::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SurfaceCurve::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceCurve>(),
@@ -44094,7 +47923,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_CURVE_SWEPT_AREA_SOLID" => {
-                let entity = SurfaceCurveSweptAreaSolid::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SurfaceCurveSweptAreaSolid::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SurfaceCurveSweptAreaSolid::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceCurveSweptAreaSolid>(),
@@ -44102,7 +47935,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_OF_LINEAR_EXTRUSION" => {
-                let entity = SurfaceOfLinearExtrusion::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SurfaceOfLinearExtrusion::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SurfaceOfLinearExtrusion::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceOfLinearExtrusion>(),
@@ -44110,7 +47947,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_OF_REVOLUTION" => {
-                let entity = SurfaceOfRevolution::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SurfaceOfRevolution::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SurfaceOfRevolution::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceOfRevolution>(),
@@ -44118,11 +47959,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_PAIR" => {
-                let entity = SurfacePair::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SurfacePair::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SurfacePair::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<SurfacePair>(), Box::new(entity)))
             }
             "SURFACE_PAIR_RANGE" => {
-                let entity = SurfacePairRange::form_parameters(typed_parameter.parameters);
+                let entity = SurfacePairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfacePairRange>(),
@@ -44130,7 +47975,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_PATCH" => {
-                let entity = SurfacePatch::form_parameters(typed_parameter.parameters);
+                let entity = SurfacePatch::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfacePatch>(),
@@ -44138,7 +47983,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_PROFILE_TOLERANCE" => {
-                let entity = SurfaceProfileTolerance::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceProfileTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceProfileTolerance>(),
@@ -44146,7 +47991,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_RENDERING_PROPERTIES" => {
-                let entity = SurfaceRenderingProperties::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceRenderingProperties::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceRenderingProperties>(),
@@ -44154,7 +47999,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_REPLICA" => {
-                let entity = SurfaceReplica::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SurfaceReplica::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SurfaceReplica::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceReplica>(),
@@ -44162,7 +48011,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_SIDE_STYLE" => {
-                let entity = SurfaceSideStyle::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceSideStyle::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceSideStyle>(),
@@ -44170,7 +48019,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_BOUNDARY" => {
-                let entity = SurfaceStyleBoundary::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceStyleBoundary::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleBoundary>(),
@@ -44178,7 +48027,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_CONTROL_GRID" => {
-                let entity = SurfaceStyleControlGrid::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceStyleControlGrid::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleControlGrid>(),
@@ -44186,7 +48035,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_FILL_AREA" => {
-                let entity = SurfaceStyleFillArea::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceStyleFillArea::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleFillArea>(),
@@ -44194,7 +48043,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_PARAMETER_LINE" => {
-                let entity = SurfaceStyleParameterLine::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceStyleParameterLine::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleParameterLine>(),
@@ -44202,7 +48051,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_REFLECTANCE_AMBIENT" => {
-                let entity = SurfaceStyleReflectanceAmbient::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceStyleReflectanceAmbient::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleReflectanceAmbient>(),
@@ -44210,7 +48059,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_REFLECTANCE_AMBIENT_DIFFUSE" => {
-                let entity = SurfaceStyleReflectanceAmbientDiffuse::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SurfaceStyleReflectanceAmbientDiffuse::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SurfaceStyleReflectanceAmbientDiffuse::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleReflectanceAmbientDiffuse>(),
@@ -44218,7 +48071,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_REFLECTANCE_AMBIENT_DIFFUSE_SPECULAR" => {
-                let entity = SurfaceStyleReflectanceAmbientDiffuseSpecular::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SurfaceStyleReflectanceAmbientDiffuseSpecular::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SurfaceStyleReflectanceAmbientDiffuseSpecular::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleReflectanceAmbientDiffuseSpecular>(),
@@ -44226,7 +48083,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_RENDERING" => {
-                let entity = SurfaceStyleRendering::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceStyleRendering::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleRendering>(),
@@ -44234,7 +48091,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_RENDERING_WITH_PROPERTIES" => {
-                let entity = SurfaceStyleRenderingWithProperties::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SurfaceStyleRenderingWithProperties::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SurfaceStyleRenderingWithProperties::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleRenderingWithProperties>(),
@@ -44242,7 +48103,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_SEGMENTATION_CURVE" => {
-                let entity = SurfaceStyleSegmentationCurve::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceStyleSegmentationCurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleSegmentationCurve>(),
@@ -44250,7 +48111,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_SILHOUETTE" => {
-                let entity = SurfaceStyleSilhouette::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceStyleSilhouette::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleSilhouette>(),
@@ -44258,7 +48119,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_TRANSPARENT" => {
-                let entity = SurfaceStyleTransparent::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceStyleTransparent::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleTransparent>(),
@@ -44266,7 +48127,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_STYLE_USAGE" => {
-                let entity = SurfaceStyleUsage::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceStyleUsage::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceStyleUsage>(),
@@ -44274,7 +48135,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SURFACE_TEXTURE_REPRESENTATION" => {
-                let entity = SurfaceTextureRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = SurfaceTextureRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SurfaceTextureRepresentation>(),
@@ -44282,7 +48143,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SWEPT_AREA_SOLID" => {
-                let entity = SweptAreaSolid::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SweptAreaSolid::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SweptAreaSolid::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SweptAreaSolid>(),
@@ -44290,7 +48155,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SWEPT_DISK_SOLID" => {
-                let entity = SweptDiskSolid::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SweptDiskSolid::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SweptDiskSolid::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SweptDiskSolid>(),
@@ -44298,7 +48167,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SWEPT_FACE_SOLID" => {
-                let entity = SweptFaceSolid::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SweptFaceSolid::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SweptFaceSolid::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SweptFaceSolid>(),
@@ -44306,7 +48179,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SWEPT_SURFACE" => {
-                let entity = SweptSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SweptSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SweptSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SweptSurface>(),
@@ -44314,7 +48191,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SYMBOL_COLOUR" => {
-                let entity = SymbolColour::form_parameters(typed_parameter.parameters);
+                let entity = SymbolColour::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SymbolColour>(),
@@ -44322,7 +48199,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SYMBOL_REPRESENTATION" => {
-                let entity = SymbolRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = SymbolRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SymbolRepresentation>(),
@@ -44330,7 +48207,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SYMBOL_REPRESENTATION_MAP" => {
-                let entity = SymbolRepresentationMap::form_parameters(typed_parameter.parameters);
+                let entity = SymbolRepresentationMap::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SymbolRepresentationMap>(),
@@ -44338,11 +48215,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SYMBOL_STYLE" => {
-                let entity = SymbolStyle::form_parameters(typed_parameter.parameters);
+                let entity = SymbolStyle::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<SymbolStyle>(), Box::new(entity)))
             }
             "SYMBOL_TARGET" => {
-                let entity = SymbolTarget::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    SymbolTarget::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    SymbolTarget::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SymbolTarget>(),
@@ -44350,7 +48231,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SYMMETRIC_SHAPE_ASPECT" => {
-                let entity = SymmetricShapeAspect::form_parameters(typed_parameter.parameters);
+                let entity = SymmetricShapeAspect::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SymmetricShapeAspect>(),
@@ -44358,7 +48239,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "SYMMETRY_TOLERANCE" => {
-                let entity = SymmetryTolerance::form_parameters(typed_parameter.parameters);
+                let entity = SymmetryTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<SymmetryTolerance>(),
@@ -44366,7 +48247,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TACTILE_APPEARANCE_REPRESENTATION" => {
-                let entity = TactileAppearanceRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = TactileAppearanceRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TactileAppearanceRepresentation>(),
@@ -44374,23 +48255,27 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TAN_FUNCTION" => {
-                let entity = TanFunction::form_parameters(typed_parameter.parameters);
+                let entity = TanFunction::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<TanFunction>(), Box::new(entity)))
             }
             "TANGENT" => {
-                let entity = Tangent::form_parameters(typed_parameter.parameters);
+                let entity = Tangent::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Tangent>(), Box::new(entity)))
             }
             "TAPER" => {
-                let entity = Taper::form_parameters(typed_parameter.parameters);
+                let entity = Taper::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Taper>(), Box::new(entity)))
             }
             "TEE_PROFILE" => {
-                let entity = TeeProfile::form_parameters(typed_parameter.parameters);
+                let entity = TeeProfile::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<TeeProfile>(), Box::new(entity)))
             }
             "TERMINATOR_SYMBOL" => {
-                let entity = TerminatorSymbol::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TerminatorSymbol::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TerminatorSymbol::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TerminatorSymbol>(),
@@ -44398,11 +48283,19 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TEXT_LITERAL" => {
-                let entity = TextLiteral::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TextLiteral::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TextLiteral::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<TextLiteral>(), Box::new(entity)))
             }
             "TEXT_LITERAL_WITH_ASSOCIATED_CURVES" => {
-                let entity = TextLiteralWithAssociatedCurves::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TextLiteralWithAssociatedCurves::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TextLiteralWithAssociatedCurves::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TextLiteralWithAssociatedCurves>(),
@@ -44410,7 +48303,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TEXT_LITERAL_WITH_BLANKING_BOX" => {
-                let entity = TextLiteralWithBlankingBox::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TextLiteralWithBlankingBox::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TextLiteralWithBlankingBox::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TextLiteralWithBlankingBox>(),
@@ -44418,7 +48315,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TEXT_LITERAL_WITH_DELINEATION" => {
-                let entity = TextLiteralWithDelineation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TextLiteralWithDelineation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TextLiteralWithDelineation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TextLiteralWithDelineation>(),
@@ -44426,7 +48327,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TEXT_LITERAL_WITH_EXTENT" => {
-                let entity = TextLiteralWithExtent::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TextLiteralWithExtent::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TextLiteralWithExtent::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TextLiteralWithExtent>(),
@@ -44434,7 +48339,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TEXT_STRING_REPRESENTATION" => {
-                let entity = TextStringRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TextStringRepresentation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TextStringRepresentation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TextStringRepresentation>(),
@@ -44442,11 +48351,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TEXT_STYLE" => {
-                let entity = TextStyle::form_parameters(typed_parameter.parameters);
+                let entity = TextStyle::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<TextStyle>(), Box::new(entity)))
             }
             "TEXT_STYLE_FOR_DEFINED_FONT" => {
-                let entity = TextStyleForDefinedFont::form_parameters(typed_parameter.parameters);
+                let entity = TextStyleForDefinedFont::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TextStyleForDefinedFont>(),
@@ -44454,7 +48363,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TEXT_STYLE_WITH_BOX_CHARACTERISTICS" => {
-                let entity = TextStyleWithBoxCharacteristics::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TextStyleWithBoxCharacteristics::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TextStyleWithBoxCharacteristics::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TextStyleWithBoxCharacteristics>(),
@@ -44462,7 +48375,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TEXT_STYLE_WITH_MIRROR" => {
-                let entity = TextStyleWithMirror::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TextStyleWithMirror::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TextStyleWithMirror::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TextStyleWithMirror>(),
@@ -44470,7 +48387,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TEXT_STYLE_WITH_SPACING" => {
-                let entity = TextStyleWithSpacing::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TextStyleWithSpacing::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TextStyleWithSpacing::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TextStyleWithSpacing>(),
@@ -44478,7 +48399,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "THERMODYNAMIC_TEMPERATURE_MEASURE_WITH_UNIT" => {
-                let entity = ThermodynamicTemperatureMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = ThermodynamicTemperatureMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ThermodynamicTemperatureMeasureWithUnit>(),
@@ -44486,7 +48407,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "THERMODYNAMIC_TEMPERATURE_UNIT" => {
-                let entity = ThermodynamicTemperatureUnit::form_parameters(typed_parameter.parameters);
+                let entity = ThermodynamicTemperatureUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ThermodynamicTemperatureUnit>(),
@@ -44494,11 +48415,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "THREAD" => {
-                let entity = Thread::form_parameters(typed_parameter.parameters);
+                let entity = Thread::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Thread>(), Box::new(entity)))
             }
             "TIME_INTERVAL" => {
-                let entity = TimeInterval::form_parameters(typed_parameter.parameters);
+                let entity = TimeInterval::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TimeInterval>(),
@@ -44506,7 +48427,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TIME_INTERVAL_BASED_EFFECTIVITY" => {
-                let entity = TimeIntervalBasedEffectivity::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TimeIntervalBasedEffectivity::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TimeIntervalBasedEffectivity::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TimeIntervalBasedEffectivity>(),
@@ -44514,7 +48439,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TIME_INTERVAL_ROLE" => {
-                let entity = TimeIntervalRole::form_parameters(typed_parameter.parameters);
+                let entity = TimeIntervalRole::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TimeIntervalRole>(),
@@ -44522,7 +48447,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TIME_INTERVAL_WITH_BOUNDS" => {
-                let entity = TimeIntervalWithBounds::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TimeIntervalWithBounds::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TimeIntervalWithBounds::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TimeIntervalWithBounds>(),
@@ -44530,7 +48459,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TIME_MEASURE_WITH_UNIT" => {
-                let entity = TimeMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = TimeMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TimeMeasureWithUnit>(),
@@ -44538,11 +48467,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TIME_UNIT" => {
-                let entity = TimeUnit::form_parameters(typed_parameter.parameters);
+                let entity = TimeUnit::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<TimeUnit>(), Box::new(entity)))
             }
             "TOLERANCE_VALUE" => {
-                let entity = ToleranceValue::form_parameters(typed_parameter.parameters);
+                let entity = ToleranceValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ToleranceValue>(),
@@ -44550,7 +48479,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TOLERANCE_ZONE" => {
-                let entity = ToleranceZone::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ToleranceZone::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ToleranceZone::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ToleranceZone>(),
@@ -44558,7 +48491,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TOLERANCE_ZONE_DEFINITION" => {
-                let entity = ToleranceZoneDefinition::form_parameters(typed_parameter.parameters);
+                let entity = ToleranceZoneDefinition::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ToleranceZoneDefinition>(),
@@ -44566,7 +48499,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TOLERANCE_ZONE_FORM" => {
-                let entity = ToleranceZoneForm::form_parameters(typed_parameter.parameters);
+                let entity = ToleranceZoneForm::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ToleranceZoneForm>(),
@@ -44574,7 +48507,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TOPOLOGICAL_REPRESENTATION_ITEM" => {
-                let entity = TopologicalRepresentationItem::form_parameters(typed_parameter.parameters);
+                let entity = TopologicalRepresentationItem::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TopologicalRepresentationItem>(),
@@ -44582,7 +48515,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TOROIDAL_SURFACE" => {
-                let entity = ToroidalSurface::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ToroidalSurface::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ToroidalSurface::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ToroidalSurface>(),
@@ -44590,11 +48527,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TORUS" => {
-                let entity = Torus::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Torus::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Torus::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Torus>(), Box::new(entity)))
             }
             "TOTAL_RUNOUT_TOLERANCE" => {
-                let entity = TotalRunoutTolerance::form_parameters(typed_parameter.parameters);
+                let entity = TotalRunoutTolerance::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TotalRunoutTolerance>(),
@@ -44602,7 +48543,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TRANSITION_FEATURE" => {
-                let entity = TransitionFeature::form_parameters(typed_parameter.parameters);
+                let entity = TransitionFeature::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TransitionFeature>(),
@@ -44610,7 +48551,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TRIMMED_CURVE" => {
-                let entity = TrimmedCurve::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TrimmedCurve::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TrimmedCurve::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TrimmedCurve>(),
@@ -44618,7 +48563,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TWO_DIRECTION_REPEAT_FACTOR" => {
-                let entity = TwoDirectionRepeatFactor::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    TwoDirectionRepeatFactor::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    TwoDirectionRepeatFactor::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TwoDirectionRepeatFactor>(),
@@ -44626,7 +48575,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "TYPE_QUALIFIER" => {
-                let entity = TypeQualifier::form_parameters(typed_parameter.parameters);
+                let entity = TypeQualifier::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<TypeQualifier>(),
@@ -44634,7 +48583,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "UNCERTAINTY_ASSIGNED_REPRESENTATION" => {
-                let entity = UncertaintyAssignedRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    UncertaintyAssignedRepresentation::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    UncertaintyAssignedRepresentation::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<UncertaintyAssignedRepresentation>(),
@@ -44642,7 +48595,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "UNCERTAINTY_MEASURE_WITH_UNIT" => {
-                let entity = UncertaintyMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    UncertaintyMeasureWithUnit::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    UncertaintyMeasureWithUnit::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<UncertaintyMeasureWithUnit>(),
@@ -44650,7 +48607,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "UNCERTAINTY_QUALIFIER" => {
-                let entity = UncertaintyQualifier::form_parameters(typed_parameter.parameters);
+                let entity = UncertaintyQualifier::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<UncertaintyQualifier>(),
@@ -44658,7 +48615,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "UNCONSTRAINED_PAIR" => {
-                let entity = UnconstrainedPair::form_parameters(typed_parameter.parameters);
+                let entity = UnconstrainedPair::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<UnconstrainedPair>(),
@@ -44666,7 +48623,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "UNCONSTRAINED_PAIR_VALUE" => {
-                let entity = UnconstrainedPairValue::form_parameters(typed_parameter.parameters);
+                let entity = UnconstrainedPairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<UnconstrainedPairValue>(),
@@ -44674,7 +48631,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "UNIFORM_CURVE" => {
-                let entity = UniformCurve::form_parameters(typed_parameter.parameters);
+                let entity = UniformCurve::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<UniformCurve>(),
@@ -44682,7 +48639,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "UNIFORM_SURFACE" => {
-                let entity = UniformSurface::form_parameters(typed_parameter.parameters);
+                let entity = UniformSurface::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<UniformSurface>(),
@@ -44690,7 +48647,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "UNIVERSAL_PAIR" => {
-                let entity = UniversalPair::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    UniversalPair::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    UniversalPair::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<UniversalPair>(),
@@ -44698,7 +48659,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "UNIVERSAL_PAIR_RANGE" => {
-                let entity = UniversalPairRange::form_parameters(typed_parameter.parameters);
+                let entity = UniversalPairRange::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<UniversalPairRange>(),
@@ -44706,7 +48667,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "UNIVERSAL_PAIR_VALUE" => {
-                let entity = UniversalPairValue::form_parameters(typed_parameter.parameters);
+                let entity = UniversalPairValue::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<UniversalPairValue>(),
@@ -44714,7 +48675,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "VALUE_FUNCTION" => {
-                let entity = ValueFunction::form_parameters(typed_parameter.parameters);
+                let entity = ValueFunction::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ValueFunction>(),
@@ -44722,11 +48683,15 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "VALUE_RANGE" => {
-                let entity = ValueRange::form_parameters(typed_parameter.parameters);
+                let entity = ValueRange::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<ValueRange>(), Box::new(entity)))
             }
             "VALUE_REPRESENTATION_ITEM" => {
-                let entity = ValueRepresentationItem::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    ValueRepresentationItem::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    ValueRepresentationItem::from_parameters(typed_parameter.parameters)
+                };
                 Some((
                     entity.type_id(),
                     std::any::type_name::<ValueRepresentationItem>(),
@@ -44734,19 +48699,23 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "VECTOR" => {
-                let entity = Vector::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    Vector::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    Vector::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<Vector>(), Box::new(entity)))
             }
             "VECTOR_STYLE" => {
-                let entity = VectorStyle::form_parameters(typed_parameter.parameters);
+                let entity = VectorStyle::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<VectorStyle>(), Box::new(entity)))
             }
             "VEE_PROFILE" => {
-                let entity = VeeProfile::form_parameters(typed_parameter.parameters);
+                let entity = VeeProfile::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<VeeProfile>(), Box::new(entity)))
             }
             "VERSIONED_ACTION_REQUEST" => {
-                let entity = VersionedActionRequest::form_parameters(typed_parameter.parameters);
+                let entity = VersionedActionRequest::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<VersionedActionRequest>(),
@@ -44754,7 +48723,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "VERSIONED_ACTION_REQUEST_RELATIONSHIP" => {
-                let entity = VersionedActionRequestRelationship::form_parameters(typed_parameter.parameters);
+                let entity = VersionedActionRequestRelationship::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<VersionedActionRequestRelationship>(),
@@ -44762,23 +48731,31 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "VERTEX" => {
-                let entity = Vertex::form_parameters(typed_parameter.parameters);
+                let entity = Vertex::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<Vertex>(), Box::new(entity)))
             }
             "VERTEX_LOOP" => {
-                let entity = VertexLoop::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    VertexLoop::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    VertexLoop::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<VertexLoop>(), Box::new(entity)))
             }
             "VERTEX_POINT" => {
-                let entity = VertexPoint::form_parameters(typed_parameter.parameters);
+                let entity = if own_parameters_only {
+                    VertexPoint::from_own_parameters(typed_parameter.parameters)
+                } else {
+                    VertexPoint::from_parameters(typed_parameter.parameters)
+                };
                 Some((entity.type_id(), std::any::type_name::<VertexPoint>(), Box::new(entity)))
             }
             "VIEW_VOLUME" => {
-                let entity = ViewVolume::form_parameters(typed_parameter.parameters);
+                let entity = ViewVolume::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<ViewVolume>(), Box::new(entity)))
             }
             "VISUAL_APPEARANCE_REPRESENTATION" => {
-                let entity = VisualAppearanceRepresentation::form_parameters(typed_parameter.parameters);
+                let entity = VisualAppearanceRepresentation::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<VisualAppearanceRepresentation>(),
@@ -44786,7 +48763,7 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "VOLUME_MEASURE_WITH_UNIT" => {
-                let entity = VolumeMeasureWithUnit::form_parameters(typed_parameter.parameters);
+                let entity = VolumeMeasureWithUnit::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<VolumeMeasureWithUnit>(),
@@ -44794,11 +48771,11 @@ impl StepReader for Ap214Reader {
                 ))
             }
             "VOLUME_UNIT" => {
-                let entity = VolumeUnit::form_parameters(typed_parameter.parameters);
+                let entity = VolumeUnit::from_parameters(typed_parameter.parameters);
                 Some((entity.type_id(), std::any::type_name::<VolumeUnit>(), Box::new(entity)))
             }
             "XOR_EXPRESSION" => {
-                let entity = XorExpression::form_parameters(typed_parameter.parameters);
+                let entity = XorExpression::from_parameters(typed_parameter.parameters);
                 Some((
                     entity.type_id(),
                     std::any::type_name::<XorExpression>(),

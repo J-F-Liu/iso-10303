@@ -7,8 +7,11 @@ use std::collections::{HashMap, HashSet};
 pub struct Generator {
     name: String,
     schema: Schema,
+    /// collected type defs in the schema
     type_infos: HashMap<String, TypeInfo>,
+    /// collected entity defs in the schema
     entity_infos: HashMap<String, EntityInfo>,
+    /// these types will derive Eq, PartialEq, Hash
     hashable_types: HashSet<String>,
 }
 
@@ -476,7 +479,37 @@ impl Generator {
                     }
                 }
             });
-            let form_parameters = if attributes.len() > 0 {
+            let from_parameters = if attributes.len() > 0 {
+                let from_own_parameters =
+                    if attributes.len() > entity_info.attributes.len() && entity_info.attributes.len() > 0 {
+                        let set_fields = entity_info.attributes.iter().enumerate().map(|(index, attr)| {
+                        let field = format_ident!("{}", attr.name);
+                        if attr.optional {
+                            quote! {
+                                #index => entity.#field = if parameter.is_null() {None} else {Some(parameter.into())},
+                            }
+                        } else {
+                            quote! {
+                                #index => entity.#field = parameter.into(),
+                            }
+                        }
+                    });
+                        quote! {
+                            pub fn from_own_parameters(parameters: Vec<Parameter>) -> Self {
+                                let mut entity = #type_name::default();
+                                for (index, parameter) in parameters.into_iter().enumerate() {
+                                    match index {
+                                        #( #set_fields )*
+                                        _ => {}
+                                    }
+                                }
+                                entity
+                            }
+                        }
+                    } else {
+                        quote! {}
+                    };
+
                 let set_fields = attributes.iter().enumerate().map(|(index, attr)| {
                     let field = format_ident!("{}", attr.name);
                     if attr.optional {
@@ -491,24 +524,24 @@ impl Generator {
                 });
                 quote! {
                     impl #type_name {
-                        pub fn form_parameters(parameters: Vec<Parameter>) -> Self {
+                        pub fn from_parameters(parameters: Vec<Parameter>) -> Self {
                             let mut entity = #type_name::default();
-
                             for (index, parameter) in parameters.into_iter().enumerate() {
                                 match index {
                                     #( #set_fields )*
                                     _ => {}
                                 }
                             }
-
                             entity
                         }
+
+                        #from_own_parameters
                     }
                 }
             } else {
                 quote! {
                     impl #type_name {
-                        pub fn form_parameters(_parameters: Vec<Parameter>) -> Self {
+                        pub fn from_parameters(_parameters: Vec<Parameter>) -> Self {
                             #type_name::default()
                         }
                     }
@@ -518,7 +551,7 @@ impl Generator {
                 #trait_code
                 #struct_code
                 #( #impls )*
-                #form_parameters
+                #from_parameters
             }
         }
     }
@@ -650,11 +683,26 @@ impl Generator {
             })
             .map(|name| {
                 let constructor = name.to_uppercase();
-                let type_name = self.entity_infos[name].type_name();
-                quote! {
-                    #constructor => {
-                        let entity = #type_name::form_parameters(typed_parameter.parameters);
-                        Some((entity.type_id(), std::any::type_name::<#type_name>(), Box::new(entity)))
+                let entity_info = &self.entity_infos[name];
+                let type_name = entity_info.type_name();
+                let attributes = self.get_entity_attributes(name);
+                if attributes.len() > entity_info.attributes.len() && entity_info.attributes.len() > 0 {
+                    quote! {
+                        #constructor => {
+                            let entity = if own_parameters_only {
+                                #type_name::from_own_parameters(typed_parameter.parameters)
+                            } else {
+                                #type_name::from_parameters(typed_parameter.parameters)
+                            };
+                            Some((entity.type_id(), std::any::type_name::<#type_name>(), Box::new(entity)))
+                        }
+                    }
+                } else {
+                    quote! {
+                        #constructor => {
+                            let entity = #type_name::from_parameters(typed_parameter.parameters);
+                            Some((entity.type_id(), std::any::type_name::<#type_name>(), Box::new(entity)))
+                        }
                     }
                 }
             });
@@ -711,7 +759,7 @@ impl Generator {
                     self.type_names.entry(type_id).or_insert(type_name);
                 }
 
-                fn create_entity(&self, typed_parameter: TypedParameter) -> Option<(TypeId, &'static str, Box<dyn Any>)> {
+                fn create_simple_entity(&self, typed_parameter: TypedParameter, own_parameters_only: bool) -> Option<(TypeId, &'static str, Box<dyn Any>)> {
                     match typed_parameter.type_name.as_str() {
                         #( #read_entities )*
                         _ => {
