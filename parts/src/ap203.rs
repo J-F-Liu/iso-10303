@@ -47027,13 +47027,13 @@ impl Ap203Reader {
             .map(|entity| entity.downcast_ref::<T>())
             .flatten()
     }
-    pub fn get_entities<T: Any>(&self) -> impl Iterator<Item = &T> {
+    pub fn get_entities<T: Any>(&self) -> impl Iterator<Item = (i64, &T)> {
         let type_id = TypeId::of::<T>();
         self.type_ids
             .get(&type_id)
             .unwrap_or(&self.empty)
             .iter()
-            .map(move |id| self.entities[id].downcast_ref::<T>().unwrap())
+            .map(move |id| (*id, self.entities[id].downcast_ref::<T>().unwrap()))
     }
     pub fn get_type_name(&self, id: i64) -> &'static str {
         let type_id = (*self.entities[&id]).type_id();

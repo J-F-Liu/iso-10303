@@ -10,6 +10,12 @@ use std::{
 #[derive(Debug, Default, Copy, Clone, PartialOrd)]
 pub struct Real(pub f64);
 
+impl From<Real> for f64 {
+    fn from(real: Real) -> Self {
+        real.0
+    }
+}
+
 #[allow(clippy::derive_ord_xor_partial_ord)]
 impl Ord for Real {
     fn cmp(&self, other: &Self) -> Ordering {
