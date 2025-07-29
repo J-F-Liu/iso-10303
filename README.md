@@ -21,6 +21,7 @@ cargo run --example family
 ```
 cargo run --release --features=gencode --bin gencode schemas/AP214E3_2010.exp parts/src/ap214.rs Ap214
 cargo run --release --features=gencode --bin gencode schemas/AP203E2_November_2008.exp parts/src/ap203.rs Ap203
+cargo run --release --features=gencode --bin gencode schemas/ifc4.exp parts/src/ifc4.rs Ifc4
 cargo build --workspace
 ```
 
