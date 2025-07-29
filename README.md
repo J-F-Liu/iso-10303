@@ -16,7 +16,7 @@ cargo run --features=gencode --bin gencode schemas/example.exp examples/family/r
 cargo run --example family
 ```
 
-Generate reader code:
+### Generate reader code:
 
 ```
 cargo run --release --features=gencode --bin gencode schemas/AP214E3_2010.exp parts/src/ap214.rs Ap214
@@ -24,7 +24,9 @@ cargo run --release --features=gencode --bin gencode schemas/AP203E2_November_20
 cargo build --workspace
 ```
 
-Generate dot graph:
+### Generate dot graph:
+
+Install [Graphviz](https://graphviz.org/), ensure `dot` command is available.
 
 ```
 cargo run --release --features=gengraph --bin gengraph schemas/AP214E3_2010.exp graphs/ap214.dot
