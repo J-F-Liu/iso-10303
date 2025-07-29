@@ -14,11 +14,11 @@ version = "0.5.0"
 
 [dependencies]
 fast-float = "0.2"
-heck = {version = "0.3", optional = true}
-petgraph = {version = "0.5.1", optional = true}
-pom = {version = "3.2", path = "../pom"}
-proc-macro2 = {version = "1.0", optional = true}
-quote = {version = "1.0", optional = true}
+heck = { version = "0.3", optional = true }
+petgraph = { version = "0.5.1", optional = true }
+pom = { version = "3.4" }
+proc-macro2 = { version = "1.0", optional = true }
+quote = { version = "1.0", optional = true }
 structopt = "0.3"
 
 [features]

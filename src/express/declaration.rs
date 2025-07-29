@@ -96,6 +96,15 @@ pub struct Statement {
     pub text: String,
 }
 
+impl Declaration {
+    pub fn is_type_def(&self) -> bool {
+        match self {
+            Declaration::TypeDef(_) => true,
+            _ => false,
+        }
+    }
+}
+
 impl Entity {
     pub fn get_attribute(&self, name: &str) -> Option<&Attribute> {
         for attribute in &self.attributes {
